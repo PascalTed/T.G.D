@@ -30,19 +30,21 @@
     </head>
     
     <body>
-        <header>
-            <div id="header-block">
-                <div id="header-title-menu">
-                    <div id="header-title">
-                        <p>T.G.D<br /><span>The Good Death</span></p>
+        <div id="body-block">
+            <header>
+                <div id="header-block">
+                    <div id="header-title-menu">
+                        <div id="header-title">
+                            <p>T.G.D<br /><span>The Good Death</span></p>
+                        </div>
+                        <?= $menu ?>
                     </div>
-                    <?= $menu ?>
                 </div>
-            </div>
-        </header>
-        
-        <footer>
-        </footer>
+            </header>
+
+            <footer>
+            </footer>
+        </div>
     </body>
 
 </html>
