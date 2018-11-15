@@ -1,3 +1,5 @@
+<?php require('menuView.php') ?>
+
 <!DOCTYPE html>
 
 <html lang="fr">
