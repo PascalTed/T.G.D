@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<nav id="header-nav">
+<nav id="header-menu">
     <ul>
         <li><a href="#">Accueil</a></li>
         <li><a href="#">Nos jeux</a></li>
