@@ -29,6 +29,14 @@
     
     <body>
         <header>
+            <div id="header-block">
+                <div id="header-title-menu">
+                    <div id="header-title">
+                        <p>T.G.D<br /><span>The Good Death</span></p>
+                    </div>
+                    <?= $menu ?>
+                </div>
+            </div>
         </header>
         
         <footer>
