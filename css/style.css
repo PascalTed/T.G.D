@@ -4,3 +4,89 @@ body
     background-repeat: repeat;
     background-size: 250px;
 }
+
+#body-block
+{
+    max-width: 1000px;
+    margin: auto;
+    font-size: 18px;
+    height: 1800px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#header-title-menu
+{
+    border-top: 1px solid #cc0000;    
+    border-bottom: 1px solid #cc0000;
+}
+
+#header-title
+{
+
+    background-color: #333333;
+}
+
+#header-title p
+{
+    margin: 0;
+    padding: 2px 0;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 10px #cc0000;
+    font-size: 22px;
+}
+
+#header-menu
+{
+   
+}
+
+#header-menu ul
+{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+
+    margin: 0;
+    background-color: #4d4d4d;
+
+}
+
+#header-menu li
+{
+    
+}
+
+#header-menu ul a
+{
+    background: linear-gradient(to left,#4d4d4d, #737373, #737373, #737373, #4d4d4d);
+    text-decoration: none;
+    display: block;
+    text-shadow: 1px 1px 1px black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+
+#header-menu ul a:hover
+{
+    
+
+    text-shadow: 1px 1px 4px black;
+    box-shadow: inset 1px 1px 10px white;
+    
+}
+
+#header-menu ul a:active
+{
+    
+    background: inherit;
+    box-shadow: inset 1px 1px 10px black;
+    background-color: #cc0000;
+}
