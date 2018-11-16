@@ -17,8 +17,8 @@ body
 
 #header-title-menu
 {
-    border-top: 1px solid #cc0000;    
-    border-bottom: 1px solid #cc0000;
+ 
+   
 }
 
 #header-title
@@ -39,7 +39,7 @@ body
 
 #header-menu
 {
-   
+       background-color: #4d4d4d;
 }
 
 #header-menu ul
@@ -48,9 +48,9 @@ body
     display: flex;
     justify-content: center;
     padding-left: 0;
-
     margin: 0;
-    background-color: #4d4d4d;
+
+
 
 }
 
@@ -61,7 +61,7 @@ body
 
 #header-menu ul a
 {
-    background: linear-gradient(to left,#4d4d4d, #737373, #737373, #737373, #4d4d4d);
+    
     text-decoration: none;
     display: block;
     text-shadow: 1px 1px 1px black;
@@ -70,7 +70,10 @@ body
     padding-left: 20px;
     padding-right: 20px;
     color: white;
-    border-radius: 10px;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 5px white;
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
 }
 
 
@@ -79,14 +82,38 @@ body
     
 
     text-shadow: 1px 1px 4px black;
-    box-shadow: inset 1px 1px 10px white;
+    box-shadow: inset 0px 0px 15px white;
+      
     
 }
 
 #header-menu ul a:active
 {
+
+    text-shadow: none;
+    background-color: #333333;
+
+}
+
+
+@media all and (max-width: 500px){
+
+    #header-title-menu
+    {
+
+    }
     
-    background: inherit;
-    box-shadow: inset 1px 1px 10px black;
-    background-color: #cc0000;
+    #header-menu
+    {
+        border-radius: 0 0 2px 2px;
+   
+    }
+    
+    #header-menu ul
+    {
+        flex-direction: column;
+        text-align: center;
+
+    }
+    
 }
