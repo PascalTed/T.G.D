@@ -2,23 +2,23 @@
 var headerBurgerIcon = document.getElementById('header-burger-icon');
 var headerMenu = document.getElementById('header-menu');
 
-document.getElementById('header-burger-icon').addEventListener('click', function (e) {
+headerBurgerIcon.addEventListener('click', function (e) {
     
-    if (!e.target.classList.contains("open")){
-        e.target.classList.add("open");
+    if (!headerBurgerIcon.classList.contains("open")){
+        e.currentTarget.classList.add("open");
         headerMenu.classList.add("open");
     } else {
-        e.target.classList.remove("open");
+        e.currentTarget.classList.remove("open");
         headerMenu.classList.remove("open");
     }
 });
 
 var mediaQuery = window.matchMedia("(max-width: 500px)");
 
-mediaQuery.addListener(function() {
+mediaQuery.addListener(function(changed) {
     if(!mediaQuery.matches) {
         headerBurgerIcon.classList.remove("open");
-        headerMenu.classList.remove("open");
+        headerMenu.classList.remove("open")
     } 
 });
 // Fin menu burger
