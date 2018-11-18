@@ -15,17 +15,70 @@ body
     background-color: white;
 }
 
+/* Début header */
 #header-title-menu
 {
- 
    
 }
 
 #header-title
 {
-
+    position: relative;
     background-color: #333333;
 }
+
+/* Début création menu burger */
+#header-burger-icon
+{
+    display: none;
+    position: absolute;
+    height: 40px;
+    width: 35px;
+	top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+#header-burger-icon span
+{
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    transition-property: all;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px #cc0000;
+}
+
+#header-burger-icon span:nth-child(1) {
+    top: 7px;
+}
+
+#header-burger-icon.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 18px;
+}
+
+#header-burger-icon span:nth-child(2) {
+    top: 18px;
+}
+
+#header-burger-icon.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#header-burger-icon span:nth-child(3) {
+    top: 29px;
+}
+
+#header-burger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 18px;
+}
+/* Fin création menu burger */
 
 #header-title p
 {
@@ -37,9 +90,10 @@ body
     font-size: 22px;
 }
 
+/* Début menu */
 #header-menu
 {
-       background-color: #4d4d4d;
+    background-color: #4d4d4d;
 }
 
 #header-menu ul
@@ -49,9 +103,6 @@ body
     justify-content: center;
     padding-left: 0;
     margin: 0;
-
-
-
 }
 
 #header-menu li
@@ -61,7 +112,6 @@ body
 
 #header-menu ul a
 {
-    
     text-decoration: none;
     display: block;
     text-shadow: 1px 1px 1px black;
@@ -73,47 +123,58 @@ body
     border-radius: 2px;
     box-shadow: inset 0px 0px 5px white;
     transition-property: box-shadow;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
 }
-
 
 #header-menu ul a:hover
 {
-    
-
     text-shadow: 1px 1px 4px black;
     box-shadow: inset 0px 0px 15px white;
-      
-    
 }
 
 #header-menu ul a:active
 {
-
     text-shadow: none;
     background-color: #333333;
-
 }
+/* Fin menu */
+/* Fin header */
 
-
+/* Début media queries */
+/* Début media query max-width: 500px */
 @media all and (max-width: 500px){
 
+/* Début header */
     #header-title-menu
     {
 
     }
     
+    #header-burger-icon
+    {
+        display: block;
+    }
+    
+/* Début menu */
     #header-menu
     {
         border-radius: 0 0 2px 2px;
-   
+        display: none;
+    }
+    
+    #header-menu.open
+    {
+        display: block;
     }
     
     #header-menu ul
     {
         flex-direction: column;
         text-align: center;
-
     }
-    
+/* Fin menu */
+/* Fin header */
+
 }
+/* Fin media query max-width: 500px */
+/* Fin media queries */
