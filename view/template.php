@@ -35,6 +35,11 @@
                 <div id="header-block">
                     <div id="header-title-menu">
                         <div id="header-title">
+                            <div id="header-burger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                             <p>T.G.D<br /><span>The Good Death</span></p>
                         </div>
                         <?= $menu ?>
@@ -45,6 +50,9 @@
             <footer>
             </footer>
         </div>
+        <!-- début script -->
+        <script src="js/appli.js"></script>
+        <!-- fin script -->
     </body>
 
 </html>
