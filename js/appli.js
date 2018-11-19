@@ -13,7 +13,7 @@ headerBurgerIcon.addEventListener('click', function (e) {
     }
 });
 
-var mediaQuery = window.matchMedia("(max-width: 500px)");
+var mediaQuery = window.matchMedia("(max-width: 600px)");
 
 mediaQuery.addListener(function(changed) {
     if(!mediaQuery.matches) {
