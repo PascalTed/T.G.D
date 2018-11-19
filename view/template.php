@@ -43,6 +43,14 @@
                 <?= $menu ?>
             </header>
             
+            <div>
+                <h1>La team des T.G.D vous souhaite la bienvenue</h1>
+            </div>
+            
+            <section>
+                <?= $messages ?>
+            </section>
+            
             <div>test</div>
             
             <footer>
