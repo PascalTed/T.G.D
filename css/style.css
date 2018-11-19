@@ -94,8 +94,6 @@ header
 #header-menu
 {
     background-color: #4d4d4d;
-    position: absolute;
-    width: 100%;
 }
 
 #header-menu ul
@@ -162,6 +160,8 @@ header
     {
         border-radius: 0 0 2px 2px;
         display: none;
+        position: absolute;
+        width: 100%;
     }
     
     #header-menu.open
