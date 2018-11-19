@@ -141,8 +141,8 @@ header
 /* Fin header */
 
 /* Début media queries */
-/* Début media query max-width: 500px */
-@media all and (max-width: 500px){
+/* Début media query max-width: 600px */
+@media all and (max-width: 600px){
 
 /* Début header */
     #header-title-menu
@@ -178,5 +178,5 @@ header
 /* Fin header */
 
 }
-/* Fin media query max-width: 500px */
+/* Fin media query max-width: 600px */
 /* Fin media queries */
