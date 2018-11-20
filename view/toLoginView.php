@@ -1,6 +1,6 @@
 <?php ob_start(); ?>               
 
-<div id="connexion">
+<div id="connection">
     <form action="#" method="post">
         <i class="fas fa-times fa-2x" id="close-window-login"></i>
         <p>
@@ -25,4 +25,4 @@
     </form>
 </div>
 
-<?php $connexion = ob_get_clean(); ?>
+<?php $connection = ob_get_clean(); ?>
