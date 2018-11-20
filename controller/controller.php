@@ -1,7 +1,7 @@
 <?php
 
 // Chargement des classes
-require_once('model/AccountManage.php');
+require_once('model/AccountManager.php');
 
 // Affiche la liste des billets
 function demarrer()
