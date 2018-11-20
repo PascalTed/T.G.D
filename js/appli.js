@@ -23,6 +23,7 @@ mediaQuery.addListener(function(changed) {
 });
 // Fin menu burger
 
+// Début connexion //
 // Début affichage de la fenêtre de connexion
 var loginWindow = document.getElementById("login-window");
 var opaqueWindow = document.getElementById("opaque-window");
@@ -48,3 +49,38 @@ var closeLoginWindow = document.getElementById("close-login-window");
         opaqueWindow.style.display = "none";
     });
 // Fin affichage de la fenêtre de connexion
+
+// Début vérification login connexion. Si le pseudo et le mot de passe associé sont exactes, on se connecte
+var submitLoginWindow = document.getElementById('submit-login-window');
+
+submitLoginWindow.addEventListener("submit", function(e) {
+    
+    e.preventDefault();
+    
+    var User = document.getElementById('pseudo-connect').value;
+    var Pass = document.getElementById('password-connect').value;
+    var dataSend = 'pseudo-connect='+ encodeURIComponent(User) + '&password-connect=' + encodeURIComponent(Pass);
+    
+    var ajaxPostConnect = Object.create(AjaxPost);
+    
+    ajaxPostConnect.init("index.php?action=connectAccount", dataSend, function(reponse) {
+
+        if (reponse === "noUser" || reponse === "noPass") {
+            document.getElementById("pseudo-pass-alert").textContent = "Pseudo ou mot de passe incorrect";
+            
+            document.getElementById("pseudo-connect").addEventListener("click", function () {
+                document.getElementById("pseudo-pass-alert").textContent = "";
+            });
+            document.getElementById("password-connect").addEventListener("click", function () {
+                document.getElementById("pseudo-pass-alert").textContent = "";
+            });
+        }
+        if (reponse === "valid") {
+            submitLoginWindow.submit();
+        }
+    });
+    ajaxPostConnect.executer();
+});
+// Fin vérification login connexion. Si le pseudo et le mot de passe associé sont exactes, on se connecte
+
+// Fin connexion //
