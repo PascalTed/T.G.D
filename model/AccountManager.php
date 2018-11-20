@@ -8,7 +8,7 @@ class AccountManager extends Manager
     public function searchPseudoPass($pseudo, $pass) 
     {
         $db = $this->dbConnect();
-        $account = $db->prepare('SELECT id, pass, avatar, admin, moderator FROM users WHERE pseudo = ?');
+        $account = $db->prepare('SELECT id, pass, avatar, user_right FROM users WHERE pseudo = ?');
         $account->execute(array($pseudo));
         $existingUsers = $account->fetch();
             
@@ -20,8 +20,7 @@ class AccountManager extends Manager
 
             $_SESSION['id'] = $existingUsers['id'];
             $_SESSION['avatar'] = $existingUsers['avatar'];
-            $_SESSION['admin'] = $existingUsers['admin'];
-            $_SESSION['moderator'] = $existingUsers['moderator'];
+            $_SESSION['user_right'] = $existingUsers['user_right'];
             $_SESSION['pseudo'] = $pseudo;           
             echo 'valid';
             
