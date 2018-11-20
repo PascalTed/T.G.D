@@ -41,9 +41,9 @@ if (menuConnect !== null) {
     }); 
 }
 
-var closeWindowLogin = document.getElementById("close-window-login");
+var closeLoginWindow = document.getElementById("close-login-window");
 
-    closeWindowLogin.addEventListener("click", function() {
+    closeLoginWindow.addEventListener("click", function() {
         loginWindow.style.display = "none";
         opaqueWindow.style.display = "none";
     });
