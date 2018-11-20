@@ -26,7 +26,7 @@ mediaQuery.addListener(function(changed) {
 // Début affichage de la fenêtre de connexion
 var loginWindow = document.getElementById("login-window");
 var opaqueWindow = document.getElementById("opaque-window");
-var menuConnect = document.getElementById("menu-connect");
+var menuConnect = document.getElementById("header-menu-connect");
 
 if (menuConnect !== null) {
     
