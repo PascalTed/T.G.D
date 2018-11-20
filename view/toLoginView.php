@@ -2,7 +2,7 @@
 
 <div id="login-window">
     <form action="#" method="post">
-        <i class="fas fa-times fa-2x" id="close-window-login"></i>
+        <i class="fas fa-times fa-2x" id="close-login-window"></i>
         <p>
             <label for="pseudo-connect">Pseudo : </label><br />
             <input type="text" id="pseudo-connect" name="pseudo-connect" />
