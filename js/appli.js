@@ -51,9 +51,9 @@ var closeLoginWindow = document.getElementById("close-login-window");
 // Fin affichage de la fenêtre de connexion
 
 // Début vérification login connexion. Si le pseudo et le mot de passe associé sont exactes, on se connecte
-var submitLoginWindow = document.getElementById('submit-login-window');
+var formLoginWindow = document.getElementById('form-login-window');
 
-submitLoginWindow.addEventListener("submit", function(e) {
+formLoginWindow.addEventListener("submit", function(e) {
     
     e.preventDefault();
     
@@ -76,7 +76,7 @@ submitLoginWindow.addEventListener("submit", function(e) {
             });
         }
         if (reponse === "valid") {
-            submitLoginWindow.submit();
+            formLoginWindow.submit();
         }
     });
     ajaxPostConnect.executer();
