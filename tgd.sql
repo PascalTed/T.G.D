@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 15 nov. 2018 à 09:11
+-- Généré le :  lun. 19 nov. 2018 à 13:35
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -31,10 +31,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `topic_id` int(11) NOT NULL,
-  `deal_id` int(11) NOT NULL,
-  `played_game_id` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `type_id` int(11) NOT NULL,
   `comment` text NOT NULL,
   `moderation` tinyint(1) NOT NULL DEFAULT '0',
   `comment_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -104,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `played_games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `type` varchar(255) NOT NULL,
+  `genre` varchar(255) NOT NULL,
   `release_date` varchar(255) NOT NULL,
   `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -113,11 +111,11 @@ CREATE TABLE IF NOT EXISTS `played_games` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `topics`
+-- Structure de la table `topics_forums`
 --
 
-DROP TABLE IF EXISTS `topics`;
-CREATE TABLE IF NOT EXISTS `topics` (
+DROP TABLE IF EXISTS `topics_forums`;
+CREATE TABLE IF NOT EXISTS `topics_forums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
