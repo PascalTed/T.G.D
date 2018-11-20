@@ -44,7 +44,7 @@
             </header>
             
             <div>
-                <h1>La team des T.G.D vous souhaite la bienvenue</h1>
+                <h1>La team T.G.D vous souhaite la bienvenue</h1>
             </div>
 
             <section>
