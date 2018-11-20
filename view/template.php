@@ -10,7 +10,7 @@
         <link rel="icon" type="image/png" href="">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
-
+        <link rel="stylesheet" href="fontawesome/css/all.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="description" content="">
         
