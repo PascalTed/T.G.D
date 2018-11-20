@@ -46,8 +46,10 @@
             <div>
                 <h1>La team des T.G.D vous souhaite la bienvenue</h1>
             </div>
-            
+
             <section>
+                <div id="opaque-window"></div>
+                <?= $connection ?>
                 <?= $messages ?>
             </section>
             
