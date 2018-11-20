@@ -21,7 +21,7 @@
                 ?>
 
                 <p id="no-connected">Connectez-vous pour laisser un message.</p>
-                <p><a href="#" id="se-connecter">Se connecter</a></p>
+                <p><a href="#" id="messages-connect">Se connecter</a></p>
 
                 <?php
                 }
