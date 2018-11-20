@@ -16,7 +16,7 @@
         <p id="pseudo-pass-alert"></p>
         
         <p>
-            <input type="submit" value="Se connecter"/>
+            <input type="submit" value="Se connecter" id="submit-login-window"/>
         </p>
                 
         <p>
