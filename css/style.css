@@ -176,7 +176,7 @@ header
 #close-login-window
 {
     position: absolute;
-    top: 0px;
+    top: 4px;
     right: 4px;
     cursor: pointer;
     color: #333333;
