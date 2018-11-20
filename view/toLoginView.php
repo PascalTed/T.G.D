@@ -1,7 +1,7 @@
 <?php ob_start(); ?>               
 
 <div id="login-window">
-    <form action="#" method="post">
+    <form action="#" method="post" id="form-login-window">
         <!-- icon fontawesome -->
         <i class="fas fa-skull-crossbones fa-2x" id="close-login-window"></i>
         <p>
