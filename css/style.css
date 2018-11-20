@@ -215,7 +215,7 @@ header
 /* Début media query max-width: 600px */
 @media all and (max-width: 600px){
 
-/* Début header */
+    /* Début header */
     #header-title-menu
     {
 
@@ -226,7 +226,7 @@ header
         display: block;
     }
     
-/* Début menu */
+    /* Début menu */
     #header-menu
     {
         border-radius: 0 0 2px 2px;
@@ -245,9 +245,17 @@ header
         flex-direction: column;
         text-align: center;
     }
-/* Fin menu */
-/* Fin header */
+    /* Fin menu */
+    /* Fin header */
 
+    /* Début section */
+    /* fenêtre se connecter */
+    #login-window
+    {
+        width: 80%;
+    }
+    /* Fin section */
+    
 }
 /* Fin media query max-width: 600px */
 /* Fin media queries */
