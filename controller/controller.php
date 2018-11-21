@@ -16,4 +16,13 @@ function verifPseudoPass($pseudo, $pass)
     $accountManager->searchPseudoPass($pseudo, $pass);
 }
 
+// se déconnecter
+function logoutAccount()
+{
+    $accountManager = new AccountManager();
+    $accountManager->removeSession();
+    
+    header('Location: index.php');  
+}
+
 ?>
