@@ -20,7 +20,7 @@
         </p>
                 
         <p>
-            <a href="">Pas encore de compte ? Inscrivez-vous !</a>
+            <a href="index.php?action=displayCreateAccount">Pas encore de compte ? Inscrivez-vous !</a>
         </p>
         
     </form>
