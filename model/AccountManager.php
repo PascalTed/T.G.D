@@ -28,4 +28,11 @@ class AccountManager extends Manager
             echo "noPass";
         } 
     }
+    // Se déconnecter
+    public function removeSession()
+    {
+        // Suppression des variables de session et de la session
+        $_SESSION = array();
+        session_destroy();
+    }
 }
