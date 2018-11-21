@@ -39,9 +39,9 @@ class AccountManager extends Manager
         $sessionAccount->execute(array($pseudo));
         $infosSession = $sessionAccount->fetch();
         
-        $_SESSION['id'] = $existingUsers['id'];
-        $_SESSION['avatar'] = $existingUsers['avatar'];
-        $_SESSION['user_right'] = $existingUsers['user_right'];
+        $_SESSION['id'] = $infosSession['id'];
+        $_SESSION['avatar'] = $infosSession['avatar'];
+        $_SESSION['user_right'] = $infosSession['user_right'];
         $_SESSION['pseudo'] = $pseudo;  
     }
     
