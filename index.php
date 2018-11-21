@@ -8,7 +8,7 @@ try {
     if (isset($_GET['action'])) {
         
         // Afficher la page pour créer un compte
-        } if ($_GET['action'] == 'displayCreateAccount') {
+        if ($_GET['action'] == 'displayCreateAccount') {
             displayCreateAccount();
         
         // Enregistrement du nouveau compte
