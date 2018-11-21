@@ -7,8 +7,12 @@ require_once('controller/controller.php');
 try {
     if (isset($_GET['action'])) {
         
+        // Afficher la page pour créer un compte
+        } if ($_GET['action'] == 'displayCreateAccount') {
+            displayCreateAccount();
+        
         // Enregistrement du nouveau compte
-        if ($_GET['action'] == 'createAccount') {
+        } elseif ($_GET['action'] == 'createAccount') {
             if (isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password'])) {
                 createAccount($_POST['pseudo'], $_POST['email'], $_POST['password']);
             } else {
