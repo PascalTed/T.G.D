@@ -12,7 +12,7 @@ function demarrer()
 // Affiche création d'un compte
 function displayCreateAccount()
 {
-    require_once('view/createLoginView.php');
+    require_once('view/registerAccountView.php');
 }
 
 // Création du compte
