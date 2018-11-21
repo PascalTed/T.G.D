@@ -9,6 +9,12 @@ function demarrer()
     require_once('view/instantMessagesView.php');
 }
 
+// Affiche création d'un compte
+function displayCreateAccount()
+{
+    require_once('view/createLoginView.php');
+}
+
 // Création du compte
 function createAccount($pseudo, $mail, $pass)
 {    
