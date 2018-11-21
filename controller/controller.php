@@ -9,6 +9,15 @@ function demarrer()
     require_once('view/instantMessagesView.php');
 }
 
+// Création du compte
+function createAccount($pseudo, $mail, $pass)
+{    
+    $accountManager = new AccountManager();
+    $accountManager->editAccount($pseudo, $mail, $pass);
+    
+    header('Location: index.php');
+}
+
 // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter
 function verifPseudoPass($pseudo, $pass) 
 {
