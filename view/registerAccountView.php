@@ -8,7 +8,7 @@
     <h1>Inscription</h1>
 
     <div>
-        <form action="index.php?action=createAccount" method="post">
+        <form action="index.php?action=createAccount" method="post" id="form-registration">
             <p><em>Les champs obligatoires sont indiqués avec *</em></p>
             
             <p>
