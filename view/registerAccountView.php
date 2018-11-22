@@ -3,7 +3,7 @@
 
 <?php ob_start(); ?>
 
-<div id="formulaireInscription">
+<div id="registration">
 
     <h1>Inscription</h1>
 
@@ -13,22 +13,22 @@
             
             <p>
                 <label for="pseudo">Pseudo*</label><br />
-                <input type="text" id="pseudo" name="pseudo" required maxlength="20"/><span id="alertPseudo"></span>
+                <input type="text" id="pseudo" name="pseudo" required maxlength="20"/><span id="alert-pseudo"></span>
             </p>
             
             <p>
                 <label for="email">Adresse Email*</label><br />
-                <input type="email" id="email" name="email" required /><span id="alertEmail"></span>
+                <input type="email" id="email" name="email" required /><span id="alert-email"></span>
             </p>
             
             <p>
                 <label for="password">Mot de passe*</label><br />
-                <input type="password" id="password" name="password" minlength="8" required /><span id="alertPassword"></span>
+                <input type="password" id="password" name="password" minlength="8" required /><span id="alert-password">il faut au minimum 8 caractères</span>
             </p>
             
             <p>
-                <label for="verifPassword">Vérification du mot de passe*</label><br />
-                <input type="Password" id="verifPassword" name="verifPassword" required /><span id="alertVerifPassword"></span>
+                <label for="verif-password">Vérification du mot de passe*</label><br />
+                <input type="Password" id="verif-password" name="verif-password" required /><span id="alert-verif-password"></span>
             </p>
             
             <p>
