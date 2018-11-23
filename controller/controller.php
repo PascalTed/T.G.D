@@ -6,7 +6,7 @@ require_once('model/AccountManager.php');
 // Affiche la liste des billets
 function demarrer()
 {
-    require_once('view/instantMessagesView.php');
+    require_once('view/homeView.php');
 }
 
 // Affiche création d'un compte
