@@ -208,7 +208,26 @@ header
 {
     color: red;
 }
-/* Fin fenêtre se connecter *
+/* Fin fenêtre se connecter */
+
+/* Début formulaire inscription */
+
+#registration span
+{
+    color: green;
+}
+
+#registration span#alert-password
+{
+    color: blue;
+}
+
+#registration span.red-message
+{
+    color: red;
+}
+
+/* Fin formulaire inscription */
 /* Fin section */
 
 /* Début media queries */
