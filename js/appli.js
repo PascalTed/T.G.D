@@ -53,9 +53,11 @@ if (formRegistration !== null) {
         ajaxPostPseudo.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
             console.log(reponse);
             if (reponse === "existUser") {
+                messagePseudo.classList.add("red-message");
                 messagePseudo.textContent = "pseudo déjà existant";
                 pseudoVerified = "nok";
             } else {
+                messagePseudo.classList.remove("red-message");
                 messagePseudo.textContent = "pseudo disponible";
                 pseudoVerified = "ok";
             } 
@@ -71,17 +73,20 @@ if (formRegistration !== null) {
         var regexEmail = Object.create(Regex);
         regexEmail.init((/.+@.+\..+/), formInputEmail.value);
         
-        if (regexEmail.verifier() === false) {
+        if (regexEmail.verifier() === false && formInputEmail.value !== "") {
+            messageEmail.classList.add("red-message");
             messageEmail.textContent = "email incorrect";  
         } else {
             ajaxPostEmail.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
                 console.log(dataSend);
                 console.log(reponse);
                 if (reponse === "existEmail") {
+                    messageEmail.classList.add("red-message");
                     console.log("exist mail");
                     messageEmail.textContent = "email déjà existant";
                     emailVerified = "nok";
                 } else {
+                    messageEmail.classList.remove("red-message");
                     messageEmail.textContent = "email disponible";
                     emailVerified = "ok";
                 }
@@ -102,10 +107,12 @@ if (formRegistration !== null) {
     formInputVerifPass.addEventListener("input", function () {
     
         if (formInputPass.value === formInputVerifPass.value) {
+            messageVerifPass.classList.remove("red-message");
             messageVerifPass.textContent = "mots de passe identique";
             passVerified = "ok";
             
         }else {
+            messageVerifPass.classList.add("red-message");
             messageVerifPass.textContent = "mots de passe différents";
             passVerified = "nok";
         }
