@@ -26,80 +26,107 @@ mediaQuery.addListener(function(changed) {
 // Début vérification infos création compte. Si le pseudo et le mail n'existe pas, le compte est créé
 var formRegistration = document.getElementById("form-registration");
 
-var messagePseudo = document.getElementById("alertPseudo");
-var messageEmail = document.getElementById("alertEmail");
-var messagePass = document.getElementById("alertPassword");
-var messageVerifPass = document.getElementById("alertVerifPassword");
+var formInputPseudo = document.getElementById("pseudo");
+var formInputEmail = document.getElementById("email");
+var formInputPass = document.getElementById("password");
+var formInputVerifPass = document.getElementById("verif-password");
+
+var messagePseudo = document.getElementById("alert-pseudo");
+var messageEmail = document.getElementById("alert-email");
+var messagePass = document.getElementById("alert-password");
+var messageVerifPass = document.getElementById("alert-verif-password");
+
+var pseudoVerified;
+var emailVerified;
+var passVerified;
 
 if (formRegistration !== null) {
     
+    formInputPseudo.value = "";
+    formInputEmail.value = "";
+    // Vérification pseudo
+    formInputPseudo.addEventListener("input", function () {
+        console.log("envois");
+        var dataSend = 'pseudo='+ encodeURIComponent(formInputPseudo.value);
+        var ajaxPostPseudo = Object.create(AjaxPost);
+        
+        ajaxPostPseudo.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
+            console.log(reponse);
+            if (reponse === "existUser") {
+                messagePseudo.textContent = "pseudo déjà existant";
+                pseudoVerified = "nok";
+            } else {
+                messagePseudo.textContent = "pseudo disponible";
+                pseudoVerified = "ok";
+            } 
+        }); 
+        ajaxPostPseudo.executer();
+    });
+    // Vérification email
+    formInputEmail.addEventListener("input", function () {
+        console.log("envois2");
+        var dataSend = 'email='+ encodeURIComponent(formInputEmail.value);
+        var ajaxPostEmail = Object.create(AjaxPost);
+        
+        var regexEmail = Object.create(Regex);
+        regexEmail.init((/.+@.+\..+/), formInputEmail.value);
+        
+        if (regexEmail.verifier() === false) {
+            messageEmail.textContent = "email incorrect";  
+        } else {
+            ajaxPostEmail.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
+                console.log(dataSend);
+                console.log(reponse);
+                if (reponse === "existEmail") {
+                    console.log("exist mail");
+                    messageEmail.textContent = "email déjà existant";
+                    emailVerified = "nok";
+                } else {
+                    messageEmail.textContent = "email disponible";
+                    emailVerified = "ok";
+                }
+            });   
+            ajaxPostEmail.executer();
+        }
+    });
+    // password
+    formInputPass.addEventListener("input", function () {
+        console.log("envois3");
+        if (formInputVerifPass.value !== "") {
+            formInputVerifPass.value = "";
+            messageVerifPass.textContent = "";
+            passVerified = "nok";
+        }
+    });
+    // Vérification du password
+    formInputVerifPass.addEventListener("input", function () {
+    
+        if (formInputPass.value === formInputVerifPass.value) {
+            messageVerifPass.textContent = "mots de passe identique";
+            passVerified = "ok";
+            
+        }else {
+            messageVerifPass.textContent = "mots de passe différents";
+            passVerified = "nok";
+        }
+        if (formInputVerifPass.value === "") {
+            messageVerifPass.textContent = "";
+        }
+    });
+
     formRegistration.addEventListener("submit", function (e) {    
         e.preventDefault();
-            
-        var userCreate = document.getElementById("pseudo").value;
-        var emailCreate = document.getElementById("email").value;
-        var mdpValue = document.getElementById("password").value;
-        var verifMdpValue = document.getElementById("verifPassword").value;
-
-        var regexSpec = Object.create(Regex);
-        regexSpec.init(/\W+/, mdpValue);
-        
-        var regexChiffre = Object.create(Regex);
-        regexChiffre.init(/\d+/, mdpValue);
-        
-        var dataSend = 'pseudo='+ encodeURIComponent(userCreate) + '&email=' + encodeURIComponent(emailCreate);
-        var ajaxPostCreate = Object.create(AjaxPost);
-        
-        ajaxPostCreate.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
-
-            if (reponse === "existUser") {
-
-                messagePseudo.textContent = "Pseudo déjà existant";
-                document.getElementById("pseudo").addEventListener("click", function () {
-                    messagePseudo.textContent = "";
-                });
-            }
-            if (reponse === "existEmail") {
-                
-                messageEmail.textContent = "email déjà existant";
-                document.getElementById("email").addEventListener("click", function () {
-                    messageEmail.textContent = "";
-                });
-            }
-            if (reponse === "valide") {
-                if (regexSpec.verifier() === true) { 
-                    if (regexChiffre.verifier() === true) { 
-                        if (mdpValue === verifMdpValue) { 
-                            formRegistration.submit();
-                        } else {
-                            messageVerifPass.textContent = "Les mots de passe ne sont pas identiques";
-                            document.getElementById("verifPassword").addEventListener("click", function () {
-                                messageVerifPass.textContent = "";
-                                messagePass.textContent = "";
-                            });
-                        }    
-                    } else {
-                        messagePass.textContent = "Il faut au minimum un chiffre";
-                        document.getElementById("password").addEventListener("click", function () {
-                            messagePass.textContent = "";
-                            messageVerifPass.textContent = "";
-                        });
-                    }        
-                } else {
-                    messagePass.textContent = "Il faut au minimum un caractère spécial"; 
-                    document.getElementById("password").addEventListener("click", function () {
-                        messagePass.textContent = "";
-                        messageVerifPass.textContent = "";
-                    });
-                }
-            }
-        });
-        ajaxPostCreate.executer();    
-    });
-}
+   
+        if (pseudoVerified === "ok" && emailVerified === "ok" && passVerified ==="ok"){
+            formRegistration.submit();
+        } else {
+            console.log("nok");
+        }
+    })
+}    
 // Fin vérification infos création compte. Si le pseudo et le mail n'existe pas, le compte est créé
 
-// Début connexion //
+// Début connexion
 // Début affichage de la fenêtre de connexion
 var loginWindow = document.getElementById("login-window");
 var opaqueWindow = document.getElementById("opaque-window");
