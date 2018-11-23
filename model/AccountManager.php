@@ -5,7 +5,7 @@ require_once("model/Manager.php");
 class AccountManager extends Manager
 {
     
-     // Vérification des informations saisies (pseudo et email), venant d'un ajaxpost, avant de créer un compte.
+     // Début vérification des informations saisies (pseudo et email), venant d'un ajaxpost, avant de créer un compte.
     public function searchPseudo($pseudo) 
     {
         $db = $this->dbConnect();
@@ -31,6 +31,7 @@ class AccountManager extends Manager
             echo "existEmail";
         }
     }
+    // Fin vérification des informations saisies (pseudo et email), venant d'un ajaxpost, avant de créer un compte.
     
     // Création du compte
     public function editAccount($pseudo, $mail, $pass)
