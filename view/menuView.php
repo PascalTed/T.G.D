@@ -11,7 +11,7 @@
         if (isset($_SESSION['pseudo'])) {
         ?>
             
-            <li><a href="#">Mon compte</a></li>
+            <li><a href="index.php?action=displayAccount" id="display-account">Mon compte</a></li>
             <li><a href="index.php?action=logoutAccount" id="logout">Se déconnecter</a></li>
 
         <?php
