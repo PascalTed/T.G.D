@@ -39,5 +39,3 @@
 </div>
 
 <?php $messages = ob_get_clean(); ?>
-
-<?php require_once('template.php'); ?>
