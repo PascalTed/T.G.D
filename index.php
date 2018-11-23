@@ -33,7 +33,11 @@ try {
             
         // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter
         } elseif ($_GET['action'] == 'connectAccount'){
-            verifPseudoPass($_POST['pseudo-connect'], $_POST['password-connect']);
+            if (isset($_POST['pseudo-connect']) && isset($_POST['password-connect'])) {
+                verifPseudoPass($_POST['pseudo-connect'], $_POST['password-connect']);
+            } else {
+                throw new Exception('Les informations (pseudo, email) n\'ont pas été envoyés.');
+            }
         
         // Afficher la page Mon compte
         } elseif ($_GET['action'] == displayAccount) {
