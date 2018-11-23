@@ -1,6 +1,3 @@
-<?php require_once('menuView.php'); ?>
-<?php require_once('toLoginView.php'); ?>
-
 <?php ob_start(); ?>
 
 <div id="instant-messages">
