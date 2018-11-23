@@ -48,7 +48,6 @@
             <section>
                 <div id="opaque-window"></div>
                 <?= $connection ?>
-                <?= $messages ?>
                 <?= $content ?>
             </section>
             
