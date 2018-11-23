@@ -1,8 +1,10 @@
-<?php require('menuView.php'); ?>
+<?php require_once('menuView.php'); ?>
 <?php require_once('toLoginView.php'); ?>
+<?php require_once('instantMessagesView.php'); ?>
 
 <?php ob_start(); ?>
 
+<?= $messages ?>
 <div id="registration">
 
     <h1>Inscription</h1>
