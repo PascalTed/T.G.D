@@ -15,9 +15,13 @@ try {
         } elseif ($_GET['action'] == 'verifCreateAccount') {
             if (isset($_POST['pseudo'])) {
                 verifPseudo($_POST['pseudo']);
+            } else {
+                throw new Exception('Aucun pseudo envoyé.'); 
             }
             if (isset ($_POST['email'])) {
-            verifMail($_POST['email']);
+                verifMail($_POST['email']);
+            } else {
+                throw new Exception('Aucun email envoyé.');
             }
         // Enregistrement du nouveau compte
         } elseif ($_GET['action'] == 'createAccount') {
@@ -30,6 +34,14 @@ try {
         // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter
         } elseif ($_GET['action'] == 'connectAccount'){
             verifPseudoPass($_POST['pseudo-connect'], $_POST['password-connect']);
+        
+        // Afficher la page Mon compte
+        } elseif ($_GET['action'] == displayAccount) {
+            if (isset($_SESSION['pseudo'])) {
+                displayAccount();
+            } else {
+                throw new Exception('Il faut être connecté pour accéder à son compte, pas de session pseudo enregistré.');
+            }
             
         // Déconnexion    
         } elseif ($_GET['action'] == 'logoutAccount') {
