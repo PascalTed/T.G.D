@@ -13,8 +13,12 @@ try {
             
         // Vérification des informations saisies (pseudo et email), venant d'un ajaxpost, avant de créer un compte.   
         } elseif ($_GET['action'] == 'verifCreateAccount') {
-            verifPseudoMail($_POST['pseudo'], $_POST['email']);
-        
+            if (isset($_POST['pseudo'])) {
+                verifPseudo($_POST['pseudo']);
+            }
+            if (isset ($_POST['email'])) {
+            verifMail($_POST['email']);
+            }
         // Enregistrement du nouveau compte
         } elseif ($_GET['action'] == 'createAccount') {
             if (isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password'])) {
