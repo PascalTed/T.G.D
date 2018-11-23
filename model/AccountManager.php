@@ -6,25 +6,30 @@ class AccountManager extends Manager
 {
     
      // Vérification des informations saisies (pseudo et email), venant d'un ajaxpost, avant de créer un compte.
-    public function searchPseudoMail($pseudo, $mail) 
+    public function searchPseudo($pseudo) 
     {
         $db = $this->dbConnect();
         
         $pseudoAccount = $db->prepare('SELECT id, pseudo, email FROM users WHERE pseudo = ?');
         $pseudoAccount->execute(array($pseudo));
         $existingUser = $pseudoAccount->fetch();
+
+        if ($existingUser['pseudo']) {
+            echo "existUser";
+        }
+    }
+    
+    public function searchMail($mail) 
+    {
+        $db = $this->dbConnect();
         
         $mailAccount = $db->prepare('SELECT id, pseudo, email FROM users WHERE email = ?');
         $mailAccount->execute(array($mail));
         $existingMail = $mailAccount->fetch();
 
-        if ($existingUser['pseudo']) {
-            echo "existUser";
-        } elseif ($existingMail['email']) {
+        if ($existingMail['email']) {
             echo "existEmail";
-        } else{
-            echo "valide";
-        } 
+        }
     }
     
     // Création du compte
