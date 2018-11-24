@@ -39,17 +39,13 @@
                     <p>T.G.D<br /><span>The Good Death</span></p>
                 </div>
                 <?= $menu ?>
-            </header>
-            
-            <div>
-                <h1>La team T.G.D vous souhaite la bienvenue</h1>
-            </div>
-
-            <section>
                 <div id="opaque-window"></div>
                 <?= $connection ?>
-                <?= $content ?>
-            </section>
+            </header>
+
+            <!-- <section> -->
+            <?= $content ?>
+            <!-- <section> -->
             
             <div>test</div>
             
