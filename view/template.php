@@ -39,13 +39,15 @@
                     <p>T.G.D<br /><span>The Good Death</span></p>
                 </div>
                 <?= $menu ?>
+                <!-- début connexion -->
                 <div id="opaque-window"></div>
                 <?= $connection ?>
+                <!-- fin connexion -->
             </header>
 
             <!-- <section> -->
             <?= $content ?>
-            <!-- <section> -->
+            <!-- </section> -->
             
             <div>test</div>
             
