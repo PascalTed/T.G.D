@@ -305,6 +305,20 @@ header
     }
     /* Fin menu */
     /* Fin header */
+    
+    /* Début section */
+    /* Début formulaire inscription */
+    #form-registration p:first-child
+    {
+        margin-top: 0;
+    }
+    
+    #form-registration p, #form-registration p:last-child
+    {
+        margin-bottom: 0;
+    }
+    /* Fin formulaire inscription */
+    /* Fin section */
 }
 /* Fin media query max-width: 800px */
 
