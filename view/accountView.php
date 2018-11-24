@@ -4,11 +4,19 @@
 
 <?php ob_start(); ?>
 
-<div id="account">
-
-    <p>Mon compte</p>
+<section id="account">
     
-</div>
+    <div>
+        <h1>Mon compte</h1>
+    </div>
+    
+    <div id="account-content">
+
+        <p>Mon compte</p>
+
+    </div>
+    
+</section>
 
 <?php $content = ob_get_clean(); ?>
 
