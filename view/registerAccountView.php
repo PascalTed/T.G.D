@@ -4,12 +4,13 @@
 
 <?php ob_start(); ?>
 
-<?= $messages ?>
 <div id="registration">
 
-    <h1>Inscription</h1>
-
     <div>
+        <h1>Inscription</h1>
+    </div>
+
+    <div id="registration-content">
         <form action="index.php?action=createAccount" method="post" id="form-registration">
             <p><em>Les champs obligatoires sont indiqués avec *</em></p>
             
