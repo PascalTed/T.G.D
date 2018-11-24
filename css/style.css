@@ -305,15 +305,17 @@ header
     }
     /* Fin menu */
     /* Fin header */
+}
+/* Fin media query max-width: 800px */
 
-    /* Début section */
+/* Début media query max-width: 500px */
+@media all and (max-width: 500px){
+    
     /* fenêtre se connecter */
     #login-window
     {
         width: 80%;
     }
-    /* Fin section */
-    
 }
-/* Fin media query max-width: 800px */
+/* Fin media query max-width: 500px */
 /* Fin media queries */
