@@ -4,10 +4,18 @@
 
 <?php ob_start(); ?>
 
-<?= $messages ?>
-<div id="home">
-    <p>Accueil</p>
-</div>
+<section id="home">
+
+    <div>
+        <h1>La team T.G.D vous souhaite la bienvenue</h1>
+    </div>
+
+    <div id="home-content">
+        <?= $messages ?>
+        <p>Accueil</p>
+    </div>
+
+</section>
 
 <?php $content = ob_get_clean(); ?>
 
