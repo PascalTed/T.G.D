@@ -4,7 +4,7 @@
 
 <?php ob_start(); ?>
 
-<div id="registration">
+<section id="registration">
 
     <div>
         <h1>Inscription</h1>
@@ -40,7 +40,7 @@
         </form>
     </div>
 
-</div>
+</section>
 
 <?php $content = ob_get_clean(); ?>
 
