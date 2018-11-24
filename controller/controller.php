@@ -44,6 +44,12 @@ function verifPseudoPass($pseudo, $pass)
     $accountManager->searchPseudoPass($pseudo, $pass);
 }
 
+// Affiche mon compte
+function displayAccount()
+{
+    require_once('view/accountView.php');
+}
+
 // se déconnecter
 function logoutAccount()
 {
