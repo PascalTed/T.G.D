@@ -40,7 +40,7 @@ try {
             }
         
         // Afficher la page Mon compte
-        } elseif ($_GET['action'] == displayAccount) {
+        } elseif ($_GET['action'] == 'displayAccount') {
             if (isset($_SESSION['pseudo'])) {
                 displayAccount();
             } else {
