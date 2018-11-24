@@ -281,6 +281,7 @@ header
     
     #header-burger-icon
     {
+        cursor: pointer;
         display: block;
     }
     
