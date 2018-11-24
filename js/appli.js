@@ -50,7 +50,7 @@ if (formRegistration !== null) {
         var dataSend = 'pseudo='+ encodeURIComponent(formInputPseudo.value);
         var ajaxPostPseudo = Object.create(AjaxPost);
         
-        ajaxPostPseudo.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
+        ajaxPostPseudo.init("index.php?action=verifPseudoCreateAccount", dataSend, function(reponse) {
             console.log(reponse);
             if (reponse === "existUser") {
                 messagePseudo.classList.add("red-message");
@@ -77,7 +77,7 @@ if (formRegistration !== null) {
             messageEmail.classList.add("red-message");
             messageEmail.textContent = "email incorrect";  
         } else {
-            ajaxPostEmail.init("index.php?action=verifCreateAccount", dataSend, function(reponse) {
+            ajaxPostEmail.init("index.php?action=verifEmailCreateAccount", dataSend, function(reponse) {
                 console.log(dataSend);
                 console.log(reponse);
                 if (reponse === "existEmail") {
