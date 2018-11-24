@@ -138,20 +138,7 @@ header
     background-color: #333333;
 }
 /* Fin menu */
-/* Fin header */
 
-/* Début section */
-#opaque-window
-{
-    position: fixed;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
 /* Début fenêtre se connecter */
 #login-window
 {
@@ -209,6 +196,20 @@ header
     color: red;
 }
 /* Fin fenêtre se connecter */
+/* Fin header */
+
+/* Début section */
+#opaque-window
+{
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 
 /* Début formulaire inscription */
 
