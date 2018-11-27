@@ -192,5 +192,26 @@ formLoginWindow.addEventListener("submit", function(e) {
     ajaxPostConnect.executer();
 });
 // Fin vérification login connexion. Si le pseudo et le mot de passe associé sont exactes, on se connecte
+// Fin connexion
 
-// Fin connexion //
+// Début page account
+var displayFormAvatar = document.getElementById("display-form-avatar");
+
+if (document.getElementById("account") !== null) {
+    
+    document.getElementById("image-avatar").addEventListener("click", function () {
+        displayFormAvatar.style.display = "block";
+        opaqueWindow.style.display = "block"
+    
+        opaqueWindow.addEventListener("click", function() {
+            opaqueWindow.style.display = "none";
+            displayFormAvatar.style.display = "none";
+        });
+        
+        document.getElementById('close-avatar-window').addEventListener("click", function() {
+            opaqueWindow.style.display = "none";
+            displayFormAvatar.style.display = "none";
+        });
+    });
+}
+// Fin page account
