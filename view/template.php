@@ -49,8 +49,6 @@
             <?= $content ?>
             <!-- </section> -->
             
-            <div>test</div>
-            
             <footer>
             </footer>
         </div>
