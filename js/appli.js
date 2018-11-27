@@ -199,7 +199,7 @@ var displayFormAvatar = document.getElementById("display-form-avatar");
 
 if (document.getElementById("account") !== null) {
     
-    document.getElementById("image-avatar").addEventListener("click", function () {
+    document.getElementById("btn-modify-avatar").addEventListener("click", function () {
         displayFormAvatar.style.display = "block";
         opaqueWindow.style.display = "block"
     
