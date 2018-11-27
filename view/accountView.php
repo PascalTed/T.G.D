@@ -32,7 +32,7 @@
                 }
                 ?>
                 
-                <a href="#" id="modify-avatar">Modifier avatar</a>
+                <a href="#" id="btn-modify-avatar">Modifier avatar</a>
             </div>
             
             <div id="infos-pseudo-email">
