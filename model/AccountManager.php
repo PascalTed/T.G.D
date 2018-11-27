@@ -41,21 +41,22 @@ class AccountManager extends Manager
         $account = $db->prepare('INSERT INTO users (pseudo, pass, email) VALUES (?, ?, ?)');
         $account->execute(array($pseudo, $passHash, $mail));
         
-        $sessionAccount = $db->prepare('SELECT id, avatar, user_right FROM users WHERE pseudo = ?');
+        $sessionAccount = $db->prepare('SELECT id, email, avatar, user_right FROM users WHERE pseudo = ?');
         $sessionAccount->execute(array($pseudo));
         $infosSession = $sessionAccount->fetch();
         
         $_SESSION['id'] = $infosSession['id'];
         $_SESSION['avatar'] = $infosSession['avatar'];
         $_SESSION['user_right'] = $infosSession['user_right'];
-        $_SESSION['pseudo'] = $pseudo;  
+        $_SESSION['pseudo'] = $pseudo;
+        $_SESSION['email'] = $infosSession['email'];
     }
     
     // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter
     public function searchPseudoPass($pseudo, $pass) 
     {
         $db = $this->dbConnect();
-        $account = $db->prepare('SELECT id, pass, avatar, user_right FROM users WHERE pseudo = ?');
+        $account = $db->prepare('SELECT id, pass, email, avatar, user_right FROM users WHERE pseudo = ?');
         $account->execute(array($pseudo));
         $existingUsers = $account->fetch();
             
@@ -68,7 +69,8 @@ class AccountManager extends Manager
             $_SESSION['id'] = $existingUsers['id'];
             $_SESSION['avatar'] = $existingUsers['avatar'];
             $_SESSION['user_right'] = $existingUsers['user_right'];
-            $_SESSION['pseudo'] = $pseudo;           
+            $_SESSION['pseudo'] = $pseudo;
+            $_SESSION['email'] = $existingUsers['email'];
             echo 'valid';
             
         } else {
