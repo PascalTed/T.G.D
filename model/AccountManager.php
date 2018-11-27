@@ -77,6 +77,72 @@ class AccountManager extends Manager
             echo "noPass";
         } 
     }
+    
+    // changer avatar
+    public function changeAvatar(monimage)
+    {
+        $extensions_valides = array('jpg' , 'jpeg' , 'png', 'gif');
+        
+        //1. strrchr renvoie l'extension avec le point (« . »).
+        //2. substr(chaine,1) ignore le premier caractère de chaine.
+        //3. strtolower met l'extension en minuscules.
+        $extension_upload = strtolower(substr(strrchr($_FILES[monimage]['name'], '.'), 1));
+        
+        if ( in_array($extension_upload,$extensions_valides) ) {
+            echo "Extension correcte";
+            switch ($extension_upload) {
+                case  'jpg':   
+                case 'jpeg':
+                    $newImage = imagecreatefromjpeg($_FILES[monimage]['tmp_name']);
+                    break;
+                case 'png':
+                    $newImage = imagecreatefrompng($_FILES[monimage]['tmp_name']);
+                    break;
+                case 'gif':
+                    $newImage = imagecreatefromgif($_FILES[monimage]['tmp_name']);
+                    break;
+            }      
+
+            $crop_width = imagesx($newImage);
+            $crop_height = imagesy($newImage);
+                
+            $size = min($crop_width, $crop_height);
+                        
+            if($crop_width >= $crop_height) {
+                $newx= ($crop_width-$crop_height)/2;
+                $croppedImage = imagecrop($newImage, ['x' => $newx, 'y' => 0, 'width' => $size, 'height' => $size]);
+            }
+            else {
+                $newy= ($crop_height-$crop_width)/2;
+                $croppedImage = imagecrop($newImage, ['x' => 0, 'y' => $newy, 'width' => $size, 'height' => $size]);
+            }
+            
+            $DestinationFileAvatar = 'images/' . $_SESSION['id'] . '.' .$extension_upload; 
+        
+            switch ($extension_upload) {
+                case  'jpg':  
+                case 'jpeg':
+                    $resultat = imagejpeg($croppedImage,$DestinationFileAvatar);
+                    break;
+                case 'png':
+                    $resultat = imagepng($croppedImage,$DestinationFileAvatar);
+                    break;
+                case 'gif':
+                    $resultat = imagegif($croppedImage,$DestinationFileAvatar);
+                    break;
+            } 
+            if ($resultat) {
+                echo 'Transfert réussi';
+            }else {
+                echo 'Erreur lors du transfert';
+            }
+            var_dump($resultat);
+            imagedestroy($newImage);
+        } else {
+            echo 'Extension incorrecte'; 
+        }
+    }
+    
     // Se déconnecter
     public function removeSession()
     {
