@@ -276,9 +276,16 @@ header
 
 #container-img-avatar
 {
-    width: 100px;
-    height: 100px;
+
 }
+
+#btn-modify-avatar
+{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
 #infos-pseudo-email
 {
     margin-left: 25px;
@@ -286,7 +293,8 @@ header
 
 #image-avatar
 {
-    width: 100%;
+    display: block;
+    width: 150px;
 }
 
 #close-avatar-window
