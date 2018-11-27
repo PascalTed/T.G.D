@@ -47,6 +47,22 @@ try {
             } else {
                 throw new Exception('Il faut être connecté pour accéder à son compte, pas de session pseudo enregistré.');
             }
+        
+        // envoie de l'image avatar
+        } elseif ($_GET['action'] == 'modifyAvatar') {
+            if (isset($_SESSION['pseudo'])) {
+                if (isset($_FILES['file-avatar']) && $_FILES['file-avatar']['error'] == 0) {
+                    if ($_FILES['file-avatar']['size'] <= 1048576) {
+                        modifyAvatar();
+                    } else {
+                        throw new Exception('fichier trop gros.');
+                    }
+                } else {
+                    throw new Exception('Aucun fichier envoyé ou erreur lors de l\'envoi.');
+                } 
+            } else {
+                throw new Exception('Aucun pseudo envoyé.'); 
+            }
             
         // Déconnexion    
         } elseif ($_GET['action'] == 'logoutAccount') {
