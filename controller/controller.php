@@ -37,6 +37,15 @@ function createAccount($pseudo, $mail, $pass)
     header('Location: index.php');
 }
 
+// Modifier avatar
+function modifyAvatar()
+{
+    $accountManager = new AccountManager();
+    $accountManager->changeAvatar();
+    
+    require_once('view/accountView.php');
+}
+
 // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter
 function verifPseudoPass($pseudo, $pass) 
 {
