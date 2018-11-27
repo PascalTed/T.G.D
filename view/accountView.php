@@ -12,10 +12,43 @@
     
     <div id="account-content">
 
-        <p>Mon compte</p>
-
+        <div id="infos-account">
+            
+            <div id="container-img-avatar">
+                
+                <?php 
+                if ($_SESSION['avatar'] == "default") {
+                ?>
+            
+                <img src="images/neutre.jpg" id="image-avatar" />
+            
+                <?php
+                } else {
+                ?>
+            
+                <img src="images/<?= $_SESSION['id'] . '.' . $_SESSION['avatar'] ?>" id="image-avatar" />
+            
+                <?php
+                }
+                ?>
+                
+            </div>
+            
+            <div id="infos-pseudo-email">
+                <p>Pseudo : <?= $_SESSION['pseudo'] ?></p>
+                <p>Email : <?= $_SESSION['email'] ?></p>
+            </div>
+            
+            <div id="display-form-avatar">
+                <i class="fas fa-skull-crossbones fa-2x" id="close-avatar-window"></i>
+       
+                <form method="post" action="index.php?action=modifyAvatar" enctype="multipart/form-data" id="form-avatar">
+                        <input type="file" name="file-avatar" id="file-avatar" required/>
+                        <input type="submit" name="submit" value="Envoyer" />
+                </form>
+            </div>
+        </div>
     </div>
-    
 </section>
 
 <?php $content = ob_get_clean(); ?>
