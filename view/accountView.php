@@ -20,13 +20,13 @@
                 if ($_SESSION['avatar'] == "default") {
                 ?>
             
-                <img src="images/neutre.jpg" id="image-avatar" />
+                <img src="images/avatars/default.jpg" id="image-avatar" />
             
                 <?php
                 } else {
                 ?>
             
-                <img src="images/<?= $_SESSION['id'] . '.' . $_SESSION['avatar'] ?>" id="image-avatar" />
+                <img src="images/avatars/<?= $_SESSION['id'] . '.' . $_SESSION['avatar'] ?>" id="image-avatar" />
             
                 <?php
                 }
