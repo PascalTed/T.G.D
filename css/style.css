@@ -398,6 +398,12 @@ header
     {
         width: 80%;
     }
+    
+    /* fenêtre modifier avatar */
+    #display-form-avatar
+    {
+        width: 80%;
+    }
 }
 /* Fin media query max-width: 500px */
 /* Fin media queries */
