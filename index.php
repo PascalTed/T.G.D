@@ -71,6 +71,18 @@ try {
             } else {
                 throw new Exception('Pas de session d\'enregistrée, il faut être connecté pour se déconnecté.'); 
             }
+            
+        // Ajouter un commentaire
+        } elseif ($_GET['action'] == 'addMessage') {
+            if (isset($_SESSION['pseudo']) {
+                if (isset($_POST['addMessage']) && $_POST['addMessage'] != '') {
+                    addMessage($_SESSION['id'], $_POST['addMessage']);
+                } else {
+                    throw new Exception('Le champ n\'est pas rempli.');
+                }
+            } else {
+                throw new Exception('Aucun pseudo envoyé.');
+            }
         }
     } else {
         demarrer();
