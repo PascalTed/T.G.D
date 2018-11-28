@@ -9,7 +9,8 @@ class MessageManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $message = $db->prepare('INSERT INTO messages(user_id, message, message_date) VALUES(?, ?)');
+        $message = $db->prepare('INSERT INTO messages(user_id, message) VALUES(?, ?)');
+        $message->execute(array($userId, $message));
     }
 }
 
