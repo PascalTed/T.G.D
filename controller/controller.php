@@ -70,10 +70,10 @@ function logoutAccount()
 }
 
 // Ajouter un message
-function addMessage($userId, $message)
+function addMessage($userId, $instantMessage)
 {
     $messageManager = new MessageManager();
-    $messageManager->editMessage($userId, $message);
+    $messageManager->editMessage($userId, $instantMessage);
 }
 
 ?>
