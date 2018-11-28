@@ -74,7 +74,7 @@ try {
             
         // Ajouter un message
         } elseif ($_GET['action'] == 'addMessage') {
-            if (isset($_SESSION['pseudo']) {
+            if (isset($_SESSION['pseudo'])) {
                 if (isset($_POST['addMessage']) && $_POST['addMessage'] != '') {
                     addMessage($_SESSION['id'], $_POST['addMessage']);
                 } else {
