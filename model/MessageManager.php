@@ -2,10 +2,10 @@
 
 require_once("model/Manager.php");
 
-class AccountManager extends Manager
+class MessageManager extends Manager
 {
     // Enregistrer le message
-    public function editMessage($userId, $message); 
+    public function editMessage($userId, $message)
     {
         $db = $this->dbConnect();
         
