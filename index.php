@@ -75,8 +75,8 @@ try {
         // Ajouter un message
         } elseif ($_GET['action'] == 'addMessage') {
             if (isset($_SESSION['pseudo'])) {
-                if (isset($_POST['addMessage']) && $_POST['addMessage'] != '') {
-                    addMessage($_SESSION['id'], $_POST['addMessage']);
+                if (isset($_POST['add-message']) && $_POST['add-message'] != '') {
+                    addMessage($_SESSION['id'], $_POST['add-message']);
                 } else {
                     throw new Exception('Le champ n\'est pas rempli.');
                 }
