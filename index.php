@@ -72,7 +72,7 @@ try {
                 throw new Exception('Pas de session d\'enregistrée, il faut être connecté pour se déconnecté.'); 
             }
             
-        // Ajouter un commentaire
+        // Ajouter un message
         } elseif ($_GET['action'] == 'addMessage') {
             if (isset($_SESSION['pseudo']) {
                 if (isset($_POST['addMessage']) && $_POST['addMessage'] != '') {
