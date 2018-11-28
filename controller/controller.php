@@ -2,6 +2,7 @@
 
 // Chargement des classes
 require_once('model/AccountManager.php');
+require_once('model/MessageManager.php');
 
 // Affiche la liste des billets
 function demarrer()
@@ -66,6 +67,13 @@ function logoutAccount()
     $accountManager->removeSession();
     
     header('Location: index.php');  
+}
+
+// Ajouter un message
+function addMessage()
+{
+    $messageManager = new MessageManager();
+    $messageManager->editMessage($userId, $message);
 }
 
 ?>
