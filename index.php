@@ -83,6 +83,18 @@ try {
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
             }
+            
+        // Vérifier si nouveaux messages ajoutés    
+        } elseif ($_GET['action'] == 'verifUpdatedMessage') {
+            if (isset($_SESSION['pseudo'])) {
+                if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
+                    verifUpdatedMessage($_GET['idMessage']);
+                } else {
+                    throw new Exception('Aucun id message envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun pseudo envoyé.');
+            }
         }
     } else {
         demarrer();
