@@ -76,4 +76,24 @@ function addMessage($userId, $instantMessage)
     $messageManager->editMessage($userId, $instantMessage);
 }
 
+// Vérifier si nouveaux messages ajoutés
+function verifUpdatedMessage($messageId)
+{
+    $messageManager = new MessageManager();
+    $req = $messageManager->getLastMessage($messageId);
+    
+    while ($lastMessage = $req->fetch()) {
+?>
+        <div id="<?= $lastMessage['id'] ?>"class="message">
+            
+            <!-- Toutes les données sont protégées par htmlspecialchars -->
+            <p><strong><?= htmlspecialchars($lastMessage['pseudo']) ?></strong><em> le <?= $lastMessage['message_date_fr'] ?></em></p>
+                
+            <p>"<?= nl2br(htmlspecialchars($lastMessage['message'])) ?>"</p>
+        </div>
+
+<?php
+    }
+}
+
 ?>
