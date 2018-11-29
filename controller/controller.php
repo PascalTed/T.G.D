@@ -83,9 +83,9 @@ function addMessage($userId, $instantMessage)
 function verifUpdatedMessage($messageId)
 {
     $messageManager = new MessageManager();
-    $req = $messageManager->getLastMessage($messageId);
+    $messages = $messageManager->getLastMessage($messageId);
     
-    while ($lastMessage = $req->fetch()) {
+    while ($lastMessage = $messages->fetch()) {
 ?>
         <div id="<?= $lastMessage['id'] ?>"class="message">
             
