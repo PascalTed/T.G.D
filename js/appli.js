@@ -240,7 +240,7 @@ if (formAddMessage !== null) {
 // Ajaxpost pour récupérer les messages ajoutés
 var allMessages = document.getElementById("all-messages");
 
-if (allMessages !== null) {
+if (formAddMessage !== null) {
     
     setInterval(function () {
         console.log("test");
