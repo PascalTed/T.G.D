@@ -228,13 +228,12 @@ if (formAddMessage !== null) {
         var message = document.getElementById('add-message').value;
         var dataSend = 'add-message='+ encodeURIComponent(message);
     
-        var ajaxPostGetMessage = Object.create(AjaxPost);
+        var ajaxPostMessage = Object.create(AjaxPost);
     
-        ajaxPostGetMessage.init("index.php?action=addMessage", dataSend, function(reponse) {   
+        ajaxPostMessage.init("index.php?action=addMessage", dataSend, function(reponse) {   
             document.getElementById('add-message').value ="";
-
         });
-        ajaxPostGetMessage.executer();
+        ajaxPostMessage.executer();
     });
 }
 
