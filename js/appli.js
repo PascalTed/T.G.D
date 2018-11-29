@@ -235,6 +235,6 @@ if (formAddMessage !== null) {
 
         });
         ajaxPostGetMessage.executer();
-});
+    });
 }
 // Fin formulaire messagerie instantanée
