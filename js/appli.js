@@ -237,4 +237,23 @@ if (formAddMessage !== null) {
         ajaxPostGetMessage.executer();
     });
 }
+
+// Ajaxpost pour récupérer les messages ajoutés
+var allMessages = document.getElementById("all-messages");
+
+if (allMessages !== null) {
+    
+        setInterval(function () {
+            console.log("test");
+            var firstMessageId = document.querySelector("#all-messages > div").id;
+            console.log(firstMessageId);
+
+            var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
+            var ajaxPostGetMessage = Object.create(AjaxPost);
+        
+            ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {   
+                allMessages.insertAdjacentHTML("afterbegin", reponse);
+            });
+        }, 1000);
+}
 // Fin formulaire messagerie instantanée
