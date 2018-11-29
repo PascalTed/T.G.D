@@ -29,17 +29,17 @@
         <div id="all-messages">
         
             <?php    
-            while ($comment = $req->fetch()) {
+            while ($message = $messages->fetch()) {
             ?>
-                <div id="<?= $comment['id'] ?>" class="message">
+                <div id="<?= $message['id'] ?>" class="message">
                     <!-- Affichage de chaque message (toutes les données sont protégées par htmlspecialchars -->
-                    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong><em> le <?= $comment['message_date_fr'] ?></em></p>
+                    <p><strong><?= htmlspecialchars($message['pseudo']) ?></strong><em> le <?= $message['message_date_fr'] ?></em></p>
                 
-                    <p>"<?= nl2br(htmlspecialchars($comment['message'])) ?>"</p>
+                    <p>"<?= nl2br(htmlspecialchars($message['message'])) ?>"</p>
                 </div>
             <?php
             }
-            $req->closeCursor();
+            $messages->closeCursor();
             ?>
             
          </div>
