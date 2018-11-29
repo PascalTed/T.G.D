@@ -215,3 +215,26 @@ if (document.getElementById("account") !== null) {
     });
 }
 // Fin page account
+
+// Début formulaire messagerie instantanée
+// Event submit: envoi formulaire
+var formAddMessage = document.getElementById('form-add-message');   
+
+if (formAddMessage !== null) {
+
+    formAddMessage.addEventListener("submit", function(e) {
+        e.preventDefault();
+    
+        var message = document.getElementById('add-message').value;
+        var dataSend = 'add-message='+ encodeURIComponent(message);
+    
+        var ajaxPostGetMessage = Object.create(AjaxPost);
+    
+        ajaxPostGetMessage.init("index.php?action=addMessage", dataSend, function(reponse) {   
+            document.getElementById('add-message').value ="";
+
+        });
+        ajaxPostGetMessage.executer();
+});
+}
+// Fin formulaire messagerie instantanée
