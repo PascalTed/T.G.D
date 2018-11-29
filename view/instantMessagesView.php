@@ -4,12 +4,11 @@
     <h3>messages</h3>
     
     <div id="form-all-messages">
-        <form action="index.php?action=addMessage" method="post" id="form-add-message">
-
+        
             <?php 
             if (isset($_SESSION['pseudo'])) {
             ?>
-            
+        <form action="index.php?action=addMessage" method="post" id="form-add-message">           
                 <label for="add-message">Laisser un message</label><br />
                 <textarea type="text" id="add-message" name="add-message" rows="10" cols="30"></textarea><br />
                 <span id="message-required"></span>
