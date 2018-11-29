@@ -78,7 +78,7 @@ try {
                 if (isset($_POST['add-message']) && $_POST['add-message'] != '') {
                     addMessage($_SESSION['id'], $_POST['add-message']);
                 } else {
-                    throw new Exception('Le champ n\'est pas rempli.');
+                    throw new Exception('Aucun message envoyé ou le champ n\'est pas rempli.');
                 }
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
