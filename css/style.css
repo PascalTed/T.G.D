@@ -268,6 +268,31 @@ header
 
 /* Fin formulaire inscription */
 
+/* Début messages instantanés */
+#all-messages
+{
+    background-color:cornflowerblue;
+    overflow:auto;
+    height: 500px;
+    width: 300px;
+}
+
+#all-messages > div
+{
+    border: 1px solid black;
+    margin: 5px;
+    background-color: white;
+}
+
+#all-messages > div p:first-child
+{
+    background-color: #4d4d4d;
+    color: white;
+    margin: 0;
+    padding: 5px;
+}
+/* Fin messages instantanés */
+
 /* Début page account */
 #infos-account
 {
