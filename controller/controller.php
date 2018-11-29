@@ -7,6 +7,9 @@ require_once('model/MessageManager.php');
 // Affiche la liste des billets
 function demarrer()
 {
+    $messageManager = new MessageManager();
+    $messages = $messageManager->getMessage();
+    
     require_once('view/homeView.php');
 }
 
