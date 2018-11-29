@@ -242,17 +242,18 @@ var allMessages = document.getElementById("all-messages");
 
 if (allMessages !== null) {
     
-        setInterval(function () {
-            console.log("test");
-            var firstMessageId = document.querySelector("#all-messages > div").id;
-            console.log(firstMessageId);
+    setInterval(function () {
+        console.log("test");
+        var firstMessageId = document.querySelector("#all-messages > div").id;
+        console.log(firstMessageId);
 
-            var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
-            var ajaxPostGetMessage = Object.create(AjaxPost);
+        var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
+        var ajaxPostGetMessage = Object.create(AjaxPost);
         
-            ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {   
-                allMessages.insertAdjacentHTML("afterbegin", reponse);
-            });
-        }, 1000);
+        ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {   
+            allMessages.insertAdjacentHTML("afterbegin", reponse);
+        });
+        ajaxPostGetMessage.executer();
+    }, 1000);
 }
 // Fin formulaire messagerie instantanée
