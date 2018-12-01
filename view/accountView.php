@@ -14,7 +14,7 @@
         <div id="infos-account">
             
             <div id="container-img-avatar">
-                <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" />                
+                <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" alt="image avatar"/> 
                 <a href="#" id="btn-modify-avatar">Modifier avatar</a>
             </div>
             
