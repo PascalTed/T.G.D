@@ -79,27 +79,27 @@ class AccountManager extends Manager
     }
     
     // changer avatar
-    public function changeAvatar($monimage, $userId)
+    public function changeAvatar($imageAvatar, $userId)
     {
         $extensions_valides = array('jpg' , 'jpeg' , 'png', 'gif');
         
         //1. strrchr renvoie l'extension avec le point (« . »).
         //2. substr(chaine,1) ignore le premier caractère de chaine.
         //3. strtolower met l'extension en minuscules.
-        $extension_upload = strtolower(substr(strrchr($_FILES[$monimage]['name'], '.'), 1));
+        $extension_upload = strtolower(substr(strrchr($imageAvatar['name'], '.'), 1));
         
         if ( in_array($extension_upload,$extensions_valides) ) {
             echo "Extension correcte";
             switch ($extension_upload) {
                 case  'jpg':   
                 case 'jpeg':
-                    $newImage = imagecreatefromjpeg($_FILES[$monimage]['tmp_name']);
+                    $newImage = imagecreatefromjpeg($imageAvatar['tmp_name']);
                     break;
                 case 'png':
-                    $newImage = imagecreatefrompng($_FILES[$monimage]['tmp_name']);
+                    $newImage = imagecreatefrompng($imageAvatar['tmp_name']);
                     break;
                 case 'gif':
-                    $newImage = imagecreatefromgif($_FILES[$monimage]['tmp_name']);
+                    $newImage = imagecreatefromgif($imageAvatar['tmp_name']);
                     break;
             }      
 
@@ -138,7 +138,7 @@ class AccountManager extends Manager
             }
             var_dump($resultat);
             imagedestroy($newImage);
-            AddNameFileAvatar($userId . '.' .$extension_upload);
+            $this->addNameFileAvatar($userId . '.' .$extension_upload);
         } else {
             echo 'Extension incorrecte'; 
         }
