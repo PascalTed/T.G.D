@@ -53,7 +53,7 @@ try {
             if (isset($_SESSION['pseudo'])) {
                 if (isset($_FILES['file-avatar']) && $_FILES['file-avatar']['error'] == 0) {
                     if ($_FILES['file-avatar']['size'] <= 1048576) {
-                        modifyAvatar('file-avatar', $_SESSION['id']);
+                        modifyAvatar($_FILES['file-avatar'], $_SESSION['id']);
                     } else {
                         throw new Exception('fichier trop gros.');
                     }
