@@ -79,7 +79,7 @@ class AccountManager extends Manager
     }
     
     // changer avatar
-    public function changeAvatar($monimage)
+    public function changeAvatar($monimage, $userId)
     {
         $extensions_valides = array('jpg' , 'jpeg' , 'png', 'gif');
         
@@ -117,7 +117,7 @@ class AccountManager extends Manager
                 $croppedImage = imagecrop($newImage, ['x' => 0, 'y' => $newy, 'width' => $size, 'height' => $size]);
             }
             
-            $DestinationFileAvatar = 'images/' . $_SESSION['id'] . '.' .$extension_upload; 
+            $DestinationFileAvatar = 'images/avatars/' . $userId . '.' .$extension_upload; 
         
             switch ($extension_upload) {
                 case  'jpg':  
@@ -138,9 +138,17 @@ class AccountManager extends Manager
             }
             var_dump($resultat);
             imagedestroy($newImage);
+            AddNameFileAvatar($userId . '.' .$extension_upload);
         } else {
             echo 'Extension incorrecte'; 
         }
+    }
+    
+    private function AddNameFileAvatar($NameFileAvatar, $userId)
+    {
+        $db = $this->dbConnect();
+        $avatar = $db->prepare('UPDATE users SET avatar = ? where $userId = ?');
+        $avatar->execute(array($NameFileAvatar, $userId));
     }
     
     // Se déconnecter
