@@ -42,10 +42,10 @@ function createAccount($pseudo, $mail, $pass)
 }
 
 // Modifier avatar
-function modifyAvatar($monImage)
+function modifyAvatar($monImage, $userId)
 {
     $accountManager = new AccountManager();
-    $accountManager->changeAvatar($monImage);
+    $accountManager->changeAvatar($monImage, $userId);
     
     require_once('view/accountView.php');
 }
