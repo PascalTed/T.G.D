@@ -16,16 +16,16 @@
             <div id="container-img-avatar">
                 
                 <?php 
-                if ($_SESSION['avatar'] == "default") {
+                if ($_SESSION['avatar'] == "default-image-avatar.jpg") {
                 ?>
             
-                <img src="images/avatars/default.jpg" id="image-avatar" />
+                <img src="images/avatars/default-image-avatar.jpg" id="image-avatar" />
             
                 <?php
                 } else {
                 ?>
             
-                <img src="images/avatars/<?= $_SESSION['id'] . '.' . $_SESSION['avatar'] ?>" id="image-avatar" />
+                <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" />
             
                 <?php
                 }
