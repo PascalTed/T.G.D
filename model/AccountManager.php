@@ -144,7 +144,7 @@ class AccountManager extends Manager
         }
     }
     
-    private function AddNameFileAvatar($NameFileAvatar, $userId)
+    private function addNameFileAvatar($NameFileAvatar, $userId)
     {
         $db = $this->dbConnect();
         $avatar = $db->prepare('UPDATE users SET avatar = ? where id = ?');
