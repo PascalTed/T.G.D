@@ -19,7 +19,7 @@
                 if ($_SESSION['avatar'] == "default-image-avatar.jpg") {
                 ?>
             
-                <img src="images/avatars/default-image-avatar.jpg" id="image-avatar" />
+                <img src="<?= $_SESSION['avatar']" id="image-avatar" />
             
                 <?php
                 } else {
