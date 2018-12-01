@@ -138,7 +138,7 @@ class AccountManager extends Manager
             }
             var_dump($resultat);
             imagedestroy($newImage);
-            $this->addNameFileAvatar($userId . '.' .$extension_upload);
+            $this->addNameFileAvatar($userId . '.' .$extension_upload, $userId);
         } else {
             echo 'Extension incorrecte'; 
         }
