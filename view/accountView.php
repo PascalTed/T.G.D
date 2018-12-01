@@ -14,23 +14,7 @@
         <div id="infos-account">
             
             <div id="container-img-avatar">
-                
-                <?php 
-                if ($_SESSION['avatar'] == "default-image-avatar.jpg") {
-                ?>
-            
-                <img src="<?= $_SESSION['avatar']" id="image-avatar" />
-            
-                <?php
-                } else {
-                ?>
-            
-                <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" />
-            
-                <?php
-                }
-                ?>
-                
+                <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" />                
                 <a href="#" id="btn-modify-avatar">Modifier avatar</a>
             </div>
             
