@@ -144,6 +144,7 @@ class AccountManager extends Manager
         }
     }
     
+    // Enregistrer le nom du nouveau fichier image avatar
     private function addNameFileAvatar($NameFileAvatar, $userId)
     {
         $db = $this->dbConnect();
