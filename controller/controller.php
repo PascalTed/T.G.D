@@ -91,7 +91,7 @@ function verifUpdatedMessage($messageId)
         <div id="<?= $lastMessage['id'] ?>" class="message">
             <img src="images/avatars/<?= $lastMessage['avatar'] ?>" id="mini-image-avatar" alt="mini image avatar"/> 
             <!-- Affichage de chaque message (toutes les données sont protégées par htmlspecialchars -->
-            <p class="message-avatar"><strong><?= htmlspecialchars($lastMessage['pseudo']) ?></strong></p>
+            <p class="message-pseudo"><strong><?= htmlspecialchars($lastMessage['pseudo']) ?></strong></p>
             <p class="message-date"><em>le <?= $lastMessage['message_date_fr'] ?></em></p>
             <p>"<?= nl2br(htmlspecialchars($lastMessage['message'])) ?>"</p>
         </div>
