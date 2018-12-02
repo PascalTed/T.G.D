@@ -218,22 +218,29 @@ if (document.getElementById("account") !== null) {
 
 // Début formulaire messagerie instantanée
 // Event submit: envoi formulaire
-var formAddMessage = document.getElementById('form-add-message');   
+var formAddMessage = document.getElementById('form-add-message');
+var addMessage = document.getElementById('add-message');
+var messageRequired = document.getElementById('message-required');
 
 if (formAddMessage !== null) {
 
     formAddMessage.addEventListener("submit", function(e) {
         e.preventDefault();
-    
-        var message = document.getElementById('add-message').value;
-        var dataSend = 'add-message='+ encodeURIComponent(message);
-    
-        var ajaxPostMessage = Object.create(AjaxPost);
-    
-        ajaxPostMessage.init("index.php?action=addMessage", dataSend, function(reponse) {   
-            document.getElementById('add-message').value ="";
-        });
-        ajaxPostMessage.executer();
+        
+         if (addMessage.value === "") {
+            messageRequired.textContent = "Le champ commentaire n'est pas rempli.";
+            addMessage.addEventListener("click", function () {
+                messageRequired.textContent = "";
+            });
+         } else {
+            var dataSend = 'add-message='+ encodeURIComponent(addMessage.value);
+            var ajaxPostMessage = Object.create(AjaxPost);
+
+            ajaxPostMessage.init("index.php?action=addMessage", dataSend, function(reponse) {   
+                document.getElementById('add-message').value ="";
+            });
+            ajaxPostMessage.executer();
+        }
     });
 }
 
