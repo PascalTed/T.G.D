@@ -34,7 +34,7 @@
                 <div id="<?= $message['id'] ?>" class="message">
                     <img src="images/avatars/<?= $message['avatar'] ?>" id="mini-image-avatar" alt="mini image avatar"/> 
                     <!-- Affichage de chaque message (toutes les données sont protégées par htmlspecialchars -->
-                    <p class="message-avatar"><strong><?= htmlspecialchars($message['pseudo']) ?></strong></p>
+                    <p class="message-pseudo"><strong><?= htmlspecialchars($message['pseudo']) ?></strong></p>
                     <p class="message-date"><em>le <?= $message['message_date_fr'] ?></em></p>
                     <p>"<?= nl2br(htmlspecialchars($message['message'])) ?>"</p>
                 </div>
