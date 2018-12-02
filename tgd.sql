@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 27 nov. 2018 à 13:18
+-- Généré le :  Dim 02 déc. 2018 à 12:30
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -35,9 +34,9 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `type_id` int(11) NOT NULL,
   `comment` text NOT NULL,
   `moderation` tinyint(1) NOT NULL DEFAULT '0',
-  `comment_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `comment_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ;
 
 -- --------------------------------------------------------
 
@@ -50,9 +49,9 @@ CREATE TABLE IF NOT EXISTS `deals` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ;
 
 -- --------------------------------------------------------
 
@@ -65,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `forums` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `categories` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ;
 
 --
 -- Déchargement des données de la table `forums`
@@ -87,9 +86,9 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `message` text NOT NULL,
-  `message_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `message_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ;
 
 -- --------------------------------------------------------
 
@@ -104,9 +103,9 @@ CREATE TABLE IF NOT EXISTS `played_games` (
   `content` text NOT NULL,
   `genre` varchar(255) NOT NULL,
   `release_date` varchar(255) NOT NULL,
-  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ;
 
 -- --------------------------------------------------------
 
@@ -121,9 +120,9 @@ CREATE TABLE IF NOT EXISTS `topics_forums` (
   `content` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `forum_id` int(11) NOT NULL,
-  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ;
 
 -- --------------------------------------------------------
 
@@ -137,11 +136,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pseudo` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `avatar` varchar(10) NOT NULL DEFAULT 'default',
+  `avatar` varchar(25) NOT NULL DEFAULT 'default-image-avatar.jpg',
   `user_right` varchar(255) NOT NULL DEFAULT 'none',
-  `registration_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `registration_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
