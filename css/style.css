@@ -269,27 +269,58 @@ header
 /* Fin formulaire inscription */
 
 /* Début messages instantanés */
+#form-all-messages
+{
+    border: 1px solid black;
+    max-width: 250px;
+}
+
+#form-add-message
+{
+    padding: 5px;
+}
+
+#add-message
+{
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+}
+
 #all-messages
 {
-    background-color:cornflowerblue;
-    overflow:auto;
-    height: 500px;
-    width: 300px;
+    overflow: scroll;
+    height: 300px;
+    padding-top: 15px;
 }
 
 #all-messages > div
 {
-    border: 1px solid black;
-    margin: 5px;
-    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    word-break: break-all;
 }
 
-#all-messages > div p:first-child
+#all-messages > div #mini-image-avatar
 {
-    background-color: #4d4d4d;
-    color: white;
+    width: 18px;
+}
+
+#all-messages > div > p.message-pseudo
+{
+    display: inline-block;
     margin: 0;
-    padding: 5px;
+}
+
+#all-messages > div > p.message-date
+{
+    margin: 0;
+    font-size: 12px;
+}
+
+#all-messages > div > p:last-child
+{
+    margin-top: 5px;
 }
 /* Fin messages instantanés */
 
