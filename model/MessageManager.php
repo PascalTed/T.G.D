@@ -18,7 +18,7 @@ class MessageManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $messages = $db->query('SELECT messages.id, messages.user_id, messages.message, DATE_FORMAT(messages.message_date, \'%d/%m/%Y à %Hh%imin%ss\') AS message_date_fr, users.pseudo FROM messages INNER JOIN users ON messages.user_id = users.id ORDER BY messages.id DESC LIMIT 0, 25');
+        $messages = $db->query('SELECT messages.id, messages.user_id, messages.message, DATE_FORMAT(messages.message_date, \'%d/%m/%Y à %Hh%imin%ss\') AS message_date_fr, users.pseudo, users.avatar FROM messages INNER JOIN users ON messages.user_id = users.id ORDER BY messages.id DESC LIMIT 0, 25');
 
         return $messages;
     }
@@ -28,7 +28,7 @@ class MessageManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $messages = $db->prepare('SELECT messages.id, messages.user_id, messages.message, DATE_FORMAT(messages.message_date, \'%d/%m/%Y à %Hh%imin%ss\') AS message_date_fr, users.pseudo FROM messages INNER JOIN users ON messages.user_id = users.id AND messages.id > ? ORDER BY messages.id DESC');
+        $messages = $db->prepare('SELECT messages.id, messages.user_id, messages.message, DATE_FORMAT(messages.message_date, \'%d/%m/%Y à %Hh%imin%ss\') AS message_date_fr, users.pseudo, users.avatar FROM messages INNER JOIN users ON messages.user_id = users.id AND messages.id > ? ORDER BY messages.id DESC');
         $messages->execute(array($messageId));
         
         return $messages;
