@@ -3,14 +3,14 @@
 
 <?php ob_start(); ?>
 
-<section id="game-detail">
+<section id="game-details">
 
     <div>
-        <h1>Détail du jeu</h1>
+        <h1>Détails du jeu</h1>
     </div>
 
-    <div id="game-content">
-        <div id="game-header">
+    <div class="game-content">
+        <div class="game-header">
             <div>
                 <h2>sql titre jeu</h2>
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
         
-        <div id="game-image-text">
+        <div class="game-image-text">
             <p><image src="" />image sql</p>
             
             <div>
