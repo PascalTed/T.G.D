@@ -87,7 +87,7 @@ try {
         // Vérifier si nouveaux messages ajoutés    
         } elseif ($_GET['action'] == 'verifUpdatedMessage') {
             if (isset($_SESSION['pseudo'])) {
-                if (isset($_POST['idMessage']) && $_POST['idMessage'] > 0) {
+                if (isset($_POST['idMessage']) && $_POST['idMessage'] >= 0) {
                     verifUpdatedMessage($_POST['idMessage']);
                 } else {
                     throw new Exception('Aucun id message envoyé.');
