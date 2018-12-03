@@ -195,7 +195,7 @@ formLoginWindow.addEventListener("submit", function(e) {
 // Fin connexion
 
 // Début page account
-var displayFormAvatar = document.getElementById("display-form-avatar");
+var displayFormAvatar = document.getElementById("form-avatar-window");
 
 if (document.getElementById("account") !== null) {
     
