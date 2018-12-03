@@ -246,13 +246,17 @@ if (formAddMessage !== null) {
 
 // Ajaxpost pour récupérer les messages ajoutés
 var allMessages = document.getElementById("all-messages");
-
+var firstMessageId;
 if (formAddMessage !== null) {
     
     setInterval(function () {
         console.log("test");
-        var firstMessageId = document.querySelector("#all-messages > div").id;
-        console.log(firstMessageId);
+        if (document.querySelector("#all-messages > div") == null) {
+            firstMessageId = 0; 
+        } else {
+            firstMessageId = document.querySelector("#all-messages > div").id;
+            console.log(firstMessageId);
+        }
 
         var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
         var ajaxPostGetMessage = Object.create(AjaxPost);
