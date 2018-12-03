@@ -3,7 +3,7 @@
 <div id="instant-messages">
     <h3>messages</h3>
     
-    <div id="form-all-messages">
+    <div id="add-read-messages">
         
         <?php 
         if (isset($_SESSION['pseudo'])) {
