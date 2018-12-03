@@ -280,6 +280,11 @@ header
 {
     padding: 5px;
 }
+#form-add-message #message-required
+{
+    display: none;
+    color: red;
+}
 
 #add-message
 {
