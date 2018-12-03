@@ -269,7 +269,7 @@ header
 /* Fin formulaire inscription */
 
 /* Début messages instantanés */
-#form-all-messages
+#add-read-messages
 {
     max-width: 200px;
     border-radius: 0 5px 0 0;
@@ -281,7 +281,7 @@ header
     padding: 5px;
 }
 
-#form-all-messages #no-connected
+#add-read-messages #no-connected
 {
     padding: 5px;
 }
