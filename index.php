@@ -97,7 +97,7 @@ try {
             }
         }
     } else {
-        demarrer();
+        home();
     }
 }
 catch(Exception $e) {
