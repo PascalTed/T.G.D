@@ -107,4 +107,10 @@ function verifUpdatedMessage($messageId)
     }
 }
 
+// Afficher la page Nos jeux
+function displayOurGames()
+{
+    require_once('view/ourGamesView.php');
+}
+
 ?>
