@@ -4,8 +4,8 @@
 require_once('model/AccountManager.php');
 require_once('model/MessageManager.php');
 
-// Affiche la liste des billets
-function demarrer()
+// Affiche la page d'accueil
+function home()
 {
     $messages = getAllmessages();
     
