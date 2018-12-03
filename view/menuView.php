@@ -4,7 +4,7 @@
     <ul>
         <li><a href="index.php">Accueil</a></li>
         <li><a href="#">Forum</a></li>
-        <li><a href="#">Nos jeux</a></li>
+        <li><a href="index.php?action=displayOurGames">Nos jeux</a></li>
         <li><a href="#">Bons plans</a></li>
         
         <?php
