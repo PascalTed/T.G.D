@@ -38,7 +38,7 @@ class AccountManager extends Manager
     {
         $passHash = password_hash($pass, PASSWORD_DEFAULT);
         $db = $this->dbConnect();
-        $account = $db->prepare('INSERT INTO users (pseudo, pass, email) VALUES (?, ?, ?)');
+        $account = $db->prepare('INSERT INTO users (pseudo, pass, email, registration_date) VALUES (?, ?, ?, NOW())');
         $account->execute(array($pseudo, $passHash, $mail));
         
         $sessionAccount = $db->prepare('SELECT id, email, avatar, user_right FROM users WHERE pseudo = ?');
