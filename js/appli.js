@@ -137,11 +137,28 @@ if (formRegistration !== null) {
 // Début affichage de la fenêtre de connexion
 var loginWindow = document.getElementById("login-window");
 var opaqueWindow = document.getElementById("opaque-window");
+// Depuis le menu
 var menuConnect = document.getElementById("header-menu-connect");
 
 if (menuConnect !== null) {
     
     menuConnect.addEventListener("click", function() {
+        loginWindow.style.display = "block";
+        opaqueWindow.style.display = "block";
+                
+        opaqueWindow.addEventListener("click", function() {
+            opaqueWindow.style.display = "none";
+            loginWindow.style.display = "none";
+        });
+    }); 
+}
+
+// Depuis la messagerie instantanée
+var connectToMessage = document.getElementById("connect-to-message");
+
+if (connectToMessage !== null) {
+    
+    connectToMessage.addEventListener("click", function() {
         loginWindow.style.display = "block";
         opaqueWindow.style.display = "block";
                 
