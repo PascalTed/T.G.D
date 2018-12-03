@@ -11,7 +11,7 @@
     
     <div id="account-content">
 
-        <div id="infos-account">
+        <div id="account-infos">
             
             <div id="container-img-avatar">
                 <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" alt="image avatar"/> 
@@ -22,16 +22,16 @@
                 <p>Pseudo : <?= $_SESSION['pseudo'] ?></p>
                 <p>Email : <?= $_SESSION['email'] ?></p>
             </div>
-            
-            <div id="display-form-avatar">
-                <i class="fas fa-skull-crossbones fa-2x" id="close-avatar-window"></i>
-       
-                <form method="post" action="index.php?action=modifyAvatar" enctype="multipart/form-data" id="form-avatar">
-                        <input type="file" name="file-avatar" id="file-avatar" required/>
-                        <input type="submit" name="submit" value="Envoyer" />
-                </form>
-            </div>
         </div>
+        
+        <div id="form-avatar-window">
+            <i class="fas fa-skull-crossbones fa-2x" id="close-avatar-window"></i>
+       
+            <form method="post" action="index.php?action=modifyAvatar" enctype="multipart/form-data" id="form-avatar">
+                <input type="file" name="file-avatar" id="file-avatar" required/>
+                <input type="submit" name="submit" value="Envoyer" />
+            </form>
+        </div>        
     </div>
 </section>
 
