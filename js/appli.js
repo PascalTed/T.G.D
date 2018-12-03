@@ -228,9 +228,9 @@ if (formAddMessage !== null) {
         e.preventDefault();
         
          if (addMessage.value === "") {
-            messageRequired.textContent = "Le champ commentaire n'est pas rempli.";
+            messageRequired.style.display = "block";
             addMessage.addEventListener("click", function () {
-                messageRequired.textContent = "";
+                messageRequired.style.display = "none";
             });
          } else {
             var dataSend = 'add-message='+ encodeURIComponent(addMessage.value);
