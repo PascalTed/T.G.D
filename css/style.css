@@ -280,6 +280,12 @@ header
 {
     padding: 5px;
 }
+
+#form-all-messages #no-connected
+{
+    padding: 5px;
+}
+
 #form-add-message #message-required
 {
     display: none;
