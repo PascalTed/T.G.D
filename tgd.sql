@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 02 déc. 2018 à 12:30
+-- Généré le :  lun. 03 déc. 2018 à 16:36
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `played_games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
-  `genre` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
   `release_date` varchar(255) NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pass` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `avatar` varchar(25) NOT NULL DEFAULT 'default-image-avatar.jpg',
-  `user_right` varchar(255) NOT NULL DEFAULT 'none',
+  `user_right` varchar(10) NOT NULL DEFAULT 'none',
   `registration_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
