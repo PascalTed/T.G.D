@@ -7,8 +7,7 @@ require_once('model/MessageManager.php');
 // Affiche la liste des billets
 function demarrer()
 {
-    $messageManager = new MessageManager();
-    $messages = $messageManager->getMessage();
+    $messages = getAllmessages();
     
     require_once('view/homeView.php');
 }
@@ -77,6 +76,14 @@ function addMessage($userId, $instantMessage)
 {
     $messageManager = new MessageManager();
     $messageManager->editMessage($userId, $instantMessage);
+}
+
+function getAllMessages()
+{
+    $messageManager = new MessageManager();
+    $messages = $messageManager->getMessage();
+    
+    return $messages;
 }
 
 // Vérifier si nouveaux messages ajoutés
