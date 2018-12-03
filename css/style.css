@@ -347,7 +347,7 @@ header
 /* Fin messages instantanés */
 
 /* Début page account */
-#infos-account
+#account-infos
 {
     display: flex;
 }
@@ -384,7 +384,7 @@ header
     color: #333333;
 }
 
-#display-form-avatar
+#form-avatar-window
 {
     position: fixed;
     display: none;
@@ -478,7 +478,7 @@ header
     }
     
     /* fenêtre modifier avatar */
-    #display-form-avatar
+    #form-avatar-window
     {
         width: 80%;
     }
