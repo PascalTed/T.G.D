@@ -95,6 +95,8 @@ try {
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
             }
+        } elseif ($_GET['action'] == 'displayOurGames') {
+            displayOurGames();
         }
     } else {
         home();
