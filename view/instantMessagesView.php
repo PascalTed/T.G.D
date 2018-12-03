@@ -11,7 +11,7 @@
         <form action="index.php?action=addMessage" method="post" id="form-add-message">           
                 <label for="add-message">Laisser un message</label><br />
                 <textarea type="text" id="add-message" name="add-message"></textarea>
-                <p id="message-required"></p>
+                <p id="message-required">Le champ message n'est pas rempli.</p>
                 <input type="submit" value="Envoyer" />
         </form>
             
