@@ -10,8 +10,8 @@
             ?>
         <form action="index.php?action=addMessage" method="post" id="form-add-message">           
                 <label for="add-message">Laisser un message</label><br />
-                <textarea type="text" id="add-message" name="add-message" rows="10" cols="30"></textarea><br />
-                <span id="message-required"></span>
+                <textarea type="text" id="add-message" name="add-message"></textarea>
+                <p id="message-required"></p>
                 <input type="submit" value="Envoyer" />
         </form>
             
