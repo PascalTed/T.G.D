@@ -5,26 +5,30 @@
     
     <div id="form-all-messages">
         
-            <?php 
-            if (isset($_SESSION['pseudo'])) {
-            ?>
+        <?php 
+        if (isset($_SESSION['pseudo'])) {
+        ?>
+        
         <form action="index.php?action=addMessage" method="post" id="form-add-message">           
-                <label for="add-message">Laisser un message</label><br />
-                <textarea type="text" id="add-message" name="add-message"></textarea>
-                <p id="message-required">Le champ message n'est pas rempli.</p>
-                <input type="submit" value="Envoyer" />
+            <label for="add-message">Laisser un message</label><br />
+            <textarea type="text" id="add-message" name="add-message"></textarea>
+            <p id="message-required">Le champ message n'est pas rempli.</p>
+            <input type="submit" value="Envoyer" />
         </form>
             
-            <?php
-            } else {
-            ?>
-        
-                <p id="no-connected">Connectez-vous pour laisser un message.</p>
-                <p><a href="#" id="messages-connect">Se connecter</a></p>
+        <?php
+        } else {
+        ?>
 
+        <div id="no-connected">
+            <p id="no-connected-message">Connectez-vous pour laisser un message.</p>
+            <p><a href="#" id="connect-to-message">Se connecter</a></p>
+        </div>
+        
             <?php
             }
             ?>
+        
         <div id="all-messages">
         
             <?php    
