@@ -6,7 +6,7 @@
 <section id="all-games">
 
     <div>
-        <h1>Détails du jeu</h1>
+        <h1>Nos jeux</h1>
     </div>
 
     <div class="all-games-content">
