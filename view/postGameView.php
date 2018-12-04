@@ -12,20 +12,20 @@
     <div class="game-content">
         <div class="game-header">
             <div>
-                <h2>sql titre jeu</h2>
+                <h2><?= $game['title']; ?></h2>
             </div>
             
             <div>
-                <p>Genre : sql</p>
-                <p>Date de sortie : sql</p>
+                <p>Genre : <?= $game['type']; ?></p>
+                <p>Date de sortie : <?= $game['release_date']; ?></p>
             </div>
         </div>
         
         <div class="game-image-text">
-            <p><image src="" />image sql</p>
+            <p><image src="images/games/<?= $game['image']; ?>" /></p>
             
             <div>
-                <p>texte sql</p>
+                <p><?= $game['content']; ?></p>
             </div>
         </div>
     </div>
