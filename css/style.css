@@ -199,6 +199,11 @@ header
 /* Fin header */
 
 /* Début section */
+section
+{
+    margin: 0 5%;
+}
+
 #opaque-window
 {
     position: fixed;
@@ -411,7 +416,15 @@ header
     margin-top: 30px;
     height: 100px;
 }
-/* Début page account */
+/* Fin page account */
+
+/* Début page Nos jeux */
+#all-games-content .image-game
+{
+    display: block
+    width: 100%;
+}
+/* Fin page Nos jeux */
 /* Fin section */
 
 /* Début media queries */
