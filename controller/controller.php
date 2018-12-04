@@ -108,9 +108,9 @@ function verifUpdatedMessage($messageId)
 }
 
 // Afficher la page Nos jeux
-function displayOurGames()
+function listPostsGames()
 {
-    require_once('view/ourGamesView.php');
+    require_once('view/listPostsGamesView.php');
 }
 
 ?>
