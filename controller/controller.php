@@ -117,4 +117,13 @@ function listPostsGames()
     require_once('view/listPostsGamesView.php');
 }
 
+// Afficher la page du jeu
+function postGame($gameId)
+{
+    $postManager = new PostManager();
+    $game = $postManager->getPostGame($gameId);
+    
+    require_once('view/PostGameView.php');
+}
+
 ?>
