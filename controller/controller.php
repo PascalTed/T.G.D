@@ -110,6 +110,9 @@ function verifUpdatedMessage($messageId)
 // Afficher la page Nos jeux
 function listPostsGames()
 {
+    $postManager = new PostManager();
+    $games = $postManager->getlistPostsGames();
+    
     require_once('view/listPostsGamesView.php');
 }
 
