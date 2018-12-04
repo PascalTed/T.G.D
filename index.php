@@ -99,7 +99,12 @@ try {
         // Afficher la page Nos jeux
         } elseif ($_GET['action'] == 'listPostsGames') {
             listPostsGames();
-        }
+        } elseif ($_GET['action'] == 'postGame') {
+            if (isset($_GET['idGame']) && $_GET['idGame'] > 0) {
+                postGame($_GET['idGame']);
+            } else {
+                throw new Exception('Aucun id game envoyé.');
+            }
     } else {
         home();
     }
