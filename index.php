@@ -97,8 +97,8 @@ try {
             }
             
         // Afficher la page Nos jeux
-        } elseif ($_GET['action'] == 'displayOurGames') {
-            displayOurGames();
+        } elseif ($_GET['action'] == 'listPostsGames') {
+            listPostsGames();
         }
     } else {
         home();
