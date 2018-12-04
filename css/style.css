@@ -421,7 +421,7 @@ section
 /* Début page Nos jeux */
 #all-games-content .image-game
 {
-    display: block
+    display: block;
     width: 100%;
 }
 /* Fin page Nos jeux */
