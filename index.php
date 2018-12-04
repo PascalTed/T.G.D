@@ -105,6 +105,7 @@ try {
             } else {
                 throw new Exception('Aucun id game envoyé.');
             }
+        }
     } else {
         home();
     }
