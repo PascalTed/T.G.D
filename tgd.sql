@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 03 déc. 2018 à 16:36
+-- Généré le :  mar. 04 déc. 2018 à 13:27
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -100,6 +100,7 @@ DROP TABLE IF EXISTS `played_games`;
 CREATE TABLE IF NOT EXISTS `played_games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `type` varchar(255) NOT NULL,
   `release_date` varchar(255) NOT NULL,
