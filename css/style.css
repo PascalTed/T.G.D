@@ -323,7 +323,7 @@ header
     border-radius: 5px;
 }
 
-#all-messages > div #mini-image-avatar
+#all-messages > div .mini-image-avatar
 {
     width: 18px;
 }
