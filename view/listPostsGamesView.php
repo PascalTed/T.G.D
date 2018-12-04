@@ -9,7 +9,7 @@
         <h1>Nos jeux</h1>
     </div>
 
-    <div class="all-games-content">
+    <div id="all-games-content">
         
         <?php    
         while ($game = $games->fetch()) {
