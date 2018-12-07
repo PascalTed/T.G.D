@@ -126,4 +126,13 @@ function postGame($gameId)
     require_once('view/PostGameView.php');
 }
 
+// Afficher la page forums
+function displayForums()
+{
+    $forumManager = new forumManager();
+    $forums = $forumManager->getForums();
+    
+    require_once('view/forumView.php');
+}
+
 ?>
