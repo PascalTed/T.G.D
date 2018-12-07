@@ -105,6 +105,10 @@ try {
             } else {
                 throw new Exception('Aucun id game envoyé.');
             }
+        
+        // Afficher la page forums
+        } elseif ($_GET['action'] == 'displayForums') {
+            displayForums();
         }
     } else {
         home();
