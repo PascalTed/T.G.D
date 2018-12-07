@@ -21,4 +21,16 @@ class PostManager extends Manager
         
         return $game;
     }
+    
+       public function getForums()
+   {
+        $db = $this->dbConnect();
+        
+        // liste des forums | nombre de sujets par forum | date des derniers messages avec pseudos
+        $forums = $db->query('SELECT id, categories, nb_topics, pseudo, last_date FROM (SELECT forums.id, forums.categories, COUNT(forums.categories) nb_topics FROM forums INNER JOIN topics ON forums.id = topics.forum_id GROUP BY forums.categories) table_a INNER JOIN (SELECT topics_messages.forum_id, MAX(topics_messages.message_date) last_date, users.pseudo FROM topics_messages INNER JOIN users ON topics_messages.user_id = users.id GROUP BY topics_messages.forum_id) table_b ON table_a.id = table_b.forum_id'); 
+        
+        Return $forums;
+        
+     }
+    
 }
