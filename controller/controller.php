@@ -132,7 +132,7 @@ function displayForums()
     $postManager = new PostManager();
     $forums = $postManager->getForums();
     
-    require_once('view/forumView.php');
+    require_once('view/forumsView.php');
 }
 
 ?>
