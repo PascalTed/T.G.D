@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 04 déc. 2018 à 13:27
+-- Généré le :  ven. 07 déc. 2018 à 08:42
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -24,32 +24,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comments`
---
-
-DROP TABLE IF EXISTS `comments`;
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(255) NOT NULL,
-  `type_id` int(11) NOT NULL,
-  `comment` text NOT NULL,
-  `moderation` tinyint(1) NOT NULL DEFAULT '0',
-  `comment_date` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `deals`
 --
 
 DROP TABLE IF EXISTS `deals`;
 CREATE TABLE IF NOT EXISTS `deals` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `content` text NOT NULL,
   `creation_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `deals_messages`
+--
+
+DROP TABLE IF EXISTS `deals_messages`;
+CREATE TABLE IF NOT EXISTS `deals_messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `deals_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `message_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
 
@@ -71,18 +70,18 @@ CREATE TABLE IF NOT EXISTS `forums` (
 --
 
 INSERT INTO `forums` (`id`, `categories`) VALUES
-(1, 'games'),
-(2, 'hardware'),
-(3, 'software');
+(1, 'Jeux PC'),
+(2, 'Hardware'),
+(3, 'Software');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `messages`
+-- Structure de la table `instant_messages`
 --
 
-DROP TABLE IF EXISTS `messages`;
-CREATE TABLE IF NOT EXISTS `messages` (
+DROP TABLE IF EXISTS `instant_messages`;
+CREATE TABLE IF NOT EXISTS `instant_messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `message` text NOT NULL,
@@ -99,6 +98,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
 DROP TABLE IF EXISTS `played_games`;
 CREATE TABLE IF NOT EXISTS `played_games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `content` text NOT NULL,
@@ -111,17 +111,35 @@ CREATE TABLE IF NOT EXISTS `played_games` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `topics_forums`
+-- Structure de la table `topics`
 --
 
-DROP TABLE IF EXISTS `topics_forums`;
-CREATE TABLE IF NOT EXISTS `topics_forums` (
+DROP TABLE IF EXISTS `topics`;
+CREATE TABLE IF NOT EXISTS `topics` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `forum_id` int(11) NOT NULL,
   `creation_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `topics_messages`
+--
+
+DROP TABLE IF EXISTS `topics_messages`;
+CREATE TABLE IF NOT EXISTS `topics_messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `forum_id` int(11) NOT NULL,
+  `topic_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `moderation` tinyint(1) NOT NULL DEFAULT '0',
+  `message_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
 
