@@ -129,8 +129,8 @@ function postGame($gameId)
 // Afficher la page forums
 function displayForums()
 {
-    $forumManager = new forumManager();
-    $forums = $forumManager->getForums();
+    $postManager = new PostManager();
+    $forums = $postManager->getForums();
     
     require_once('view/forumView.php');
 }
