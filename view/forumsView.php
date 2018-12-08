@@ -6,7 +6,7 @@
 <section id="forums">
 
     <div>
-        <h1>Forums</h1>
+        <a href="">Forums</a>
     </div>
     
     <div>
@@ -14,16 +14,38 @@
         <?php    
         while ($forum = $forums->fetch()) {
         ?>
-            
+        
             <div>
                 <div>
-                    <div>image</div>
-                    <div><a href="#"><h4><?= $forum['categories'] ?></h4></a></div>
+                    <div>
+                        <img src="" />
+                    </div>
+                    
+                    <div>
+                        <a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>">
+                            <h4><?= $forum['categories'] ?></h4>
+                        </a>
+                    </div>
                 </div>
 
-                <div><?= $forum['nb_topics'] ?> sujet(s)</div>
+                <div><?= $forum['nb_topics'] ?> sujets</div>
+                
+                <?php
+                if ($forum['nb_topics'] <= 0) {
+                ?>
+                
+                    <div>Pas de messages</div>
+                
+                <?php
+                } else {
+                ?>
+                
+                    <div>dernier message par <?= $forum['pseudo'] ?> le <?= $forum['last_date'] ?></div>
+                
+                <?php
+                }
+                ?>
 
-                <div>dernier message par <?= $forum['pseudo'] ?> le <?= $forum['last_date'] ?></div>
             </div>
         
         <?php
