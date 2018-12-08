@@ -117,6 +117,14 @@ try {
             } else {
                 throw new Exception('Aucun id ou catégorie forum envoyé.');
             }
+            
+        // Afficher la page du sujet et ses messages   
+        } elseif ($_GET['action'] == 'displayTopic') {
+            if (isset($_GET['idTopic']) && isset($_GET['titleTopic'])) {
+                displayTopic($_GET['idTopic'], $_GET['titleTopic']);
+            } else {
+                throw new Exception('Aucun id ou titre sujet envoyé.');
+            }
         }
     } else {
         home();
