@@ -106,9 +106,17 @@ try {
                 throw new Exception('Aucun id game envoyé.');
             }
         
-        // Afficher la page forums
+        // Afficher la page des forums
         } elseif ($_GET['action'] == 'displayForums') {
             displayForums();
+        
+        // Afficher la page du forum et ses sujets
+        } elseif ($_GET['action'] == 'displayForumTopics') {
+            if (isset($_GET['idForum']) && isset($_GET['catForum'])) {
+                displayForumTopics($_GET['idForum'], $_GET['catForum']);
+            } else {
+                throw new Exception('Aucun id ou catégorie forum envoyé.');
+            }
         }
     } else {
         home();
