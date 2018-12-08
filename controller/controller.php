@@ -126,13 +126,23 @@ function postGame($gameId)
     require_once('view/PostGameView.php');
 }
 
-// Afficher la page forums
+// Afficher la page des forums
 function displayForums()
 {
     $postManager = new PostManager();
     $forums = $postManager->getForums();
     
     require_once('view/forumsView.php');
+}
+
+// Afficher la page du forum et ses sujets
+function displayForumTopics($forumId, $forumCat)
+{
+    $postManager = new PostManager();
+    $topics = $postManager->getTopics($forumId);
+    $titleForum = $forumCat;
+    
+    require_once('view/forumTopicsView.php');
 }
 
 ?>
