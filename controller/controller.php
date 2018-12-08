@@ -145,4 +145,14 @@ function displayForumTopics($forumId, $forumCat)
     require_once('view/forumTopicsView.php');
 }
 
+// Afficher la page du sujet et ses messages
+function displayTopic($topicId, $topicTitle)
+{
+    $postManager = new PostManager();
+    $topicMessages = $postManager->getTopic($topicId);
+    $titleTopic = $topicTitle;
+    
+    require_once('view/topicView.php');
+}
+
 ?>
