@@ -6,7 +6,7 @@
 <section id="forum">
 
     <div>
-        <h1>Forum <?= $titleForum ?></h1>
+        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="#"><?= $titleForum ?></a>
     </div>
     
     <div>
