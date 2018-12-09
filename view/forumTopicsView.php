@@ -11,20 +11,52 @@
     
     <div>
         
-        <?php    
-        while ($topic = $topics->fetch()) {
+        <?php
+        if (isset($_SESSION['pseudo'])) {
         ?>
-            
-            <div>
-                <div><a href="index.php?action=displayTopic&amp;idTopic=<?= $topic['topicID'] ?>&amp;titleTopic=<?= $topic['title'] ?>"><h4><?= $topic['title'] ?></h4></a></div>
-
-                <div><p>posté par <?= $topic['t_pseudo'] ?> le <?= $topic['creation_date'] ?></p></div>
-
-                <div>dernier message par <?= $topic['tm_pseudo'] ?> le <?= $topic['last_date'] ?></div>
-            </div>
+        
+            <p><a href="#">Créer un sujet</a></p>
+        
+        <?php
+        } else {
+        ?>
+        
+            <p>Connectez-vous pour créer un nouveau sujet : <a href="">Se connecter</a></p>
         
         <?php
         }
+        ?>
+        
+    </div>
+    
+    <div>
+        
+        <?php
+        $countTopics = $topics->rowcount();
+        if ($countTopics == 0) {
+        ?>
+        
+            <div>
+                <p>Aucun sujet de créé.</p>
+            </div>
+        
+        <?php
+        } else {
+            while ($topic = $topics->fetch()) {
+        ?>
+        
+                <div>
+                    <div><a href="index.php?action=displayTopic&amp;idTopic=<?= $topic['topicID'] ?>&amp;titleTopic=<?= $topic['title'] ?>"><h4><?= $topic['title'] ?></h4></a></div>
+
+                    <div><p>posté par <?= $topic['t_pseudo'] ?> le <?= $topic['creation_date'] ?></p></div>
+
+                    <div>dernier message par <?= $topic['tm_pseudo'] ?> le <?= $topic['last_date'] ?></div>
+                </div>
+        
+        <?php
+            }
+        }
+        $topics->closeCursor();
         ?>
         
     </div>
