@@ -6,7 +6,7 @@
 <section id="forums">
 
     <div>
-        <a href="">Forums</a>
+        <a href="#">Forums</a>
     </div>
     
     <div>
@@ -17,10 +17,6 @@
         
             <div>
                 <div>
-                    <div>
-                        <img src="" />
-                    </div>
-                    
                     <div>
                         <a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>">
                             <h4><?= $forum['categories'] ?></h4>
