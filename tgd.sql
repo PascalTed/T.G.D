@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 07 déc. 2018 à 08:42
+-- Généré le :  Dim 09 déc. 2018 à 12:56
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -20,37 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `tgd`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `deals`
---
-
-DROP TABLE IF EXISTS `deals`;
-CREATE TABLE IF NOT EXISTS `deals` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `creation_date` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `deals_messages`
---
-
-DROP TABLE IF EXISTS `deals_messages`;
-CREATE TABLE IF NOT EXISTS `deals_messages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `deals_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `message_date` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ;
 
 -- --------------------------------------------------------
 
@@ -118,7 +87,6 @@ DROP TABLE IF EXISTS `topics`;
 CREATE TABLE IF NOT EXISTS `topics` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
-  `content` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `forum_id` int(11) NOT NULL,
   `creation_date` datetime NOT NULL,
@@ -155,8 +123,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pseudo` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `avatar` varchar(25) NOT NULL DEFAULT 'default-image-avatar.jpg',
-  `user_right` varchar(10) NOT NULL DEFAULT 'none',
+  `avatar` varchar(255) NOT NULL DEFAULT 'default-image-avatar.jpg',
+  `user_right` varchar(255) NOT NULL DEFAULT 'none',
   `registration_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ;
