@@ -75,10 +75,10 @@ try {
         // Ajouter un message
         } elseif ($_GET['action'] == 'addMessage') {
             if (isset($_SESSION['pseudo'])) {
-                if (isset($_POST['add-message']) && $_POST['add-message'] != '') {
+                if (isset($_POST['add-message'])) {
                     addMessage($_SESSION['id'], $_POST['add-message']);
                 } else {
-                    throw new Exception('Aucun message envoyé ou le champ n\'est pas rempli.');
+                    throw new Exception('Aucun message envoyé');
                 }
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
