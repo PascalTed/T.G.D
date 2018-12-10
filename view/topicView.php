@@ -6,7 +6,7 @@
 <section id="Topic">
 
     <div>
-        <h1>Sujet <?= $titleTopic ?></h1>
+        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumTopics['id'] ?>&amp;catForum=<?= $forumTopics['categories'] ?>"><?= $forumTopics['categories'] ?></a><span>/</span><a href="#"><?= $forumTopics['title'] ?></a>
     </div>
     
     <div>
