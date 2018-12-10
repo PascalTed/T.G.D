@@ -21,7 +21,7 @@
         } else {
         ?>
         
-            <p>Connectez-vous pour créer un nouveau sujet : <a href="">Se connecter</a></p>
+            <p>Connectez-vous pour créer un nouveau sujet : <a href="#" id="connect-to-forum">Se connecter</a></p>
         
         <?php
         }
