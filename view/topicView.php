@@ -19,7 +19,7 @@
 
                 <div><p>posté par <?= $topic['pseudo'] ?></p></div>
 
-                <div>message par <?= $topic['message'] ?>></div>
+                <div>message par <?= $topic['message'] ?></div>
             </div>
         
         <?php
