@@ -49,4 +49,14 @@ class PostManager extends Manager
         $topic->execute(array($topicId));
         return $topic;
     }
+    
+    public function getCatForum($forumId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT categories FROM forums WHERE id = ?');
+        
+        $req->execute(array($forumId));
+        $CatForum = $req->fetch();
+        return $CatForum;
+    }
 }
