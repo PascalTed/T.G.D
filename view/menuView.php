@@ -5,7 +5,6 @@
         <li><a href="index.php">Accueil</a></li>
         <li><a href="index.php?action=displayForums">Forum</a></li>
         <li><a href="index.php?action=listPostsGames">Nos jeux</a></li>
-        <li><a href="#">Bons plans</a></li>
         
         <?php
         if (isset($_SESSION['pseudo'])) {
