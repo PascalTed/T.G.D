@@ -118,12 +118,12 @@ function listGames()
 }
 
 // Afficher la page du jeu
-function postGame($gameId)
+function game($gameId)
 {
     $postManager = new PostManager();
-    $game = $postManager->getPostGame($gameId);
+    $game = $postManager->getGame($gameId);
     
-    require_once('view/PostGameView.php');
+    require_once('view/GameView.php');
 }
 
 // Afficher la page des forums
