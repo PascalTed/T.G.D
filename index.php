@@ -72,7 +72,7 @@ try {
                 throw new Exception('Pas de session d\'enregistrée, il faut être connecté pour se déconnecter.'); 
             }
             
-        // Ajouter un message
+        // Ajouter un message, Venant d'un ajaxpost.
         } elseif ($_GET['action'] == 'addMessage') {
             if (isset($_SESSION['pseudo'])) {
                 if (isset($_POST['add-message'])) {
@@ -84,7 +84,7 @@ try {
                 throw new Exception('Aucun pseudo envoyé.');
             }
             
-        // Vérifier si nouveaux messages ajoutés    
+        // Vérifier si nouveaux messages ajoutés, Venant d'un ajaxpost.  
         } elseif ($_GET['action'] == 'verifUpdatedMessage') {
             if (isset($_SESSION['pseudo'])) {
                 if (isset($_POST['idMessage']) && $_POST['idMessage'] >= 0) {
