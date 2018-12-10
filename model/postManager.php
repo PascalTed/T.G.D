@@ -59,4 +59,14 @@ class PostManager extends Manager
         $CatForum = $req->fetch();
         return $CatForum;
     }
+    
+    public function $getForumTopics($topicId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT forums.id, forums.categories, topics.title FROM forums INNER JOIN topics ON topics.id = ? WHERE topics.forum_id = forums.id');
+        
+        $req->execute(array($topicId));
+        $forumTopics = $req->fetch();
+        return $forumTopics;
+    }
 }
