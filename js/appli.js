@@ -169,6 +169,22 @@ if (connectToMessage !== null) {
     }); 
 }
 
+// Depuis le forum
+var connectToForum = document.getElementById("connect-to-forum");
+
+if (connectToForum !== null) {
+    
+    connectToForum.addEventListener("click", function() {
+        loginWindow.style.display = "block";
+        opaqueWindow.style.display = "block";
+                
+        opaqueWindow.addEventListener("click", function() {
+            opaqueWindow.style.display = "none";
+            loginWindow.style.display = "none";
+        });
+    }); 
+}
+
 var closeLoginWindow = document.getElementById("close-login-window");
 
     closeLoginWindow.addEventListener("click", function() {
