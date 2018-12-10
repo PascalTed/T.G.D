@@ -69,7 +69,7 @@ try {
             if (isset($_SESSION['pseudo'])) {
                 logoutAccount();
             } else {
-                throw new Exception('Pas de session d\'enregistrée, il faut être connecté pour se déconnecté.'); 
+                throw new Exception('Pas de session d\'enregistrée, il faut être connecté pour se déconnecter.'); 
             }
             
         // Ajouter un message
