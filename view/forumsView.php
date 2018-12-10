@@ -6,7 +6,7 @@
 <section id="forums">
 
     <div>
-        <a href="#">Forums</a>
+        <a href="#">Forum</a>
     </div>
     
     <div>
