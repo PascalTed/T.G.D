@@ -112,18 +112,18 @@ try {
         
         // Afficher la page du forum et ses sujets
         } elseif ($_GET['action'] == 'displayForumTopics') {
-            if (isset($_GET['idForum']) && isset($_GET['catForum'])) {
-                displayForumTopics($_GET['idForum'], $_GET['catForum']);
+            if (isset($_GET['idForum']) && $_GET['idForum'] > 0) {
+                displayForumTopics($_GET['idForum']);
             } else {
-                throw new Exception('Aucun id ou catégorie forum envoyé.');
+                throw new Exception('Aucun id forum envoyé.');
             }
             
         // Afficher la page du sujet et ses messages   
         } elseif ($_GET['action'] == 'displayTopic') {
-            if (isset($_GET['idTopic']) && isset($_GET['titleTopic'])) {
-                displayTopic($_GET['idTopic'], $_GET['titleTopic']);
+            if (isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
+                displayTopic($_GET['idTopic']);
             } else {
-                throw new Exception('Aucun id ou titre sujet envoyé.');
+                throw new Exception('Aucun id sujet envoyé.');
             }
         }
     } else {
