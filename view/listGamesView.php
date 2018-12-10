@@ -28,7 +28,7 @@
                 <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
                 
                 <!-- Toutes les données sont protégées par htmlspecialchars -->
-                <p class="game-extract"><?= strip_tags($GameExtract) ?><a class="read-more-game" href="index.php?action=postGame&amp;idGame=<?= $game['id']; ?>"> <em>... lire la suite</em></a>
+                <p class="game-extract"><?= strip_tags($GameExtract) ?><a class="read-more-game" href="index.php?action=game&amp;idGame=<?= $game['id']; ?>"> <em>... lire la suite</em></a>
                 </p>
                 
             </div>
