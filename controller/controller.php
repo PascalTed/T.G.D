@@ -136,11 +136,12 @@ function displayForums()
 }
 
 // Afficher la page du forum et ses sujets
-function displayForumTopics($forumId, $forumCat)
+function displayForumTopics($forumId)
 {
     $postManager = new PostManager();
     $topics = $postManager->getTopics($forumId);
-    $titleForum = $forumCat;
+    
+    $catForum = $postManager->getCatForum($forumId);
     
     require_once('view/forumTopicsView.php');
 }
