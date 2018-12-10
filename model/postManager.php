@@ -12,7 +12,7 @@ class PostManager extends Manager
         return $games;
     }
     
-    public function getPostGame($gameId)
+    public function getGame($gameId)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, title, image, content, type, release_date FROM played_games WHERE id = ? ORDER BY creation_date DESC');
