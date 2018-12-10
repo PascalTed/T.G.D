@@ -18,7 +18,7 @@
             <div>
                 <div>
                     <div>
-                        <a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>">
+                        <a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>">
                             <h4><?= $forum['categories'] ?></h4>
                         </a>
                     </div>
