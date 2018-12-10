@@ -6,7 +6,7 @@
 <section id="forum">
 
     <div>
-        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="#"><?= $titleForum ?></a>
+        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="#"><?= $catForum['categories'] ?></a>
     </div>
     
     <div>
@@ -46,7 +46,7 @@
         ?>
         
                 <div>
-                    <div><a href="index.php?action=displayTopic&amp;idTopic=<?= $topic['topicID'] ?>&amp;titleTopic=<?= $topic['title'] ?>"><h4><?= $topic['title'] ?></h4></a></div>
+                    <div><a href="index.php?action=displayTopic&amp;idTopic=<?= $topic['topicID'] ?>"><h4><?= $topic['title'] ?></h4></a></div>
 
                     <div><p>posté par <?= $topic['t_pseudo'] ?> le <?= $topic['creation_date'] ?></p></div>
 
