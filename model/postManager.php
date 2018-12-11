@@ -63,7 +63,7 @@ class PostManager extends Manager
     public function getForumTopics($topicId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT forums.id, forums.categories, topics.title FROM forums INNER JOIN topics ON topics.id = ? WHERE topics.forum_id = forums.id');
+        $req = $db->prepare('SELECT forums.id forum_id, forums.categories forum_cat, topics.id topic_id, topics.title topic_title, topics.content topic_content, topics.creation_date topic_date, users.pseudo, users.avatar, users.registration_date user_date FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id WHERE topics.id = ?');
         
         $req->execute(array($topicId));
         $forumTopics = $req->fetch();
