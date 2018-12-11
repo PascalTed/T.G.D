@@ -142,7 +142,11 @@ try {
         }elseif ($_GET['action'] == 'createTopic') {
             if (isset($_SESSION['pseudo'])) {
                 if ($_GET['idForum'] > 0) {
-                    editTopic($_GET['idForum']);
+                    if (isset($_POST['create-title-topic']) && isset($_POST['create-content-topic'])) {
+                        editTopic($_GET['idForum']);
+                    } else {
+                        throw new Exception('Aucun titre ou contenu du nouveau sujet envoyés.');
+                    }
                 } else {
                     throw new Exception('Aucun id forum envoyé.');
                 }
