@@ -50,14 +50,14 @@ class PostManager extends Manager
         return $topic;
     }
     
-    public function getCatForum($forumId)
+    public function getForumIdCat($forumId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT categories FROM forums WHERE id = ?');
+        $req = $db->prepare('SELECT id, categories FROM forums WHERE id = ?');
         
         $req->execute(array($forumId));
-        $CatForum = $req->fetch();
-        return $CatForum;
+        $forumIdCat = $req->fetch();
+        return $forumIdCat;
     }
     
     public function getForumTopics($topicId)
