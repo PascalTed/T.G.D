@@ -13,11 +13,11 @@
             <p>
                 <label for="create-title-topic">Ajouter le titre</label>
                 <textarea id="create-title-topic" name="create-title-topic"></textarea>
-                <span id="no-title"></span>
+                <span id="no-title-topic"></span>
 
                 <label for="create-content-topic">Ajouter le contenu</label>
                 <textarea id="create-content-topic" name="create-content-topic"></textarea>
-                <span id="no-content"></span>
+                <span id="no-content-topic"></span>
                 
                 <input type="submit" value="Ajouter le sujet" />
             </p>
