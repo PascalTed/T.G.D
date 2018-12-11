@@ -301,3 +301,39 @@ if (formAddMessage !== null) {
     }, 1000);
 }
 // Fin formulaire messagerie instantanée
+
+// Début page displayCreateTopic
+// vérification textarea "Ajouter le titre" et "Ajouter le contenu" avant de créer le nouveau topic
+var formCreateTopic = document.getElementById("form-create-topic");
+var noTitleTopic = document.getElementById("no-title-topic");
+var noContentTopic = document.getElementById("no-content-topic");
+var createTitleTopic = document.getElementById("create-title-topic");
+var createContentTopic = document.getElementById("create-content-topic");
+
+if (formCreateTopic !== null) {
+
+    formCreateTopic.addEventListener("submit", function (e) {
+        tinymce.triggerSave();
+        e.preventDefault();
+        
+        var valueTitle = createTitleTopic.value;
+        var valueContent = createContentTopic.value;
+        
+        if (valueTitle === "") {
+            noTitleTopic.textContent = "Il faut ajouter un titre pour ajouter le billet"
+            tinymce.get("create-title-topic").on("click", function () {
+                noTitleTopic.textContent = "";
+            });
+        }
+        if (valueContent === "") {
+            noContentTopic.textContent = "Il faut ajouter le contenu pour ajouter le billet"
+            tinymce.get("create-content-topic").on("click", function () {
+                noContentTopic.textContent = "";
+            });
+        }
+        if (valueTitle !== "" && valueContent !== "") {
+            formCreatePost.submit();
+        }
+    });
+}
+// Fin page displayCreateTopic
