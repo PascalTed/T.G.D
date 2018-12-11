@@ -167,10 +167,10 @@ function displayCreateTopic($forumId)
 }
 
 // Enregistrement du nouveau sujet
-function createTopic($forumId)
+function createTopic($forumId, $titleTopic, $contentTopic)
 {
     $postManager = new PostManager();
-    $postManager->editTopic($forumId);
+    $postManager->editTopic($forumId, $titleTopic, $contentTopic);
     
     $forumIdCat = $postManager->getForumIdCat($forumId);
     
