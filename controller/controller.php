@@ -157,4 +157,12 @@ function displayTopic($topicId)
     require_once('view/topicView.php');
 }
 
+// Afficher la page créer un sujet
+function displayCreateTopic($forumId)
+{
+    $forumIdCat = $postManager->getForumIdCat($forumId);
+    
+    require_once('view/displayCreateTopicView.php');
+}
+
 ?>
