@@ -141,7 +141,7 @@ function displayForumTopics($forumId)
     $postManager = new PostManager();
     $topics = $postManager->getTopics($forumId);
     
-    $catForum = $postManager->getCatForum($forumId);
+    $forumIdCat = $postManager->getForumIdCat($forumId);
     
     require_once('view/forumTopicsView.php');
 }
