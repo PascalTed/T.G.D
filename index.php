@@ -125,11 +125,24 @@ try {
             } else {
                 throw new Exception('Aucun id sujet envoyé.');
             }
+            
         // Afficher page pour créer un sujet
         } elseif ($_GET['action'] == 'displayCreateTopic') {
             if (isset($_SESSION['pseudo'])) {
                 if (isset($_GET['idForum']) && $_GET['idForum'] > 0) {
                     displayCreateTopic($_GET['idForum']);
+                } else {
+                    throw new Exception('Aucun id forum envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun pseudo envoyé.');
+            }
+        
+        // Enregistrement du nouveau sujet    
+        }elseif ($_GET['action'] == 'editTopic') {
+            if (isset($_SESSION['pseudo'])) {
+                if ($_GET['idForum'] > 0) {
+                    editTopic($_GET['idForum']);
                 } else {
                     throw new Exception('Aucun id forum envoyé.');
                 }
