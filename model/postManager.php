@@ -41,12 +41,12 @@ class PostManager extends Manager
         return $topics;
     }
     
-    public function getTopic($topicId)
+    public function getTopicMessages($topicId)
     {
         $db = $this->dbConnect();
-        $topic = $db->prepare('SELECT topics_messages.id tm_id, message, pseudo, avatar FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ?');
+        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, pseudo, avatar FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ?');
         
-        $topic->execute(array($topicId));
+        $topicMessages->execute(array($topicId));
         return $topic;
     }
     

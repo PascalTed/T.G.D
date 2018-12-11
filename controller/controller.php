@@ -147,10 +147,10 @@ function displayForumTopics($forumId)
 }
 
 // Afficher la page du sujet et ses messages
-function displayTopic($topicId)
+function displayTopicMessages($topicId)
 {
     $postManager = new PostManager();
-    $topicMessages = $postManager->getTopic($topicId);
+    $topicMessages = $postManager->getTopicMessages($topicId);
     
     $forumTopics = $postManager->getForumTopics($topicId);
     

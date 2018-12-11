@@ -119,9 +119,9 @@ try {
             }
             
         // Afficher la page du sujet et ses messages   
-        } elseif ($_GET['action'] == 'displayTopic') {
+        } elseif ($_GET['action'] == 'displayTopicMessages') {
             if (isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
-                displayTopic($_GET['idTopic']);
+                displayTopicMessages($_GET['idTopic']);
             } else {
                 throw new Exception('Aucun id sujet envoyé.');
             }
