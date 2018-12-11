@@ -160,6 +160,7 @@ function displayTopic($topicId)
 // Afficher la page créer un sujet
 function displayCreateTopic($forumId)
 {
+    $postManager = new PostManager();
     $forumIdCat = $postManager->getForumIdCat($forumId);
     
     require_once('view/displayCreateTopicView.php');
