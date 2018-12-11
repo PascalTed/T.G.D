@@ -53,6 +53,15 @@
             </footer>
         </div>
         <!-- début script -->
+        <script src="js/tinymce/tinymce.js"></script>
+        <script>
+            tinymce.init({
+            selector: '#create-title-topic', menubar: false, toolbar: 'undo redo', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize"
+            });
+            tinymce.init({
+            selector: '#create-content-topic', menubar: false, toolbar: 'undo redo | emoticons | bold | italic | underline | strikethrough | alignleft aligncenter alignright alignjustify | link', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize link emoticons"
+            });
+        </script>
         <script src="js/regex.js"></script>
         <script src="js/ajaxpost.js"></script>
         <script src="js/appli.js"></script>
