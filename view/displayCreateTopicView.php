@@ -9,7 +9,7 @@
     </div>
     
     <div>
-        <form class="form-tiny-mce" action="index.php?action=editTopic&amp;idForum=<?= $forumIdCat['id'] ?>" method="post" id="form-create-topic">
+        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $forumIdCat['id'] ?>" method="post" id="form-create-topic">
             <p>
                 <label for="create-title-topic">Ajouter le titre</label>
                 <textarea id="create-title-topic" name="create-title-topic"></textarea>
