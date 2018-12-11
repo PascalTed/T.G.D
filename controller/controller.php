@@ -166,4 +166,15 @@ function displayCreateTopic($forumId)
     require_once('view/displayCreateTopicView.php');
 }
 
+// Enregistrement du nouveau sujet
+function createTopic($forumId)
+{
+    $postManager = new PostManager();
+    $postManager->editTopic($forumId);
+    
+    $forumIdCat = $postManager->getForumIdCat($forumId);
+    
+    require_once('view/forumTopicsView.php');
+}
+
 ?>
