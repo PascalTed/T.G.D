@@ -332,7 +332,7 @@ if (formCreateTopic !== null) {
             });
         }
         if (valueTitle !== "" && valueContent !== "") {
-            formCreatePost.submit();
+            formCreateTopic.submit();
         }
     });
 }
