@@ -139,7 +139,7 @@ try {
             }
         
         // Enregistrement du nouveau sujet    
-        }elseif ($_GET['action'] == 'editTopic') {
+        }elseif ($_GET['action'] == 'createTopic') {
             if (isset($_SESSION['pseudo'])) {
                 if ($_GET['idForum'] > 0) {
                     editTopic($_GET['idForum']);
