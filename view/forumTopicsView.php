@@ -15,7 +15,7 @@
         if (isset($_SESSION['pseudo'])) {
         ?>
         
-            <p><a href="index.php?action=displayCreateTopic&amp;idForum=<?= idCatForum['id'] ?>">Créer un sujet</a></p>
+            <p><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumIdCat['id'] ?>">Créer un sujet</a></p>
         
         <?php
         } else {
