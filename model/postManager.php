@@ -47,7 +47,7 @@ class PostManager extends Manager
         $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, pseudo, avatar FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ?');
         
         $topicMessages->execute(array($topicId));
-        return $topic;
+        return $topicMessages;
     }
     
     public function getForumIdCat($forumId)
