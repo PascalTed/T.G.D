@@ -19,7 +19,7 @@
             </div>
             <div>
                 <p>Le <?= $forumTopics['topic_date'] ?></p>
-                <p><?= $forumTopics['topic_content'] ?></p>
+                <p><?= $forumTopics['message'] ?></p>
             </div>
         </div>
         
