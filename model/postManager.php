@@ -44,9 +44,9 @@ class PostManager extends Manager
     public function getTopicMessages($topicId)
     {
         $db = $this->dbConnect();
-        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, moderation, message_date, pseudo, avatar FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = 15 AND topics_messages.id > (SELECT MIN(topics_messages.id) FROM topics_messages WHERE topics_messages.topic_id = 15) order by topics_messages.id ASC');
+        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, moderation, message_date, pseudo, avatar FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ? AND topics_messages.id > (SELECT MIN(topics_messages.id) FROM topics_messages WHERE topics_messages.topic_id = ?) order by topics_messages.id ASC');
         
-        $topicMessages->execute(array($topicId));
+        $topicMessages->execute(array($topicId, $topicId));
         return $topicMessages;
     }
     
