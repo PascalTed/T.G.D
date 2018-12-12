@@ -26,7 +26,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $forums = $db->query('SELECT id, categories, nb_topics, pseudo, last_date FROM (SELECT forums.id, forums.categories, COUNT(topics.forum_id) nb_topics FROM forums LEFT JOIN topics ON forums.id = topics.forum_id GROUP BY forums.categories) table_a LEFT JOIN (SELECT topics_messages.forum_id, MAX(topics_messages.message_date) last_date, users.pseudo FROM topics_messages INNER JOIN users ON topics_messages.user_id = users.id GROUP BY topics_messages.forum_id) table_b ON table_a.id = table_b.forum_id ORDER BY nb_topics DESC'); 
+        $forums = $db->query('SELECT id, categories, nb_topics, pseudo, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') last_date FROM (SELECT forums.id, forums.categories, COUNT(topics.forum_id) nb_topics FROM forums LEFT JOIN topics ON forums.id = topics.forum_id GROUP BY forums.categories) table_a LEFT JOIN (SELECT topics_messages.forum_id, MAX(topics_messages.message_date) date, users.pseudo FROM topics_messages INNER JOIN users ON topics_messages.user_id = users.id GROUP BY topics_messages.forum_id) table_b ON table_a.id = table_b.forum_id ORDER BY nb_topics DESC'); 
         
         return $forums;
     }
@@ -35,7 +35,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $topics = $db->prepare('SELECT topicID, messageID, title, nb_message, t_pseudo, creation_date, tm_pseudo, last_date FROM (SELECT topics.id topicID, COUNT(topics_messages.topic_id) nb_message, topics.title, users.pseudo t_pseudo, topics.creation_date FROM topics INNER JOIN users ON users.id = topics.user_id INNER JOIN topics_messages ON topics_messages.topic_id = topics.id WHERE topics.forum_id = ? GROUP BY topicID) t1 INNER JOIN (SELECT topics_messages.id messageID, topics_messages.topic_id, users.pseudo tm_pseudo, MAX(topics_messages.message_date) last_date FROM topics_messages INNER JOIN users ON topics_messages.user_id = users.id GROUP BY topics_messages.topic_id) t2 ON t1.topicID = t2.topic_id'); 
+        $topics = $db->prepare('SELECT topicID, messageID, title, nb_message, t_pseudo, creation_date, tm_pseudo, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') last_date FROM (SELECT topics.id topicID, COUNT(topics_messages.topic_id) nb_message, topics.title, users.pseudo t_pseudo, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') creation_date FROM topics INNER JOIN users ON users.id = topics.user_id INNER JOIN topics_messages ON topics_messages.topic_id = topics.id WHERE topics.forum_id = ? GROUP BY topicID) t1 INNER JOIN (SELECT topics_messages.id messageID, topics_messages.topic_id, users.pseudo tm_pseudo, MAX(topics_messages.message_date) date FROM topics_messages INNER JOIN users ON topics_messages.user_id = users.id GROUP BY topics_messages.topic_id) t2 ON t1.topicID = t2.topic_id'); 
         $topics->execute(array($forumId));
         
         return $topics;
@@ -63,7 +63,7 @@ class PostManager extends Manager
     public function getForumTopics($topicId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT forums.id forum_id, forums.categories forum_cat, topics.id topic_id, topics.title topic_title, topics.content topic_content, topics.creation_date topic_date, users.pseudo, users.avatar, users.registration_date user_date FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id WHERE topics.id = ?');
+        $req = $db->prepare('SELECT forums.id forum_id, forums.categories forum_cat, topics.id topic_id, topics.title topic_title, topics.content topic_content, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topic_date, users.pseudo, users.avatar, DATE_FORMAT(users.registration_date, \'%d/%m/%Y à %Hh%imin%ss\') user_date FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id WHERE topics.id = ?');
         
         $req->execute(array($topicId));
         $forumTopics = $req->fetch();
