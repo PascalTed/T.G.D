@@ -170,7 +170,7 @@ function displayCreateTopic($forumId)
 function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
 {
     $postManager = new PostManager();
-    $postManager->editTopic($userId, $forumId, $titleTopic);
+    $postManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
     
     $forumIdCat = $postManager->getForumIdCat($forumId);
     
