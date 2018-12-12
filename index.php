@@ -143,7 +143,7 @@ try {
             if (isset($_SESSION['pseudo'])) {
                 if ($_GET['idForum'] > 0) {
                     if (isset($_POST['create-title-topic']) && isset($_POST['create-content-topic'])) {
-                        editTopic($_GET['idForum'], $_POST['create-title-topic'], $_POST['create-content-topic']);
+                        editTopic($_SESSION['pseudo'], $_GET['idForum'], $_POST['create-title-topic'], $_POST['create-content-topic']);
                     } else {
                         throw new Exception('Aucun titre ou contenu du nouveau sujet envoyés.');
                     }
