@@ -63,7 +63,7 @@ class PostManager extends Manager
     public function getForumTopics($topicId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT forums.id forum_id, forums.categories forum_cat, topics.id topic_id, topics.title topic_title, topics.content topic_content, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topic_date, users.pseudo, users.avatar, DATE_FORMAT(users.registration_date, \'%d/%m/%Y à %Hh%imin%ss\') user_date FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id WHERE topics.id = ?');
+        $req = $db->prepare('SELECT forums.id forum_id, forums.categories forum_cat, topics.id topic_id, topics.title topic_title, message, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topic_date, users.pseudo, users.avatar, DATE_FORMAT(users.registration_date, \'%d/%m/%Y à %Hh%imin%ss\') user_date FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id INNER JOIN (SELECT topics_messages.topic_id, topics_messages.message FROM topics_messages WHERE topics_messages.topic_id = ? HAVING MIN(topics_messages.id)) t1 ON t1.topic_id = topics.id');
         
         $req->execute(array($topicId));
         $forumTopics = $req->fetch();
