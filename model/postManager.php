@@ -69,4 +69,12 @@ class PostManager extends Manager
         $forumTopics = $req->fetch();
         return $forumTopics;
     }
+    
+    public function editTopic($userId, $forumId, $titleTopic)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO topics(title, user_id, forum_id, creation_date) VALUES (?, ?, ?, NOW())');
+        
+        $req->execute(array($titleTopic, $userId, $forumId));
+    }
 }
