@@ -163,7 +163,7 @@ function displayCreateTopic($forumId)
     $postManager = new PostManager();
     $forumIdCat = $postManager->getForumIdCat($forumId);
     
-    require_once('view/displayCreateTopicView.php');
+    require_once('view/createTopicView.php');
 }
 
 // Enregistrement du nouveau sujet
