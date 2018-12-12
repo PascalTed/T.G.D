@@ -97,11 +97,11 @@ try {
             }
             
         // Afficher la page Nos jeux
-        } elseif ($_GET['action'] == 'listGames') {
-            listGames();
-        } elseif ($_GET['action'] == 'game') {
+        } elseif ($_GET['action'] == 'displayListGames') {
+            displayListGames();
+        } elseif ($_GET['action'] == 'displayGame') {
             if (isset($_GET['idGame']) && $_GET['idGame'] > 0) {
-                game($_GET['idGame']);
+                displayGame($_GET['idGame']);
             } else {
                 throw new Exception('Aucun id game envoyé.');
             }

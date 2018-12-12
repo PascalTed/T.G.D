@@ -4,7 +4,7 @@
     <ul>
         <li><a href="index.php">Accueil</a></li>
         <li><a href="index.php?action=displayForums">Forum</a></li>
-        <li><a href="index.php?action=listGames">Nos jeux</a></li>
+        <li><a href="index.php?action=displayListGames">Nos jeux</a></li>
         
         <?php
         if (isset($_SESSION['pseudo'])) {

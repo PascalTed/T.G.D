@@ -109,7 +109,7 @@ function verifUpdatedMessage($messageId)
 }
 
 // Afficher la page Nos jeux
-function listGames()
+function displayListGames()
 {
     $postManager = new PostManager();
     $games = $postManager->getListGames();
@@ -118,7 +118,7 @@ function listGames()
 }
 
 // Afficher la page du jeu
-function game($gameId)
+function displayGame($gameId)
 {
     $postManager = new PostManager();
     $game = $postManager->getGame($gameId);
@@ -172,6 +172,7 @@ function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     $postManager = new PostManager();
     $postManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
     
+    $topics = $postManager->getTopics($forumId);
     $forumIdCat = $postManager->getForumIdCat($forumId);
     
     require_once('view/forumTopicsView.php');
