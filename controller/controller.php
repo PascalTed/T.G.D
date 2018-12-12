@@ -152,7 +152,7 @@ function displayTopicMessages($topicId)
     $postManager = new PostManager();
     $topicMessages = $postManager->getTopicMessages($topicId);
     
-    $forumTopics = $postManager->getForumTopics($topicId);
+    $infoForumTopic = $postManager->getInfoForumTopic($topicId);
     
     require_once('view/topicView.php');
 }
