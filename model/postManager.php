@@ -26,7 +26,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $forums = $db->query('SELECT id, categories, nb_topics, pseudo, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') last_date FROM (SELECT forums.id, forums.categories, COUNT(topics.forum_id) nb_topics FROM forums LEFT JOIN topics ON forums.id = topics.forum_id GROUP BY forums.categories) table_a LEFT JOIN (SELECT topics_messages.forum_id, MAX(topics_messages.message_date) date, users.pseudo FROM topics_messages INNER JOIN users ON topics_messages.user_id = users.id GROUP BY topics_messages.forum_id) table_b ON table_a.id = table_b.forum_id ORDER BY nb_topics DESC'); 
+        $forums = $db->query('SELECT id, categories, nb_topics, pseudo, DATE_FORMAT(message_date, \'%d/%m/%Y à %Hh%imin%ss\') last_date FROM (SELECT forums.id, forums.categories, COUNT(topics.forum_id) nb_topics FROM forums LEFT JOIN topics ON forums.id = topics.forum_id GROUP BY forums.categories) table_a LEFT JOIN (SELECT forum_id, message_date, users.pseudo FROM (SELECT tm.* FROM topics_messages tm INNER JOIN (SELECT forum_id, MAX(id) AS maxId FROM topics_messages GROUP BY forum_id) t1 ON tm.forum_id = t1.forum_id AND tm.id = t1.maxId) t2 INNER JOIN users ON users.id = t2.user_id) table_b ON table_a.id = table_b.forum_id ORDER BY nb_topics DESC'); 
         
         return $forums;
     }
