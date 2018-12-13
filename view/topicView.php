@@ -6,7 +6,7 @@
 <section id="topic">
 
     <div>
-        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="index.php?action=displayForumTopics&amp;idForum=<?= $infoForumTopic['forum_id'] ?>&amp;catForum=<?= $infoForumTopic['forum_cat'] ?>"><?= $infoForumTopic['forum_cat'] ?></a><span>/</span><a href="#"><?= $infoForumTopic['topic_title'] ?></a>
+        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="index.php?action=displayForumTopics&amp;idForum=<?= $infoForumTopic['forumID'] ?>&amp;catForum=<?= $infoForumTopic['forumCat'] ?>"><?= $infoForumTopic['forumCat'] ?></a><span>/</span><a href="#"><?= $infoForumTopic['topicTitle'] ?></a>
     </div>
     
     <div>
@@ -14,11 +14,11 @@
             <div>
                 <div>
                     <img src="images/avatars/<?= $infoForumTopic['avatar'] ?>" />
-                    <p>Inscrit le <?= $infoForumTopic['user_date'] ?></p>
+                    <p>Inscrit le <?= $infoForumTopic['userDate'] ?></p>
                 </div>
             </div>
             <div>
-                <p>Le <?= $infoForumTopic['topic_date'] ?></p>
+                <p>Le <?= $infoForumTopic['topicDate'] ?></p>
                 <p><?= $infoForumTopic['message'] ?></p>
             </div>
         </div>
@@ -44,7 +44,7 @@
     if (isset($_SESSION['pseudo'])) {
     ?>
     <div>
-        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $infoForumTopic['forum_id'] ?>&amp;idTopic=$infoForumTopic['topic_id']" method="post" id="form-create-topic">
+        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $infoForumTopic['forumID'] ?>&amp;idTopic=<? $infoForumTopic['topicID']" method="post" id="form-create-topic">
 
             <label for="reply-to-message">Laisser un message</label>
             <textarea id="reply-to-message" name="reply-to-message"></textarea>
