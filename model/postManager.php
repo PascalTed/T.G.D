@@ -63,7 +63,7 @@ class PostManager extends Manager
     public function getInfoForumTopic($topicId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT forums.id forumID, forums.categories forumCat, topics.id topicID, topics.title topicTitle, message, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topicDate, users.pseudo, users.avatar, DATE_FORMAT(users.registration_date, \'%d/%m/%Y à %Hh%imin%ss\') userDate FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id INNER JOIN (SELECT topics_messages.topic_id, topics_messages.message FROM topics_messages WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC LIMIT 1) t1 ON t1.topic_id = topics.id');
+        $req = $db->prepare('SELECT forums.id forumID, forums.categories forumCat, topics.id topicID, topics.title topicTitle, message, moderation, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topicDate, users.pseudo, users.avatar, DATE_FORMAT(users.registration_date, \'%d/%m/%Y à %Hh%imin%ss\') userDate FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id INNER JOIN (SELECT topics_messages.topic_id, topics_messages.message, topics_messages.moderation FROM topics_messages WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC LIMIT 1) t1 ON t1.topic_id = topics.id');
         
         $req->execute(array($topicId));
         $forumTopics = $req->fetch();
