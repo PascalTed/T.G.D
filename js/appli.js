@@ -337,3 +337,29 @@ if (formCreateTopic !== null) {
     });
 }
 // Fin page createTopic
+
+// Début page topic
+// vérification textarea "Laisser un message" avant d'envoyer une réponse
+var formReplyToMessage = document.getElementById("form-reply-to-message");
+var noReplyToMessage = document.getElementById("no-reply-to-message");
+var replyToMessage = document.getElementById("reply-to-message");
+
+if (formReplyToMessage !== null) {
+    
+    formReplyToMessage.addEventListener("submit", function (e) {
+        tinymce.triggerSave();
+        e.preventDefault();
+        
+        var valueReplyToMessage = replyToMessage.value;
+        
+        if (valueReplyToMessage === "") {
+            noReplyToMessage.textContent = "Le champ est vide"
+            tinymce.get("reply-to-message").on("click", function () {
+                noReplyToMessage.textContent = "";
+            });
+        } else {
+            formReplyToMessage.submit();
+        }
+    });
+}
+// Fin page topic
