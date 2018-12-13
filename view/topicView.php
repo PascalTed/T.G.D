@@ -40,6 +40,29 @@
         ?>
         
     </div>
+    <?php
+    if (isset($_SESSION['pseudo'])) {
+    ?>
+    <div>
+        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $infoForumTopic['forum_id'] ?>&amp;idTopic=$infoForumTopic['topic_id']" method="post" id="form-create-topic">
+
+            <label for="reply-to-message">Laisser un message</label>
+            <textarea id="reply-to-message" name="reply-to-message"></textarea>
+            <span id="no-reply-to-message"></span>
+                
+            <input type="submit" value="Ajouter le message" />
+         </form>
+    </div>
+    <?php
+    } else {
+    ?>
+    <div>
+        <p>Vous devez être connecté pour laisser un message</p>
+        <p><a href="">Se connecter</a></p>
+    </div>
+    <?php
+    }
+    ?>
     
 </section>
 
