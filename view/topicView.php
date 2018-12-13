@@ -31,7 +31,8 @@
 
                 <div><p>posté par <?= $topic['pseudo'] ?></p></div>
 
-                <div>message par <?= $topic['message'] ?></div>
+                <div>message  <?= $topic['message'] ?></div>
+                <div>Date du message : <?= $topic['message_date'] ?></div>
             </div>
         
         <?php
