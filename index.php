@@ -153,6 +153,22 @@ try {
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
             }
+            
+        // Enregistrement d'un message réponse depuis un topic    
+        } elseif ($_GET['action'] == 'replyToMessage') {
+            if (isset($_SESSION['pseudo'])) {
+                if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
+                    if (isset($_POST['reply-to-message'])) {
+                        replyToMessage($_SESSION['id'], $_POST['reply-to-message'], $_GET['idForum'], $_GET['idTopic']);
+                    } else {
+                        throw new Exception('Aucune réponse envoyée.');
+                    }
+                } else {
+                    throw new Exception('Aucun id forum ou topic envoyé.');
+                } 
+            } else {
+                throw new Exception('Aucun pseudo envoyé.');
+            }
         }
     } else {
         home();
