@@ -302,7 +302,7 @@ if (formAddMessage !== null) {
 }
 // Fin formulaire messagerie instantanée
 
-// Début page displayCreateTopic
+// Début page createTopic
 // vérification textarea "Ajouter le titre" et "Ajouter le contenu" avant de créer le nouveau topic
 var formCreateTopic = document.getElementById("form-create-topic");
 var noTitleTopic = document.getElementById("no-title-topic");
@@ -336,4 +336,4 @@ if (formCreateTopic !== null) {
         }
     });
 }
-// Fin page displayCreateTopic
+// Fin page createTopic
