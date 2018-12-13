@@ -56,7 +56,7 @@
         <script src="js/tinymce/tinymce.js"></script>
         <script>
             tinymce.init({
-            selector: '#create-title-topic', menubar: false, toolbar: 'undo redo', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize"
+            selector: '#create-title-topic', menubar: false, toolbar: 'undo redo', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize", forced_root_block: false
             });
             tinymce.init({
             selector: '#create-content-topic, #reply-to-message', menubar: false, toolbar: 'undo redo | emoticons | bold | italic | underline | strikethrough | forecolor | alignleft aligncenter alignright alignjustify | link', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize link emoticons textcolor", language: 'fr_FR'
