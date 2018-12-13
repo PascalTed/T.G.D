@@ -44,7 +44,7 @@
     if (isset($_SESSION['pseudo'])) {
     ?>
     <div>
-        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $infoForumTopic['forumID'] ?>&amp;idTopic=<? $infoForumTopic['topicID'] ?>" method="post" id="form-create-topic">
+        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $infoForumTopic['forumID'] ?>&amp;idTopic=<? $infoForumTopic['topicID'] ?>" method="post" id="form-reply-to-message">
 
             <label for="reply-to-message">Laisser un message</label>
             <textarea id="reply-to-message" name="reply-to-message"></textarea>
