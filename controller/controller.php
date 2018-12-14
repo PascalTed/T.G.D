@@ -183,11 +183,7 @@ function replyToMessage($userId, $message, $forumId, $topicId)
     $postManager = new PostManager();
     $postManager->editMessage($userId, $message, $forumId, $topicId);
     
-    $topicMessages = $postManager->getTopicMessages($topicId);
-    
-    $infoForumTopic = $postManager->getInfoForumTopic($topicId);
-    
-    require_once('view/topicView.php');
+    header('Location: index.php?action=displayTopicMessages&idTopic=' . $topicId);
 }
 
 ?>
