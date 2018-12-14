@@ -172,10 +172,7 @@ function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     $postManager = new PostManager();
     $postManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
     
-    $topics = $postManager->getTopics($forumId);
-    $forumIdCat = $postManager->getForumIdCat($forumId);
-    
-    require_once('view/forumTopicsView.php');
+    header('Location: index.php?action=displayForumTopics&idForum=' . $forumId);
 }
 
 function replyToMessage($userId, $message, $forumId, $topicId)
