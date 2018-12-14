@@ -187,7 +187,7 @@ function replyToMessage($userId, $message, $forumId, $topicId)
     
     $infoForumTopic = $postManager->getInfoForumTopic($topicId);
     
-    require_once('view/topicsView.php');
+    require_once('view/topicView.php');
 }
 
 ?>
