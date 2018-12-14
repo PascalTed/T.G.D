@@ -141,7 +141,7 @@ try {
         // Enregistrement du nouveau sujet    
         }elseif ($_GET['action'] == 'createTopic') {
             if (isset($_SESSION['pseudo'])) {
-                if ($_GET['idForum'] > 0) {
+                if (isset($_GET['idForum']) && $_GET['idForum'] > 0) {
                     if (isset($_POST['create-title-topic']) && isset($_POST['create-content-topic'])) {
                         createTopic($_SESSION['id'], $_GET['idForum'], $_POST['create-title-topic'], $_POST['create-content-topic']);
                     } else {
