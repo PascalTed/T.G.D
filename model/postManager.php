@@ -79,11 +79,8 @@ class PostManager extends Manager
         
         $lastTopicId = $db->lastInsertId();
         echo $lastTopicId;
-
-        $db = $this->dbConnect();
-        $editFirstMessage = $db->prepare('INSERT INTO topics_messages (user_id, forum_id, topic_id, message, message_date) VALUES (?, ?, ?, ?, NOW())');
         
-        $editFirstMessage->execute(array($userId, $forumId, $lastTopicId, $firstMessageTopic));
+        $this->editMessage($userId, $firstMessageTopic, $forumId, $lastTopicId);
     }
     
     public function editMessage($userId, $message, $forumId, $topicId)
