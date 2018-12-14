@@ -59,7 +59,7 @@
             selector: '#create-title-topic', menubar: false, toolbar: 'undo redo', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize", forced_root_block: false
             });
             tinymce.init({
-            selector: '#create-content-topic, #reply-to-message', menubar: false, toolbar: 'undo redo | emoticons | bold | italic | underline | strikethrough | forecolor | alignleft aligncenter alignright alignjustify | link', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize link emoticons textcolor", language: 'fr_FR'
+            selector: '#create-content-topic, #reply-to-message', menubar: false, toolbar: 'undo redo | emoticons | bold | italic | underline | strikethrough | forecolor | alignleft aligncenter alignright alignjustify | link', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize link emoticons textcolor", language: 'fr_FR', default_link_target: "_blank", target_list: false, link_title: false, anchor_top: false, anchor_bottom: false
             });
         </script>
         <script src="js/regex.js"></script>
