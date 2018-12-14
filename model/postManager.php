@@ -85,4 +85,12 @@ class PostManager extends Manager
         
         $editFirstMessage->execute(array($userId, $forumId, $lastTopicId, $firstMessageTopic));
     }
+    
+    public function editMessage($userId, $message, $forumId, $topicId)
+    {
+        $db = $this->dbConnect();
+        $editNewMessage = $db->prepare('INSERT INTO topics_messages (user_id, forum_id, topic_id, message, message_date) VALUES (?, ?, ?, ?, NOW())');
+        
+        $editNewMessage->execute(array($userId, $forumId, $topicId, $message));
+    }
 }
