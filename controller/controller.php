@@ -47,7 +47,7 @@ function modifyAvatar($imageAvatar, $userId)
     $accountManager = new AccountManager();
     $accountManager->changeAvatar($imageAvatar, $userId);
     
-    require_once('view/accountView.php');
+    header('Location: index.php?action=displayAccount');
 }
 
 // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter
