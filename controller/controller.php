@@ -178,4 +178,16 @@ function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     require_once('view/forumTopicsView.php');
 }
 
+function replyToMessage($userId, $message, $forumId, $topicId)
+{
+    $postManager = new PostManager();
+    $postManager->editMessage($userId, $message, $forumId, $topicId);
+    
+    $topicMessages = $postManager->getTopicMessages($topicId);
+    
+    $infoForumTopic = $postManager->getInfoForumTopic($topicId);
+    
+    require_once('view/topicsView.php');
+}
+
 ?>
