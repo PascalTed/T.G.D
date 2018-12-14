@@ -181,7 +181,7 @@ function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
 function replyToMessage($userId, $message, $forumId, $topicId)
 {
     $postManager = new PostManager();
-    $postManager->editMessage($userId, $message, $forumId, $topicId);
+    $postManager->editReplyToMessage($userId, $message, $forumId, $topicId);
     
     $topicMessages = $postManager->getTopicMessages($topicId);
     
