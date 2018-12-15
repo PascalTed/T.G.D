@@ -58,7 +58,7 @@
     ?>
     <div>
         <p>Vous devez être connecté pour laisser un message</p>
-        <p><a href="" id="connect-to-reply">Se connecter</a></p>
+        <p><a href="#" id="connect-to-reply">Se connecter</a></p>
     </div>
     <?php
     }
