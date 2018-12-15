@@ -298,7 +298,7 @@ var noneInstantMessage = document.getElementById("none-instant-message");
 var firstMessageId;
 
 if (formAddMessage !== null) {
-    if (document.querySelector("#all-messages > div") == null) {
+    if (document.querySelector("#all-messages > div") === null) {
         noneInstantMessage.style.display = "block";
         firstMessageId = 0;
     }
