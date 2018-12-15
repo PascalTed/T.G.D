@@ -30,6 +30,7 @@
             ?>
         
         <div id="all-messages">
+            <p id ="none-instant-message">Aucun message</p>
         
             <?php    
             while ($message = $messages->fetch()) {
