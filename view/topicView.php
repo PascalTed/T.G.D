@@ -23,21 +23,22 @@
             </div>
         </div>
         
-        <?php    
-        while ($topic = $topicMessages->fetch()) {
-        ?>
+        <div id="all-messages-topic">
+            <p id="none-messages-topic">Aucun message</p>"
             
-            <div>
+            <?php    
+            while ($topic = $topicMessages->fetch()) {
+            ?>
 
-                <div><p>posté par <?= $topic['pseudo'] ?></p></div>
+                    <div><p>posté par <?= $topic['pseudo'] ?></p></div>
 
-                <div>message  <?= $topic['message'] ?></div>
-                <div>Date du message : <?= $topic['message_date'] ?></div>
-            </div>
-        
-        <?php
-        }
-        ?>
+                    <div>message  <?= $topic['message'] ?></div>
+                    <div>Date du message : <?= $topic['message_date'] ?></div>
+
+            <?php
+            }
+            ?>
+        </div>
         
     </div>
     <?php
