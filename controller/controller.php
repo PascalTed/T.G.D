@@ -130,8 +130,8 @@ function displayGame($gameId)
 // Afficher la page des forums
 function displayForums()
 {
-    $postManager = new PostManager();
-    $forums = $postManager->getForums();
+    $forumManager = new ForumManager();
+    $forums = $forumManager->getForums();
     
     require_once('view/forumsView.php');
 }
@@ -139,10 +139,10 @@ function displayForums()
 // Afficher la page du forum et ses sujets
 function displayForumTopics($forumId)
 {
-    $postManager = new PostManager();
-    $topics = $postManager->getTopics($forumId);
+    $forumManager = new ForumManager();
+    $topics = $forumManager->getTopics($forumId);
     
-    $forumIdCat = $postManager->getForumIdCat($forumId);
+    $forumIdCat = $forumManager->getForumIdCat($forumId);
     
     require_once('view/forumTopicsView.php');
 }
@@ -150,10 +150,10 @@ function displayForumTopics($forumId)
 // Afficher la page du sujet et ses messages
 function displayTopicMessages($topicId)
 {
-    $postManager = new PostManager();
-    $topicMessages = $postManager->getTopicMessages($topicId);
+    $forumManager = new ForumManager();
+    $topicMessages = $forumManager->getTopicMessages($topicId);
     
-    $infoForumTopic = $postManager->getInfoForumTopic($topicId);
+    $infoForumTopic = $forumManager->getInfoForumTopic($topicId);
     
     require_once('view/topicView.php');
 }
@@ -161,8 +161,8 @@ function displayTopicMessages($topicId)
 // Afficher la page créer un sujet
 function displayCreateTopic($forumId)
 {
-    $postManager = new PostManager();
-    $forumIdCat = $postManager->getForumIdCat($forumId);
+    $forumManager = new ForumManager();
+    $forumIdCat = $forumManager->getForumIdCat($forumId);
     
     require_once('view/createTopicView.php');
 }
@@ -170,16 +170,16 @@ function displayCreateTopic($forumId)
 // Enregistrement du nouveau sujet
 function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
 {
-    $postManager = new PostManager();
-    $postManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
+    $forumManager = new ForumManager();
+    $forumManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
     
     header('Location: index.php?action=displayForumTopics&idForum=' . $forumId);
 }
 
 function replyToMessage($userId, $message, $forumId, $topicId)
 {
-    $postManager = new PostManager();
-    $postManager->editMessage($userId, $message, $forumId, $topicId);
+    $forumManager = new ForumManager();
+    $forumManager->editMessage($userId, $message, $forumId, $topicId);
     
     header('Location: index.php?action=displayTopicMessages&idTopic=' . $topicId);
 }
