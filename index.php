@@ -153,8 +153,8 @@ try {
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
             }
-            
-        // Enregistrement d'un message réponse depuis un topic    
+
+        // Enregistrement d'un message réponse depuis un topic venant d'un ajaxpost   
         } elseif ($_GET['action'] == 'replyToMessage') {
             if (isset($_SESSION['pseudo'])) {
                 if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
