@@ -185,6 +185,21 @@ if (connectToForum !== null) {
     }); 
 }
 
+// Depuis le topic
+var connectToReply = document.getElementById("connect-to-reply");
+
+if (connectToReply !== null) {
+   connectToReply.addEventListener("click", function() {
+        loginWindow.style.display = "block";
+        opaqueWindow.style.display = "block";
+                
+        opaqueWindow.addEventListener("click", function() {
+            opaqueWindow.style.display = "none";
+            loginWindow.style.display = "none";
+        });
+    }); 
+}
+
 var closeLoginWindow = document.getElementById("close-login-window");
 
     closeLoginWindow.addEventListener("click", function() {
