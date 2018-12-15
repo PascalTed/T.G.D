@@ -3,7 +3,8 @@
 // Chargement des classes
 require_once('model/AccountManager.php');
 require_once('model/InstantMessageManager.php');
-require_once('model/PostManager.php');
+require_once('model/GameManager.php');
+require_once('model/ForumManager.php');
 
 // Affiche la page d'accueil
 function home()
