@@ -2,7 +2,7 @@
 
 // Chargement des classes
 require_once('model/AccountManager.php');
-require_once('model/MessageManager.php');
+require_once('model/InstantMessageManager.php');
 require_once('model/PostManager.php');
 
 // Affiche la page d'accueil
@@ -75,14 +75,14 @@ function logoutAccount()
 // Ajouter un message
 function addMessage($userId, $instantMessage)
 {
-    $messageManager = new MessageManager();
-    $messageManager->editMessage($userId, $instantMessage);
+    $instantMessageManager = new InstantMessageManager();
+    $instantMessageManager->editMessage($userId, $instantMessage);
 }
 
 function getAllMessages()
 {
-    $messageManager = new MessageManager();
-    $messages = $messageManager->getMessage();
+    $instantMessageManager = new InstantMessageManager();
+    $messages = $instantMessageManager->getMessage();
     
     return $messages;
 }
@@ -90,8 +90,8 @@ function getAllMessages()
 // Vérifier si nouveaux messages ajoutés
 function verifUpdatedMessage($messageId)
 {
-    $messageManager = new MessageManager();
-    $messages = $messageManager->getLastMessage($messageId);
+    $instantMessageManager = new InstantMessageManager();
+    $messages = $instantMessageManager->getLastMessage($messageId);
     
     while ($lastMessage = $messages->fetch()) {
 ?>

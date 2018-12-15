@@ -2,7 +2,7 @@
 
 require_once("model/Manager.php");
 
-class MessageManager extends Manager
+class InstantMessageManager extends Manager
 {
     // Enregistrer le message
     public function editMessage($userId, $instantMessage)
