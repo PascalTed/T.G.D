@@ -363,9 +363,12 @@ if (formCreateTopic !== null) {
 var formReplyToMessage = document.getElementById("form-reply-to-message");
 var noReplyToMessage = document.getElementById("no-reply-to-message");
 var replyToMessage = document.getElementById("reply-to-message");
+var noneMessagesTopic = document.getElementById("none-messages-topic");
 
 if (formReplyToMessage !== null) {
-    
+    if (document.querySelector("#all-messages-topic > div") === null) {
+        noneMessagesTopic.style.display = "block";
+    }
     formReplyToMessage.addEventListener("submit", function (e) {
         tinymce.triggerSave();
         e.preventDefault();
@@ -378,7 +381,15 @@ if (formReplyToMessage !== null) {
                 noReplyToMessage.textContent = "";
             });
         } else {
-            formReplyToMessage.submit();
+            var dataSend = 'reply-to-message='+ encodeURIComponent(valueReplyToMessage);
+            var ajaxPostGetMessage = Object.create(AjaxPost);
+            ajaxPostGetMessage.init(formReplyToMessage.getAttribute("action"), dataSend, function(reponse) {
+                if (reponse) {
+                tinymce.get('reply-to-message').setContent("");     document.getElementById("all-messages-topic").innerHTML = reponse;
+                noneMessagesTopic.style.display = "none";
+                }
+            }); 
+            ajaxPostGetMessage.executer();
         }
     });
 }
