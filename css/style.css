@@ -316,6 +316,11 @@ section
     padding-top: 15px;
 }
 
+#all-messages #none-instant-message
+{
+    display: none;
+}
+
 #all-messages > div
 {
     padding-left: 5px;
