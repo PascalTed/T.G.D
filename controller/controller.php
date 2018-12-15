@@ -112,8 +112,8 @@ function verifUpdatedMessage($messageId)
 // Afficher la page Nos jeux
 function displayListGames()
 {
-    $postManager = new PostManager();
-    $games = $postManager->getListGames();
+    $gameManager = new GameManager();
+    $games = $gameManager->getListGames();
     
     require_once('view/listGamesView.php');
 }
@@ -121,8 +121,8 @@ function displayListGames()
 // Afficher la page du jeu
 function displayGame($gameId)
 {
-    $postManager = new PostManager();
-    $game = $postManager->getGame($gameId);
+    $gameManager = new GameManager();
+    $game = $gameManager->getGame($gameId);
     
     require_once('view/GameView.php');
 }
