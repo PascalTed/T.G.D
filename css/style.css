@@ -430,6 +430,13 @@ section
     width: 100%;
 }
 /* Fin page Nos jeux */
+
+/* Début page topic */
+#none-messages-topic
+{
+    display: none;
+}
+/* Début page topic */
 /* Fin section */
 
 /* Début media queries */
