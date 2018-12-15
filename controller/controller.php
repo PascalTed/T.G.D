@@ -181,7 +181,16 @@ function replyToMessage($userId, $message, $forumId, $topicId)
     $forumManager = new ForumManager();
     $forumManager->editMessage($userId, $message, $forumId, $topicId);
     
-    header('Location: index.php?action=displayTopicMessages&idTopic=' . $topicId);
+    $topicMessages = $forumManager->getTopicMessages($topicId);
+    while ($topic = $topicMessages->fetch()) {
+    ?>
+            
+        <div><p>posté par <?= $topic['pseudo'] ?></p></div>
+        <div>message  <?= $topic['message'] ?></div>
+        <div>Date du message : <?= $topic['message_date'] ?></div>   
+        
+    <?php
+    }
 }
 
 ?>
