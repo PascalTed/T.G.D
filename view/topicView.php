@@ -24,7 +24,7 @@
         </div>
         
         <div id="all-messages-topic">
-            <p id="none-messages-topic">Aucun message</p>"
+            <p id="none-messages-topic">Aucun message</p>
             
             <?php    
             while ($topic = $topicMessages->fetch()) {
