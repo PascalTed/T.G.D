@@ -299,7 +299,7 @@ var firstMessageId;
 
 if (formAddMessage !== null) {
     if (document.querySelector("#all-messages > div") == null) {
-        noneInstantMessage
+        noneInstantMessage.style.display = "block";
         firstMessageId = 0;
     }
     setInterval(function () {
