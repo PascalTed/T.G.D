@@ -294,23 +294,28 @@ if (formAddMessage !== null) {
 
 // Ajaxpost pour récupérer les messages ajoutés
 var allMessages = document.getElementById("all-messages");
+var noneInstantMessage = document.getElementById("none-instant-message");
 var firstMessageId;
+
 if (formAddMessage !== null) {
-    
+    if (document.querySelector("#all-messages > div") == null) {
+        noneInstantMessage
+        firstMessageId = 0;
+    }
     setInterval(function () {
-        console.log("test");
-        if (document.querySelector("#all-messages > div") == null) {
-            firstMessageId = 0; 
-        } else {
+
+        if (document.querySelector("#all-messages > div") !== null) {
             firstMessageId = document.querySelector("#all-messages > div").id;
-            console.log(firstMessageId);
         }
 
         var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
         var ajaxPostGetMessage = Object.create(AjaxPost);
         
-        ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {   
+        ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {
+            if (reponse) {
             allMessages.insertAdjacentHTML("afterbegin", reponse);
+            noneInstantMessage.style.display = "none"    
+            }
         });
         ajaxPostGetMessage.executer();
     }, 1000);
