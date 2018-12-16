@@ -16,12 +16,14 @@
         ?>
         
             <div class="forum-categorie">
-                <div>
-                   <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>"><?= $forum['categories'] ?></a>
-                    </h2>
-                </div>
+                <div class="forum-cat-topics">
+                    <div>
+                       <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>"><?= $forum['categories'] ?></a>
+                        </h2>
+                    </div>
 
-                <div><?= $forum['nb_topics'] ?> sujets</div>
+                    <div><?= $forum['nb_topics'] ?> sujets</div>
+                </div>
                 
                 <?php
                 if ($forum['nb_topics'] <= 0) {
