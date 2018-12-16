@@ -57,7 +57,7 @@ if (formRegistration !== null) {
         if (regexPseudo.verifier() === true) {
             console.log("ui");
             messagePseudo.classList.add("red-message");
-            messagePseudo.textContent = "pseudo incorrect";
+            messagePseudo.textContent = "pseudo incorrect (espace non accepté)";
             pseudoVerified = "nok";
         } else { 
             ajaxPostPseudo.init("index.php?action=verifPseudoCreateAccount", dataSend, function(reponse) {
@@ -92,15 +92,10 @@ if (formRegistration !== null) {
         regexEmail.init((/^\S+@\S+\.\S+$/), formInputEmail.value);
         
         if (regexEmail.verifier() === false) {
-            messageEmail.classList.add("red-message");
-            messageEmail.textContent = "email incorrect";
             emailVerified = "nok";
             console.log("pas verifier");
-            
-            if (formInputEmail.value === "") {
-                messageEmail.textContent = "";
-                console.log("pas verifier vide");
-            }
+            messageEmail.textContent = "";
+
             console.log(formInputEmail.value);
             console.log(emailVerified);
         } else {
