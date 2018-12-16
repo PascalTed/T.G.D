@@ -6,22 +6,19 @@
 <section id="forums">
 
     <div>
-        <a href="#">Forum</a>
+        <h1 id="forums-title">Forums</h1>
     </div>
     
-    <div>
+    <div id="forums-categories">
         
         <?php    
         while ($forum = $forums->fetch()) {
         ?>
         
-            <div>
+            <div id="forum-categorie">
                 <div>
-                    <div>
-                        <a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>">
-                            <h4><?= $forum['categories'] ?></h4>
-                        </a>
-                    </div>
+                   <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>"><?= $forum['categories'] ?></a>
+                    </h2>
                 </div>
 
                 <div><?= $forum['nb_topics'] ?> sujets</div>
