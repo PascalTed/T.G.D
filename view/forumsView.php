@@ -15,7 +15,7 @@
         while ($forum = $forums->fetch()) {
         ?>
         
-            <div id="forum-categorie">
+            <div class="forum-categorie">
                 <div>
                    <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>"><?= $forum['categories'] ?></a>
                     </h2>
