@@ -36,34 +36,52 @@ var messageEmail = document.getElementById("alert-email");
 var messagePass = document.getElementById("alert-password");
 var messageVerifPass = document.getElementById("alert-verif-password");
 
-var pseudoVerified;
-var emailVerified;
-var passVerified;
+var pseudoVerified = "nok";
+var emailVerified = "nok";
+var passVerified = "nok";
 
 if (formRegistration !== null) {
     
     formInputPseudo.value = "";
     formInputEmail.value = "";
+    
     // Vérification pseudo
     formInputPseudo.addEventListener("input", function () {
         console.log("envois");
         var dataSend = 'pseudo='+ encodeURIComponent(formInputPseudo.value);
         var ajaxPostPseudo = Object.create(AjaxPost);
         
-        ajaxPostPseudo.init("index.php?action=verifPseudoCreateAccount", dataSend, function(reponse) {
+        var regexPseudo = Object.create(Regex);
+        regexPseudo.init((/\s+/), formInputPseudo.value);
+        
+        if (regexPseudo.verifier() === true) {
+            console.log("ui");
+            messagePseudo.classList.add("red-message");
+            messagePseudo.textContent = "pseudo incorrect";
+            pseudoVerified = "nok";
+        } else { 
+            ajaxPostPseudo.init("index.php?action=verifPseudoCreateAccount", dataSend, function(reponse) {
             console.log(reponse);
-            if (reponse === "existUser") {
-                messagePseudo.classList.add("red-message");
-                messagePseudo.textContent = "pseudo déjà existant";
-                pseudoVerified = "nok";
-            } else {
-                messagePseudo.classList.remove("red-message");
-                messagePseudo.textContent = "pseudo disponible";
-                pseudoVerified = "ok";
-            } 
-        }); 
-        ajaxPostPseudo.executer();
+                if (reponse === "existUser") {
+                    messagePseudo.classList.add("red-message");
+                    messagePseudo.textContent = "pseudo déjà existant";
+                    pseudoVerified = "nok";
+                } else {
+                    if (formInputPseudo.value !== "") {
+                        messagePseudo.classList.remove("red-message");
+                        messagePseudo.textContent = "pseudo disponible";
+                        pseudoVerified = "ok";
+                    } else {
+                        messagePseudo.textContent = "";
+                        pseudoVerified = "nok";
+                    }
+                }
+                console.log(pseudoVerified);
+            }); 
+            ajaxPostPseudo.executer();
+        }
     });
+    
     // Vérification email
     formInputEmail.addEventListener("input", function () {
         console.log("envois2");
@@ -71,11 +89,20 @@ if (formRegistration !== null) {
         var ajaxPostEmail = Object.create(AjaxPost);
         
         var regexEmail = Object.create(Regex);
-        regexEmail.init((/.+@.+\..+/), formInputEmail.value);
+        regexEmail.init((/^\S+@\S+\.\S+$/), formInputEmail.value);
         
-        if (regexEmail.verifier() === false && formInputEmail.value !== "") {
+        if (regexEmail.verifier() === false) {
             messageEmail.classList.add("red-message");
-            messageEmail.textContent = "email incorrect";  
+            messageEmail.textContent = "email incorrect";
+            emailVerified = "nok";
+            console.log("pas verifier");
+            
+            if (formInputEmail.value === "") {
+                messageEmail.textContent = "";
+                console.log("pas verifier vide");
+            }
+            console.log(formInputEmail.value);
+            console.log(emailVerified);
         } else {
             ajaxPostEmail.init("index.php?action=verifEmailCreateAccount", dataSend, function(reponse) {
                 console.log(dataSend);
@@ -90,8 +117,10 @@ if (formRegistration !== null) {
                     messageEmail.textContent = "email disponible";
                     emailVerified = "ok";
                 }
+                console.log(emailVerified);
             });   
             ajaxPostEmail.executer();
+            console.log("en bvas");
         }
     });
     // password
@@ -102,23 +131,27 @@ if (formRegistration !== null) {
             messageVerifPass.textContent = "";
             passVerified = "nok";
         }
+        console.log(passVerified);
     });
     // Vérification du password
     formInputVerifPass.addEventListener("input", function () {
     
         if (formInputPass.value === formInputVerifPass.value) {
-            messageVerifPass.classList.remove("red-message");
-            messageVerifPass.textContent = "mots de passe identique";
-            passVerified = "ok";
-            
-        }else {
+            if (formInputVerifPass.value !== "") {
+                messageVerifPass.classList.remove("red-message");
+                messageVerifPass.textContent = "mots de passe identique";
+                passVerified = "ok";
+            } else {
+                messageVerifPass.textContent = "";
+                passVerified = "nok";
+            }
+        } else {
             messageVerifPass.classList.add("red-message");
             messageVerifPass.textContent = "mots de passe différents";
             passVerified = "nok";
         }
-        if (formInputVerifPass.value === "") {
-            messageVerifPass.textContent = "";
-        }
+        
+        console.log(passVerified);
     });
 
     formRegistration.addEventListener("submit", function (e) {    
