@@ -436,7 +436,37 @@ section
 {
     display: none;
 }
-/* Début page topic */
+/* Fin page topic */
+/* Début page forums */
+.forum-categorie
+{
+    display: flex;
+    align-items: center;
+}
+
+.forum-categorie .forum-cat-topics
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.forum-categorie > div:last-child
+{
+    width: 60%;
+}
+
+.forum-cat-topics > div:first-child
+{
+    width: 40%;
+}
+
+.forum-cat-topics > div:last-child
+{
+    width: 40%;
+}
+/* Fin page forums */
 /* Fin section */
 
 /* Début media queries */
@@ -489,6 +519,35 @@ section
         margin-bottom: 0;
     }
     /* Fin formulaire inscription */
+    
+    /* Début page forums */
+    .forum-categorie
+    {
+        flex-direction: column;
+        align-items: inherit;
+    }
+    
+    .forum-categorie .forum-cat-topics
+    {
+        width: auto;
+        display: block;
+    }
+    
+    .forum-categorie > div:last-child
+    {
+        width: auto;
+    }
+    
+    .forum-cat-topics > div:first-child
+    {
+        width: auto;
+    }
+    
+    .forum-cat-topics > div:last-child
+    {
+        width: auto;
+    }
+    /* Fin page forums */
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
