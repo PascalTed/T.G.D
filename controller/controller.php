@@ -176,20 +176,33 @@ function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     header('Location: index.php?action=displayForumTopics&idForum=' . $forumId);
 }
 
+// Enregistrer message réponse d'un topic
 function replyToMessage($userId, $message, $forumId, $topicId)
 {
     $forumManager = new ForumManager();
     $forumManager->editMessage($userId, $message, $forumId, $topicId);
     
     $topicMessages = $forumManager->getTopicMessages($topicId);
+    
     while ($topic = $topicMessages->fetch()) {
     ?>
-            
+
         <div><p>posté par <?= $topic['pseudo'] ?></p></div>
         <div>message  <?= $topic['message'] ?></div>
-        <div>Date du message : <?= $topic['message_date'] ?></div>   
-        
+        <div>Date du message : <?= $topic['message_date'] ?></div>  
+
+        <?php
+        if (isset($_SESSION['pseudo'])) {
+            if ($topic['moderation'] == 1) {
+            ?>
+                <p class="already-report">Message signalé</p>
+                <?php
+            } else {
+            ?>
+                <p><a  class="to-report" href="index.php?action=reportTopicMessage&amp;idMessage=<?= $topic['tm_id']; ?>&amp;idTopic=<?= $infoForumTopic['topicID']; ?> ">Signaler</a></p>
     <?php
+            }
+        }
     }
 }
 
