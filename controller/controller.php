@@ -199,7 +199,7 @@ function replyToMessage($userId, $message, $forumId, $topicId)
                 <?php
             } else {
             ?>
-                <p><a  class="to-report" href="index.php?action=reportTopicMessage&amp;idMessage=<?= $topic['tm_id']; ?>&amp;idTopic=<?= $infoForumTopic['topicID']; ?> ">Signaler</a></p>
+                <p><a  class="to-report" href="index.php?action=reportTopicMessage&amp;idMessage=<?= $topic['tm_id']; ?>&amp;idTopic=<?= $topicId; ?> ">Signaler</a></p>
     <?php
             }
         }
