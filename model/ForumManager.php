@@ -72,4 +72,11 @@ class ForumManager extends Manager
         
         $editNewMessage->execute(array($userId, $forumId, $topicId, $message));
     }
+    
+    public function editReport($messageId)
+    {
+        $db = $this->dbConnect();
+        $message =  $db->prepare('UPDATE topics_messages SET moderation = true WHERE id = ?');
+        $message->execute(array($messageId));
+    }
 }
