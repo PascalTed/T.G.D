@@ -36,13 +36,13 @@
 
                 <?php
                 if (isset($_SESSION['pseudo'])) {
-                    if ($topic['moderation'] == 0) {
+                    if ($topic['moderation'] == 1) {
                     ?>
-                        <a href="">Signaler</a>
+                        <p class="already-report">Message signalé</p>
                     <?php
                     } else {
                     ?>
-                        <p>message signalé</p>
+                        <p><a  class="to-report" href="index.php?action=reportTopicMessage&amp;idMessage=<?= $topic['tm_id']; ?>&amp;idTopic=<?= $infoForumTopic['topicID']; ?> ">Signaler</a></p>
             <?php
                     }
                 }
