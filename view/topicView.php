@@ -30,12 +30,20 @@
             while ($topic = $topicMessages->fetch()) {
             ?>
 
-                    <div><p>posté par <?= $topic['pseudo'] ?></p></div>
+                <div><p>posté par <?= $topic['pseudo'] ?></p></div>
+                <div>message  <?= $topic['message'] ?></div>
+                <div>Date du message : <?= $topic['message_date'] ?></div>  
 
-                    <div>message  <?= $topic['message'] ?></div>
-                    <div>Date du message : <?= $topic['message_date'] ?></div>
-
+                <?php
+                if ($topic['moderation'] == 0) {
+                ?>
+                    <a href="">Signaler</a>
+                <?php
+                } else {
+                ?>
+                    <p>message signalé</p>
             <?php
+                }
             }
             ?>
         </div>
