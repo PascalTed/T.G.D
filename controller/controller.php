@@ -193,4 +193,13 @@ function replyToMessage($userId, $message, $forumId, $topicId)
     }
 }
 
+// Signaler un message d'un topic
+function reportTopicMessage($messageId, $topicId)
+{
+    $forumManager = new ForumManager();
+    $forumManager->editReport($messageId);
+    
+    header('Location: index.php?action=displayTopicMessages&idTopic=' . $topicId);
+}
+
 ?>
