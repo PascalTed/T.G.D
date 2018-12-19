@@ -35,14 +35,16 @@
                 <div>Date du message : <?= $topic['message_date'] ?></div>  
 
                 <?php
-                if ($topic['moderation'] == 0) {
-                ?>
-                    <a href="">Signaler</a>
-                <?php
-                } else {
-                ?>
-                    <p>message signalé</p>
+                if (isset($_SESSION['pseudo'])) {
+                    if ($topic['moderation'] == 0) {
+                    ?>
+                        <a href="">Signaler</a>
+                    <?php
+                    } else {
+                    ?>
+                        <p>message signalé</p>
             <?php
+                    }
                 }
             }
             ?>
