@@ -169,6 +169,18 @@ try {
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
             }
+            
+        // Signaler un message d'un topic    
+        } elseif ($_GET['action'] == 'reportTopicMessage') {
+            if (isset($_SESSION['pseudo'])) {
+                if (isset($_GET['idMessage']) && isset($_GET['idTopic'])) {
+                    reportTopicMessage($_GET['idMessage'], $_GET['idTopic']);
+                } else {
+                    throw new Exception('Aucun id message ou topic envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun pseudo envoyé.');
+            }
         }
     } else {
         home();
