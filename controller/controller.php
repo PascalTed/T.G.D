@@ -219,4 +219,10 @@ function reportTopicMessage($messageId, $topicId)
     echo $actualizeMessages;
 }
 
+// Afficher la page Gérer (Partie administration)
+function displayAdminHome()
+{
+    require_once('view/adminHomeView.php');
+}
+
 ?>
