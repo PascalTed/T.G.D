@@ -392,6 +392,7 @@ var formReplyToMessage = document.getElementById("form-reply-to-message");
 var noReplyToMessage = document.getElementById("no-reply-to-message");
 var replyToMessage = document.getElementById("reply-to-message");
 var noneMessagesTopic = document.getElementById("none-messages-topic");
+var allMessagesTopic = document.getElementById("all-messages-topic");
 
 if (formReplyToMessage !== null) {
     if (document.querySelector("#all-messages-topic > div") === null) {
@@ -413,12 +414,28 @@ if (formReplyToMessage !== null) {
             var ajaxPostGetMessage = Object.create(AjaxPost);
             ajaxPostGetMessage.init(formReplyToMessage.getAttribute("action"), dataSend, function(reponse) {
                 if (reponse) {
-                tinymce.get('reply-to-message').setContent("");     document.getElementById("all-messages-topic").innerHTML = reponse;
+                tinymce.get('reply-to-message').setContent("");
+                allMessagesTopic.innerHTML = reponse;
                 noneMessagesTopic.style.display = "none";
                 }
             }); 
             ajaxPostGetMessage.executer();
         }
+    });
+}
+
+// Ajaxpost pour signaler un message et récupérer les messages
+var toReport = document.getElementsByClassName("to-report");
+if (allMessagesTopic !== null) {
+    allMessagesTopic.addEventListener("click", function (e) {
+        if (e.target.className == "to-report") {
+            e.preventDefault();
+            var ajaxGetToReportMessage = Object.create(AjaxGet);
+            ajaxGetToReportMessage.init(e.target.getAttribute("href"), function(reponse) {
+                allMessagesTopic.innerHTML = reponse;
+            });
+            ajaxGetToReportMessage.executer();
+        } 
     });
 }
 // Fin page topic
