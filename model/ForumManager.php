@@ -32,16 +32,6 @@ class ForumManager extends Manager
         return $topicMessages;
     }
     
-    public function getForumIdCat($forumId)
-    {
-        $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, categories FROM forums WHERE id = ?');
-        
-        $req->execute(array($forumId));
-        $forumIdCat = $req->fetch();
-        return $forumIdCat;
-    }
-    
     public function getInfoForumTopic($topicId)
     {
         $db = $this->dbConnect();

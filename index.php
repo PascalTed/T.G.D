@@ -112,10 +112,10 @@ try {
         
         // Afficher la page du forum et ses sujets
         } elseif ($_GET['action'] == 'displayForumTopics') {
-            if (isset($_GET['idForum']) && $_GET['idForum'] > 0) {
-                displayForumTopics($_GET['idForum']);
+            if ((isset($_GET['idForum']) AND $_GET['idForum'] > 0) AND isset($_GET['catForum'])) {
+                displayForumTopics($_GET['idForum'], $_GET['catForum']);
             } else {
-                throw new Exception('Aucun id forum envoyé.');
+                throw new Exception('Aucun id ou catégorie forum envoyé.');
             }
             
         // Afficher la page du sujet et ses messages   
@@ -129,10 +129,10 @@ try {
         // Afficher page pour créer un sujet
         } elseif ($_GET['action'] == 'displayCreateTopic') {
             if (isset($_SESSION['pseudo'])) {
-                if (isset($_GET['idForum']) && $_GET['idForum'] > 0) {
-                    displayCreateTopic($_GET['idForum']);
+                if ((isset($_GET['idForum']) AND $_GET['idForum'] > 0) AND isset($_GET['catForum'])) {
+                    displayCreateTopic($_GET['idForum'], $_GET['catForum']);
                 } else {
-                    throw new Exception('Aucun id forum envoyé.');
+                    throw new Exception('Aucun id ou catégorie forum envoyé.');
                 }
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
@@ -141,14 +141,14 @@ try {
         // Enregistrement du nouveau sujet    
         }elseif ($_GET['action'] == 'createTopic') {
             if (isset($_SESSION['pseudo'])) {
-                if (isset($_GET['idForum']) && $_GET['idForum'] > 0) {
+                if ((isset($_GET['idForum']) AND $_GET['idForum'] > 0) AND isset($_GET['catForum'])) {
                     if (isset($_POST['create-title-topic']) && isset($_POST['create-content-topic'])) {
-                        createTopic($_SESSION['id'], $_GET['idForum'], $_POST['create-title-topic'], $_POST['create-content-topic']);
+                        createTopic($_SESSION['id'], $_GET['idForum'], $_GET['catForum'], $_POST['create-title-topic'], $_POST['create-content-topic']);
                     } else {
                         throw new Exception('Aucun titre ou contenu du nouveau sujet envoyés.');
                     }
                 } else {
-                    throw new Exception('Aucun id forum envoyé.');
+                    throw new Exception('Aucun id ou catégorie forum envoyé.');
                 }
             } else {
                 throw new Exception('Aucun pseudo envoyé.');

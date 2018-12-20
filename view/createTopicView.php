@@ -5,11 +5,11 @@
 
 <section id="create-topic">
     
-    <div><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumIdCat['id'] ?>">Forum <?= $forumIdCat['categories'] ?></a>
+    <div><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>">Forum <?= $forumCat ?></a>
     </div>
     
     <div>
-        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $forumIdCat['id'] ?>" method="post" id="form-create-topic">
+        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" method="post" id="form-create-topic">
             <p>
                 <label for="create-title-topic">Ajouter le titre</label>
                 <textarea id="create-title-topic" name="create-title-topic"></textarea>

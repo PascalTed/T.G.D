@@ -137,12 +137,10 @@ function displayForums()
 }
 
 // Afficher la page du forum et ses sujets
-function displayForumTopics($forumId)
+function displayForumTopics($forumId, $forumCat)
 {
     $forumManager = new ForumManager();
     $topics = $forumManager->getTopics($forumId);
-    
-    $forumIdCat = $forumManager->getForumIdCat($forumId);
     
     require_once('view/forumTopicsView.php');
 }
@@ -159,21 +157,18 @@ function displayTopicMessages($topicId)
 }
 
 // Afficher la page créer un sujet
-function displayCreateTopic($forumId)
+function displayCreateTopic($forumId, $forumCat)
 {
-    $forumManager = new ForumManager();
-    $forumIdCat = $forumManager->getForumIdCat($forumId);
-    
     require_once('view/createTopicView.php');
 }
 
 // Enregistrement du nouveau sujet
-function createTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
+function createTopic($userId, $forumId, $forumCat, $titleTopic, $firstMessageTopic)
 {
     $forumManager = new ForumManager();
     $forumManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
     
-    header('Location: index.php?action=displayForumTopics&idForum=' . $forumId);
+    header('Location: index.php?action=displayForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
 // Enregistrer message réponse d'un topic

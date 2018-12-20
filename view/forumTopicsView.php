@@ -6,7 +6,7 @@
 <section id="forum">
 
     <div>
-        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="#"><?= $forumIdCat['categories'] ?></a>
+        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="#"><?= $forumCat ?></a>
     </div>
     
     <div>
@@ -15,7 +15,7 @@
         if (isset($_SESSION['pseudo'])) {
         ?>
         
-            <p><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumIdCat['id'] ?>">Créer un sujet</a></p>
+            <p><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Créer un sujet</a></p>
         
         <?php
         } else {
