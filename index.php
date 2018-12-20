@@ -181,6 +181,14 @@ try {
             } else {
                 throw new Exception('Aucun pseudo envoyé.');
             }
+        
+        // Afficher la page Gérer
+        } elseif ($_GET['action'] == 'displayAdminHome') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayAdminHome();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
