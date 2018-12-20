@@ -220,7 +220,8 @@ function reportTopicMessage($messageId, $topicId)
     $forumManager = new ForumManager();
     $forumManager->editReport($messageId);
     
-    header('Location: index.php?action=displayTopicMessages&idTopic=' . $topicId);
+    $actualizeMessages = updateMessages($topicId);
+    echo $actualizeMessages;
 }
 
 ?>
