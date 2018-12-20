@@ -11,6 +11,17 @@
         ?>
             
             <li><a href="index.php?action=displayAccount" id="display-account">Mon compte</a></li>
+            
+            <?php
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+            ?>
+        
+                <li><a href="">Gérer</a></li>
+            
+            <?php
+            }
+            ?>
+        
             <li><a href="index.php?action=logoutAccount" id="logout">Se déconnecter</a></li>
 
         <?php
