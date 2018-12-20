@@ -146,12 +146,12 @@ function displayForumTopics($forumId, $forumCat)
 }
 
 // Afficher la page du sujet et ses messages
-function displayTopicMessages($topicId)
+function displayTopicMessages($forumId, $forumCat, $topicId)
 {
     $forumManager = new ForumManager();
     $topicMessages = $forumManager->getTopicMessages($topicId);
     
-    $infoForumTopic = $forumManager->getInfoForumTopic($topicId);
+    $infoTopic = $forumManager->getInfoTopic($topicId);
     
     require_once('view/topicView.php');
 }
