@@ -16,7 +16,7 @@
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
             ?>
         
-                <li><a href="">Gérer</a></li>
+                <li><a href="index.php?action=displayAdminHome">Gérer</a></li>
             
             <?php
             }
