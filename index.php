@@ -182,7 +182,7 @@ try {
                 throw new Exception('Aucun pseudo envoyé.');
             }
         
-        // Afficher la page Gérer
+        // Afficher la page Gérer (Partie administration)
         } elseif ($_GET['action'] == 'displayAdminHome') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminHome();
