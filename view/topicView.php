@@ -6,21 +6,12 @@
 <section id="topic">
 
     <div>
-        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="index.php?action=displayForumTopics&amp;idForum=<?= $infoForumTopic['forumID'] ?>&amp;catForum=<?= $infoForumTopic['forumCat'] ?>"><?= $infoForumTopic['forumCat'] ?></a><span>/</span><a href="#"><?= $infoForumTopic['topicTitle'] ?></a>
+        <p><a href="index.php?action=displayForums">Forum</a><span>/</span><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>"><?= $forumCat ?></a><span>/</span><?= $infoTopic['topicTitle'] ?></p>
     </div>
     
     <div>
         <div>
-            <div>
-                <div>
-                    <img src="images/avatars/<?= $infoForumTopic['avatar'] ?>" />
-                    <p>Inscrit le <?= $infoForumTopic['userDate'] ?></p>
-                </div>
-            </div>
-            <div>
-                <p>Le <?= $infoForumTopic['topicDate'] ?></p>
-                <p><?= $infoForumTopic['message'] ?></p>
-            </div>
+            <p><?= $infoTopic['topicTitle'] ?></p><em>Créé le <?= $infoTopic['topicDate'] ?></em>
         </div>
         
         <div id="all-messages-topic">
@@ -55,7 +46,7 @@
     if (isset($_SESSION['pseudo'])) {
     ?>
     <div>
-        <form class="form-tiny-mce" action="index.php?action=replyToMessage&amp;idForum=<?= $infoForumTopic['forumID'] ?>&amp;idTopic=<?= $infoForumTopic['topicID'] ?>" method="post" id="form-reply-to-message">
+        <form class="form-tiny-mce" action="index.php?action=replyToMessage&amp;idForum=<?= $forumId ?>&amp;idTopic=<?= $topicId ?>" method="post" id="form-reply-to-message">
 
             <label for="reply-to-message">Laisser un message</label>
             <textarea id="reply-to-message" name="reply-to-message"></textarea>
