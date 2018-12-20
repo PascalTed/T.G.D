@@ -26,16 +26,16 @@ class ForumManager extends Manager
     public function getTopicMessages($topicId)
     {
         $db = $this->dbConnect();
-        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, moderation, DATE_FORMAT(message_date, \'%d/%m/%Y à %Hh%imin%ss\') message_date, pseudo, avatar FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ? AND topics_messages.id > (SELECT topics_messages.id FROM topics_messages WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC LIMIT 1) ORDER BY topics_messages.id ASC');
+        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, moderation, DATE_FORMAT(message_date, \'%d/%m/%Y à %Hh%imin%ss\') message_date, pseudo, avatar, DATE_FORMAT(registration_date, \'%d/%m/%Y à %Hh%imin%ss\') registration_date FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC');
         
-        $topicMessages->execute(array($topicId, $topicId));
+        $topicMessages->execute(array($topicId));
         return $topicMessages;
     }
     
-    public function getInfoForumTopic($topicId)
+    public function getInfoTopic($topicId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT forums.id forumID, forums.categories forumCat, topics.id topicID, topics.title topicTitle, message, moderation, DATE_FORMAT(message_date, \'%d/%m/%Y à %Hh%imin%ss\') message_date, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topicDate, users.pseudo, users.avatar, DATE_FORMAT(users.registration_date, \'%d/%m/%Y à %Hh%imin%ss\') userDate FROM forums INNER JOIN topics ON forums.id = topics.forum_id INNER JOIN users ON topics.user_id = users.id INNER JOIN (SELECT topics_messages.topic_id, topics_messages.message, topics_messages.moderation, topics_messages.message_date FROM topics_messages WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC LIMIT 1) t1 ON t1.topic_id = topics.id');
+        $req = $db->prepare('SELECT topics.title topicTitle, DATE_FORMAT(topics.creation_date, \'%d/%m/%Y à %Hh%imin%ss\') topicDate FROM topics WHERE topics.id = ?');
         
         $req->execute(array($topicId));
         $forumTopics = $req->fetch();
