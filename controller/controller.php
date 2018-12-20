@@ -182,6 +182,14 @@ function replyToMessage($userId, $message, $forumId, $topicId)
     $forumManager = new ForumManager();
     $forumManager->editMessage($userId, $message, $forumId, $topicId);
     
+    $actualizeMessages = updateMessages($topicId);
+    echo $actualizeMessages;
+}
+
+// Mettre à jour la liste des messages d'un topic
+function updateMessages($topicId)    
+{
+    $forumManager = new ForumManager();
     $topicMessages = $forumManager->getTopicMessages($topicId);
     
     while ($topic = $topicMessages->fetch()) {
