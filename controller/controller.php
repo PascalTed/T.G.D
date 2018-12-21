@@ -244,4 +244,23 @@ function addForumCat($userId, $forumCat)
     
     header('Location: index.php?action=displayAdminForums');
 }
+
+// Modifier une catégorie forum (administration)
+function modifyForumCat($userId, $forumCat)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->updateForumCat($userId, $forumCat);
+    
+    header('Location: index.php?action=displayAdminForums');
+}
+
+// Supprimer une catégorie forum (administration)
+function deleteForumCat($forumId)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->removeForumCat($forumId);
+    
+    header('Location: index.php?action=displayAdminForums');
+}
+
 ?>
