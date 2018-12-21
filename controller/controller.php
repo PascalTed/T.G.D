@@ -236,7 +236,7 @@ function displayAdminForums()
     require_once('view/adminForumsView.php');
 }
 
-// Ajouter une nouvelle catégorie forum
+// Ajouter une nouvelle catégorie forum (administration)
 function addForumCat($userId, $forumCat)
 {
     $adminForumManager = new AdminForumManager();
