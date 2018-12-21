@@ -216,7 +216,7 @@ try {
                 if (isset($_POST['setForum'])) {
                     switch ($_POST['setForum']) {
                         case 'modify-forum-cat':
-                            modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum']);
+                            modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum'], $_GET['idForum']);
                             break;
                         case 'delete-forum-cat':
                             deleteForumCat($_GET['idForum']);
