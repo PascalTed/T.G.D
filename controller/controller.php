@@ -219,11 +219,17 @@ function reportTopicMessage($messageId, $topicId)
     echo $actualizeMessages;
 }
 
-// Afficher la page Gérer (Partie administration)
+// Afficher la page accueil (administration)
 function displayAdminHome()
 {
     $messages = getAllmessages();
     require_once('view/adminHomeView.php');
+}
+
+// Afficher la page forums (administration)
+function displayAdminForums()
+{
+    require_once('view/adminForumsView.php');
 }
 
 ?>
