@@ -43,7 +43,7 @@
         ?>
         
         <div id="add-forum-content">
-            <form action="index.php?action=addForumCat" id="form-add-forum">
+            <form action="index.php?action=addForumCat" method="post" id="form-add-forum">
                 <label for="add-forum">Ajouter un forum</label><br />
                 <textarea type="text" id="add-forum" name="add-forum"></textarea>
                 <p class="message-required">Le champ message n'est pas rempli.</p>
