@@ -18,24 +18,9 @@
 
         <div>
             <ul>
-                <li><i class="fas fa-cogs"></i>Forums
-                    <ul>
-                        <li><a href="index.php?action=displayAdminForums">Ajouter ou supprimer un forum</a></li>
-                        <li><a href="">Supprimer un sujet</a></li>
-                        <li><a href="">Supprimer un commentaire</a></li>
-                    </ul>
-                </li>
-
-                <li><i class="fas fa-cogs"></i>Nos jeux
-                    <ul>
-                        <li><a href="">Ajouter ou supprimer un jeu</a></li>
-                    </ul>
-                </li>
-                <li><i class="fas fa-cogs"></i>Compte
-                    <ul>
-                        <li><a href="">Modifier les droits utilisateur</a></li>
-                    </ul>
-                </li>
+                <li><a href="index.php?action=displayAdminForums"><i class="fas fa-cogs"></i>Forums</a></li>
+                <li><a href=""><i class="fas fa-cogs"></i>Nos jeux</a></li>
+                <li><a href=""><i class="fas fa-cogs"></i>Compte</a></li>
             </ul>
         </div>
     </div>
