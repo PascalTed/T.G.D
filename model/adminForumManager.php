@@ -27,6 +27,22 @@ class AdminForumManager extends Manager
         $req = $db->prepare('DELETE FROM forums WHERE id = ?');
         $req->execute(array($forumId));
     }
+    
+    public function deleteTopicsOfForum($forumId)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('DELETE FROM topics WHERE forum_id = ?');
+        $req->execute(array($forumId));
+    }
+    
+    public function deleteMessagesOfForum($forumId)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('DELETE FROM topics_messages WHERE forum_id = ?');
+        $req->execute(array($forumId));
+    }
 }
 
 ?>
