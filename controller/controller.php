@@ -259,6 +259,10 @@ function removeForumCat($forumId)
 {
     $adminForumManager = new AdminForumManager();
     $adminForumManager->deleteForumCat($forumId);
+
+    $adminForumManager->deleteTopicsOfForum($forumId);
+
+    $adminForumManager->deleteMessagesOfForum($forumId)
     
     header('Location: index.php?action=displayAdminForums');
 }
