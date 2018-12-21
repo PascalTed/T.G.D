@@ -5,6 +5,7 @@ require_once('model/AccountManager.php');
 require_once('model/InstantMessageManager.php');
 require_once('model/GameManager.php');
 require_once('model/ForumManager.php');
+require_once('model/AdminForumManager.php');
 
 // Affiche la page d'accueil
 function home()
@@ -236,11 +237,11 @@ function displayAdminForums()
 }
 
 // Ajouter une nouvelle catégorie forum
-function addForumCat($userID, $forumCat)
+function addForumCat($userId, $forumCat)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->editForumCat($userID, $forumCat);
+    $adminForumManager->editForumCat($userId, $forumCat);
     
-    header('Location: view/adminForumsView.php');
+    header('Location: index.php?action=displayAdminForums');
 }
 ?>
