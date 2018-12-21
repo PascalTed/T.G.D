@@ -222,6 +222,7 @@ function reportTopicMessage($messageId, $topicId)
 // Afficher la page Gérer (Partie administration)
 function displayAdminHome()
 {
+    $messages = getAllmessages();
     require_once('view/adminHomeView.php');
 }
 
