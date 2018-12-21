@@ -189,10 +189,23 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
         // Afficher la page forums (administration)
         } elseif ($_GET['action'] == 'displayAdminForums') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminForums();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
+         
+            
+        } elseif ($_GET['action'] == 'addForumCat') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_GET['add-forum']) {
+                    addForumCat($_SESSION['id'], $_GET['add-forum'])
+                } else {
+                    throw new Exception('Aucune nouvelle catégorie de forum envoyée.');
+                }
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
