@@ -229,6 +229,9 @@ function displayAdminHome()
 // Afficher la page forums (administration)
 function displayAdminForums()
 {
+    $forumManager = new ForumManager();
+    $forums = $forumManager->getForums();
+    
     require_once('view/adminForumsView.php');
 }
 
