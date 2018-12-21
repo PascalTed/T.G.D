@@ -22,7 +22,7 @@
                     <div><?= $forum['nb_topics'] ?> sujets</div>
                 </div>
                         
-                <form action="" class="form-edit-forum">
+                <form action="index.php?action=modifyOrDeleteForum" class="form-edit-forum" method="post">
                     <label>Modifier le nom du forum<br />
                         <textarea class="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forum['categories']); ?></textarea>
                     </label>
