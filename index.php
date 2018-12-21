@@ -218,7 +218,7 @@ try {
                         case 'modify-forum-cat':
                             modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum'], $_GET['idForum']);
                             break;
-                        case 'delete-forum-cat':
+                        case 'remove-forum-cat':
                             removeForumCat($_GET['idForum']);
                             break;
                         default: 'ce choix n\'existe pas';
