@@ -201,8 +201,8 @@ try {
         // Ajouter une nouvelle catégorie forum   
         } elseif ($_GET['action'] == 'addForumCat') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                if (isset($_GET['add-forum'])) {
-                    addForumCat($_SESSION['id'], $_GET['add-forum']);
+                if (isset($_POST['add-forum'])) {
+                    addForumCat($_SESSION['id'], $_POST['add-forum']);
                 } else {
                     throw new Exception('Aucune nouvelle catégorie de forum envoyée.');
                 }
