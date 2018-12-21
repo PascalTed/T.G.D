@@ -211,7 +211,7 @@ try {
             }
         
         // Modifier ou supprimer une catégorie forum (administration)
-        } elseif ($_GET['action'] == 'modifyOrDeleteForum') {
+        } elseif ($_GET['action'] == 'modifyOrRemoveForum') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_POST['setForum'])) {
                     switch ($_POST['setForum']) {
@@ -219,7 +219,7 @@ try {
                             modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum'], $_GET['idForum']);
                             break;
                         case 'delete-forum-cat':
-                            deleteForumCat($_GET['idForum']);
+                            removeForumCat($_GET['idForum']);
                             break;
                         default: 'ce choix n\'existe pas';
                     }
