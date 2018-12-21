@@ -219,7 +219,7 @@ try {
                             modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum']);
                             break;
                         case 'delete-forum-cat':
-                            deleteForumCat($_GET['setForum']);
+                            deleteForumCat($_GET['idForum']);
                             break;
                         default: 'ce choix n\'existe pas';
                     }
