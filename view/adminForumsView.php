@@ -22,7 +22,7 @@
                     <div><?= $forum['nb_topics'] ?> sujets</div>
                 </div>
                         
-                <form action="index.php?action=modifyOrDeleteForum&amp;idForum=<?= $forum['id'] ?>" class="form-edit-forum" method="post">
+                <form action="index.php?action=modifyOrRemoveForum&amp;idForum=<?= $forum['id'] ?>" class="form-edit-forum" method="post">
                     <label>Modifier le nom du forum<br />
                         <textarea class="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forum['categories']); ?></textarea>
                     </label>
@@ -31,7 +31,7 @@
                     <div class="forum-radio">
                         <label><input type="radio" name="setForum" value="modify-forum-cat" class="adm-modify-forum" checked />Modifier le nom du forum</label>
             
-                        <label><input type="radio" name="setForum" value="delete-forum-cat" class="adm-remove-forum" />Supprimer le forum</label><br />
+                        <label><input type="radio" name="setForum" value="remove-forum-cat" class="adm-remove-forum" />Supprimer le forum</label><br />
                     </div>
             
                     <input type="submit" value="Envoyer" />
