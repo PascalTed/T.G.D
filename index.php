@@ -209,6 +209,26 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+        
+        // Modifier ou supprimer une catégorie forum (administration)
+        } elseif ($_GET['action'] == 'modifyOrDeleteForum') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_POST['setForum'])) {
+                    switch ($_POST['setForum']) {
+                        case 'modify-forum-cat':
+                            modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum']);
+                            break;
+                        case 'delete-forum-cat':
+                            deleteForumCat($_GET['setForum']);
+                            break;
+                        default: 'ce choix n\'existe pas';
+                    }
+                } else {
+                    throw new Exception('le choix modifier ou supprimer un forum n\'a pas été envoyé');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
