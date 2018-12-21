@@ -5,7 +5,7 @@
 
 <section id="create-topic">
     
-    <div><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>">Forum <?= $forumCat ?></a>
+    <div><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Forum <?= $forumCat ?></a>
     </div>
     
     <div>
