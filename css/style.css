@@ -438,12 +438,12 @@ section
 }
 /* Fin page topic */
 /* Début page forums */
-#forums-categories .forum-categorie:nth-child(odd)
+#forums-content .forum-categorie:nth-child(odd)
 {
     background-color: gray; 
 }
 
-#forums-categories .forum-categorie:nth-child(even)
+#forums-content .forum-categorie:nth-child(even)
 {
     background-color: cornflowerblue; 
 }

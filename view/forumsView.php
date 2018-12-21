@@ -9,7 +9,7 @@
         <h1 id="forums-title">Forums</h1>
     </div>
     
-    <div id="forums-categories">
+    <div id="forums-content">
         
         <?php    
         while ($forum = $forums->fetch()) {
