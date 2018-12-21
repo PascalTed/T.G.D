@@ -3,7 +3,7 @@
 <nav id="header-menu">
     <ul>
         <li><a href="index.php">Accueil</a></li>
-        <li><a href="index.php?action=displayForums">Forum</a></li>
+        <li><a href="index.php?action=displayForums">Forums</a></li>
         <li><a href="index.php?action=displayListGames">Nos jeux</a></li>
         
         <?php
@@ -16,7 +16,7 @@
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
             ?>
         
-                <li><a href="index.php?action=displayAdminHome">Gérer</a></li>
+                <li><a href="index.php?action=displayAdminHome"><i class="fas fa-cogs"></i> Administrer</a></li>
             
             <?php
             }
