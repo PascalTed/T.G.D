@@ -246,10 +246,10 @@ function addForumCat($userId, $forumCat)
 }
 
 // Modifier une catégorie forum (administration)
-function modifyForumCat($userId, $forumCat)
+function modifyForumCat($userId, $forumCat, $forumId)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->updateForumCat($userId, $forumCat);
+    $adminForumManager->updateForumCat($userId, $forumCat, $forumId);
     
     header('Location: index.php?action=displayAdminForums');
 }
