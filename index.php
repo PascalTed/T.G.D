@@ -198,7 +198,7 @@ try {
                 throw new Exception('Aucun droit envoyé.');
             }
          
-            
+        // Ajouter une nouvelle catégorie forum   
         } elseif ($_GET['action'] == 'addForumCat') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['add-forum']) {
