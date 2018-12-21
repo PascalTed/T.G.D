@@ -182,10 +182,17 @@ try {
                 throw new Exception('Aucun pseudo envoyé.');
             }
         
-        // Afficher la page Gérer (Partie administration)
+        // Afficher la page accueil (administration)
         } elseif ($_GET['action'] == 'displayAdminHome') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminHome();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
+        // Afficher la page forums (administration)
+        } elseif ($_GET['action'] == 'displayAdminForums') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayAdminForums();
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
