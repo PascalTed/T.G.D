@@ -31,7 +31,7 @@
                     <div class="forum-radio">
                         <label><input type="radio" name="setForum" value="modify-forum-cat" class="adm-modify-forum" checked />Modifier le nom du forum</label>
             
-                        <label><input type="radio" name="setForum" value="remove-forum-cat" class="adm-remove-forum" />Supprimer le forum</label><br />
+                        <label><input type="radio" name="setForum" value="delete-forum-cat" class="adm-remove-forum" />Supprimer le forum</label><br />
                     </div>
             
                     <input type="submit" value="Envoyer" />
