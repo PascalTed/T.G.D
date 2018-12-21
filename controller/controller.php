@@ -255,10 +255,10 @@ function modifyForumCat($userId, $forumCat, $forumId)
 }
 
 // Supprimer une catégorie forum (administration)
-function deleteForumCat($forumId)
+function removeForumCat($forumId)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->removeForumCat($forumId);
+    $adminForumManager->deleteForumCat($forumId);
     
     header('Location: index.php?action=displayAdminForums');
 }
