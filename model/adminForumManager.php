@@ -19,6 +19,14 @@ class AdminForumManager extends Manager
         $req = $db->prepare('UPDATE forums SET user_id = ?, categories = ? WHERE id = ?');
         $req->execute(array($userId, $forumCat, $forumId));
     }
+    
+    public function deleteForumCat($forumId)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('DELETE FROM forums WHERE id = ?');
+        $req->execute(array($forumId));
+    }
 }
 
 ?>
