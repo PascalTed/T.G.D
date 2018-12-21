@@ -235,4 +235,12 @@ function displayAdminForums()
     require_once('view/adminForumsView.php');
 }
 
+// Ajouter une nouvelle catégorie forum
+function addForumCat($userID, $forumCat)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->editForumCat($userID, $forumCat);
+    
+    header('Location: view/adminForumsView.php');
+}
 ?>
