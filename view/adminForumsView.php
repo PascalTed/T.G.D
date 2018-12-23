@@ -26,7 +26,7 @@
                     <label>Modifier le nom du forum<br />
                         <textarea class="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forum['categories']); ?></textarea>
                     </label>
-     
+                    <span class="forum-exist">Ce forum existe déjà.</span>
                     <div class="forum-radio">
                         <label><input type="radio" name="setForum" value="modify-forum-cat" class="adm-modify-forum" checked />Modifier le nom du forum</label>
             
@@ -45,6 +45,7 @@
             <form action="index.php?action=addForumCat" method="post" id="form-add-forum">
                 <label for="add-forum">Ajouter un forum</label><br />
                 <textarea type="text" id="add-forum" name="add-forum"></textarea>
+                <span id="forum-exist">Ce forum existe déjà.</span>
                 <span id="forum-required">Le champ message n'est pas rempli.</span>
                 <input type="submit" value="Envoyer" />
             </form>
