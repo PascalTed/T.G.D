@@ -43,6 +43,19 @@ class AdminForumManager extends Manager
         $req = $db->prepare('DELETE FROM topics_messages WHERE forum_id = ?');
         $req->execute(array($forumId));
     }
+    
+    public function searchForumCat($forumCat)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('SELECT categories FROM forums WHERE categories = ?');
+        $req->execute(array($forumCat));
+        $existingForumCat = $req->fetch();
+        
+        if ($existingForumCat['categories']) {
+            echo "existForum";
+        }
+    }
 }
 
 ?>
