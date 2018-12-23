@@ -229,6 +229,18 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+        
+        // Vérifier si la catégorie d'un forum existe déjà avant la modification de celui-ci, Venant d'un ajaxpost (administration)
+        } elseif ($_GET['action'] == 'verifyForum') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_POST['catForum'])) {
+                        verifyForum($_POST['catForum']);
+                } else {
+                    throw new Exception('Aucune catégorie forum envoyée.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
