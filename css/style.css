@@ -480,6 +480,12 @@ section
 /* Début page forumTopics
 
 /* Fin page forumTopics
+/* Début page forums administrateur */
+#admin-forums .forum-exist
+{
+    display: none;
+}
+/* Fin page forums administrateur */
 /* Fin section */
 
 /* Début media queries */
