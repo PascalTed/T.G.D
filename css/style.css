@@ -481,7 +481,7 @@ section
 
 /* Fin page forumTopics
 /* Début page forums administrateur */
-#admin-forums .forum-exist
+#admin-forums .forum-exist, #forum-exist, #forum-required
 {
     display: none;
 }
