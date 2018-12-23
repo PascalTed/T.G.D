@@ -441,4 +441,47 @@ if (allMessagesTopic !== null) {
         } 
     });
 }
+
+// Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification. Pour une suppression il n'y a pas de vérification
+var forumExist = document.getElementsByClassName("forum-exist");
+var adminForumsContent = document.getElementById("admin-forums-content");
+
+if (adminForumsContent !== null) {
+    // Délégation d'évènement
+    adminForumsContent.addEventListener("submit", function (e) {
+        console.log(e.target);
+        e.preventDefault();
+        if (e.target.className === "form-edit-forum" && e.target.querySelector(".adm-modify-forum").checked) {
+            console.log(e.target.querySelector(".adm-modify-forum").checked);
+            var textareaCatForum = e.target.querySelector(".textarea-cat-forum").value;
+ 
+            console.log(textareaCatForum);
+            var dataSend = 'catForum='+ encodeURIComponent(textareaCatForum);
+            var ajaxPostVerifyForum = Object.create(AjaxPost);
+
+            ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
+                console.log(e.target);
+
+                if (reponse === "existForum") {
+                    e.target.querySelector(".forum-exist").style.display = "block";
+                } else {
+                    e.target.submit();
+                }
+              
+            });
+            ajaxPostVerifyForum.executer();
+            
+        } else {
+            e.target.submit();
+        }
+    })
+    // Délégation d'évènement
+    adminForumsContent.addEventListener("click", function (e) {
+        if (e.target.className === "textarea-cat-forum") {
+            for (var i = 0; i < forumExist.length; i++) {        
+                forumExist[i].style.display = "none";
+            }
+        }
+    });
+}
 // Fin page topic
