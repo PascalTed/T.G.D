@@ -26,7 +26,6 @@
                     <label>Modifier le nom du forum<br />
                         <textarea class="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forum['categories']); ?></textarea>
                     </label>
-                    <p class="message-required">Le champ message n'est pas rempli.</p>
      
                     <div class="forum-radio">
                         <label><input type="radio" name="setForum" value="modify-forum-cat" class="adm-modify-forum" checked />Modifier le nom du forum</label>
@@ -46,7 +45,7 @@
             <form action="index.php?action=addForumCat" method="post" id="form-add-forum">
                 <label for="add-forum">Ajouter un forum</label><br />
                 <textarea type="text" id="add-forum" name="add-forum"></textarea>
-                <p class="message-required">Le champ message n'est pas rempli.</p>
+                <span id="forum-message-required">Le champ message n'est pas rempli.</span>
                 <input type="submit" value="Envoyer" />
             </form>
         </div>
