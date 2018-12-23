@@ -48,11 +48,11 @@ class AdminForumManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $req = $db->prepare('SELECT categories FROM forums WHERE categories = ?');
+        $req = $db->prepare('SELECT id FROM forums WHERE categories = ?');
         $req->execute(array($forumCat));
         $existingForumCat = $req->fetch();
         
-        if ($existingForumCat['categories']) {
+        if ($existingForumCat['id']) {
             echo "existForum";
         }
     }
