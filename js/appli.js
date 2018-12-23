@@ -318,14 +318,14 @@ if (formAddMessage !== null) {
             ajaxPostMessage.executer();
         }
     });
-}
 
-// Ajaxpost pour récupérer les messages ajoutés
-var allMessages = document.getElementById("all-messages");
-var noneInstantMessage = document.getElementById("none-instant-message");
-var firstMessageId;
 
-if (formAddMessage !== null) {
+    // Ajaxpost pour récupérer les messages ajoutés
+    var allMessages = document.getElementById("all-messages");
+    var noneInstantMessage = document.getElementById("none-instant-message");
+    var firstMessageId;
+
+
     if (document.querySelector("#all-messages > div") === null) {
         noneInstantMessage.style.display = "block";
         firstMessageId = 0;
@@ -334,6 +334,9 @@ if (formAddMessage !== null) {
 
         if (document.querySelector("#all-messages > div") !== null) {
             firstMessageId = document.querySelector("#all-messages > div").id;
+            // Supprimer "message" de firstMessageId, on récupère juste le numéro du message 
+            var regexIdMessage = "message";
+            firstMessageId = firstMessageId.replace(regexIdMessage, '');
         }
 
         var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
