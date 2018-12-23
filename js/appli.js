@@ -335,7 +335,7 @@ if (formAddMessage !== null) {
         if (document.querySelector("#all-messages > div") !== null) {
             firstMessageId = document.querySelector("#all-messages > div").id;
             // Supprimer "message" de firstMessageId, on récupère juste le numéro du message 
-            var regexIdMessage = "message";
+            var regexIdMessage = "message-";
             firstMessageId = firstMessageId.replace(regexIdMessage, '');
         }
 
