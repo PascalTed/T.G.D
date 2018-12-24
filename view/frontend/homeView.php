@@ -1,6 +1,6 @@
-<?php require_once('menuView.php'); ?>
-<?php require_once('toLoginView.php'); ?>
-<?php require_once('instantMessagesView.php'); ?>
+<?php require_once('view/frontend/menuView.php'); ?>
+<?php require_once('view/frontend/view/frontend/toLoginView.php'); ?>
+<?php require_once('view/frontend/instantMessagesView.php'); ?>
 
 <?php ob_start(); ?>
 
@@ -19,4 +19,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('view/frontend/template.php'); ?>
