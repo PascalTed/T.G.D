@@ -1,11 +1,9 @@
 <?php
 
 // Chargement des classes
-require_once('model/frontend/AccountManager.php');
-require_once('model/frontend/InstantMessageManager.php');
-require_once('model/frontend/GameManager.php');
-require_once('model/frontend/ForumManager.php');
+
 require_once('model/backend/AdminForumManager.php');
+require_once('controller/frontend.php');
 
 // Afficher la page accueil (administration)
 function displayAdminHome()
