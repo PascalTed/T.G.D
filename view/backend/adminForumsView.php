@@ -1,5 +1,5 @@
-<?php require_once('adminMenuView.php'); ?>
-<?php require_once('toLoginView.php'); ?>
+<?php require_once('view/backend/adminMenuView.php'); ?>
+<?php require_once('view/frontend/toLoginView.php'); ?>
 
 <?php ob_start(); ?>
 
@@ -56,4 +56,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('view/frontend/template.php'); ?>
