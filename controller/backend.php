@@ -9,7 +9,7 @@ require_once('controller/frontend.php');
 function displayAdminHome()
 {
     $messages = getAllmessages();
-    require_once('view/adminHomeView.php');
+    require_once('view/backend/adminHomeView.php');
 }
 
 // Afficher la page forums (administration)
@@ -18,7 +18,7 @@ function displayAdminForums()
     $forumManager = new ForumManager();
     $forums = $forumManager->getForums();
     
-    require_once('view/adminForumsView.php');
+    require_once('view/backend/adminForumsView.php');
 }
 
 // Ajouter une nouvelle catégorie forum (administration)
