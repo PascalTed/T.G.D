@@ -1,6 +1,6 @@
 <?php
 
-require_once("model/Manager.php");
+require_once("model/frontend/Manager.php");
 
 class AdminForumManager extends Manager
 {
