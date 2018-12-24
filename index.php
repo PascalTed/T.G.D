@@ -2,7 +2,8 @@
 
 session_start();
 
-require_once('controller/controller.php');
+require_once('controller/frontend.php');
+require_once('controller/backend.php');
 
 try {
     if (isset($_GET['action'])) {
