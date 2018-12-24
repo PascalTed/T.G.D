@@ -1,24 +1,23 @@
 <?php
 
 // Chargement des classes
-require_once('model/AccountManager.php');
-require_once('model/InstantMessageManager.php');
-require_once('model/GameManager.php');
-require_once('model/ForumManager.php');
-require_once('model/AdminForumManager.php');
+require_once('model/frontend/AccountManager.php');
+require_once('model/frontend/InstantMessageManager.php');
+require_once('model/frontend/GameManager.php');
+require_once('model/frontend/ForumManager.php');
 
 // Affiche la page d'accueil
 function home()
 {
     $messages = getAllmessages();
     
-    require_once('view/homeView.php');
+    require_once('view/frontend/homeView.php');
 }
 
 // Affiche création d'un compte
 function displayCreateAccount()
 {
-    require_once('view/registerAccountView.php');
+    require_once('view/frontend/registerAccountView.php');
 }
 
 // Vérification des informations saisies (pseudo et email), venant d'un ajaxpost, avant de créer un compte. 
@@ -62,7 +61,7 @@ function verifPseudoPass($pseudo, $pass)
 // Affiche mon compte
 function displayAccount()
 {
-    require_once('view/accountView.php');
+    require_once('view/frontend/accountView.php');
 }
 
 // se déconnecter
@@ -116,7 +115,7 @@ function displayListGames()
     $gameManager = new GameManager();
     $games = $gameManager->getListGames();
     
-    require_once('view/listGamesView.php');
+    require_once('view/frontend/listGamesView.php');
 }
 
 // Afficher la page du jeu
@@ -125,7 +124,7 @@ function displayGame($gameId)
     $gameManager = new GameManager();
     $game = $gameManager->getGame($gameId);
     
-    require_once('view/GameView.php');
+    require_once('view/frontend/GameView.php');
 }
 
 // Afficher la page des forums
@@ -134,7 +133,7 @@ function displayForums()
     $forumManager = new ForumManager();
     $forums = $forumManager->getForums();
     
-    require_once('view/forumsView.php');
+    require_once('view/frontend/forumsView.php');
 }
 
 // Afficher la page du forum et ses sujets
@@ -143,7 +142,7 @@ function displayForumTopics($forumId, $forumCat)
     $forumManager = new ForumManager();
     $topics = $forumManager->getTopics($forumId);
     
-    require_once('view/forumTopicsView.php');
+    require_once('view/frontend/forumTopicsView.php');
 }
 
 // Afficher la page du sujet et ses messages
@@ -154,13 +153,13 @@ function displayTopicMessages($forumId, $forumCat, $topicId)
     
     $infoTopic = $forumManager->getInfoTopic($topicId);
     
-    require_once('view/topicView.php');
+    require_once('view/frontend/topicView.php');
 }
 
 // Afficher la page créer un sujet
 function displayCreateTopic($forumId, $forumCat)
 {
-    require_once('view/createTopicView.php');
+    require_once('view/frontend/createTopicView.php');
 }
 
 // Enregistrement du nouveau sujet
