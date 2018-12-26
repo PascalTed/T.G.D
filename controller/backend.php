@@ -80,14 +80,22 @@ function displayAdminTopic($forumId, $forumCat, $topicId)
     require_once('view/backend/adminTopicView.php');
 }
 
-function modifyTopic($userId, $titleTopic)
+function modifyTopic($userId, $titleTopic, $topicId)
 {
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->updateTopic($userId, $titleTopic, $topicId);
     
+    header('Location: index.php?action=displayAdminForumTopics');
 }
 
 function removeTopic($topicId)
 {
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->deleteTopic($topicId);
+
+    $adminForumManager->deleteMessagesOfTopic($topicId);
     
+    header('Location: index.php?action=displayAdminForumTopics');
 }
 
 ?>
