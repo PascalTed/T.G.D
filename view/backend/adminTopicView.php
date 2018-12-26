@@ -9,7 +9,7 @@
         <p><a href="index.php?action=displayAdminForums">Forum</a><span>/</span><a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>"><?= $forumCat ?></a><span>/</span><?= $infoTopic['topicTitle'] ?></p>
     </div>
     
-    <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>" id="form-edit-topic" method="post">
+    <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" id="form-edit-topic" method="post">
         <label for="textarea-edit-topic">Modifier le nom du topic</label><br />
         <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= strip_tags($infoTopic['topicTitle']); ?></textarea>
         <span id="topic-exist">Ce forum existe déjà.</span>
