@@ -70,4 +70,14 @@ function displayAdminForumTopics($forumId, $forumCat)
     require_once('view/backend/adminForumTopicsView.php');
 }
 
+function displayAdminTopic($forumId, $forumCat, $topicId)
+{
+    $forumManager = new ForumManager();
+    $topicMessages = $forumManager->getTopicMessages($topicId);
+    
+    $infoTopic = $forumManager->getInfoTopic($topicId);
+    
+    require_once('view/backend/adminTopicView.php');
+}
+
 ?>
