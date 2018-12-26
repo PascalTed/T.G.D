@@ -65,6 +65,14 @@ class AdminForumManager extends Manager
         $req = $db->prepare('UPDATE topics SET user_id_update = ?, title = ?, update_date = NOW() WHERE id = ?');
         $req->execute(array($userId, $titleTopic, $topicId));
     }
+    
+    public function deleteTopic($topicId)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('DELETE FROM topics WHERE id = ?');
+        $req->execute(array($topicId));
+    }
 }
 
 ?>
