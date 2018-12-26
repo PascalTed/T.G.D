@@ -265,6 +265,26 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Modifier ou supprimer un topic (administration)
+        } elseif ($_GET['action'] == 'modifyOrRemoveTopic') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_POST['setTopic'])) {
+                    switch ($_POST['setTopic']) {
+                        case 'adm-modify-topic':
+                            modifyTopic($_SESSION['id'], $_POST['textarea-edit-topic'], $_GET['idForum']);
+                            break;
+                        case 'adm-remove-topic':
+                            removeTopic($_GET['idForum']);
+                            break;
+                        default: 'ce choix n\'existe pas';
+                    }
+                } else {
+                    throw new Exception('le choix modifier ou supprimer un topic n\'a pas été envoyé');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
