@@ -61,4 +61,13 @@ function verifyForum($forumCat)
     $adminForumManager->searchForumCat($forumCat);
 }
 
+// Afficher la page du forum et ses sujets (administration)
+function displayAdminForumTopics($forumId, $forumCat)
+{
+    $forumManager = new ForumManager();
+    $topics = $forumManager->getTopics($forumId);
+    
+    require_once('view/backend/adminForumTopicsView.php');
+}
+
 ?>
