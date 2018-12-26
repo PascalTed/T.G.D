@@ -62,7 +62,7 @@ class AdminForumManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $req = $db->prepare('UPDATE topics SET user_id_update = ?, title = ? update_date = NOW() WHERE id = ?')
+        $req = $db->prepare('UPDATE topics SET user_id_update = ?, title = ? update_date = NOW() WHERE id = ?');
         $req->execute(array($userId, $titleTopic, $topicId));
     }
 }
