@@ -254,6 +254,17 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+        // Afficher la page du sujet et ses messages (administration)
+        } elseif ($_GET['action'] == 'displayAdminTopic'){
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['catForum']) && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
+                displayAdminTopic($_GET['idForum'], $_GET['catForum'], $_GET['idTopic']);
+                } else {
+                throw new Exception('Aucun id sujet ou id forum ou catégorie forum envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
