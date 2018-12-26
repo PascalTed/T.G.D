@@ -88,14 +88,14 @@ function modifyTopic($userId, $titleTopic, $topicId, $forumId, $forumCat)
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
-function removeTopic($topicId)
+function removeTopic($topicId, $forumId, $forumCat)
 {
     $adminForumManager = new AdminForumManager();
     $adminForumManager->deleteTopic($topicId);
 
     $adminForumManager->deleteMessagesOfTopic($topicId);
     
-    header('Location: index.php?action=displayAdminForumTopics');
+    header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
 ?>
