@@ -269,18 +269,22 @@ try {
         // Modifier ou supprimer un topic (administration)
         } elseif ($_GET['action'] == 'modifyOrRemoveTopic') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                if (isset($_POST['setTopic'])) {
-                    switch ($_POST['setTopic']) {
-                        case 'adm-modify-topic':
-                            modifyTopic($_SESSION['id'], $_POST['textarea-edit-topic'], $_GET['idTopic']);
-                            break;
-                        case 'adm-remove-topic':
-                            removeTopic($_GET['idTopic']);
-                            break;
-                        default: 'ce choix n\'existe pas';
+                if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['catForum']) && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
+                    if (isset($_POST['setTopic'])) {
+                        switch ($_POST['setTopic']) {
+                            case 'adm-modify-topic':
+                                modifyTopic($_SESSION['id'], $_POST['textarea-edit-topic'], $_GET['idTopic'],  $_GET['idForum'], $_GET['catForum']);
+                                break;
+                            case 'adm-remove-topic':
+                                removeTopic($_GET['idTopic'], $_GET['idForum'], $_GET['catForum']);
+                                break;
+                            default: 'ce choix n\'existe pas';
+                        }
+                    } else {
+                        throw new Exception('le choix modifier ou supprimer un topic n\'a pas été envoyé');
                     }
                 } else {
-                    throw new Exception('le choix modifier ou supprimer un topic n\'a pas été envoyé');
+                throw new Exception('Aucun id sujet ou id forum ou catégorie forum envoyé.');
                 }
             } else {
                 throw new Exception('Aucun droit envoyé.');
