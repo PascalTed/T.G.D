@@ -272,10 +272,10 @@ try {
                 if (isset($_POST['setTopic'])) {
                     switch ($_POST['setTopic']) {
                         case 'adm-modify-topic':
-                            modifyTopic($_SESSION['id'], $_POST['textarea-edit-topic'], $_GET['idForum']);
+                            modifyTopic($_SESSION['id'], $_POST['textarea-edit-topic'], $_GET['idTopic']);
                             break;
                         case 'adm-remove-topic':
-                            removeTopic($_GET['idForum']);
+                            removeTopic($_GET['idTopic']);
                             break;
                         default: 'ce choix n\'existe pas';
                     }
