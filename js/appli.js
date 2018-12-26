@@ -440,69 +440,33 @@ if (allMessagesTopic !== null) {
 // Fin page topic
 
 // Début page forums (administration)
-// Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification ou la création d'un forum. Pour une suppression il n'y a pas de vérification
-var forumExist = document.getElementsByClassName("forum-exist");
-var adminForumsContent = document.getElementById("admin-forums-content");
-var ajaxPostVerifyForum;
+// Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification d'un forum. Pour une suppression il n'y a pas de vérification
+var forumExist = document.getElementById("forum-exist");
+var textareaCatForum = document.getElementById("textarea-cat-forum");
+var admModifyForum = document.getElementById("adm-modify-forum");
+var formEditForum = document.getElementById("form-edit-forum");
 
-if (adminForumsContent !== null) {
-    // Délégation d'évènement
-    adminForumsContent.addEventListener("submit", function (e) {
-        console.log(e.target);
+if (formEditForum !== null) {
+    formEditForum.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (e.target.className === "form-edit-forum" && e.target.querySelector(".adm-modify-forum").checked) {
-            console.log(e.target.querySelector(".adm-modify-forum").checked);
-            var textareaCatForum = e.target.querySelector(".textarea-cat-forum");
- 
-            console.log(textareaCatForum);
+        
+        if (admModifyForum.checked) {
             var dataSend = 'catForum='+ encodeURIComponent(textareaCatForum.value);
             ajaxPostVerifyForum = Object.create(AjaxPost);
 
             ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
-                console.log(e.target);
-
                 if (reponse === "existForum") {
-                    e.target.querySelector(".forum-exist").style.display = "block";
+                    forumExist.style.display = "block";
+                    textareaCatForum.addEventListener("click", function (e) {
+                        forumExist.style.display = "none";
+                    });
                 } else {
-                    e.target.submit();
-                }
-              
-            });
-            ajaxPostVerifyForum.executer();
-            
-        } else if (e.target.id === "form-add-forum") {
-           console.log(e.target.id) ;
-            var addForum = e.target.querySelector("#add-forum");
-            console.log(addForum);
-            var dataSend = 'catForum='+ encodeURIComponent(addForum.value);
-            ajaxPostVerifyForum = Object.create(AjaxPost);
-
-            ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
-                console.log(e.target);
-                if (reponse === "existForum") {
-                    e.target.querySelector("#forum-exist").style.display = "block";
-                } else {
-                    e.target.submit();
+                    formEditForum.submit();
                 }
             });
             ajaxPostVerifyForum.executer();
         } else {
-            e.target.submit();
-        }
-    })
-    // Délégation d'évènement
-    adminForumsContent.addEventListener("click", function (e) {
-        if (e.target.className === "textarea-cat-forum") {
-            for (var i = 0; i < forumExist.length; i++) {        
-                forumExist[i].style.display = "none";
-            }
-            document.getElementById("forum-exist").style.display = "none";
-        }
-        if (e.target.id === "add-forum") {
-            document.getElementById("forum-exist").style.display = "none";
-            for (var i = 0; i < forumExist.length; i++) {        
-                forumExist[i].style.display = "none";
-            }
+            formEditForum.submit();
         }
     });
 }
