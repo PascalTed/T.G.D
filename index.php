@@ -216,10 +216,10 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_POST['setForum'])) {
                     switch ($_POST['setForum']) {
-                        case 'modify-forum-cat':
+                        case 'adm-modify-forum':
                             modifyForumCat($_SESSION['id'], $_POST['textarea-cat-forum'], $_GET['idForum']);
                             break;
-                        case 'remove-forum-cat':
+                        case 'adm-remove-forum':
                             removeForumCat($_GET['idForum']);
                             break;
                         default: 'ce choix n\'existe pas';

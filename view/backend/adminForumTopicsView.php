@@ -15,10 +15,10 @@
         <span id="forum-exist">Ce forum existe déjà.</span>
         <div id="forum-radio">
             <label for ="adm-modify-forum">Modifier le nom du forum</label>
-            <input type="radio" name="setForum" value="modify-forum-cat" id="adm-modify-forum" checked />
+            <input type="radio" name="setForum" value="adm-modify-forum" id="adm-modify-forum" checked />
                 
             <label for ="adm-remove-forum">Supprimer le forum</label>
-            <input type="radio" name="setForum" value="remove-forum-cat" id="adm-remove-forum" />
+            <input type="radio" name="setForum" value="adm-remove-forum" id="adm-remove-forum" />
         </div>
         <input type="submit" value="Envoyer" />
     </form>
