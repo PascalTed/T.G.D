@@ -80,4 +80,14 @@ function displayAdminTopic($forumId, $forumCat, $topicId)
     require_once('view/backend/adminTopicView.php');
 }
 
+function modifyTopic($userId, $titleTopic)
+{
+    
+}
+
+function removeTopic($topicId)
+{
+    
+}
+
 ?>
