@@ -1,6 +1,7 @@
 <?php
+namespace model\frontend;
 
-require_once("model/frontend/Manager.php");
+use model\frontend\Manager;
 
 class GameManager extends Manager
 {

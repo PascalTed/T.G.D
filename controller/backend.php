@@ -1,9 +1,11 @@
 <?php
 
 // Chargement des classes
+require "vendor/autoload.php";
 
-require_once('model/backend/AdminForumManager.php');
-require_once('controller/frontend.php');
+use model\backend\AdminForumManager;
+use model\frontend\InstantMessageManager;
+use model\frontend\ForumManager;
 
 // Afficher la page accueil (administration)
 function displayAdminHome()

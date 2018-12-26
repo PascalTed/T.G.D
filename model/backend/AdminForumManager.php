@@ -1,6 +1,7 @@
 <?php
+namespace model\backend;
 
-require_once("model/frontend/Manager.php");
+use model\frontend\Manager;
 
 class AdminForumManager extends Manager
 {

@@ -1,5 +1,5 @@
 <?php require_once('view/frontend/menuView.php'); ?>
-<?php require_once('view/frontend/view/frontend/toLoginView.php'); ?>
+<?php require_once('view/frontend/toLoginView.php'); ?>
 <?php require_once('view/frontend/instantMessagesView.php'); ?>
 
 <?php ob_start(); ?>

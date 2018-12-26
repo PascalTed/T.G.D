@@ -1,0 +1,8 @@
+{
+    "name": "ted/tgd",
+    "require": {},
+	"autoload": {
+		"psr-4" : {
+        "model\\" : "model"}
+	}
+}

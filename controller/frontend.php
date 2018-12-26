@@ -1,10 +1,12 @@
 <?php
 
 // Chargement des classes
-require_once('model/frontend/AccountManager.php');
-require_once('model/frontend/InstantMessageManager.php');
-require_once('model/frontend/GameManager.php');
-require_once('model/frontend/ForumManager.php');
+require "vendor/autoload.php";
+
+use model\frontend\AccountManager;
+use model\frontend\InstantMessageManager;
+use model\frontend\GameManager;
+use model\frontend\ForumManager;
 
 // Affiche la page d'accueil
 function home()
