@@ -80,12 +80,12 @@ function displayAdminTopic($forumId, $forumCat, $topicId)
     require_once('view/backend/adminTopicView.php');
 }
 
-function modifyTopic($userId, $titleTopic, $topicId)
+function modifyTopic($userId, $titleTopic, $topicId, $forumId, $forumCat)
 {
     $adminForumManager = new AdminForumManager();
     $adminForumManager->updateTopic($userId, $titleTopic, $topicId);
     
-    header('Location: index.php?action=displayAdminForumTopics');
+    header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
 function removeTopic($topicId)
