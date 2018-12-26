@@ -246,7 +246,7 @@ try {
         // Afficher la page du forum et ses sujets (administration)
         } elseif ($_GET['action'] == 'displayAdminForumTopics') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                if (isset($_GET['idForum']) AND $_GET['idForum'] > 0) AND isset($_GET['catForum'])) {
+                if (isset($_GET['idForum']) AND $_GET['idForum'] > 0 AND isset($_GET['catForum'])) {
                     displayAdminForumTopics($_GET['idForum'], $_GET['catForum']);
                 } else {
                     throw new Exception('Aucun id ou catégorie forum envoyé.');
