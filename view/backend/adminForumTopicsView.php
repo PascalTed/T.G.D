@@ -42,7 +42,7 @@
                 <div>
                     <div>
                         <h4>
-                            <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?> <?= $topic['nb_message'] ?> messages</a>
+                            <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?> <?= $topic['nb_message'] ?> messages</a>
                         </h4>
                     </div>
 
