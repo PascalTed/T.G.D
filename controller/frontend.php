@@ -148,7 +148,7 @@ function displayForumTopics($forumId, $forumCat)
 }
 
 // Afficher la page du sujet et ses messages
-function displayTopicMessages($forumId, $forumCat, $topicId)
+function displayTopic($forumId, $forumCat, $topicId)
 {
     $forumManager = new ForumManager();
     $topicMessages = $forumManager->getTopicMessages($topicId);

@@ -46,7 +46,7 @@
         ?>
         
                 <div>
-                    <div><a href="index.php?action=displayTopicMessages&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><h4><?= $topic['title'] ?></h4></a></div>
+                    <div><a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><h4><?= $topic['title'] ?></h4></a></div>
 
                     <div><p>posté par <?= $topic['t_pseudo'] ?> le <?= $topic['creation_date'] ?></p></div>
 

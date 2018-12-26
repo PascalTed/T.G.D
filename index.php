@@ -120,9 +120,9 @@ try {
             }
             
         // Afficher la page du sujet et ses messages   
-        } elseif ($_GET['action'] == 'displayTopicMessages') {
+        } elseif ($_GET['action'] == 'displayTopic') {
             if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['catForum']) && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
-                displayTopicMessages($_GET['idForum'], $_GET['catForum'], $_GET['idTopic']);
+                displayTopic($_GET['idForum'], $_GET['catForum'], $_GET['idTopic']);
             } else {
                 throw new Exception('Aucun id sujet ou id forum ou catégorie forum envoyé.');
             }
