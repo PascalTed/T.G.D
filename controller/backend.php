@@ -54,7 +54,7 @@ function removeForumCat($forumId)
     header('Location: index.php?action=displayAdminForums');
 }
 
-// Vérifier si la catégorie d'un forum existe déjà avant la modification de celui-ci, Venant d'un ajaxpost (administration)
+// Vérifier si la catégorie d'un forum existe déjà avant la modification ou la création de celui-ci, Venant d'un ajaxpost (administration)
 function verifyForum($forumCat)
 {
     $adminForumManager = new AdminForumManager();
