@@ -454,7 +454,7 @@ if (formAddForum !== null) {
         ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
             if (reponse === "existForum") {
                 forumExist.style.display = "block";
-                textareaCatForum.addEventListener("click", function (e) {
+                formAddForum.addEventListener("click", function (e) {
                     forumExist.style.display = "none";
                 });
             } else {
