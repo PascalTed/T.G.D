@@ -440,8 +440,32 @@ if (allMessagesTopic !== null) {
 // Fin page topic
 
 // Début page forums (administration)
-// Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification d'un forum. Pour une suppression il n'y a pas de vérification
+// Ajaxpost pour vérifier si une catégorie forum est déjà existante avant sa création
+var addForum = document.getElementById("add-forum");
+var formAddForum = document.getElementById("form-add-forum");
 var forumExist = document.getElementById("forum-exist");
+
+if (formAddForum !== null) {
+    formAddForum.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var dataSend = 'catForum='+ encodeURIComponent(addForum.value);
+        var ajaxPostVerifyForum = Object.create(AjaxPost);
+
+        ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
+            if (reponse === "existForum") {
+                forumExist.style.display = "block";
+                textareaCatForum.addEventListener("click", function (e) {
+                    forumExist.style.display = "none";
+                });
+            } else {
+                formAddForum.submit();
+            }
+        });
+        ajaxPostVerifyForum.executer();
+    });
+}
+
+// Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification d'un forum. Pour une suppression il n'y a pas de vérification
 var textareaCatForum = document.getElementById("textarea-cat-forum");
 var admModifyForum = document.getElementById("adm-modify-forum");
 var formEditForum = document.getElementById("form-edit-forum");
@@ -452,7 +476,7 @@ if (formEditForum !== null) {
         
         if (admModifyForum.checked) {
             var dataSend = 'catForum='+ encodeURIComponent(textareaCatForum.value);
-            ajaxPostVerifyForum = Object.create(AjaxPost);
+            var ajaxPostVerifyForum = Object.create(AjaxPost);
 
             ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
                 if (reponse === "existForum") {
