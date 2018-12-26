@@ -428,7 +428,6 @@ if (formReplyToMessage !== null) {
 }
 
 // Ajaxpost pour signaler un message et récupérer les messages
-var toReport = document.getElementsByClassName("to-report");
 if (allMessagesTopic !== null) {
     allMessagesTopic.addEventListener("click", function (e) {
         if (e.target.className == "to-report") {
