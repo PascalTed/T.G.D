@@ -17,9 +17,8 @@
         
             <div class="admin-edit-forum">
                 <div class="admin-forum-cat-topics">
-                    <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
+                    <h2><a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?> (<?= $forum['nb_topics'] ?> sujets)</a>
                     </h2>
-                    <div><?= $forum['nb_topics'] ?> sujets</div>
                 </div>
                         
                 <form action="index.php?action=modifyOrRemoveForum&amp;idForum=<?= $forum['id'] ?>" class="form-edit-forum" method="post">
