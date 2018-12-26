@@ -57,6 +57,14 @@ class AdminForumManager extends Manager
             echo "existForum";
         }
     }
+    
+    public function updateTopic($userId, $titleTopic, $topicId)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('UPDATE topics SET user_id_update = ?, title = ? update_date = NOW() WHERE id = ?')
+        $req->execute(array($userId, $titleTopic, $topicId));
+    }
 }
 
 ?>
