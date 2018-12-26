@@ -9,6 +9,20 @@
         <a href="index.php?action=displayAdminForums">Forum</a><span>/</span><a href="#"><?= $forumCat ?></a>
     </div>
     
+    <form action="index.php?action=modifyOrRemoveForum&amp;idForum=<?= $forumId ?>" id="form-edit-forum" method="post">
+        <label for="textarea-cat-forum">Modifier le nom du forum</label><br />
+        <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forumCat); ?></textarea>
+        <span id="forum-exist">Ce forum existe déjà.</span>
+        <div id="forum-radio">
+            <label for ="adm-modify-forum">Modifier le nom du forum</label>
+            <input type="radio" name="setForum" value="modify-forum-cat" id="adm-modify-forum" checked />
+                
+            <label for ="adm-remove-forum">Supprimer le forum</label>
+            <input type="radio" name="setForum" value="remove-forum-cat" id="adm-remove-forum" />
+        </div>
+        <input type="submit" value="Envoyer" />
+    </form>
+    
     <div>
         
         <?php
