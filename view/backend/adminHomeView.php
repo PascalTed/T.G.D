@@ -18,7 +18,12 @@
 
         <div>
             <ul>
-                <li><a href="index.php?action=displayAdminForums"><i class="fas fa-cogs"></i>Forums</a></li>
+                <li>Forums
+                    <ul>
+                        <li><a href="index.php?action=displayAdminForums"><i class="fas fa-cogs"></i>Editer les Forums, les topics</a>
+                        <li><a href="index.php?action=displayAdminReportedMessages"><i class="fas fa-cogs"></i>Messages signalés</a></li>
+                    </ul>
+                </li>
                 <li><a href=""><i class="fas fa-cogs"></i>Nos jeux</a></li>
                 <li><a href=""><i class="fas fa-cogs"></i>Compte</a></li>
             </ul>
