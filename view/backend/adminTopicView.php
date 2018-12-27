@@ -10,14 +10,16 @@
     </div>
     
     <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" id="form-edit-topic" method="post">
-        <label for="textarea-edit-topic">Modifier le nom du topic</label><br />
+        <label for="textarea-edit-topic">Modifier le nom du sujet</label><br />
         <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= strip_tags($infoTopic['topicTitle']); ?></textarea>
-        <span id="topic-exist">Ce forum existe déjà.</span>
+        <span id="topic-exist">Ce sujet existe déjà.</span>
+        <span id="no-forum">Le champ sujet est vide.</span>
+        
         <div id="topic-radio">
-            <label for ="adm-modify-topic">Modifier le nom du forum</label>
+            <label for ="adm-modify-topic">Modifier le sujet</label>
             <input type="radio" name="setTopic" value="adm-modify-topic" id="adm-modify-topic" checked />
                 
-            <label for ="adm-remove-topic">Supprimer le forum</label>
+            <label for ="adm-remove-topic">Supprimer le sujet</label>
             <input type="radio" name="setTopic" value="adm-remove-topic" id="adm-remove-topic" />
         </div>
         <input type="submit" value="Envoyer" />
