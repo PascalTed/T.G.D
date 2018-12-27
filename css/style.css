@@ -489,11 +489,20 @@ section
 
 /* Fin page forumTopics
 /* Début page forums (administration) */
-#admin-forums .forum-exist, #forum-exist, #forum-required
+#admin-forums #forum-exist
 {
     display: none;
+    color: red;
 }
 /* Fin page forums (administration) */
+
+/* Début page forumTopics (administration) */
+#admin-forum #forum-exist, #admin-forum #no-forum
+{
+    display: none;
+    color: red;
+}
+/* Fin page forumTopics (administration) */
 /* Fin section */
 
 /* Début media queries */
