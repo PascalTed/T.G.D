@@ -13,7 +13,7 @@
         <label for="textarea-edit-topic">Modifier le nom du sujet</label><br />
         <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= strip_tags($infoTopic['topicTitle']); ?></textarea>
         <span id="topic-exist">Ce sujet existe déjà.</span>
-        <span id="no-forum">Le champ sujet est vide.</span>
+        <span id="no-topic">Le champ sujet est vide.</span>
         
         <div id="topic-radio">
             <label for ="adm-modify-topic">Modifier le sujet</label>
