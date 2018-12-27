@@ -527,4 +527,41 @@ if (formEditForum !== null) {
 // Fin page forumTopics (administration)
 
 // Début page Topic (administration)
+var textareaEditTopic = document.getElementById("textarea-edit-topic");
+var admModifyTopic = document.getElementById("adm-modify-topic");
+var noTopic = document.getElementById("no-topic");
+var topicExist = document.getElementById("topic-exist");
+var formEditTopic = document.getElementById("form-edit-topic");
+
+if (formEditTopic !== null) {
+    formEditTopic.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (admModifyTopic.checked) {
+            console.log("test");
+            if (textareaEditTopic.value !== "") {
+                var dataSend = 'topicTitle='+ encodeURIComponent(textareaEditTopic.value);
+                var ajaxPostVerifyTopic = Object.create(AjaxPost);
+
+                ajaxPostVerifyTopic.init("index.php?action=verifyTopic", dataSend, function(reponse) { 
+                    if (reponse === "existTopic") {
+                        topicExist.style.display = "block";
+                        textareaCatForum.addEventListener("click", function (e) {
+                            topicExist.style.display = "none";
+                        });
+                    } else {
+                        formEditTopic.submit();
+                    }
+                });
+                ajaxPostVerifyTopic.executer();
+            } else {
+                noTopic.style.display = "block";
+                textareaEditTopic.addEventListener("click", function () {
+                    noTopic.style.display = "none";
+                });
+            }
+        } else {
+            formEditTopic.submit();
+        }
+    });
+}
 // Fin page Topic (administration)
