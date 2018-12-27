@@ -484,7 +484,9 @@ if (formAddForum !== null) {
         ajaxPostVerifyForum.executer();
     });
 }
+// Fin page forums (administration)
 
+// Début page forumTopics (administration)
 // Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification d'un forum. Pour une suppression il n'y a pas de vérification
 var textareaCatForum = document.getElementById("textarea-cat-forum");
 var admModifyForum = document.getElementById("adm-modify-forum");
@@ -522,4 +524,7 @@ if (formEditForum !== null) {
         }
     });
 }
-// Fin page forums (administration)
+// Fin page forumTopics (administration)
+
+// Début page Topic (administration)
+// Fin page Topic (administration)
