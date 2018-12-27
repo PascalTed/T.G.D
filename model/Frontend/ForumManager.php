@@ -58,9 +58,9 @@ class ForumManager extends Manager
     public function editTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     {
         $db = $this->dbConnect();
-        $editNewTopic = $db->prepare('INSERT INTO topics(title, user_id, forum_id, creation_date) VALUES (?, ?, ?, NOW())');
+        $editNewTopic = $db->prepare('INSERT INTO topics(title, user_id, forum_id, creation_date, user_id_update) VALUES (?, ?, ?, NOW(), ?)');
         
-        $editNewTopic->execute(array($titleTopic, $userId, $forumId));
+        $editNewTopic->execute(array($titleTopic, $userId, $forumId, $userId));
         
         $lastTopicId = $db->lastInsertId();
         echo $lastTopicId;
