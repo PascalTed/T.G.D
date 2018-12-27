@@ -3,7 +3,7 @@
 
 <?php ob_start(); ?>
 
-<section id="admin-Forum">
+<section id="admin-forum">
     
     <div>
         <a href="index.php?action=displayAdminForums">Forum</a><span>/</span><a href="#"><?= $forumCat ?></a>
@@ -13,6 +13,7 @@
         <label for="textarea-cat-forum">Modifier le nom du forum</label><br />
         <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forumCat); ?></textarea>
         <span id="forum-exist">Ce forum existe déjà.</span>
+        <span id="no-forum">Le champ forum est vide.</span>
         <div id="forum-radio">
             <label for ="adm-modify-forum">Modifier le nom du forum</label>
             <input type="radio" name="setForum" value="adm-modify-forum" id="adm-modify-forum" checked />
