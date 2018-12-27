@@ -139,6 +139,18 @@ try {
                 throw new Exception('Aucun pseudo envoyé.');
             }
         
+        // Vérifier si le topic existe déjà avant la modification ou la création de celui-ci, Venant d'un ajaxpost
+        } elseif ($_GET['action'] == 'verifyTopic') {
+            if (isset($_SESSION['pseudo'])) {
+               if (isset($_POST['topicTitle'])) {
+                   verifyTopic($_POST['topicTitle']);
+               } else {
+                   throw new Exception('Aucun titre du nouveau sujet envoyé.');
+               }
+            } else {
+                throw new Exception('Aucun pseudo envoyé.');
+            }
+
         // Enregistrement du nouveau sujet    
         }elseif ($_GET['action'] == 'createTopic') {
             if (isset($_SESSION['pseudo'])) {

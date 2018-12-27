@@ -355,11 +355,12 @@ if (formAddMessage !== null) {
 
 // Début page createTopic
 // vérification textarea "Ajouter le titre" et "Ajouter le contenu" avant de créer le nouveau topic
-var formCreateTopic = document.getElementById("form-create-topic");
-var noTitleTopic = document.getElementById("no-title-topic");
-var noContentTopic = document.getElementById("no-content-topic");
+var topicExist = document.getElementById("topic-exist");
 var createTitleTopic = document.getElementById("create-title-topic");
 var createContentTopic = document.getElementById("create-content-topic");
+var noTitleTopic = document.getElementById("no-title-topic");
+var noContentTopic = document.getElementById("no-content-topic");
+var formCreateTopic = document.getElementById("form-create-topic");
 
 if (formCreateTopic !== null) {
 
@@ -371,19 +372,38 @@ if (formCreateTopic !== null) {
         var valueContent = createContentTopic.value;
         
         if (valueTitle === "") {
-            noTitleTopic.textContent = "Il faut ajouter un titre pour ajouter le billet"
+            noTitleTopic.style.display = "block";
             tinymce.get("create-title-topic").on("click", function () {
-                noTitleTopic.textContent = "";
+                noTitleTopic.style.display = "none";
             });
         }
         if (valueContent === "") {
-            noContentTopic.textContent = "Il faut ajouter le contenu pour ajouter le billet"
+            noContentTopic.style.display = "block";
             tinymce.get("create-content-topic").on("click", function () {
-                noContentTopic.textContent = "";
+                noContentTopic.style.display = "none";
             });
         }
         if (valueTitle !== "" && valueContent !== "") {
-            formCreateTopic.submit();
+        
+            var dataSend = 'topicTitle='+ encodeURIComponent(createTitleTopic.value);
+            var ajaxPostVerifyTopic = Object.create(AjaxPost);
+
+            console.log(dataSend);
+
+            ajaxPostVerifyTopic.init("index.php?action=verifyTopic", dataSend, function(reponse) {
+                console.log(dataSend);
+                console.log(reponse);
+                if (reponse === "existTopic") {
+                    console.log(reponse);
+                    topicExist.style.display = "block";
+                    tinymce.get("create-title-topic").on("click", function () {
+                        topicExist.style.display = "none";
+                    });
+                } else {
+                    formCreateTopic.submit();
+                }
+            });
+            ajaxPostVerifyTopic.executer();
         }
     });
 }

@@ -437,6 +437,14 @@ section
     display: none;
 }
 /* Fin page topic */
+/* Début page création topic */
+#create-topic #topic-exist, #create-topic #no-title-topic, #create-topic #no-content-topic
+{
+    display: none;
+    color : red;
+}
+/* Fin page création topic */
+
 /* Début page forums */
 #forums-content .forum-categorie:nth-child(odd)
 {

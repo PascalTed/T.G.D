@@ -164,6 +164,13 @@ function displayCreateTopic($forumId, $forumCat)
     require_once('view/frontend/createTopicView.php');
 }
 
+// Vérifier si le topic existe déjà avant la modification ou la création de celui-ci, Venant d'un ajaxpost
+function verifyTopic ($titleTopic)
+{
+    $forumManager = new ForumManager();
+    $forumManager->searchTopic($titleTopic);
+}
+
 // Enregistrement du nouveau sujet
 function createTopic($userId, $forumId, $forumCat, $titleTopic, $firstMessageTopic)
 {

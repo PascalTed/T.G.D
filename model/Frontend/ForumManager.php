@@ -43,6 +43,18 @@ class ForumManager extends Manager
         return $forumTopics;
     }
     
+    public function searchTopic($titleTopic)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT id FROM topics WHERE title = ?');
+        $req->execute(array($titleTopic));
+        
+        $existingTopic = $req->fetch();
+        if ($existingTopic['id']) {
+            echo "existTopic";
+        }
+    }
+    
     public function editTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     {
         $db = $this->dbConnect();
