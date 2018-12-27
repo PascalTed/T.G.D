@@ -503,6 +503,13 @@ section
     color: red;
 }
 /* Fin page forumTopics (administration) */
+/* Début page Topic (administration) */
+#admin-topic #topic-exist, #admin-topic #no-topic
+{
+    display: none;
+    color: red;
+}
+/* Fin page Topic (administration) */
 /* Fin section */
 
 /* Début media queries */
