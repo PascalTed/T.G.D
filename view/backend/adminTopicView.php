@@ -26,10 +26,7 @@
     </form>
     
     <div>
-        <div>
-            <p><?= $infoTopic['topicTitle'] ?></p><em>Créé le <?= $infoTopic['topicDate'] ?></em>
-        </div>
-        
+
         <div id="admin-all-messages-topic">
         
             <?php    
