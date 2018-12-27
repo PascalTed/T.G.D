@@ -488,6 +488,7 @@ if (formAddForum !== null) {
 // Ajaxpost pour vérifier si une catégorie forum est déjà existante avant la modification d'un forum. Pour une suppression il n'y a pas de vérification
 var textareaCatForum = document.getElementById("textarea-cat-forum");
 var admModifyForum = document.getElementById("adm-modify-forum");
+var noForum = document.getElementById("no-forum");
 var formEditForum = document.getElementById("form-edit-forum");
 
 if (formEditForum !== null) {
@@ -495,20 +496,27 @@ if (formEditForum !== null) {
         e.preventDefault();
         
         if (admModifyForum.checked) {
-            var dataSend = 'catForum='+ encodeURIComponent(textareaCatForum.value);
-            var ajaxPostVerifyForum = Object.create(AjaxPost);
+            if (textareaCatForum.value !== "") {
+                var dataSend = 'catForum='+ encodeURIComponent(textareaCatForum.value);
+                var ajaxPostVerifyForum = Object.create(AjaxPost);
 
-            ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
-                if (reponse === "existForum") {
-                    forumExist.style.display = "block";
-                    textareaCatForum.addEventListener("click", function (e) {
-                        forumExist.style.display = "none";
-                    });
-                } else {
-                    formEditForum.submit();
-                }
-            });
-            ajaxPostVerifyForum.executer();
+                ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
+                    if (reponse === "existForum") {
+                        forumExist.style.display = "block";
+                        textareaCatForum.addEventListener("click", function (e) {
+                            forumExist.style.display = "none";
+                        });
+                    } else {
+                        formEditForum.submit();
+                    }
+                });
+                ajaxPostVerifyForum.executer();
+            } else {
+                noForum.style.display = "block";
+                textareaCatForum.addEventListener("click", function () {
+                    noForum.style.display = "none";
+                });
+            }
         } else {
             formEditForum.submit();
         }
