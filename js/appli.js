@@ -545,7 +545,7 @@ if (formEditTopic !== null) {
                 ajaxPostVerifyTopic.init("index.php?action=verifyTopic", dataSend, function(reponse) { 
                     if (reponse === "existTopic") {
                         topicExist.style.display = "block";
-                        textareaCatForum.addEventListener("click", function (e) {
+                        textareaEditTopic.addEventListener("click", function (e) {
                             topicExist.style.display = "none";
                         });
                     } else {
