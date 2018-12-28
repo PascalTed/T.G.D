@@ -315,7 +315,7 @@ try {
                 throw new Exception('Aucun droit envoyé.');
             }
             
-        // Afficher la page des messages signalés (administration))
+        // Afficher la page des messages signalés des topics (administration)
         } elseif ($_GET['action'] == 'displayAdminReportedMessages') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminReportedMessages();
