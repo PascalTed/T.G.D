@@ -108,4 +108,13 @@ function removeTopicMessage($messageId, $forumId, $forumCat, $topicId)
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
+// Afficher la page des messages signalés (administration))
+function displayAdminReportedMessages()
+{
+    $adminForumManager = new AdminForumManager();
+    $reportedMessage = $adminForumManager->getReportedMessage();
+    
+    require_once('view/backend/adminReportedMessagesView.php');
+}
+
 ?>
