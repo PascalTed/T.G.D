@@ -94,7 +94,7 @@ class AdminForumManager extends Manager
         $delTopic->execute(array($messageId));
         
         if ($delTopic->rowCount() > 0) {
-            this->deleteMessagesOfTopic($topicId);
+            $this->deleteMessagesOfTopic($topicId);
         }
     }
 }
