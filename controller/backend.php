@@ -121,7 +121,7 @@ function displayAdminReportedMessages()
 function validMessage($messageId)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->validateMessage();
+    $adminForumManager->validateMessage($messageId);
     
     header('Location: index.php?action=displayAdminReportedMessages');
 }
