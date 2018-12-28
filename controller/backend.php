@@ -108,13 +108,31 @@ function removeTopicMessage($messageId, $forumId, $forumCat, $topicId)
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
-// Afficher la page des messages signalés (administration))
+// Afficher la page des messages signalés des topics (administration))
 function displayAdminReportedMessages()
 {
     $adminForumManager = new AdminForumManager();
     $reportedMessages = $adminForumManager->getReportedMessages();
     
     require_once('view/backend/adminReportedMessagesView.php');
+}
+
+// Valider le message signalé d'un topic (administration)
+function validMessage($messageId)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->validateMessage();
+    
+    header('Location: index.php?action=displayAdminReportedMessages');
+}
+
+// Supprimer le message signalé d'un topic (administration)
+function removeMessage($messageId, $topicId)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->deleteMessage($messageId, $topicId);
+    
+    header('Location: index.php?action=displayAdminReportedMessages');
 }
 
 ?>
