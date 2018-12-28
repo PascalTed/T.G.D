@@ -339,7 +339,7 @@ try {
         } elseif ($_GET['action'] == 'removeMessage') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0 && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
-                    removeMessage($_GET['idMessage']);
+                    removeMessage($_GET['idMessage'], $_GET['idTopic']);
                 } else {
                     throw new Exception('Aucun id message ou id sujet envoyé.');
                 }
