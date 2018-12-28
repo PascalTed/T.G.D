@@ -105,6 +105,14 @@ class AdminForumManager extends Manager
 
         return $reportedMessages;
     }
+    
+    // Valider le message signalé d'un topic (administration)
+    public function validateMessage($messageId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE topics_messages SET moderation = false WHERE id = ?');
+        $req->execute(array($messageId));
+    }
 }
 
 ?>
