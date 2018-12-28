@@ -41,8 +41,14 @@
                 if ($topic['moderation'] == 1) {
                 ?>
                     <p class="admin-message-reported">Message signalé</p>
-            <?php
+                
+                <?php
                 }
+                ?>
+            
+                <p><a href="index.php?action=removeTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Supprimé</a></p>
+            
+            <?php
             }
             ?>
             
