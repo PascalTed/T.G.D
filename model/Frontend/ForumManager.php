@@ -55,6 +55,7 @@ class ForumManager extends Manager
         }
     }
     
+    // Enregistrement du nouveau topic et de son premier message
     public function editTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     {
         $db = $this->dbConnect();
@@ -66,6 +67,13 @@ class ForumManager extends Manager
         echo $lastTopicId;
         
         $this->editMessage($userId, $firstMessageTopic, $forumId, $lastTopicId);
+        
+        $req = $db->prepare('SELECT * FROM topics_messages WHERE topic_id = ?');
+        $req->execute(array($lastTopicId));
+        $newTopicMessage = $req->fetch();
+        
+        $upNewTopic = $db->prepare('UPDATE topics SET topic_message_id = ? where id = ?');
+        $upNewTopic->execute(array($newTopicMessage['id'], $lastTopicId));
     }
     
     public function editMessage($userId, $message, $forumId, $topicId)
