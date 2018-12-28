@@ -112,7 +112,7 @@ function removeTopicMessage($messageId, $forumId, $forumCat, $topicId)
 function displayAdminReportedMessages()
 {
     $adminForumManager = new AdminForumManager();
-    $reportedMessage = $adminForumManager->getReportedMessage();
+    $reportedMessages = $adminForumManager->getReportedMessage();
     
     require_once('view/backend/adminReportedMessagesView.php');
 }
