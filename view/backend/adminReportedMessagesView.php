@@ -28,9 +28,9 @@
             <div>
                     <p>Forum <?= $reportedMessage['forumCategorie'] ?></p>
 
-                    <p>Topic <?= $reportedMessage['topicTitle'] ?></p>
+                    <p>Topic <?= $reportedMessage['topicTitle'] ?> créé le <?= $reportedMessage['topicCreation_date'] ?></p>
 
-                    <p>Message : <br /><?= $reportedMessage['tm_message'] ?></p>
+                    <p>Message créé le <?=$reportedMessage['tm_date'] ?> :<br /><?= $reportedMessage['tm_message'] ?></p>
 
                     <p><a href="index.php?action=validMessage&amp;idMessage=<?= $reportedMessage['tm_id'] ?>&amp;idTopic=<?= $reportedMessage['topicID'] ?>">Valider</a><a href="index.php?action=removeMessaget&amp;idMessage=<?= $reportedMessage['tm_id'] ?>">Supprimer</a>
                     </p>
