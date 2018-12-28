@@ -59,7 +59,7 @@ class ForumManager extends Manager
     public function editTopic($userId, $forumId, $titleTopic, $firstMessageTopic)
     {
         $db = $this->dbConnect();
-        $editNewTopic = $db->prepare('INSERT INTO topics(title, user_id, forum_id, creation_date, user_id_update) VALUES (?, ?, ?, NOW(), ?)');
+        $editNewTopic = $db->prepare('INSERT INTO topics(title, user_id, forum_id, creation_date, user_id_update, update_date) VALUES (?, ?, ?, NOW(), ?, NOW())');
         
         $editNewTopic->execute(array($titleTopic, $userId, $forumId, $userId));
         
@@ -76,6 +76,7 @@ class ForumManager extends Manager
         $upNewTopic->execute(array($newTopicMessage['id'], $lastTopicId));
     }
     
+    // Enregistrer le message d'un topic
     public function editMessage($userId, $message, $forumId, $topicId)
     {
         $db = $this->dbConnect();
@@ -84,6 +85,7 @@ class ForumManager extends Manager
         $editNewMessage->execute(array($userId, $forumId, $topicId, $message));
     }
     
+    // Signaler le message d'un topic
     public function editReport($messageId)
     {
         $db = $this->dbConnect();
