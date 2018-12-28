@@ -314,6 +314,14 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Afficher la page des messages signalés (administration))
+        } elseif ($_GET['action'] == 'displayAdminReportedMessages') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayAdminReportedMessages();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
