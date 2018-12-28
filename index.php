@@ -322,6 +322,30 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Valider le message signalé d'un topic (administration)
+        } elseif ($_GET['action'] == 'validMessage') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
+                    validMessage($_GET['idMessage']);
+                } else {
+                    throw new Exception('Aucun id message envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
+            
+        // Supprimer le message signalé d'un topic (administration)
+        } elseif ($_GET['action'] == 'removeMessage') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
+                    removeMessage($_GET['idMessage']);
+                } else {
+                    throw new Exception('Aucun id message envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
