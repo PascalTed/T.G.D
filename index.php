@@ -338,10 +338,10 @@ try {
         // Supprimer le message signalé d'un topic (administration)
         } elseif ($_GET['action'] == 'removeMessage') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
+                if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0 && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {
                     removeMessage($_GET['idMessage']);
                 } else {
-                    throw new Exception('Aucun id message envoyé.');
+                    throw new Exception('Aucun id message ou id sujet envoyé.');
                 }
             } else {
                 throw new Exception('Aucun droit envoyé.');
