@@ -101,9 +101,8 @@ class AdminForumManager extends Manager
     public function getReportedMessages()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT topics_messages.id tm_id, topics_messages.message tm_message, topics_messages.message_date tm_date, topics.id topicID, topics.title topicTitle, topics.creation_date topicCreation_date, forums.id forumID, forums.categories forumCategorie FROM topics_messages INNER JOIN topics ON topics_messages.topic_id = topics.id INNER JOIN forums ON topics.forum_id = forums.id WHERE topics_messages.moderation = 1 ORDER BY tm_id DESC');
-        
-        $reportedMessages = $req->fetch();
+        $reportedMessages = $db->query('SELECT topics_messages.id tm_id, topics_messages.message tm_message, topics_messages.message_date tm_date, topics.id topicID, topics.title topicTitle, topics.creation_date topicCreation_date, forums.id forumID, forums.categories forumCategorie FROM topics_messages INNER JOIN topics ON topics_messages.topic_id = topics.id INNER JOIN forums ON topics.forum_id = forums.id WHERE topics_messages.moderation = 1 ORDER BY tm_id DESC');
+
         return $reportedMessages;
     }
 }
