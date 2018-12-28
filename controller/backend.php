@@ -98,4 +98,14 @@ function removeTopic($topicId, $forumId, $forumCat)
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
+// Supprimer le message d'un topic (administration)
+// Si celuic-ci est le premier message du topic, le topic et tous ses messages seront supprimés 
+function removeTopicMessage($messageId, $forumId, $forumCat, $topicId)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->deleteMessage($messageId, $topicId);
+    
+    header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
+}
+
 ?>
