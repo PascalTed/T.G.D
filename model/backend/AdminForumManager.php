@@ -81,6 +81,22 @@ class AdminForumManager extends Manager
         $req = $db->prepare('DELETE FROM topics_messages WHERE topic_id = ?');
         $req->execute(array($topicId));
     }
+    
+    // Supprimer le message d'un topic (administration)
+    // Si celuic-ci est le premier message du topic, le topic et tous ses messages seront supprimés 
+    public function deleteMessage($messageId, $topicId)
+    {
+        $db = $this->dbConnect();
+        $delMessage = $db->prepare('DELETE FROM topics_messages WHERE id = ?');
+        $delMessage->execute(array($messageId));
+        
+        $delTopic = $db->prepare('DELETE FROM topics WHERE topic_message_id = ?');
+        $delTopic->execute(array($messageId));
+        
+        if ($delTopic->rowCount() > 0) {
+            this->deleteMessagesOfTopic($topicId);
+        }
+    }
 }
 
 ?>
