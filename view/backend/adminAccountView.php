@@ -39,7 +39,7 @@
                     ?>
                     
                     <label for="admin-rights">Droits administrateur</label>
-                    <input type="radio" name="setRights" value="admin-rights" id="admin-rights"/>
+                    <input type="radio" name="setRights" value="admin-rights" id="admin-rights" required/>
                     
                     <?php
                     }
@@ -47,13 +47,14 @@
                     ?>
                     
                     <label for="none-rights">Aucun droits</label>
-                    <input type="radio" name="setRights" value="none-rights" id="none-rights"/>
+                    <input type="radio" name="setRights" value="none-rights" id="none-rights" required/>
                     
                     <?php
                     }
                     ?>
                     
                     <div>
+                        <input type="reset" value="Annuler" />
                         <input type="submit" value="Envoyer" />
                     </div>
                 </form>
