@@ -366,6 +366,26 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Modifier les droits utilisateurs (administration)
+        } elseif ($_GET['action'] == 'addOrRemoveRights') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_POST['setRights'])) {
+                    switch ($_POST['setRights']) {
+                        case 'admin-rights':
+                            addAdminRights($_GET['idUser']);
+                            break;
+                        case 'none-rights':
+                            removeRights($_GET['idUser']);
+                            break;
+                        default: 'ce choix n\'existe pas';
+                    }
+                } else {
+                    throw new Exception('Aucun choix droits utilisateurs n\'a été envoyé');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
