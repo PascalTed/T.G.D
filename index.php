@@ -346,6 +346,14 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Afficher la page des comptes utilisateurs (administration)
+        } elseif ($_GET['action'] == 'displayAdminAllAccounts') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayAdminAllAccounts();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
