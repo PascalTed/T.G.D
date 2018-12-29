@@ -8,7 +8,7 @@ class AdminAccountManager extends Manager
     public function getAllAccounts()
     {
         $db = $this->dbConnect();
-        $allAccounts = $db->prepare('SELECT * FROM users');
+        $allAccounts = $db->query('SELECT * FROM users');
         
         return $allAccounts;
     }
