@@ -10,23 +10,54 @@
     </div>
 
     <div id="admin-infos-account-content">
-
             <div>
                 <p><img src="images/avatars/<?= $infoAccount['avatar'] ?>" alt="image avatar"/><?= $infoAccount['pseudo'] ?></p>
                 <p>Inscrit le : <?= $infoAccount['registration_date'] ?></p>
                 <p>Email : <?= $infoAccount['email'] ?></p>
-                <p>droits : <?= $infoAccount['user_right'] ?></p>
-                <p>Modifié les droits</p>
                 
-                <form action="index.php?action=addRights" method="post" id="form-add-rights">      
-                    <label for="admin-rights">Droits administrateur</label>
-                    <input type="radio" name="setRights" value="admin-rights" id="admin-rights"/>
-                    <label for="none-rights">Droits administrateur</label>
-                    <input type="radio" name="setRights" value="none-rights" id="none-rights"/>
-                </form>
-
+                <?php
+                switch ($infoAccount['user_right']) {
+                case 'admin':
+                    $rights = "Administrateur";
+                    break;
+                case 'none':
+                    $rights = "Aucun";
+                    break;
+                }
+                ?>
+                
+                <p>droits : <?= $rights ?></p>
             </div>
         
+            <div>
+                <p>Modifier les droits</p>
+                
+                <form action="index.php?action=addRights" method="post" id="form-add-rights">
+    
+                    <?php
+                    if ($infoAccount['user_right'] == "none") {
+                    ?>
+                    
+                    <label for="admin-rights">Droits administrateur</label>
+                    <input type="radio" name="setRights" value="admin-rights" id="admin-rights"/>
+                    
+                    <?php
+                    }
+                    if ($infoAccount['user_right'] == "admin") {
+                    ?>
+                    
+                    <label for="none-rights">Aucun droits</label>
+                    <input type="radio" name="setRights" value="none-rights" id="none-rights"/>
+                    
+                    <?php
+                    }
+                    ?>
+                    
+                    <div>
+                        <input type="submit" value="Envoyer" />
+                    </div>
+                </form>
+            </div>
     </div>
     
 </section>
