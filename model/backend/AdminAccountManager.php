@@ -22,4 +22,22 @@ class AdminAccountManager extends Manager
    
         return $infoAccount;
     }
+    
+    public function setAdminRights($userId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE users SET user_right = "admin" WHERE id = ?');
+        $req->execute(array($userId));
+    }
+    
+    public function setNoneRights($userId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('UPDATE users SET user_right = "none" WHERE id = ?');
+        $req->execute(array($userId));
+        
+        if ($_SESSION['id'] == $userId) {
+            $_SESSION['user_right'] = "none";
+        }
+    }
 }
