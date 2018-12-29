@@ -302,12 +302,24 @@ try {
                 throw new Exception('Aucun droit envoyé.');
             }
             
-        // Supprimer le message d'un topic (administration)
+        // Supprimer le message d'un topic dans éditer les forums (administration)
         // Si celuic-ci est le premier message du topic, le topic et tous ses messages seront supprimés    
         } elseif ($_GET['action'] == 'removeTopicMessage') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['catForum']) && isset($_GET['idTopic']) && $_GET['idTopic'] > 0 && isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
                     removeTopicMessage($_GET['idMessage'], $_GET['idForum'], $_GET['catForum'], $_GET['idTopic']);
+                } else {
+                    throw new Exception('Aucun id sujet ou id forum ou catégorie forum ou id message envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
+            
+        // Valider le message signalé d'un topic dans éditer les forums (administration)
+        } elseif ($_GET['action'] == 'validTopicMessage') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['catForum']) && isset($_GET['idTopic']) && $_GET['idTopic'] > 0 && isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
+                    validTopicMessage($_GET['idMessage'], $_GET['idForum'], $_GET['catForum'], $_GET['idTopic']);
                 } else {
                     throw new Exception('Aucun id sujet ou id forum ou catégorie forum ou id message envoyé.');
                 }
@@ -323,7 +335,7 @@ try {
                 throw new Exception('Aucun droit envoyé.');
             }
             
-        // Valider le message signalé d'un topic (administration)
+        // Valider le message signalé d'un topic dans tous les messages signalés (administration)
         } elseif ($_GET['action'] == 'validMessage') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
@@ -335,7 +347,7 @@ try {
                 throw new Exception('Aucun droit envoyé.');
             }
             
-        // Supprimer le message signalé d'un topic (administration)
+        // Supprimer le message signalé d'un topic dans tous les messages signalés (administration)
         } elseif ($_GET['action'] == 'removeMessage') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['idMessage']) && $_GET['idMessage'] > 0 && isset($_GET['idTopic']) && $_GET['idTopic'] > 0) {

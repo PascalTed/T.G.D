@@ -36,18 +36,20 @@
                 <div><p>posté par <?= $topic['pseudo'] ?></p></div>
                 <div>message  <?= $topic['message'] ?></div>
                 <div>Date du message : <?= $topic['message_date'] ?></div>  
+                <div>
+                    <?php
+                    if ($topic['moderation'] == 1) {
+                    ?>
 
-                <?php
-                if ($topic['moderation'] == 1) {
-                ?>
-                    <p class="admin-message-reported">Message signalé</p>
-                
-                <?php
-                }
-                ?>
-            
-                <p><a href="index.php?action=removeTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Supprimé</a></p>
-            
+                        <p class="topic-message-reported">Message signalé</p>
+                        <a href="index.php?action=validTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Validé</a>
+
+                    <?php
+                    }
+                    ?>
+
+                    <a href="index.php?action=removeTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Supprimé</a>
+                </div>
             <?php
             }
             ?>

@@ -99,7 +99,7 @@ function removeTopic($topicId, $forumId, $forumCat)
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
 
-// Supprimer le message d'un topic (administration)
+// Supprimer le message d'un topic dans éditer les forums (administration)
 // Si celuic-ci est le premier message du topic, le topic et tous ses messages seront supprimés 
 function removeTopicMessage($messageId, $forumId, $forumCat, $topicId)
 {
@@ -107,6 +107,15 @@ function removeTopicMessage($messageId, $forumId, $forumCat, $topicId)
     $adminForumManager->deleteMessage($messageId, $topicId);
     
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
+}
+
+// Valider le message signalé d'un topic dans éditer les forums (administration)
+function validTopicMessage($messageId, $forumId, $forumCat, $topicId)
+{
+    $adminForumManager = new AdminForumManager();
+    $adminForumManager->validateMessage($messageId);
+    
+    header('Location: index.php?action=displayAdminTopic&idForum=' . $forumId . '&catForum=' . $forumCat . '&idTopic=' . $topicId);
 }
 
 // Afficher la page des messages signalés des topics (administration))
@@ -118,7 +127,7 @@ function displayAdminReportedMessages()
     require_once('view/backend/adminReportedMessagesView.php');
 }
 
-// Valider le message signalé d'un topic (administration)
+// Valider le message signalé d'un topic situé dans tous les messages signalés(administration)
 function validMessage($messageId)
 {
     $adminForumManager = new AdminForumManager();
@@ -127,7 +136,8 @@ function validMessage($messageId)
     header('Location: index.php?action=displayAdminReportedMessages');
 }
 
-// Supprimer le message signalé d'un topic (administration)
+// Supprimer le message signalé d'un topic situé dans tous les messages signalés (administration)
+// Si celuic-ci est le premier message du topic, le topic et tous ses messages seront supprimés
 function removeMessage($messageId, $topicId)
 {
     $adminForumManager = new AdminForumManager();
