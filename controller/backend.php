@@ -154,4 +154,20 @@ function displayAdminAccount($userId)
     require_once('view/backend/adminAccountView.php');
 }
 
+function addAdminRights($userId)
+{
+    $adminAccountManager = new AdminAccountManager();
+    $adminAccountManager->setAdminRights($userId);
+    
+    header('Location: index.php?action=displayAdminAccount&idUser=' . $userId);
+}
+
+function removeRights($userId)
+{
+    $adminAccountManager = new AdminAccountManager();
+    $adminAccountManager->setNoneRights($userId);
+    
+    header('Location: index.php?action=displayAdminAccount&idUser=' . $userId);
+}
+
 ?>
