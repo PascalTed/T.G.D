@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li><a href=""><i class="fas fa-cogs"></i>Nos jeux</a></li>
-                <li><a href=""><i class="fas fa-cogs"></i>Compte</a></li>
+                <li><a href="index.php?action=displayAdminAllAccounts"><i class="fas fa-cogs"></i>Compte</a></li>
             </ul>
         </div>
     </div>
