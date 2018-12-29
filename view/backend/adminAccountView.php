@@ -10,21 +10,22 @@
     </div>
 
     <div id="admin-infos-account-content">
-        
-        <?php
-        while ($infoAccount = $infosAccount->fetch()) {
-        ?>
-        
+
             <div>
                 <p><img src="images/avatars/<?= $infoAccount['avatar'] ?>" alt="image avatar"/><?= $infoAccount['pseudo'] ?></p>
                 <p>Inscrit le : <?= $infoAccount['registration_date'] ?></p>
                 <p>Email : <?= $infoAccount['email'] ?></p>
                 <p>droits : <?= $infoAccount['user_right'] ?></p>
+                <p>Modifié les droits</p>
+                
+                <form action="index.php?action=addRights" method="post" id="form-add-rights">      
+                    <label for="admin-rights">Droits administrateur</label>
+                    <input type="radio" name="setRights" value="admin-rights" id="admin-rights"/>
+                    <label for="none-rights">Droits administrateur</label>
+                    <input type="radio" name="setRights" value="none-rights" id="none-rights"/>
+                </form>
+
             </div>
-        
-        <?php
-        }
-        ?>
         
     </div>
     
