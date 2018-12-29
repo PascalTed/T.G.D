@@ -4,7 +4,7 @@
 require "vendor/autoload.php";
 
 use model\backend\AdminForumManager;
-use model\backend\AdminAllAccounts;
+use model\backend\AdminAccountManager;
 use model\frontend\InstantMessageManager;
 use model\frontend\ForumManager;
 
