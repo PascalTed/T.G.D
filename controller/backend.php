@@ -4,6 +4,7 @@
 require "vendor/autoload.php";
 
 use model\backend\AdminForumManager;
+use model\backend\AdminAllAccounts;
 use model\frontend\InstantMessageManager;
 use model\frontend\ForumManager;
 
@@ -133,6 +134,15 @@ function removeMessage($messageId, $topicId)
     $adminForumManager->deleteMessage($messageId, $topicId);
     
     header('Location: index.php?action=displayAdminReportedMessages');
+}
+
+// Afficher la page des comptes utilisateurs (administration)
+function displayAdminAllAccounts()
+{
+    $adminAccountManager = new AdminAccountManager();
+    $adminAccountManager->getAllAccounts();
+    
+    require_once('view/backend/adminAllAccounts.php');
 }
 
 ?>
