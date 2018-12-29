@@ -16,7 +16,7 @@
         ?>
         
             <div>
-                <p><a href="index.php?action=displayAdminAccount&amp;idPseudo=<?= $Account['id'] ?>"><?= $Account['pseudo'] ?></a></p>
+                <p><a href="index.php?action=displayAdminAccount&amp;idUser=<?= $Account['id'] ?>"><?= $Account['pseudo'] ?></a></p>
                 <p>Inscrit le : <?= $Account['registration_date'] ?></p>
                 <p>droits : <?= $Account['user_right'] ?></p>
             </div>

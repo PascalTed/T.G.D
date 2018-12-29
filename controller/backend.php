@@ -146,10 +146,10 @@ function displayAdminAllAccounts()
 }
 
 // Afficher la page infos compte utilisateur (administration)
-function displayAdminAccount($pseudoId)
+function displayAdminAccount($userId)
 {
     $adminAccountManager = new AdminAccountManager();
-    $InfosAccount = $adminAccountManager->getInfosAccount($pseudoId);
+    $InfosAccount = $adminAccountManager->getInfosAccount($userId);
     
     require_once('view/backend/adminAccountView.php');
 }

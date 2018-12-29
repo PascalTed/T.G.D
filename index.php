@@ -358,8 +358,8 @@ try {
         // Afficher la page infos compte utilisateur (administration)    
         } elseif($_GET['action'] == 'displayAdminAccount') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                if (isset($_GET['idPseudo'])) {
-                    displayAdminAccount($_GET['idPseudo']);
+                if (isset($_GET['idUser'])) {
+                    displayAdminAccount($_GET['idUser']);
                 } else {
                     throw new Exception('Aucun pseudo envoyé.');
                 }
