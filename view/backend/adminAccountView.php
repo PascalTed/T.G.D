@@ -32,7 +32,7 @@
             <div>
                 <p>Modifier les droits</p>
                 
-                <form action="index.php?action=addRights" method="post" id="form-add-rights">
+                <form action="index.php?action=addOrRemoveRights" method="post" id="form-add-rights">
     
                     <?php
                     if ($infoAccount['user_right'] == "none") {
