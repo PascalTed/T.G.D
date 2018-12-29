@@ -149,7 +149,7 @@ function displayAdminAllAccounts()
 function displayAdminAccount($userId)
 {
     $adminAccountManager = new AdminAccountManager();
-    $infosAccount = $adminAccountManager->getInfosAccount($userId);
+    $infoAccount = $adminAccountManager->getInfosAccount($userId);
     
     require_once('view/backend/adminAccountView.php');
 }
