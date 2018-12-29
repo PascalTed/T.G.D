@@ -354,6 +354,18 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Afficher la page infos compte utilisateur (administration)    
+        } elseif($_GET['action'] == 'displayAdminAccount') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_GET['pseudo'])) {
+                    displayAdminAccount($_GET['pseudo']);
+                } else {
+                    throw new Exception('Aucun pseudo envoyé.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
