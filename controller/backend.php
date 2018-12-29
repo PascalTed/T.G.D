@@ -140,7 +140,7 @@ function removeMessage($messageId, $topicId)
 function displayAdminAllAccounts()
 {
     $adminAccountManager = new AdminAccountManager();
-    $adminAccountManager->getAllAccounts();
+    $allAccounts = $adminAccountManager->getAllAccounts();
     
     require_once('view/backend/adminAllAccounts.php');
 }
