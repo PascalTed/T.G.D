@@ -142,7 +142,16 @@ function displayAdminAllAccounts()
     $adminAccountManager = new AdminAccountManager();
     $allAccounts = $adminAccountManager->getAllAccounts();
     
-    require_once('view/backend/adminAllAccounts.php');
+    require_once('view/backend/adminAllAccountsView.php');
+}
+
+// Afficher la page infos compte utilisateur (administration)
+function displayAdminAccount($_GET['pseudo']);
+{
+    $adminAccountManager = new AdminAccountManager();
+    $InfosAccount = $adminAccountManager->getInfosAccount();
+    
+    require_once('view/backend/adminAccountView.php');
 }
 
 ?>
