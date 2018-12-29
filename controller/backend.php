@@ -146,7 +146,7 @@ function displayAdminAllAccounts()
 }
 
 // Afficher la page infos compte utilisateur (administration)
-function displayAdminAccount($pseudoId);
+function displayAdminAccount($pseudoId)
 {
     $adminAccountManager = new AdminAccountManager();
     $InfosAccount = $adminAccountManager->getInfosAccount($pseudoId);
