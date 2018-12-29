@@ -18,8 +18,8 @@ class AdminAccountManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT id, email, avatar, pseudo, user_right, DATE_FORMAT(registration_date, \'%d/%m/%Y à %Hh%imin%ss\') registration_date FROM users WHERE id = ?');
         $req->execute(array($userId));
-        $infosAccount = $req->fetch();
+        $infoAccount = $req->fetch();
    
-        return $infosAccount;
+        return $infoAccount;
     }
 }
