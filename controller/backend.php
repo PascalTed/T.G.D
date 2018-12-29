@@ -167,7 +167,11 @@ function removeRights($userId)
     $adminAccountManager = new AdminAccountManager();
     $adminAccountManager->setNoneRights($userId);
     
-    header('Location: index.php?action=displayAdminAccount&idUser=' . $userId);
+    if($_SESSION['user_right'] == 'none') {
+        header('Location: index.php');
+    } else {
+        header('Location: index.php?action=displayAdminAccount&idUser=' . $userId);
+    }
 }
 
 ?>
