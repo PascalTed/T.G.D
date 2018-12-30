@@ -400,9 +400,9 @@ try {
             }
             
         // Afficher la page éditer nos jeux (administration)    
-        } elseif ($_GET['action'] == 'displayAdminlistGames') {
+        } elseif ($_GET['action'] == 'displayAdminListGames') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                displayAdminlistGames();
+                displayAdminListGames();
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
