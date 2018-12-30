@@ -184,7 +184,7 @@ function removeRights($userId)
         header('Location: index.php?action=displayAdminAccount&idUser=' . $userId);
     }
 }
-require_once('view/backend/adminListGamesView.php');
+
 // Afficher la page éditer nos jeux (administration)
 function displayAdminListGames()
 {
@@ -195,7 +195,7 @@ function displayAdminListGames()
 }
 
 // Afficher la page pour créer un jeu joué (admnistration)
-function displayAdminCreateGame()
+function displayCreateGame()
 {
     require_once('view/backend/adminCreateGameView.php');
 }
