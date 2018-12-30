@@ -406,6 +406,14 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+        
+        // Afficher la page pour créer un jeu joué (admnistration)
+        } elseif ($_GET['action'] == 'displayCreateGame') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayCreateGame();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
