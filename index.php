@@ -398,6 +398,14 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Afficher la page éditer nos jeux (administration)    
+        } elseif ($_GET['action'] == 'displayAdminlistGames') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayAdminlistGames();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
