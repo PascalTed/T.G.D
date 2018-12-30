@@ -195,7 +195,7 @@ function displayAdminListGames()
 }
 
 // Afficher la page pour créer un jeu joué (admnistration)
-function displayCreateGame()
+function displayAdminCreateGame()
 {
     require_once('view/backend/adminCreateGameView.php');
 }
