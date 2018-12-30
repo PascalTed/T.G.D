@@ -7,6 +7,7 @@ use model\backend\AdminForumManager;
 use model\backend\AdminAccountManager;
 use model\frontend\InstantMessageManager;
 use model\frontend\ForumManager;
+use model\frontend\GameManager;
 
 // Afficher la page accueil (administration)
 function displayAdminHome()
@@ -182,6 +183,15 @@ function removeRights($userId)
     } else {
         header('Location: index.php?action=displayAdminAccount&idUser=' . $userId);
     }
+}
+
+// Afficher la page éditer nos jeux (administration)
+function displayAdminListGames()
+{
+    $gameManager = new gameManager();
+    $games = $gameManager->getListGames();
+    
+    require_once('view/backend/adminListGamesView.php');
 }
 
 ?>
