@@ -10,7 +10,7 @@
     </div>
     
     <div>
-        <h2><a href="index.php?action=displayCreateGame">Ajouter un jeu</a></h2>
+        <h2><a href="index.php?action=displayAdminCreateGame">Ajouter un jeu</a></h2>
     </div>
 
     <div id="admin-all-games-content">
