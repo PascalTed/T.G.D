@@ -408,9 +408,9 @@ try {
             }
         
         // Afficher la page pour créer un jeu joué (admnistration)
-        } elseif ($_GET['action'] == 'displayCreateGame') {
+        } elseif ($_GET['action'] == 'displayAdminCreateGame') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                displayCreateGame();
+                displayAdminCreateGame();
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
