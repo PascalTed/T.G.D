@@ -209,5 +209,10 @@ function createGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType
     
     header('Location: index.php?action=displayAdminListGames');
 }
+// Afficher la page modifier ou supprimer un jeu joué (administration)
+function displayAdminModifyGame()
+{
+    require_once('view/backend/AdminModifyGameView.php');
+}
 
 ?>
