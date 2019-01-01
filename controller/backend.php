@@ -206,6 +206,8 @@ function createGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType
 {
     $adminGameManager = new AdminGameManager();
     $adminGameManager->addGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
+    
+    header('Location: index.php?action=displayAdminListGames');
 }
 
 ?>
