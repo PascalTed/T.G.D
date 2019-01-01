@@ -271,24 +271,48 @@ formLoginWindow.addEventListener("submit", function(e) {
 // Fin connexion
 
 // Début page account
-var displayFormAvatar = document.getElementById("form-avatar-window");
+var formAvatar = document.getElementById("form-avatar");
+var maxFileAvatar = document.getElementById("max-file-avatar");
+var fileAvatar = document.getElementById("file-avatar");
 
-if (document.getElementById("account") !== null) {
+if (formAvatar !== null) {
     
-    document.getElementById("btn-modify-avatar").addEventListener("click", function () {
-        displayFormAvatar.style.display = "block";
-        opaqueWindow.style.display = "block"
-    
-        opaqueWindow.addEventListener("click", function() {
-            opaqueWindow.style.display = "none";
-            displayFormAvatar.style.display = "none";
+    var displayFormAvatar = document.getElementById("form-avatar-window");
+
+    if (document.getElementById("account") !== null) {
+
+        document.getElementById("btn-modify-avatar").addEventListener("click", function () {
+            displayFormAvatar.style.display = "block";
+            opaqueWindow.style.display = "block"
+
+            opaqueWindow.addEventListener("click", function() {
+                opaqueWindow.style.display = "none";
+                displayFormAvatar.style.display = "none";
+            });
+
+            document.getElementById('close-avatar-window').addEventListener("click", function() {
+                opaqueWindow.style.display = "none";
+                displayFormAvatar.style.display = "none";
+            });
         });
+    }
+    
+    formAvatar.addEventListener("submit", function (e) {
+        e.preventDefault();
         
-        document.getElementById('close-avatar-window').addEventListener("click", function() {
-            opaqueWindow.style.display = "none";
-            displayFormAvatar.style.display = "none";
-        });
-    });
+        var sizeFileAvatar = fileAvatar.files[0].size;
+        
+        if (sizeFileAvatar > 1048576) {
+            console.log("fichier trop gros");
+            maxFileAvatar.style.display = "block";
+            fileAvatar.addEventListener("click", function () {
+                maxFileAvatar.style.display = "none";
+            });
+        } else {
+            console.log(formAvatar);
+            formAvatar.submit();
+        }
+    })
 }
 // Fin page account
 
