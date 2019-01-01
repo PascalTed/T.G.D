@@ -653,7 +653,7 @@ if (formCreateGame !== null) {
                 noContentGame.style.display = "none";
             });
         }
-        if (valueTitleGame !== "" && valueReleaseDateGame !== "" && valueTypeGame !== "" && sizeFileGame <= 2097152 !== "" && valueContentGame) {
+        if (valueTitleGame !== "" && valueReleaseDateGame !== "" && valueTypeGame !== "" && sizeFileGame <= 2097152 && valueContentGame !== "") {
             formCreateGame.submit();
             console.log("test2");
         }
