@@ -8,6 +8,7 @@ use model\backend\AdminAccountManager;
 use model\frontend\InstantMessageManager;
 use model\frontend\ForumManager;
 use model\frontend\GameManager;
+use model\backend\AdminGameManager;
 
 // Afficher la page accueil (administration)
 function displayAdminHome()
@@ -198,6 +199,13 @@ function displayAdminListGames()
 function displayAdminCreateGame()
 {
     require_once('view/backend/adminCreateGameView.php');
+}
+
+// Enregistrer le nouveau jeu joué (admnistration)
+function createGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
+{
+    $adminGameManager = new AdminGameManager();
+    $adminGameManager->addGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
 }
 
 ?>
