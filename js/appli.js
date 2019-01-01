@@ -565,3 +565,75 @@ if (formEditTopic !== null) {
     });
 }
 // Fin page Topic (administration)
+
+// Début page createGame (administration)
+var formCreateGame = document.getElementById("form-create-game");
+
+var titleGame = document.getElementById("title-game");
+var noTitleGame = document.getElementById("no-title-game");
+
+var releaseDateGame = document.getElementById("release-date-game");
+var noDateGame = document.getElementById("no-date-game");
+
+var typeGame = document.getElementById("type-game");
+var noTypeGame = document.getElementById("no-type-game");
+
+var fileGame = document.getElementById('file-game');
+var maxFileGame = document.getElementById("max-file-game");
+
+var contentGame = document.getElementById("content-game");
+var noContentGame = document.getElementById("no-content-game");
+
+if (formCreateGame !== null) {
+    formCreateGame.addEventListener("submit", function(e) {
+        tinymce.triggerSave();
+        e.preventDefault();
+        
+        console.log("test");
+        var valueTitleGame = titleGame.value;
+        var valueReleaseDateGame = releaseDateGame.value;
+        var valueTypeGame = typeGame.value;
+        var valueContentGame = contentGame.value;
+        
+        var sizeFileGame = fileGame.files[0].size;
+        
+        
+        if (valueTitleGame == "") {
+            noTitleGame.style.display = "block";
+            tinymce.get("title-game").on("click", function () {
+                noTitleGame.style.display = "none";
+            });
+        }
+        if (valueReleaseDateGame == "") {
+            noDateGame.style.display = "block";
+            tinymce.get("release-date-game").on("click", function () {
+                noDateGame.style.display = "none";
+            });
+        }
+        if (valueTypeGame == "") {
+            noTypeGame.style.display = "block";
+            tinymce.get("type-game").on("click", function () {
+                noTypeGame.style.display = "none";
+            });
+        }
+        if (sizeFileGame > 2097152) {
+            console.log("fichier trop gros");
+            maxFileGame.style.display = "block";
+            fileGame.addEventListener("click", function () {
+                maxFileGame.style.display = "none";
+            });
+        }
+        if (valueContentGame == "") {
+            noContentGame.style.display = "block";
+            tinymce.get("content-game").on("click", function () {
+                noContentGame.style.display = "none";
+            });
+        }
+        if (valueTitleGame !== "" && valueReleaseDateGame !== "" && valueTypeGame !== "" && sizeFileGame <= 2097152 !== "" && valueContentGame) {
+            formCreateGame.submit();
+            console.log("test2");
+        }
+        
+    });
+}
+// Fin page createGame (administration)
