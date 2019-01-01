@@ -31,7 +31,7 @@
                 <input type="file" name="file-avatar" id="file-avatar" required/><br />
                 <span id="accepted-file-avatar">Fichiers acceptés : jpeg ou png ou gif, maximum 1Mo.</span><br />
                 <span id="max-file-avatar">Le fichier est trop gros.</span><br />
-                <input type="submit" name="submit" value="Envoyer" />
+                <input type="submit" value="Envoyer" />
             </form>
         </div>        
     </div>
