@@ -214,7 +214,7 @@ function displayAdminModifyGame($gameId)
 {
     $gameManager = new GameManager();
     $game = $gameManager->getGame($gameId);
-    require_once('view/backend/AdminModifyGameView.php');
+    require_once('view/backend/adminModifyGameView.php');
 }
 
 ?>
