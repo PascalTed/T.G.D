@@ -29,7 +29,7 @@
             <p>
                 <label for="file-game">Ajouter l'image</label><br />
                 <input type="file" name="file-game" id="file-game" required/><br />
-                <span>Fichiers acceptés : jpeg ou png, maximum 2Mo.</span><br />
+                <span id="accepted-file-game">Fichiers acceptés : jpeg ou png, maximum 2Mo.</span><br />
                 <span id="max-file-game" class="messages-create-game">Le fichier est trop gros.</span>
             </p>
 
