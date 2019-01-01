@@ -438,7 +438,7 @@ try {
         } elseif ($_GET['action'] == 'displayAdminModifyGame') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['idGame']) && $_GET['idGame'] > 0) {
-                    displayAdminModifyGame();
+                    displayAdminModifyGame($_GET['idGame']);
                 } else {
                     throw new Exception('Aucun id jeu envoyé.');
                 }
