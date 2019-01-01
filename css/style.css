@@ -503,6 +503,7 @@ section
     color: red;
 }
 /* Fin page forumTopics (administration) */
+
 /* Début page Topic (administration) */
 #admin-topic #topic-exist, #admin-topic #no-topic
 {
@@ -513,6 +514,20 @@ section
 /* Fin section */
 
 /* Début media queries */
+
+/* Début page createGame (administration) */
+#admin-create-game .messages-create-game
+{
+    display: none;
+    color: red;
+}
+
+#admin-create-game #accepted-file-game
+{
+    color: blue;
+}
+/* Fin page createGame (administration) */
+
 /* Début media query max-width: 800px */
 @media all and (max-width: 800px){
 
