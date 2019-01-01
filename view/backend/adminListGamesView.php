@@ -32,7 +32,7 @@
                 <img src="images/games/<?= $game['image'] ?>" class="admin-image-game" alt="image du jeu"/> 
                 
                 <!-- Toutes les données sont protégées par htmlspecialchars -->
-                <p class="admin-game-extract"><?= strip_tags($GameExtract) ?>...<a class="admin-modify-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
+                <p class="admin-game-extract"><?= strip_tags($GameExtract) ?>...<a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
                 </p>
                 
             </div>
