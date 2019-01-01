@@ -424,6 +424,7 @@ section
 #max-file-avatar
 {
     display: none;
+    color: red;
 }
 
 #accepted-file-avatar
