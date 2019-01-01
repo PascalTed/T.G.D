@@ -433,6 +433,14 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+            
+        // Afficher la page modifier ou supprimer un jeu joué (administration)    
+        } elseif ($_GET['action'] == 'displayAdminModifyGame') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                displayAdminModifyGame();
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
