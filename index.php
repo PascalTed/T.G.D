@@ -414,6 +414,25 @@ try {
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
+        // Enregistrer le nouveau jeu joué (admnistration)
+        } elseif($_GET['action'] == 'createGame') {
+            if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
+                if (isset($_FILES['file-game']) && $_FILES['file-game']['error'] == 0) {
+                    if ($_FILES['file-game']['size'] <= 2097152) {
+                        if (isset($_POST['title-game']) && isset($_POST['release-date-game']) && isset($_POST['type-game']) && isset($_POST['content-game'])) {
+                            createGame($_SESSION['id'], $_FILES['file-game'], $_POST['title-game'], $_POST['release-date-game'], $_POST['type-game'], $_POST['content-game']);
+                        } else {
+                           throw new Exception('Aucun titre ou date de sortie ou genre ou contenu du jeu envoyé.'); 
+                        }
+                    } else {
+                       throw new Exception('Fichier trop gros.'); 
+                    }
+                } else {
+                    throw new Exception('Aucun fichier image envoyé ou erreur lors de l\'envoi.');
+                }
+            } else {
+                throw new Exception('Aucun droit envoyé.');
+            }
         }
     } else {
         home();
