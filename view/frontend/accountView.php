@@ -28,7 +28,9 @@
             <i class="fas fa-skull-crossbones fa-2x" id="close-avatar-window"></i>
        
             <form method="post" action="index.php?action=modifyAvatar" enctype="multipart/form-data" id="form-avatar">
-                <input type="file" name="file-avatar" id="file-avatar" required/>
+                <input type="file" name="file-avatar" id="file-avatar" required/><br />
+                <span id="accepted-file-avatar">Fichiers acceptés : jpeg ou png ou gif, maximum 1Mo.</span><br />
+                <span id="max-file-avatar">Le fichier est trop gros.</span><br />
                 <input type="submit" name="submit" value="Envoyer" />
             </form>
         </div>        
