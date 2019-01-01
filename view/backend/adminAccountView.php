@@ -6,6 +6,10 @@
 <section id="admin-infos-account">
     
     <div>
+        <p><a href="index.php?action=displayAdminAllAccounts">Comptes</a><span>/</span>Compte utilisateur</p>
+    </div>
+    
+    <div>
         <h1>Informations du compte utilisateur</h1>
     </div>
 
