@@ -437,7 +437,11 @@ try {
         // Afficher la page modifier ou supprimer un jeu joué (administration)    
         } elseif ($_GET['action'] == 'displayAdminModifyGame') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
-                displayAdminModifyGame();
+                if (isset($_GET['idGame']) && $_GET['idGame'] > 0) {
+                    displayAdminModifyGame();
+                } else {
+                    throw new Exception('Aucun id jeu envoyé.');
+                }
             } else {
                 throw new Exception('Aucun droit envoyé.');
             }
