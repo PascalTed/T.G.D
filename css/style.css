@@ -521,9 +521,6 @@ section
     color: red;
 }
 /* Fin page Topic (administration) */
-/* Fin section */
-
-/* Début media queries */
 
 /* Début page createGame (administration) */
 #admin-create-game .messages-create-game
@@ -538,6 +535,21 @@ section
 }
 /* Fin page createGame (administration) */
 
+/* Début page modifyGame (administration) */
+#admin-edit-game .messages-edit-game
+{
+    display: none;
+    color: red;
+}
+
+#admin-edit-game #accepted-edit-file-game
+{
+    color: blue;
+}
+/* Fin page modifyGame (administration) */
+/* Fin section */
+
+/* Début media queries */
 /* Début media query max-width: 800px */
 @media all and (max-width: 800px){
 
