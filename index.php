@@ -455,9 +455,9 @@ try {
                             switch ($_POST['setGame']) {
                                 case 'adm-modify-game':
                                     if (isset($_POST['edit-title-game']) && isset($_POST['edit-date-game']) && isset($_POST['edit-type-game']) && isset($_POST['edit-content-game'])) {
-                                        modifyGame($_SESSION['id'], $_FILES['edit-file-game'], $_POST['edit-title-game'], $_POST['edit-date-game'], $_POST['edit-type-game'], $_POST['edit-content-game']);
+                                        modifyGame($_SESSION['id'], $_FILES['edit-file-game'], $_POST['edit-title-game'], $_POST['edit-date-game'], $_POST['edit-type-game'], $_POST['edit-content-game'], $_GET['idGame']);
                                     } else {
-                                        throw new Exception('Aucun titre ou date de sortie ou genre ou contenu de jeu envoyé.');
+                                        throw new Exception('Aucun titre ou date de sortie ou genre ou contenu ou id jeu envoyé.');
                                     }
                                     break;
                                 case 'adm-remove-game':

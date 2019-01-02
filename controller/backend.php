@@ -218,10 +218,10 @@ function displayAdminModifyGame($gameId)
 }
 
 // Modifier un jeu joué (administration)
-function modifyGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
+function modifyGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId)
 {
     $adminGameManager = new AdminGameManager();
-    $adminGameManager->editGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
+    $adminGameManager->editGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId);
     
     header('Location: index.php?action=displayAdminListGames');
 }
