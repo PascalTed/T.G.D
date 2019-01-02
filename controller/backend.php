@@ -217,4 +217,21 @@ function displayAdminModifyGame($gameId)
     require_once('view/backend/adminModifyGameView.php');
 }
 
+// Modifier un jeu joué (administration)
+function modifyGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
+{
+    $adminGameManager = new AdminGameManager();
+    $adminGameManager->editGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
+    
+    header('Location: index.php?action=displayAdminListGames');
+}
+
+function removeGame($gameId)
+{
+    $adminGameManager = new AdminGameManager();
+    $adminGameManager->deleteGame($gameId);
+    
+    header('Location: index.php?action=displayAdminListGames');
+}
+
 ?>
