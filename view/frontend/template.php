@@ -56,10 +56,10 @@
         <script src="js/tinymce/tinymce.js"></script>
         <script>
             tinymce.init({
-            selector: '#create-title-topic, #title-game, #release-date-game, #type-game', menubar: false, toolbar: 'undo redo', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize", forced_root_block: false
+            selector: '#create-title-topic, #title-game, #release-date-game, #type-game , #edit-title-game, #edit-type-game, #edit-date-game', menubar: false, toolbar: 'undo redo', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize", forced_root_block: false
             });
             tinymce.init({
-            selector: '#create-content-topic, #reply-to-message, #content-game', menubar: false, toolbar: 'undo redo | emoticons | bold | italic | underline | strikethrough | forecolor | alignleft aligncenter alignright alignjustify | link', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize link emoticons textcolor", language: 'fr_FR', default_link_target: "_blank", target_list: false, link_title: false, anchor_top: false, anchor_bottom: false
+            selector: '#create-content-topic, #reply-to-message, #content-game, #edit-content-game', menubar: false, toolbar: 'undo redo | emoticons | bold | italic | underline | strikethrough | forecolor | alignleft aligncenter alignright alignjustify | link', branding: false, statusbar: false, entity_encoding: "raw", plugins: "autoresize link emoticons textcolor", language: 'fr_FR', default_link_target: "_blank", target_list: false, link_title: false, anchor_top: false, anchor_bottom: false
             });
         </script>
         <script src="js/regex.js"></script>
