@@ -75,4 +75,13 @@ class AdminGameManager extends Manager
         
         $req->execute(array($userId, $gameTitle, $fileGameName, $gameContent, $gameType, $gameReleaseDate, $gameId));
     }
+    
+    // Supprimé un jeu joué
+    public function deleteGame($gameId)
+    {
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('DELETE FROM played_games WHERE id = ?');
+        $req->execute(array($gameId));
+    }
 }
