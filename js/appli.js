@@ -661,3 +661,75 @@ if (formCreateGame !== null) {
     });
 }
 // Fin page createGame (administration)
+
+// Début page modifyGame (administration)
+var formEditGame = document.getElementById("form-edit-game");
+
+var editTitleGame = document.getElementById("edit-title-game");
+var noEditTitleGame = document.getElementById("no-edit-title-game");
+
+var editDateGame = document.getElementById("edit-date-game");
+var noEditDateGame = document.getElementById("no-edit-date-game");
+
+var editTypeGame = document.getElementById("edit-type-game");
+var noEditTypeGame = document.getElementById("no-edit-type-game");
+
+var editFileGame = document.getElementById('edit-file-game');
+var maxEditFileGame = document.getElementById("max-edit-file-game");
+
+var editContentGame = document.getElementById("edit-content-game");
+var noEditContentGame = document.getElementById("no-edit-content-game");
+
+if (formEditGame !== null) {
+    formEditGame.addEventListener("submit", function(e) {
+        tinymce.triggerSave();
+        e.preventDefault();
+        
+        console.log("test");
+        var valueEditTitleGame = editTitleGame.value;
+        var valueEditDateGame = editDateGame.value;
+        var valueEditTypeGame = editTypeGame.value;
+        var valueEditContentGame = editContentGame.value;
+        
+        var sizeFileEditGame = editFileGame.files[0].size;
+        
+        
+        if (valueEditTitleGame == "") {
+            noEditTitleGame.style.display = "block";
+            tinymce.get("edit-title-game").on("click", function () {
+                noEditTitleGame.style.display = "none";
+            });
+        }
+        if (valueEditDateGame == "") {
+            noEditDateGame.style.display = "block";
+            tinymce.get("edit-date-game").on("click", function () {
+                noEditDateGame.style.display = "none";
+            });
+        }
+        if (valueEditTypeGame == "") {
+            noEditTypeGame.style.display = "block";
+            tinymce.get("edit-type-game").on("click", function () {
+                noEditTypeGame.style.display = "none";
+            });
+        }
+        if (sizeFileEditGame > 2097152) {
+            console.log("fichier trop gros");
+            maxEditFileGame.style.display = "block";
+            fileGame.addEventListener("click", function () {
+                maxEditFileGame.style.display = "none";
+            });
+        }
+        if (valueEditContentGame == "") {
+            noEditContentGame.style.display = "block";
+            tinymce.get("edit-content-game").on("click", function () {
+                noEditContentGame.style.display = "none";
+            });
+        }
+        if (valueEditTitleGame !== "" && valueEditDateGame !== "" && valueEditTypeGame !== "" && sizeFileEditGame <= 2097152 && valueEditContentGame !== "") {
+            formEditGame.submit();
+            console.log("test2");
+        }
+        
+    });
+}
+// Fin page modifyGame (administration)
