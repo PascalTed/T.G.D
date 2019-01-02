@@ -450,26 +450,30 @@ try {
         } elseif($_GET['action'] == 'modifyOrRemoveGame') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_FILES['edit-file-game']) && $_FILES['edit-file-game']['error'] == 0) {
-                    if (isset($_POST['setGame'])) {
-                        switch ($_POST['setGame']) {
-                            case 'adm-modify-game':
-                                if (isset($_POST['edit-title-game']) && isset($_POST['edit-date-game']) && isset($_POST['edit-type-game']) && isset($_POST['edit-content-game'])) {
-                                    modifyGame($_SESSION['id'], $_FILES['edit-file-game'], $_POST['edit-title-game'], $_POST['edit-date-game'], $_POST['edit-type-game'], $_POST['edit-content-game']);
-                                } else {
-                                    throw new Exception('Aucun titre ou date de sortie ou genre ou contenu de jeu envoyé.');
-                                }
-                                break;
-                            case 'adm-remove-game':
-                                if (isset($_GET['idGame'])) {
-                                    removeGame($_GET['idGame']);
-                                } else {
-                                    throw new Exception('Aucun id de jeu envoyé');
-                                }
-                                break;
-                            default: 'ce choix n\'existe pas';
+                    if ($_FILES['file-game']['size'] <= 2097152) {
+                        if (isset($_POST['setGame'])) {
+                            switch ($_POST['setGame']) {
+                                case 'adm-modify-game':
+                                    if (isset($_POST['edit-title-game']) && isset($_POST['edit-date-game']) && isset($_POST['edit-type-game']) && isset($_POST['edit-content-game'])) {
+                                        modifyGame($_SESSION['id'], $_FILES['edit-file-game'], $_POST['edit-title-game'], $_POST['edit-date-game'], $_POST['edit-type-game'], $_POST['edit-content-game']);
+                                    } else {
+                                        throw new Exception('Aucun titre ou date de sortie ou genre ou contenu de jeu envoyé.');
+                                    }
+                                    break;
+                                case 'adm-remove-game':
+                                    if (isset($_GET['idGame'])) {
+                                        removeGame($_GET['idGame']);
+                                    } else {
+                                        throw new Exception('Aucun id de jeu envoyé');
+                                    }
+                                    break;
+                                default: 'ce choix n\'existe pas';
+                            }
+                        } else {
+                            throw new Exception('Aucun choix, modifier ou supprimer un jeu joué, n\'a été envoyé');
                         }
                     } else {
-                        throw new Exception('Aucun choix, modifier ou supprimer un jeu joué, n\'a été envoyé');
+                        throw new Exception('Fichier trop gros.');
                     }
                 } else {
                     throw new Exception('Aucun fichier image envoyé ou erreur lors de l\'envoi.');
