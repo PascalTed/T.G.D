@@ -718,13 +718,15 @@ if (formEditGame !== null) {
                 if (sizeFileEditGame > 2097152) {
                     console.log("fichier trop gros");
                     maxEditFileGame.style.display = "block";
-                    fileGame.addEventListener("click", function () {
+                    editFileGame.addEventListener("click", function () {
                         maxEditFileGame.style.display = "none";
-                        existEditFileGame.style.display = "none";
                     });
                 }
             } else {
                 existEditFileGame.style.display = "block";
+                editFileGame.addEventListener("click", function () {
+                    existEditFileGame.style.display = "none";
+                });
             }
             if (valueEditContentGame == "") {
                 noEditContentGame.style.display = "block";
