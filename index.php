@@ -450,7 +450,7 @@ try {
         } elseif($_GET['action'] == 'modifyOrRemoveGame') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_FILES['edit-file-game']) && $_FILES['edit-file-game']['error'] == 0) {
-                    if ($_FILES['file-game']['size'] <= 2097152) {
+                    if ($_FILES['edit-file-game']['size'] <= 2097152) {
                         if (isset($_POST['setGame'])) {
                             switch ($_POST['setGame']) {
                                 case 'adm-modify-game':
