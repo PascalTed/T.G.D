@@ -63,4 +63,16 @@ class AdminGameManager extends Manager
         
         $req->execute(array($userId, $gameTitle, $fileGameName, $gameContent, $gameType, $gameReleaseDate));
     }
+    
+    // Modifié un jeu joué
+    public function modifyGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
+    {
+        $fileGameName = $this->addFileGame($gameImage);
+        
+        $db = $this->dbConnect();
+        
+        $req = $db->prepare('UPDATE played_games SET user_id = ?, title = ?, image = ?, content = ?, type = ?, release_date = ?) VALUES (?, ?, ?, ?, ?, ?');
+        
+        $req->execute(array($userId, $gameTitle, $fileGameName, $gameContent, $gameType, $gameReleaseDate));
+    }
 }
