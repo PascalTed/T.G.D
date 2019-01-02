@@ -65,7 +65,7 @@ class AdminGameManager extends Manager
     }
     
     // Modifié un jeu joué
-    public function ediGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
+    public function editGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
     {
         $fileGameName = $this->addFileGame($gameImage);
         
