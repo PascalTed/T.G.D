@@ -6,15 +6,16 @@
 <section id="admin-create-game">
 
     <div>
-        <div>
-            <h1>Ajouté un jeu joué</h1>
-        </div>
+        <h1>Ajouté un jeu joué</h1>
+    </div>
         
-        <div>
-            <p>
-                <a href="index.php?action=displayAdminListGames">Editer nos jeux</a><span>/</span>Ajouter un jeu
-            </p>
-        </div>
+    <div>
+        <p>
+            <a href="index.php?action=displayAdminListGames">Editer nos jeux</a><span>/</span>Ajouter un jeu
+        </p>
+    </div>
+        
+    <div id="admin-create-game-content">
         
         <form class="form-tiny-mce" action="index.php?action=createGame" method="post" id="form-create-game" enctype="multipart/form-data">
             <p>
@@ -51,8 +52,8 @@
             <p>
                 <input type="submit" value="Ajouter le jeu" />
             </p>
-            
-         </form>
+        </form>
+        
     </div>
     
 </section>
