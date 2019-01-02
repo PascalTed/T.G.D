@@ -6,7 +6,16 @@
 <section id="admin-create-game">
 
     <div>
-        <h1>Ajouté un jeu joué</h1>
+        <div>
+            <h1>Ajouté un jeu joué</h1>
+        </div>
+        
+        <div>
+            <p>
+                <a href="index.php?action=displayAdminListGames">Editer nos jeux</a><span>/</span>Ajouter un jeu
+            </p>
+        </div>
+        
         <form class="form-tiny-mce" action="index.php?action=createGame" method="post" id="form-create-game" enctype="multipart/form-data">
             <p>
                 <label for="title-game">Ajouter le titre</label><br />
