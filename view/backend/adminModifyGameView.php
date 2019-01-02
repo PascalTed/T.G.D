@@ -16,7 +16,7 @@
         </p>
     </div>
 
-    <div class="admin-game-content">
+    <div class="admin-edit-game-content">
 
         <form action="index.php?action=modifyOrRemoveGame&amp;idGame=<?= $game['id'] ?>" id="form-edit-game" method="post">
             <p>
