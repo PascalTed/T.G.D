@@ -18,7 +18,7 @@
 
     <div id ="admin-edit-game-content">
 
-        <form action="index.php?action=modifyOrRemoveGame&amp;idGame=<?= $game['id'] ?>" id="form-edit-game" method="post">
+        <form action="index.php?action=modifyOrRemoveGame&amp;idGame=<?= $game['id'] ?>" id="form-edit-game" method="post" enctype="multipart/form-data">
             <p>
                 <label for="edit-title-game">Modifier le titre</label><br />
                 <textarea id="edit-title-game" name="edit-title-game"><?= $game['title']; ?></textarea><br />
