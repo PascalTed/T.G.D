@@ -56,7 +56,7 @@
                         <p><img src="images/social/twitter.png" alt="twitter"/></p>
                     </div>
                     <div id="copyright">
-                        <p>Copyright 2019 - Tous droits réservés</p>
+                        <p>Copyright © 2019 tgd.tedsev.com</p>
                     </div>
                 </div>
             </footer>
