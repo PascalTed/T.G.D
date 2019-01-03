@@ -50,6 +50,15 @@
             <!-- </section> -->
             
             <footer>
+                <div>
+                    <div id="social-icons">
+                        <p><img src="images/social/facebook.png" alt="facebook"/></p>
+                        <p><img src="images/social/twitter.png" alt="twitter"/></p>
+                    </div>
+                    <div id="copyright">
+                        <p>Copyright 2019 - Tous droits réservés</p>
+                    </div>
+                </div>
             </footer>
         </div>
         <!-- début script -->
