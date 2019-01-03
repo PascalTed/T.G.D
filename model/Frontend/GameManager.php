@@ -22,4 +22,11 @@ class GameManager extends Manager
         
         return $game;
     }
+    
+    public function getNbGames()
+    {
+        $db = $this->dbConnect();
+        $nbGames = $db->query('SELECT COUNT(id) nb_games FROM played_games');
+        return $nbGames;
+    }
 }
