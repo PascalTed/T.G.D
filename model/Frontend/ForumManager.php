@@ -13,6 +13,15 @@ class ForumManager extends Manager
         
         return $forums;
     }
+    
+    public function getNbForums()
+    {
+        $db = $this->dbConnect();
+        
+        $nbForums = $db->query('SELECT COUNT(id) nb_forums FROM forums');
+        
+        return $nbForums;
+    }
      
     public function getTopics($forumId)
     {
