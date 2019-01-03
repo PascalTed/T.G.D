@@ -549,6 +549,42 @@ section
 /* Fin page modifyGame (administration) */
 /* Fin section */
 
+/* Début footer */
+footer
+{
+    background-color: #333333;
+    color: white;
+}
+
+footer > div
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer #social-icons
+{
+    display: flex;
+}
+
+footer #social-icons img
+{
+    height: 30px;
+    display: block;
+}
+
+footer p
+{
+    margin: 5px 5px;
+}
+
+footer #copyright p
+{
+    text-align: right;
+}
+/* Fin footer */
+
 /* Début media queries */
 /* Début media query max-width: 800px */
 @media all and (max-width: 800px){
