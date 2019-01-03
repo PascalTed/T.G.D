@@ -13,6 +13,13 @@ function home()
 {
     $messages = getAllmessages();
     
+    $gameManager = new GameManager();
+    $nbGame = $gameManager->nbGames();
+    
+    $forumManager = new ForumManager();
+    $nbForum = $forumManager->nbForums();
+    
+    
     require_once('view/frontend/homeView.php');
 }
 
