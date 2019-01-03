@@ -26,7 +26,10 @@ class GameManager extends Manager
     public function getNbGames()
     {
         $db = $this->dbConnect();
-        $nbGames = $db->query('SELECT COUNT(id) nb_games FROM played_games');
+        
+        $req = $db->query('SELECT COUNT(id) nb_games FROM played_games');
+        $nbGames = $req->fetch();
+        
         return $nbGames;
     }
 }
