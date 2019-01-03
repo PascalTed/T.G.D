@@ -18,7 +18,8 @@ class ForumManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $nbForums = $db->query('SELECT COUNT(id) nb_forums FROM forums');
+        $req = $db->query('SELECT COUNT(id) nb_forums FROM forums');
+        $nbForums = $req->fetch();
         
         return $nbForums;
     }
