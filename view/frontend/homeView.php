@@ -12,7 +12,15 @@
 
     <div id="home-content">
         <?= $messages ?>
-        <p>Accueil</p>
+        <div>
+            <div id="nb-forums">
+                <h2><a href="index.php?action=displayForums">Forums</a></h2>
+            </div>
+            
+            <div id="nb-games">
+                <h2><a href="index.php?action=displayListGames">Les jeux joués par la team</a></h2>
+            </div>
+        </div>
     </div>
 
 </section>
