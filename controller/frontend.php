@@ -14,10 +14,10 @@ function home()
     $messages = getAllmessages();
     
     $gameManager = new GameManager();
-    $nbGame = $gameManager->nbGames();
+    $nbGames = $gameManager->getNbGames();
     
     $forumManager = new ForumManager();
-    $nbForum = $forumManager->nbForums();
+    $nbForums = $forumManager->getNbForums();
     
     
     require_once('view/frontend/homeView.php');
