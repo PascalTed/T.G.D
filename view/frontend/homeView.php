@@ -14,11 +14,13 @@
         <?= $messages ?>
         <div>
             <div id="nb-forums">
-                <h2><a href="index.php?action=displayForums">Forums</a></h2>
+                <h2>Forums</h2>
+                <p><a href="index.php?action=displayForums">Voir les <?= $nbForums['nb_forums'] ?> Forums</a></p>
             </div>
             
             <div id="nb-games">
-                <h2><a href="index.php?action=displayListGames">Les jeux joués par la team</a></h2>
+                <h2>Nos jeux</h2>
+                <p><a href="index.php?action=displayListGames">Voir les <?= $nbGames['nb_games'] ?> jeux joués par la team</a></p>
             </div>
         </div>
     </div>
