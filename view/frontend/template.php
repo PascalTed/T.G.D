@@ -52,8 +52,8 @@
             <footer>
                 <div>
                     <div id="social-icons">
-                        <p><img src="images/social/facebook.png" alt="facebook"/></p>
-                        <p><img src="images/social/twitter.png" alt="twitter"/></p>
+                        <p><a href="https://www.facebook.com/"><img src="images/social/facebook.png" alt="facebook"/></a></p>
+                        <p><a href="https://twitter.com/"><img src="images/social/twitter.png" alt="twitter"/></a></p>
                     </div>
                     <div id="copyright">
                         <p>Copyright © 2019 tgd.tedsev.com</p>
