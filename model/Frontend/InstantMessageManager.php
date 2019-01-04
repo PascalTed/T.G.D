@@ -19,7 +19,7 @@ class InstantMessageManager extends Manager
     {
         $db = $this->dbConnect();
         
-        $messages = $db->query('SELECT instant_messages.id, instant_messages.user_id, instant_messages.message, DATE_FORMAT(instant_messages.message_date, \'%d/%m/%Y à %Hh%imin%ss\') AS message_date_fr, users.pseudo, users.avatar FROM instant_messages INNER JOIN users ON instant_messages.user_id = users.id ORDER BY instant_messages.id DESC LIMIT 0, 25');
+        $messages = $db->query('SELECT instant_messages.id, instant_messages.user_id, instant_messages.message, DATE_FORMAT(instant_messages.message_date, \'%d/%m/%Y à %Hh%imin%ss\') AS message_date_fr, users.pseudo, users.avatar FROM instant_messages INNER JOIN users ON instant_messages.user_id = users.id ORDER BY instant_messages.id DESC LIMIT 0, 100');
 
         return $messages;
     }

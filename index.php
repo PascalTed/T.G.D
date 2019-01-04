@@ -86,15 +86,11 @@ try {
             }
             
         // Vérifier si nouveaux messages ajoutés, Venant d'un ajaxpost.  
-        } elseif ($_GET['action'] == 'verifUpdatedMessage') {
-            if (isset($_SESSION['pseudo'])) {
-                if (isset($_POST['idMessage']) && $_POST['idMessage'] >= 0) {
-                    verifUpdatedMessage($_POST['idMessage']);
-                } else {
-                    throw new Exception('Aucun id message envoyé.');
-                }
+        } elseif ($_GET['action'] == 'verifUpdatedMessage') {  
+            if (isset($_POST['idMessage']) && $_POST['idMessage'] >= 0) {
+                verifUpdatedMessage($_POST['idMessage']);
             } else {
-                throw new Exception('Aucun pseudo envoyé.');
+                throw new Exception('Aucun id message envoyé.');
             }
             
         // Afficher la page Nos jeux

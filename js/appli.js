@@ -322,6 +322,15 @@ var formAddMessage = document.getElementById('form-add-message');
 var addMessage = document.getElementById('add-message');
 var messageRequired = document.getElementById('message-required');
 
+var allMessages = document.getElementById("all-messages");
+var noneInstantMessage = document.getElementById("none-instant-message");
+var firstMessageId;
+
+if (document.querySelector("#all-messages > div") === null) {
+    noneInstantMessage.style.display = "block";
+    firstMessageId = 0;
+}
+
 if (formAddMessage !== null) {
 
     formAddMessage.addEventListener("submit", function(e) {
@@ -342,39 +351,30 @@ if (formAddMessage !== null) {
             ajaxPostMessage.executer();
         }
     });
+}
 
+// Ajaxpost pour récupérer les messages ajoutés toute les 1 secondes
+setInterval(function () {
 
-    // Ajaxpost pour récupérer les messages ajoutés
-    var allMessages = document.getElementById("all-messages");
-    var noneInstantMessage = document.getElementById("none-instant-message");
-    var firstMessageId;
-
-
-    if (document.querySelector("#all-messages > div") === null) {
-        noneInstantMessage.style.display = "block";
-        firstMessageId = 0;
+    if (document.querySelector("#all-messages > div") !== null) {
+        firstMessageId = document.querySelector("#all-messages > div").id;
+        // Supprimer "message" de firstMessageId, on récupère juste le numéro du message 
+        var regexIdMessage = "message-";
+        firstMessageId = firstMessageId.replace(regexIdMessage, '');
     }
-    setInterval(function () {
 
-        if (document.querySelector("#all-messages > div") !== null) {
-            firstMessageId = document.querySelector("#all-messages > div").id;
-            // Supprimer "message" de firstMessageId, on récupère juste le numéro du message 
-            var regexIdMessage = "message-";
-            firstMessageId = firstMessageId.replace(regexIdMessage, '');
-        }
-
-        var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
-        var ajaxPostGetMessage = Object.create(AjaxPost);
+    var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
+    var ajaxPostGetMessage = Object.create(AjaxPost);
         
-        ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {
-            if (reponse) {
+    ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {
+        if (reponse) {
             allMessages.insertAdjacentHTML("afterbegin", reponse);
             noneInstantMessage.style.display = "none"    
-            }
-        });
-        ajaxPostGetMessage.executer();
-    }, 1000);
-}
+        }
+    });
+    ajaxPostGetMessage.executer();
+}, 1000);
+
 // Fin formulaire messagerie instantanée
 
 // Début page createTopic

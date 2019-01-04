@@ -1,8 +1,6 @@
 body
 {
-    background-image: url("../images/mosaics-background.jpg");
     background-repeat: repeat;
-    background-size: 250px;
 }
 
 #body-block
@@ -10,9 +8,8 @@ body
     max-width: 1000px;
     margin: auto;
     font-size: 18px;
-    height: 1800px;
-    border: 1px solid black;
-    background-color: white;
+    background-image: url("../images/mosaics-background.jpg");
+    background-size: 250px;
 }
 
 /* Début header */
@@ -201,7 +198,7 @@ header
 /* Début section */
 section
 {
-    margin: 0 5%;
+    margin: 0 2%;
 }
 
 #opaque-window
@@ -270,25 +267,144 @@ section
 {
     color: red;
 }
-
 /* Fin formulaire inscription */
 
-/* Début messages instantanés */
-#add-read-messages
+/* Début page home */
+#home #home-content
 {
-    max-width: 200px;
-    border-radius: 0 5px 0 0;
-    background-color: rgb(230, 238, 255);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+#home h1
+{
+    text-align: center;
+    background-color: steelblue;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 0px 0px 15px black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid mediumslateblue;
+}
+
+#forums-games
+{
+    align-self: flex-start;
+    background-color: white;
+    box-shadow: 0px 0px 15px black;
+    border: 1px solid mediumslateblue;
+    padding: 25px;
+    border-radius: 5px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+#forums-games div:last-child
+{
+    margin-bottom: 0;
+}
+
+#forums-games a
+{
+    color: blue;
+}
+
+#nb-forums, #nb-games
+{
+    margin-bottom: 30px;
+}
+
+#nb-forums h2, #nb-games h2, #tgd-players h2
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #333333;
+}
+
+#nb-forums p, #nb-games p
+{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#nb-forums i
+{
+    color: darkgoldenrod;
+}
+
+#nb-games i
+{
+    color: orangered;
+}
+
+#tgd-players i
+{
+    color: red;
+}
+
+#tgd-players ul
+{
+    margin: 0;
+    padding-left: 20px;
+}
+
+#tgd-players ul li
+{
+    padding-top: 10px;
+    font-size: 20px;
+}
+/* Fin page home */
+
+/* Début messages instantanés */
+#instant-messages
+{
+    width: 400px;
+    border-radius: 5px 5px 0 0;
+    background-color: lightsteelblue;
+    border: 1px solid mediumslateblue;
+    box-shadow: 0px 0px 15px black;
+    box-sizing: border-box;
+    align-self: flex-start;
+}
+
+#no-connected-message
+{
+    font-weight: bold;
+}
+
+#connect-to-message
+{
+    color: blue
+}
+
+#instant-messages #no-connected
+{
+    padding: 5px;
+}
+
+#instant-messages #no-connected p
+{
+    margin: 0;
 }
 
 #form-add-message
 {
-    padding: 5px;
+    padding: 10px 5px;
 }
 
-#add-read-messages #no-connected
+#form-add-message label
 {
-    padding: 5px;
+    padding-left: 5px;
+}
+
+#form-add-message input[type="submit"]
+{
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
 }
 
 #form-add-message #message-required
@@ -297,6 +413,8 @@ section
     color: red;
     margin-top: 0;
     margin-bottom: 5px;
+    padding: 5px;
+    text-shadow: 0px 0px 5px white;
 }
 
 #add-message
@@ -312,24 +430,33 @@ section
 #all-messages
 {
     overflow: auto;
-    height: 300px;
-    padding-top: 15px;
+    max-height: 450px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(147, 174, 210);
+    box-shadow: inset 0px 2px 20px black;
 }
 
 #all-messages #none-instant-message
 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    word-break: break-all;
+    background-color: white;
+    box-shadow: 0px 0px 15px black;
+    border-radius: 5px;
     display: none;
 }
 
 #all-messages > div
 {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
+    padding: 5px;
+    margin-top: 10px;
     word-break: break-all;
     background-color: white;
-    box-shadow: 1px 1px 10px white;
+    box-shadow: inset 0px 0px 10px black;
     border-radius: 5px;
 }
 
@@ -353,6 +480,7 @@ section
 #all-messages > div > p:last-child
 {
     margin-top: 5px;
+    margin-bottom: 0;
 }
 /* Fin messages instantanés */
 
@@ -636,6 +764,26 @@ footer #copyright p
     }
     /* Fin formulaire inscription */
     
+    /* Début messages instantanés */
+    #instant-messages
+    {
+        width: 250px;
+    }
+    /* Fin messages instantanés */
+    
+    /* Début page home */
+    #home #home-content
+    {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+    
+    #home h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page home */
+    
     /* Début page forums */
     .forum-categorie
     {
@@ -667,6 +815,61 @@ footer #copyright p
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
+
+/* Début media query max-width: 600px */
+@media all and (max-width: 600px){
+    
+    /* Début section */
+    /* Début page home */
+    #home
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    #home h1
+    {
+
+    }
+    
+    #home #home-content
+    {
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    #forums-games
+    {
+        align-self: inherit;
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    #nb-forums, #nb-games
+    {
+        margin-bottom: 15px;
+    }
+    
+    #nb-forums p, #nb-games p
+    {
+        margin-top: 5px;
+    }
+    
+    #tgd-players ul li
+    {
+        padding-top: 5px;
+    }
+    
+    #instant-messages
+    {
+        width: 100%;
+    }
+    /* Fin page home */
+    /* Fin section */
+}
+/* Fin media query max-width: 600px *
 
 /* Début media query max-width: 500px */
 @media all and (max-width: 500px){
