@@ -13,7 +13,7 @@
             <input type="password" id="password-connect" name="password-connect" />
         </p>
         
-        <p id="pseudo-pass-alert"></p>
+        <p id="pseudo-pass-alert">Pseudo ou mot de passe incorrect</p>
         
         <p>
             <input type="submit" value="Se connecter" id="submit-login-window"/>

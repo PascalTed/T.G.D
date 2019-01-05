@@ -6,44 +6,52 @@
 <section id="forums">
 
     <div>
-        <h1 id="forums-title">Forums</h1>
+        <h1>Forums</h1>
     </div>
     
     <div id="forums-content">
         
-        <?php    
-        while ($forum = $forums->fetch()) {
+        <?php
+        $countForums = $forums->rowcount();
+        if ($countForums == 0) {
         ?>
-        
-            <div class="forum-categorie">
-                <div class="forum-cat-topics">
-                    <div>
-                       <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
-                        </h2>
-                    </div>
-
-                    <div><?= $forum['nb_topics'] ?> sujets</div>
-                </div>
-                
-                <?php
-                if ($forum['nb_topics'] <= 0) {
-                ?>
-                
-                    <div>Pas de messages</div>
-                
-                <?php
-                } else {
-                ?>
-                
-                    <div>dernier message par <?= $forum['pseudo'] ?> le <?= $forum['last_date'] ?></div>
-                
-                <?php
-                }
-                ?>
-
-            </div>
+            <p>Aucun forum</p>
         
         <?php
+        } else {
+            while ($forum = $forums->fetch()) {
+        ?>
+
+                <div class="forum-categorie">
+                    <div class="forum-cat-topics">
+                        <div>
+                           <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
+                            </h2>
+                        </div>
+
+                        <div><?= $forum['nb_topics'] ?> sujets</div>
+                    </div>
+
+                    <?php
+                    if ($forum['nb_topics'] <= 0) {
+                    ?>
+
+                        <div>Pas de messages</div>
+
+                    <?php
+                    } else {
+                    ?>
+
+                        <div>dernier message par <?= $forum['pseudo'] ?> le <?= $forum['last_date'] ?></div>
+
+                    <?php
+                    }
+                    ?>
+
+                </div>
+
+        <?php
+            }
         }
         ?>
         

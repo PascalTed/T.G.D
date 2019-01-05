@@ -165,6 +165,8 @@ if (formRegistration !== null) {
 // Début affichage de la fenêtre de connexion
 var loginWindow = document.getElementById("login-window");
 var opaqueWindow = document.getElementById("opaque-window");
+var pseudoPassAlert = document.getElementById("pseudo-pass-alert");
+
 // Depuis le menu
 var menuConnect = document.getElementById("header-menu-connect");
 
@@ -173,6 +175,9 @@ if (menuConnect !== null) {
     menuConnect.addEventListener("click", function() {
         loginWindow.style.display = "block";
         opaqueWindow.style.display = "block";
+        if (pseudoPassAlert.style.display === "block") {
+            pseudoPassAlert.style.display = "none";
+        }
                 
         opaqueWindow.addEventListener("click", function() {
             opaqueWindow.style.display = "none";
@@ -189,7 +194,9 @@ if (connectToMessage !== null) {
     connectToMessage.addEventListener("click", function() {
         loginWindow.style.display = "block";
         opaqueWindow.style.display = "block";
-                
+        if (pseudoPassAlert.style.display === "block") {
+            pseudoPassAlert.style.display = "none";
+        }
         opaqueWindow.addEventListener("click", function() {
             opaqueWindow.style.display = "none";
             loginWindow.style.display = "none";
@@ -205,7 +212,9 @@ if (connectToForum !== null) {
     connectToForum.addEventListener("click", function() {
         loginWindow.style.display = "block";
         opaqueWindow.style.display = "block";
-                
+        if (pseudoPassAlert.style.display === "block") {
+            pseudoPassAlert.style.display = "none";
+        }
         opaqueWindow.addEventListener("click", function() {
             opaqueWindow.style.display = "none";
             loginWindow.style.display = "none";
@@ -220,8 +229,10 @@ if (connectToReply !== null) {
    connectToReply.addEventListener("click", function() {
         loginWindow.style.display = "block";
         opaqueWindow.style.display = "block";
-                
-        opaqueWindow.addEventListener("click", function() {
+       if (pseudoPassAlert.style.display === "block") {
+            pseudoPassAlert.style.display = "none";
+       }
+       opaqueWindow.addEventListener("click", function() {
             opaqueWindow.style.display = "none";
             loginWindow.style.display = "none";
         });
@@ -252,13 +263,13 @@ formLoginWindow.addEventListener("submit", function(e) {
     ajaxPostConnect.init("index.php?action=connectAccount", dataSend, function(reponse) {
 
         if (reponse === "noUser" || reponse === "noPass") {
-            document.getElementById("pseudo-pass-alert").textContent = "Pseudo ou mot de passe incorrect";
-            
+            pseudoPassAlert.style.display = "block";
+                        
             document.getElementById("pseudo-connect").addEventListener("click", function () {
-                document.getElementById("pseudo-pass-alert").textContent = "";
+                pseudoPassAlert.style.display = "none";
             });
             document.getElementById("password-connect").addEventListener("click", function () {
-                document.getElementById("pseudo-pass-alert").textContent = "";
+                pseudoPassAlert.style.display = "none";
             });
         }
         if (reponse === "valid") {
