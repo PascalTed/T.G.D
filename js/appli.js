@@ -337,9 +337,32 @@ var allMessages = document.getElementById("all-messages");
 var noneInstantMessage = document.getElementById("none-instant-message");
 var firstMessageId;
 
-if (document.querySelector("#all-messages > div") === null) {
-    noneInstantMessage.style.display = "block";
-    firstMessageId = 0;
+if (document.getElementById("instant-messages") !== null) {
+    if (document.querySelector("#all-messages > div") === null) {
+        noneInstantMessage.style.display = "block";
+        firstMessageId = 0;
+    }
+    // Ajaxpost pour récupérer les messages ajoutés toute les 1 secondes
+    setInterval(function () {
+
+        if (document.querySelector("#all-messages > div") !== null) {
+            firstMessageId = document.querySelector("#all-messages > div").id;
+            // Supprimer "message" de firstMessageId, on récupère juste le numéro du message 
+            var regexIdMessage = "message-";
+            firstMessageId = firstMessageId.replace(regexIdMessage, '');
+        }
+
+        var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
+        var ajaxPostGetMessage = Object.create(AjaxPost);
+
+        ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {
+            if (reponse) {
+                allMessages.insertAdjacentHTML("afterbegin", reponse);
+                noneInstantMessage.style.display = "none"    
+            }
+        });
+        ajaxPostGetMessage.executer();
+    }, 1000);
 }
 
 if (formAddMessage !== null) {
@@ -363,29 +386,6 @@ if (formAddMessage !== null) {
         }
     });
 }
-
-// Ajaxpost pour récupérer les messages ajoutés toute les 1 secondes
-setInterval(function () {
-
-    if (document.querySelector("#all-messages > div") !== null) {
-        firstMessageId = document.querySelector("#all-messages > div").id;
-        // Supprimer "message" de firstMessageId, on récupère juste le numéro du message 
-        var regexIdMessage = "message-";
-        firstMessageId = firstMessageId.replace(regexIdMessage, '');
-    }
-
-    var dataSend = 'idMessage='+ encodeURIComponent(firstMessageId);
-    var ajaxPostGetMessage = Object.create(AjaxPost);
-        
-    ajaxPostGetMessage.init("index.php?action=verifUpdatedMessage", dataSend, function(reponse) {
-        if (reponse) {
-            allMessages.insertAdjacentHTML("afterbegin", reponse);
-            noneInstantMessage.style.display = "none"    
-        }
-    });
-    ajaxPostGetMessage.executer();
-}, 1000);
-
 // Fin formulaire messagerie instantanée
 
 // Début page createTopic

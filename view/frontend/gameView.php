@@ -6,23 +6,17 @@
 <section id="game-details">
 
     <div>
-        <h1>Détails du jeu</h1>
+        <h1><?= $game['title']; ?></h1>
     </div>
 
-    <div class="game-content">
-        <div class="game-header">
-            <div>
-                <h2><?= $game['title']; ?></h2>
-            </div>
-            
-            <div>
-                <p>Genre : <?= $game['type']; ?></p>
-                <p>Date de sortie : <?= $game['release_date']; ?></p>
-            </div>
+    <div id="game-content">
+        <div id="game-header">
+            <p><span>Genre : </span><?= $game['type']; ?></p>
+            <p><span>Date de sortie : </span><?= $game['release_date']; ?></p>
         </div>
         
-        <div class="game-image-text">
-            <p><image src="images/games/<?= $game['image']; ?>" /></p>
+        <div id="game-image-text">
+            <image src="images/games/<?= $game['image']; ?>" alt="image du jeu" id="game-detail-image"/>
             
             <div>
                 <p><?= $game['content']; ?></p>

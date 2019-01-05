@@ -11,29 +11,35 @@
 
     <div id="all-games-content">
         
-        <?php    
-        while ($game = $games->fetch()) {
-            
-            $GameExtract = $game['content'];
-            $GameExtract = substr($GameExtract, 0, 200);
-            $spacePosition = strrpos($GameExtract, " ");
-            if ($spacePosition) {
-                $GameExtract = substr($GameExtract, 0, $spacePosition);
-            }
-        ?>
-            
-            <div class="game-content">
-                <h2><?= $game['title'] ?></h2>
-                
-                <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
-                
-                <!-- Toutes les données sont protégées par htmlspecialchars -->
-                <p class="game-extract"><?= strip_tags($GameExtract) ?><a class="read-more-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>"> <em>... lire la suite</em></a>
-                </p>
-                
-            </div>
-            
         <?php
+        $countGames = $games->rowcount();
+        if ($countGames == 0) {
+        ?>
+        
+            <div id="no-list-games">
+                <p>Aucun Jeu</p>
+            </div>
+                    
+        <?php
+        } else {
+            while ($game = $games->fetch()) {
+
+                $GameExtract = strip_tags($game['content']);
+                $GameExtract = substr($GameExtract, 0, 200);
+        ?>
+
+                <div class="game-content">
+                    <h2><?= $game['title'] ?></h2>
+
+                    <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
+
+                    <p class="game-extract"><?= $GameExtract ?><a class="read-more-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>"> <em>... lire la suite</em></a>
+                    </p>
+
+                </div>
+
+        <?php
+            }
         }
         ?>
         

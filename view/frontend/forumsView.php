@@ -15,7 +15,8 @@
         $countForums = $forums->rowcount();
         if ($countForums == 0) {
         ?>
-            <p>Aucun forum</p>
+        
+            <p id="no-list-forums">Aucun forum</p>
         
         <?php
         } else {
@@ -25,7 +26,8 @@
                 <div class="forum-categorie">
                     <div class="forum-cat-topics">
                         <div>
-                           <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
+                            <!-- Affichage de chaque message (toutes les données sont protégées par htmlspecialchars -->
+                           <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= htmlspecialchars($forum['categories']) ?>"><?= $forum['categories'] ?></a>
                             </h2>
                         </div>
 

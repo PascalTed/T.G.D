@@ -224,14 +224,14 @@ section
 #registration h1
 {
     text-align: center;
-    background-color: rgb(65, 105, 225);
+    background-color: grey;
     border-radius: 4px;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 5px 5px 3px black;
     box-shadow: 0px 0px 15px #333333;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
 }
 
 #form-registration
@@ -241,10 +241,9 @@ section
     margin-bottom: 25px;
     max-width: 450px;
     padding: 20px;
+    border: 1px solid #4d4d4d;
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
-    border-right: 2px solid #4d4d4d;
-    border-left: 2px solid #4d4d4d;
     border-radius: 4px;
     box-shadow: 0px 0px 15px #333333;
     background-color: rgb(245, 245, 245);
@@ -305,14 +304,14 @@ section
 #home h1
 {
     text-align: center;
-    background-color: rgb(65, 105, 225);
+    background-color: grey;
     border-radius: 4px;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 5px 5px 3px black;
     box-shadow: 0px 0px 15px #333333;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
 }
 
 #forums-games
@@ -589,12 +588,116 @@ section
 /* Fin page account */
 
 /* Début page Nos jeux */
-#all-games-content .image-game
+#all-games h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
+}
+
+#all-games-content
+{
+    
+}
+
+#no-list-games p
+{
+    margin: 0;
+}
+
+#no-list-games, .game-content
+{
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    word-break: break-all;
+}
+
+.game-content h2
+{
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.image-game
 {
     display: block;
-    width: 100%;
+    width: 180px;
+    margin: auto;
+}
+
+.game-extract
+{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.game-extract a
+{
+    color: blue;
 }
 /* Fin page Nos jeux */
+
+/* Début page jeu */
+#game-details h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
+}
+
+#game-content
+{
+    padding: 10px 40px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    word-break: break-all; 
+}
+
+#game-header p:first-child
+{
+    margin-top: 0;
+}
+
+#game-header span
+{
+    font-weight: bold;
+}
+
+#game-image-text div p
+{
+    margin-bottom: 0;
+}
+
+#game-detail-image
+{
+    width: 100%;
+    display: block;
+}
+/* Fin page jeu */
 
 /* Début page topic */
 #none-messages-topic
@@ -614,36 +717,47 @@ section
 #forums h1
 {
     text-align: center;
-    background-color: rgb(65, 105, 225);
+    background-color: grey;
     border-radius: 4px;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 5px 5px 3px black;
     box-shadow: 0px 0px 15px #333333;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
 }
 
 #forums-content
 {
     margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+}
+
+#no-list-forums
+{
+    margin-left: 10px;
 }
 
 #forums-content .forum-categorie:nth-child(odd)
 {
-    background-color: gray; 
+    background-color: rgb(245, 245, 245); 
 }
 
 #forums-content .forum-categorie:nth-child(even)
 {
-    background-color: cornflowerblue; 
+    background-color: rgb(211, 211, 211); 
 }
 
 .forum-categorie
 {
     display: flex;
     align-items: center;
-    word-break: break-all;
+    padding: 10px;
 }
 
 .forum-categorie .forum-cat-topics
@@ -651,20 +765,34 @@ section
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
+    width: 60%;
 }
 
-.forum-categorie > div:last-child
+.forum-cat-topics h2
 {
-    width: 60%;
+    margin: 0;
+}
+
+.forum-cat-topics h2 a
+{
+    color: blue;
+    font-size: 22px;
 }
 
 .forum-cat-topics > div:first-child
 {
-    width: 40%;
+    width: 60%;
+    word-break: break-all;
 }
 
 .forum-cat-topics > div:last-child
+{
+    margin-left: 10%;
+    width: 30%;
+    font-weight: bold;
+}
+
+.forum-categorie > div:last-child
 {
     width: 40%;
 }
@@ -853,11 +981,6 @@ footer #copyright p
         display: block;
     }
     
-    .forum-categorie > div:last-child
-    {
-        width: auto;
-    }
-    
     .forum-cat-topics > div:first-child
     {
         width: auto;
@@ -866,8 +989,27 @@ footer #copyright p
     .forum-cat-topics > div:last-child
     {
         width: auto;
+        margin-left: 0;
+    }
+    
+    .forum-categorie > div:last-child
+    {
+        width: auto;
     }
     /* Fin page forums */
+    
+    /* Début page Nos jeux */
+    #all-games h1
+    {
+        font-size: 25px;
+    }
+    
+    /* Début page jeu */
+    #game-details h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page Nos jeux */
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
