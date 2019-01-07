@@ -11,23 +11,25 @@
     </div>
     
     <div id="admin-home-content">
-        <div>
-            <?= $messages ?>
-            <p>Accueil</p>
+        <div id="admin-option">
+            <div id="forum-option">
+                <h2><i class="fas fa-cogs"></i> Forums</h2>
+                <p><a href="index.php?action=displayAdminForums"><i class="fas fa-tools"></i><i class="fas fa-wrench"></i> Editer les forums et les topics</a></p>
+                <p><a href="index.php?action=displayAdminReportedMessages"><i class="fas fa-wrench"></i> Messages signalés</a></p>
+            </div>
+            
+            <div id="game-option">
+                <h2><i class="fas fa-cogs"></i> Nos jeux</h2>
+                <p><a href="index.php?action=displayAdminListGames"><i class="fas fa-wrench"></i> Editer</a></p>
+            </div>
+            
+            <div id="account-option">
+                <h2><i class="fas fa-cogs"></i> Compte</h2>
+                <p><a href="index.php?action=displayAdminAllAccounts"><i class="fas fa-wrench"></i> Modifier les droits</a></p>
+            </div>
         </div>
-
-        <div>
-            <ul>
-                <li>Forums
-                    <ul>
-                        <li><a href="index.php?action=displayAdminForums"><i class="fas fa-cogs"></i>Editer les Forums, les topics</a>
-                        <li><a href="index.php?action=displayAdminReportedMessages"><i class="fas fa-cogs"></i>Messages signalés</a></li>
-                    </ul>
-                </li>
-                <li><a href="index.php?action=displayAdminListGames"><i class="fas fa-cogs"></i>Nos jeux</a></li>
-                <li><a href="index.php?action=displayAdminAllAccounts"><i class="fas fa-cogs"></i>Compte</a></li>
-            </ul>
-        </div>
+        
+        <?= $messages ?>
     </div>
     
 </section>

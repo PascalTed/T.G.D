@@ -461,7 +461,7 @@ if (formReplyToMessage !== null) {
         var valueReplyToMessage = replyToMessage.value;
         
         if (valueReplyToMessage === "") {
-            noReplyToMessage.textContent = "Le champ est vide"
+            noReplyToMessage.textContent = "Le champ est message est vide"
             tinymce.get("reply-to-message").on("click", function () {
                 noReplyToMessage.textContent = "";
             });

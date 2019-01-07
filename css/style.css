@@ -1,6 +1,7 @@
 body
 {
     background-repeat: repeat;
+    word-wrap: break-word;
 }
 
 #body-block
@@ -506,32 +507,70 @@ section
 /* Fin messages instantanés */
 
 /* Début page account */
+#account-return a
+{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#account h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+}
+
+#account-content
+{
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    word-wrap: break-word;
+}
+    
 #account-infos
 {
     display: flex;
 }
 
-#container-img-avatar
+#container-img-avatar p
 {
-
+    margin-top: 5px;
+    text-align: center;
 }
 
 #btn-modify-avatar
 {
-    display: block;
-    text-align: center;
     text-decoration: none;
+    padding-top: 5px;
+    color: blue;
 }
 
 #infos-pseudo-email
 {
     margin-left: 25px;
+    width: 100%;
 }
 
 #image-avatar
 {
     display: block;
-    width: 150px;
+    max-width: 150px;
+    border: 1px solid mediumslateblue;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 #close-avatar-window
@@ -540,7 +579,8 @@ section
     top: 4px;
     right: 4px;
     cursor: pointer;
-    color: #333333;
+    color: #4d4d4d;
+    text-shadow: 1px 1px 1px black;
 }
 
 #form-avatar-window
@@ -550,9 +590,9 @@ section
     z-index: 9999;
     background-color: white;
     color: black;
-    border: 1px solid #333333;
-    border-top: 8px solid #333333;
-    border-bottom: 8px solid #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
     top: 50%; 
     left: 50%;
@@ -560,6 +600,12 @@ section
     padding: 15px;
     width: 350px;
     font-size: 18px;
+}
+
+#form-avatar-window [type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
 }
 
 #form-avatar
@@ -697,6 +743,49 @@ section
 /* Fin page jeu */
 
 /* Début page création topic */
+#create-topic h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
+}
+
+#create-topic-return a
+{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#create-topic-content
+{
+    margin-bottom: 25px;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+}
+
+#form-create-topic div
+{
+    box-sizing: border-box;
+}
+
+#form-create-topic input[type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
+}
+
 #create-topic #topic-exist, #create-topic #no-title-topic, #create-topic #no-content-topic
 {
     display: none;
@@ -1011,7 +1100,104 @@ background-color: rgb(211, 211, 211);
     box-shadow: 2px 2px 5px #333333;
 }
 
+#no-reply-to-message
+{
+    color: red;
+    display: block;
+}
 /* Fin page topic */
+
+/* Début page home (administration) */
+#admin-home h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+}
+
+#admin-home-content
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+#admin-option
+{
+    align-self: flex-start;
+    background-color: white;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    padding: 25px;
+    border-radius: 4px;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: rgb(245, 245, 245);
+}
+
+#admin-option a
+{
+    color: blue;
+}
+#forum-option h2, #game-option h2, #account-option h2
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #333333;
+}
+
+#forum-option
+{
+    margin-bottom: 30px;
+}
+
+#forum-option i
+{
+    color: darkgoldenrod;
+}
+
+#game-option
+{
+    margin-bottom: 30px;
+}
+
+#game-option i
+{
+    color: orangered;
+}
+
+#account-option i
+{
+    color: mediumpurple;
+}
+
+#forum-option p
+{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+#game-option p
+{
+    margin-top: 10px;
+    margin-bottom: 0; 
+}
+
+#account-option p
+{
+    margin-top: 10px;
+    margin-bottom: 0; 
+}
+
+/* Fin page home (administration) */
 
 /* Début page forums (administration) */
 #admin-forums #forum-exist
@@ -1225,6 +1411,13 @@ footer #copyright p
     }
     /* Fin page topic */
     
+    /* Début page création topic */
+    #create-topic h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page création topic */
+    
     /* Début page Nos jeux */
     #all-games h1
     {
@@ -1237,6 +1430,20 @@ footer #copyright p
         font-size: 25px;
     }
     /* Fin page Nos jeux */
+    
+    /* Début page account */
+    #account h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page account */
+    
+    /* Début page home (administration) */
+    #admin-home h1
+    {
+        font-size: 25px;
+    }
+    /* Début page home (administration) */
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
@@ -1294,7 +1501,6 @@ footer #copyright p
     /* Fin page home */
     
     /* Début page topic */
-    
     .all-messages-topic
     {
         flex-direction: column;
@@ -1352,6 +1558,74 @@ footer #copyright p
     }
     /* Fin page topic */
     
+    /* Début page account */
+    #account-infos
+    {
+        flex-direction: column;
+    }
+    
+    #image-avatar
+    {
+        margin: auto;
+    }
+    
+    #infos-pseudo-email
+    {
+        margin-left: 0;
+    }
+    
+    #infos-pseudo-email p:first-child
+    {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    
+    #infos-pseudo-email p:last-child
+    {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    /* Fin page account */
+    /* Début page home (administration) */
+    #admin-home-content
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #admin-option
+    {
+        align-self: inherit;
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    #forum-option
+    {
+        margin-bottom: 15px;
+    }
+
+    #game-option
+    {
+        margin-bottom: 15px;
+    }
+    
+    #forum-option p
+    {
+        margin-top: 5px;
+    }
+
+    #game-option p
+    {
+        margin-top: 5px;
+    }
+
+    #account-option p
+    {
+        margin-top: 5px;
+    }
+    /* Fin page home (administration) */
     /* Fin section */
 }
 /* Fin media query max-width: 600px *

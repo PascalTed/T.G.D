@@ -5,6 +5,11 @@
 
 <section id="account">
     
+    <div id="account-return">
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <p><a href="index.php"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
+    </div>
+    
     <div>
         <h1>Mon compte</h1>
     </div>
@@ -15,12 +20,12 @@
             
             <div id="container-img-avatar">
                 <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" alt="image avatar"/> 
-                <a href="#" id="btn-modify-avatar">Modifier avatar</a>
+                <p><a href="#" id="btn-modify-avatar">Modifier avatar</a></p>
             </div>
             <!-- Les données sont protégées par htmlspecialchars -->
             <div id="infos-pseudo-email">
-                <p>Pseudo : <?= htmlspecialchars($_SESSION['pseudo']) ?></p>
-                <p>Email : <?= htmlspecialchars($_SESSION['email']) ?></p>
+                <p><strong>Pseudo : </strong><?= htmlspecialchars($_SESSION['pseudo']) ?></p>
+                <p><strong>Email : </strong><?= htmlspecialchars($_SESSION['email']) ?></p>
             </div>
         </div>
         
@@ -28,9 +33,9 @@
             <i class="fas fa-skull-crossbones fa-2x" id="close-avatar-window"></i>
        
             <form method="post" action="index.php?action=modifyAvatar" enctype="multipart/form-data" id="form-avatar">
-                <input type="file" name="file-avatar" id="file-avatar" required/><br />
-                <span id="accepted-file-avatar">Fichiers acceptés : jpeg ou png ou gif, maximum 1Mo.</span><br />
+                <input type="file" name="file-avatar" id="file-avatar" required/>
                 <span id="max-file-avatar">Le fichier est trop gros.</span><br />
+                <span id="accepted-file-avatar">Fichiers acceptés : jpeg ou png, maximum 1Mo.</span><br/>
                 <input type="submit" value="Envoyer" />
             </form>
         </div>        
