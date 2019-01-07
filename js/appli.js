@@ -450,7 +450,7 @@ var formReplyToMessage = document.getElementById("form-reply-to-message");
 var noReplyToMessage = document.getElementById("no-reply-to-message");
 var replyToMessage = document.getElementById("reply-to-message");
 
-var allMessagesTopic = document.getElementById("all-messages-topic");
+var topicContent = document.getElementById("topic-content");
 
 if (formReplyToMessage !== null) {
 
@@ -471,7 +471,7 @@ if (formReplyToMessage !== null) {
             ajaxPostGetMessage.init(formReplyToMessage.getAttribute("action"), dataSend, function(reponse) {
                 if (reponse) {
                 tinymce.get('reply-to-message').setContent("");
-                allMessagesTopic.innerHTML = reponse;
+                topicContent.innerHTML = reponse;
                 }
             }); 
             ajaxPostGetMessage.executer();
@@ -480,13 +480,13 @@ if (formReplyToMessage !== null) {
 }
 
 // Ajaxpost pour signaler un message et récupérer les messages
-if (allMessagesTopic !== null) {
-    allMessagesTopic.addEventListener("click", function (e) {
+if (topicContent !== null) {
+    topicContent.addEventListener("click", function (e) {
         if (e.target.className == "to-report") {
             e.preventDefault();
             var ajaxGetToReportMessage = Object.create(AjaxGet);
             ajaxGetToReportMessage.init(e.target.getAttribute("href"), function(reponse) {
-                allMessagesTopic.innerHTML = reponse;
+                topicContent.innerHTML = reponse;
             });
             ajaxGetToReportMessage.executer();
         } 

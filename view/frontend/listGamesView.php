@@ -4,6 +4,11 @@
 <?php ob_start(); ?>
 
 <section id="all-games">
+    
+    <div id="games-return">
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <p><a href="index.php"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
+    </div>
 
     <div>
         <h1>Nos jeux</h1>
@@ -27,9 +32,9 @@
                 $GameExtract = strip_tags($game['content']);
                 $GameExtract = substr($GameExtract, 0, 200);
         ?>
-
+                <!-- Les données sont protégées par htmlspecialchars -->
                 <div class="game-content">
-                    <h2><?= $game['title'] ?></h2>
+                    <h2><?= htmlspecialchars($game['title']) ?></h2>
 
                     <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
 
@@ -41,6 +46,7 @@
         <?php
             }
         }
+        $games->closeCursor();
         ?>
         
     </div>

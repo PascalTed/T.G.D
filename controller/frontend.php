@@ -205,24 +205,41 @@ function updateMessages($topicId)
     
     while ($topic = $topicMessages->fetch()) {
     ?>
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <div class="all-messages-topic">
+            <div class="info-user">
+                <p><img src="images/avatars/<?= $topic['avatar'] ?>" alt="image avatar" class="topic-image-avatar" /></p>
+                <p><strong><?= htmlspecialchars($topic['pseudo']) ?></strong></p>
+                <p>Inscrit le <?= $topic['registration_date'] ?></p>
+            </div>
 
-        <div><p>posté par <?= $topic['pseudo'] ?></p></div>
-        <div>message  <?= $topic['message'] ?></div>
-        <div>Date du message : <?= $topic['message_date'] ?></div>  
+            <div class="info-message">
+                <p><em><strong>le <?= $topic['message_date'] ?></strong></em></p>  
+                <div><?= $topic['message'] ?></div>
 
-        <?php
-        if (isset($_SESSION['pseudo'])) {
-            if ($topic['moderation'] == 1) {
-            ?>
-                <p class="already-report">Message signalé</p>
                 <?php
-            } else {
-            ?>
-                <p><a  class="to-report" href="index.php?action=reportTopicMessage&amp;idMessage=<?= $topic['tm_id']; ?>&amp;idTopic=<?= $topicId; ?> ">Signaler</a></p>
+                if (isset($_SESSION['pseudo'])) {
+                    if ($topic['moderation'] == 1) {
+                ?>
+                
+                        <p class="already-report">Message signalé</p>
+
+                    <?php
+                    } else {
+                    ?>
+                        <p><a  class="to-report" href="index.php?action=reportTopicMessage&amp;idMessage=<?= $topic['tm_id']; ?>&amp;idTopic=<?= $topicId; ?> ">Signaler</a></p>
+
+                <?php
+                    }
+                }
+                ?>
+
+            </div>
+        </div>
+            
     <?php
-            }
-        }
     }
+    $topicMessages->closeCursor();
 }
 
 // Signaler un message d'un topic

@@ -4,8 +4,8 @@
 <?php ob_start(); ?>
 
 <section id="create-topic">
-    
-    <div><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Forum <?= $forumCat ?></a>
+    <!-- Les données sont protégées par htmlspecialchars -->
+    <div><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Forum <?= htmlspecialchars($forumCat) ?></a>
     </div>
     
     <div>

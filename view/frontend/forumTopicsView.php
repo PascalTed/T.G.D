@@ -5,64 +5,66 @@
 
 <section id="forum">
 
-    <div>
-        <a href="index.php?action=displayForums">Forum</a><span>/</span><a href="#"><?= $forumCat ?></a>
+    <div id="forum-return">
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <p><a href="index.php?action=displayForums"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
     <div>
-        
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <h1>Forum <?= htmlspecialchars($forumCat) ?></h1>
+    </div>
+    
+    <div id="new-topics">
+
         <?php
         if (isset($_SESSION['pseudo'])) {
         ?>
-        
+
             <p><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Créer un sujet</a></p>
-        
+
         <?php
         } else {
         ?>
-        
+
             <p>Connectez-vous pour créer un nouveau sujet : <a href="#" id="connect-to-forum">Se connecter</a></p>
-        
+
         <?php
         }
         ?>
-        
+
     </div>
     
-    <div>
-        
+    <div id="forum-content">
+
         <?php
         $countTopics = $topics->rowcount();
         if ($countTopics == 0) {
         ?>
-        
-            <div>
-                <p>Aucun sujet de créé.</p>
-            </div>
-        
+
+            <p id="none-topics">Aucun sujet de créé</p>
+
         <?php
         } else {
             while ($topic = $topics->fetch()) {
         ?>
-        
-                <div>
-                    <div>
-                        <h4>
-                            <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?> <?= $topic['nb_message'] ?> messages</a>
-                        </h4>
-                    </div>
+                <div class="topics">
+                    <h2>
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?> (<?= $topic['nb_message'] ?> messages)</a>
+                    </h2>
+              
+                    <p>Posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
 
-                    <div><p>posté par <?= $topic['t_pseudo'] ?> le <?= $topic['creation_date'] ?></p></div>
-
-                    <div>dernier message par <?= $topic['tm_pseudo'] ?> le <?= $topic['last_date'] ?></div>
+                    <p>Dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>
                 </div>
-        
+
         <?php
             }
         }
         $topics->closeCursor();
         ?>
-        
+  
     </div>
     
 </section>

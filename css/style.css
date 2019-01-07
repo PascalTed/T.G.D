@@ -397,11 +397,6 @@ section
     align-self: flex-start;
 }
 
-#no-connected-message
-{
-    font-weight: bold;
-}
-
 #connect-to-message
 {
     color: blue
@@ -469,7 +464,7 @@ section
     margin-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    word-break: break-all;
+    word-wrap: break-word;
     background-color: white;
     box-shadow: 0px 0px 15px #333333;
     border-radius: 4px;
@@ -480,7 +475,7 @@ section
 {
     padding: 5px;
     margin-top: 10px;
-    word-break: break-all;
+    word-wrap: break-word;
     background-color: white;
     box-shadow: inset 0px 0px 10px #333333;
     border-radius: 4px;
@@ -621,7 +616,7 @@ section
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
     background-color: rgb(245, 245, 245);
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .game-content h2
@@ -651,6 +646,13 @@ section
 /* Fin page Nos jeux */
 
 /* Début page jeu */
+#games-return a
+{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 #game-details h1
 {
     text-align: center;
@@ -674,17 +676,12 @@ section
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
     background-color: rgb(245, 245, 245);
-    word-break: break-all; 
+    word-wrap: break-word; 
 }
 
 #game-header p:first-child
 {
     margin-top: 0;
-}
-
-#game-header span
-{
-    font-weight: bold;
 }
 
 #game-image-text div p
@@ -694,17 +691,11 @@ section
 
 #game-detail-image
 {
-    width: 100%;
+    width: 60%;
     display: block;
 }
 /* Fin page jeu */
 
-/* Début page topic */
-#none-messages-topic
-{
-    display: none;
-}
-/* Fin page topic */
 /* Début page création topic */
 #create-topic #topic-exist, #create-topic #no-title-topic, #create-topic #no-content-topic
 {
@@ -740,7 +731,7 @@ section
 
 #no-list-forums
 {
-    margin-left: 10px;
+    margin: 10px;
 }
 
 #forums-content .forum-categorie:nth-child(odd)
@@ -779,27 +770,249 @@ section
     font-size: 22px;
 }
 
-.forum-cat-topics > div:first-child
+.forum-cat-topics > div
 {
     width: 60%;
-    word-break: break-all;
+    word-wrap: break-word;
 }
 
-.forum-cat-topics > div:last-child
+.forum-cat-topics > p
 {
     margin-left: 10%;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     width: 30%;
+}
+
+.forum-categorie > p
+{
+    width: 40%;
+    margin: 0;
+}
+/* Fin page forums */
+/* Début page forumTopics */
+
+#forum a
+{
+    color: blue;
+}
+
+#forum-return a
+{
+    color: black;
+    text-decoration: none;
     font-weight: bold;
 }
 
-.forum-categorie > div:last-child
+#forum h1
 {
-    width: 40%;
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
 }
-/* Fin page forums */
-/* Début page forumTopics
 
-/* Fin page forumTopics
+#forum-content
+{
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+}
+
+#new-topics a
+{
+    font-size: 20px;
+}
+
+#none-topics
+{
+    margin: 10px;
+}
+
+#forum-content .topics:nth-child(odd)
+{
+    background-color: rgb(245, 245, 245); 
+}
+
+#forum-content .topics:nth-child(even)
+{
+background-color: rgb(211, 211, 211); 
+}
+
+.topics
+{
+    padding: 10px;
+}
+
+.topics h2
+{
+    margin: 0;
+}
+
+.topics h2 a
+{
+    font-size: 22px;
+}
+
+.topics p
+{
+    margin: 5px 0;
+}
+
+.topics p:last-child
+{
+    margin: 0;
+}
+/* Fin page forumTopics */
+
+/* Début page topic */
+#topic-return a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#topic h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    /* word-break: break-all; */
+}
+
+#topic-content
+{
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    /* width: 100% */
+}
+
+.all-messages-topic
+{
+    padding: 10px;
+    display: flex;
+}
+
+.all-messages-topic:nth-child(odd)
+{
+    background-color: rgb(230, 230, 230); 
+}
+
+.all-messages-topic:nth-child(even)
+{
+    background-color: rgb(245, 245, 245); 
+}
+
+.info-user > p .topic-image-avatar
+{
+    display: block;
+    width: 100px;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#topic-content .all-messages-topic:nth-child(1) .topic-image-avatar
+{
+    border: 1px solid mediumslateblue;
+}
+
+.info-user p:nth-child(1)
+{
+    margin: 0;
+    width: 100px
+}
+
+.info-user p:nth-child(2)
+{
+    margin: 0;
+    margin-top: 5px;
+    width: 100px
+}
+
+.info-user p:nth-child(3)
+{
+    margin: 0;
+    width: 100px
+}
+
+.info-message
+{
+    padding-left: 20px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    /* flex-grow: 1; */
+    width: 100%;
+}
+
+.info-message p:first-child
+{
+    margin-top: 0;
+}
+
+.info-message > div
+{
+    word-wrap: break-word;
+}
+
+.already-report
+{
+    color: red;
+}
+
+.connect-to-report-reply, .connect-to-report-reply a
+{
+    color: blue;
+}
+
+#form-reply-to-message
+{
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid mediumslateblue;
+    border-top: 8px solid mediumslateblue;
+    border-bottom: 8px solid mediumslateblue;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    box-sizing: border-box;
+    /* width: 100% */
+}
+
+#form-reply-to-message div
+{
+    box-sizing: border-box;
+}
+
+#form-reply-to-message input[type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
+}
+
+/* Fin page topic */
+
 /* Début page forums (administration) */
 #admin-forums #forum-exist
 {
@@ -981,22 +1194,36 @@ footer #copyright p
         display: block;
     }
     
-    .forum-cat-topics > div:first-child
+    .forum-cat-topics > div
     {
         width: auto;
     }
     
-    .forum-cat-topics > div:last-child
+    .forum-cat-topics > p
     {
         width: auto;
-        margin-left: 0;
+        margin: 5px 0;
     }
     
-    .forum-categorie > div:last-child
+    .forum-categorie > p
     {
         width: auto;
     }
     /* Fin page forums */
+    
+    /* Début page forumTopics */
+    #forum h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page forumTopics */
+    
+    /* Début page topic */
+    #topic h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page topic */
     
     /* Début page Nos jeux */
     #all-games h1
@@ -1065,6 +1292,66 @@ footer #copyright p
         width: 100%;
     }
     /* Fin page home */
+    
+    /* Début page topic */
+    
+    .all-messages-topic
+    {
+        flex-direction: column;
+    }
+    
+    .info-user
+    {
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    
+    .info-user p:nth-child(1)
+    {
+        width: auto;
+    }
+
+    .info-user p:nth-child(2)
+    {
+        width: auto;
+    }
+
+    .info-user p:nth-child(3)
+    {
+        width: auto;
+    }
+    
+    .info-user > p .topic-image-avatar
+    {
+        width: 50px;
+    }
+        
+    .info-message
+    {
+        padding: 0;
+    }
+    
+    .info-message
+    {
+        padding-top: 5px;
+        border-top: 1px solid #4d4d4d;
+        width: 100%;
+    }
+    
+    .info-message p:first-child
+    {
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-align: right;
+    }
+    
+    .info-message p:last-child
+    {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+    /* Fin page topic */
+    
     /* Fin section */
 }
 /* Fin media query max-width: 600px *

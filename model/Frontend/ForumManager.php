@@ -37,7 +37,7 @@ class ForumManager extends Manager
     public function getTopicMessages($topicId)
     {
         $db = $this->dbConnect();
-        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, moderation, DATE_FORMAT(message_date, \'%d/%m/%Y à %Hh%imin%ss\') message_date, pseudo, avatar, DATE_FORMAT(registration_date, \'%d/%m/%Y à %Hh%imin%ss\') registration_date FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC');
+        $topicMessages = $db->prepare('SELECT topics_messages.id tm_id, message, moderation, DATE_FORMAT(message_date, \'%d/%m/%Y à %Hh%imin%ss\') message_date, pseudo, avatar, DATE_FORMAT(registration_date, \'%d/%m/%Y\') registration_date FROM topics_messages INNER JOIN users ON users.id = topics_messages.user_id WHERE topics_messages.topic_id = ? ORDER BY topics_messages.id ASC');
         
         $topicMessages->execute(array($topicId));
         return $topicMessages;

@@ -17,10 +17,10 @@
                 <img src="images/avatars/<?= $_SESSION['avatar'] ?>" id="image-avatar" alt="image avatar"/> 
                 <a href="#" id="btn-modify-avatar">Modifier avatar</a>
             </div>
-            
+            <!-- Les données sont protégées par htmlspecialchars -->
             <div id="infos-pseudo-email">
-                <p>Pseudo : <?= $_SESSION['pseudo'] ?></p>
-                <p>Email : <?= $_SESSION['email'] ?></p>
+                <p>Pseudo : <?= htmlspecialchars($_SESSION['pseudo']) ?></p>
+                <p>Email : <?= htmlspecialchars($_SESSION['email']) ?></p>
             </div>
         </div>
         

@@ -5,6 +5,11 @@
 
 <section id="forums">
 
+    <div id="forum-return">
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <p><a href="index.php"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
+    </div>
+    
     <div>
         <h1>Forums</h1>
     </div>
@@ -26,25 +31,25 @@
                 <div class="forum-categorie">
                     <div class="forum-cat-topics">
                         <div>
-                            <!-- Affichage de chaque message (toutes les données sont protégées par htmlspecialchars -->
-                           <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= htmlspecialchars($forum['categories']) ?>"><?= $forum['categories'] ?></a>
+                            <!-- Les données sont protégées par htmlspecialchars -->
+                            <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= htmlspecialchars($forum['categories']) ?></a>
                             </h2>
                         </div>
 
-                        <div><?= $forum['nb_topics'] ?> sujets</div>
+                        <p><strong><?= $forum['nb_topics'] ?> sujets</strong></p>
                     </div>
 
                     <?php
                     if ($forum['nb_topics'] <= 0) {
                     ?>
 
-                        <div>Pas de messages</div>
+                        <p>pas de messages</p>
 
                     <?php
                     } else {
                     ?>
-
-                        <div>dernier message par <?= $forum['pseudo'] ?> le <?= $forum['last_date'] ?></div>
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <p>dernier message par <?= htmlspecialchars($forum['pseudo']) ?> le <?= $forum['last_date'] ?></p>
 
                     <?php
                     }
@@ -55,6 +60,7 @@
         <?php
             }
         }
+        $forums->closeCursor();
         ?>
         
     </div>
