@@ -80,7 +80,7 @@
 
                 <label for="reply-to-message"><strong>Laisser un message</strong></label>
                 <textarea id="reply-to-message" name="reply-to-message"></textarea>
-                <span id="no-reply-to-message"></span>
+                <span id="no-reply-to-message">Le champ message est vide</span>
 
                 <input type="submit" value="Ajouter le message" />
              </form>

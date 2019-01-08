@@ -461,9 +461,9 @@ if (formReplyToMessage !== null) {
         var valueReplyToMessage = replyToMessage.value;
         
         if (valueReplyToMessage === "") {
-            noReplyToMessage.textContent = "Le champ est message est vide"
+            noReplyToMessage.style.display = "block"
             tinymce.get("reply-to-message").on("click", function () {
-                noReplyToMessage.textContent = "";
+                noReplyToMessage.style.display = "none"
             });
         } else {
             var dataSend = 'reply-to-message='+ encodeURIComponent(valueReplyToMessage);
@@ -495,28 +495,40 @@ if (topicContent !== null) {
 // Fin page topic
 
 // Début page forums (administration)
+// vérification si textarea vide
 // Ajaxpost pour vérifier si une catégorie forum est déjà existante avant sa création
 var addForum = document.getElementById("add-forum");
 var formAddForum = document.getElementById("form-add-forum");
-var forumExist = document.getElementById("forum-exist");
+var addForumExist = document.getElementById("add-forum-exist");
+var addForumEmpty = document.getElementById("add-forum-empty");
 
 if (formAddForum !== null) {
     formAddForum.addEventListener("submit", function (e) {
+        tinymce.triggerSave();
         e.preventDefault();
+        
         var dataSend = 'catForum='+ encodeURIComponent(addForum.value);
         var ajaxPostVerifyForum = Object.create(AjaxPost);
-
-        ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
-            if (reponse === "existForum") {
-                forumExist.style.display = "block";
-                formAddForum.addEventListener("click", function (e) {
-                    forumExist.style.display = "none";
-                });
-            } else {
-                formAddForum.submit();
-            }
-        });
-        ajaxPostVerifyForum.executer();
+        var valueAddForum = addForum.value;
+        
+        if (valueAddForum !== "") {
+            ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
+                if (reponse === "existForum") {
+                    addForumExist.style.display = "block";
+                    tinymce.get("add-forum").on("click", function () {
+                        addForumExist.style.display = "none";
+                    });
+                } else {
+                    formAddForum.submit();
+                }
+            });
+            ajaxPostVerifyForum.executer();
+        } else {
+            addForumEmpty.style.display ="block";
+            tinymce.get("add-forum").on("click", function () {
+                addForumEmpty.style.display ="none";
+            });
+        }
     });
 }
 // Fin page forums (administration)
@@ -527,6 +539,7 @@ var textareaCatForum = document.getElementById("textarea-cat-forum");
 var admModifyForum = document.getElementById("adm-modify-forum");
 var noForum = document.getElementById("no-forum");
 var formEditForum = document.getElementById("form-edit-forum");
+var forumExist = document.getElementById("forum-exist");
 
 if (formEditForum !== null) {
     formEditForum.addEventListener("submit", function (e) {

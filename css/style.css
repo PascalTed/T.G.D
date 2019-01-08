@@ -247,7 +247,7 @@ section
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
     box-shadow: 0px 0px 15px #333333;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
  }
 
 
@@ -327,7 +327,6 @@ section
     border-radius: 4px;
     width: 300px;
     box-sizing: border-box;
-    background-color: rgb(245, 245, 245);
 }
 
 #forums-games div:last-child
@@ -535,7 +534,7 @@ section
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     word-wrap: break-word;
 }
     
@@ -547,6 +546,7 @@ section
 #container-img-avatar p
 {
     margin-top: 5px;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -661,7 +661,7 @@ section
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     word-wrap: break-word;
 }
 
@@ -721,7 +721,7 @@ section
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     word-wrap: break-word; 
 }
 
@@ -772,7 +772,7 @@ section
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
 }
 
 #form-create-topic div
@@ -815,7 +815,7 @@ section
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
 }
 
 #no-list-forums
@@ -830,7 +830,7 @@ section
 
 #forums-content .forum-categorie:nth-child(even)
 {
-    background-color: rgb(245, 245, 245); 
+    background-color: white; 
 }
 
 .forum-categorie
@@ -915,7 +915,7 @@ section
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
 }
 
 #new-topics p a
@@ -940,7 +940,7 @@ section
 
 #forum-content .topics:nth-child(even)
 {
-background-color: rgb(245, 245, 245); 
+background-color: white; 
 }
 
 .topics
@@ -998,7 +998,7 @@ background-color: rgb(245, 245, 245);
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     /* width: 100% */
 }
 
@@ -1015,7 +1015,7 @@ background-color: rgb(245, 245, 245);
 
 .all-messages-topic:nth-child(even)
 {
-    background-color: rgb(245, 245, 245); 
+    background-color: white; 
 }
 
 .info-user > p .topic-image-avatar
@@ -1085,11 +1085,11 @@ background-color: rgb(245, 245, 245);
     padding: 10px;
     margin-bottom: 25px;
     box-shadow: 0px 0px 15px #333333;
-    border: 1px solid mediumslateblue;
-    border-top: 8px solid mediumslateblue;
-    border-bottom: 8px solid mediumslateblue;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     box-sizing: border-box;
     /* width: 100% */
 }
@@ -1108,7 +1108,7 @@ background-color: rgb(245, 245, 245);
 #no-reply-to-message
 {
     color: red;
-    display: block;
+    display: none;
 }
 /* Fin page topic */
 
@@ -1145,7 +1145,7 @@ background-color: rgb(245, 245, 245);
     border-radius: 4px;
     width: 300px;
     box-sizing: border-box;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
 }
 
 #admin-option a
@@ -1232,7 +1232,7 @@ background-color: rgb(245, 245, 245);
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     /* width: 100% */
 }
 
@@ -1249,7 +1249,7 @@ background-color: rgb(245, 245, 245);
 
 .all-account-img-info:nth-child(even)
 {
-    background-color: rgb(245, 245, 245); 
+    background-color: white; 
 }
 
 .all-account-img img
@@ -1312,7 +1312,7 @@ background-color: rgb(245, 245, 245);
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
 }
 
 #admin-account-img-info
@@ -1394,7 +1394,7 @@ background-color: rgb(245, 245, 245);
     border-top: 8px solid #4d4d4d;
     border-bottom: 8px solid #4d4d4d;
     border-radius: 4px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
 }
 
 #none-reported-message p
@@ -1424,7 +1424,7 @@ background-color: rgb(245, 245, 245);
 
 .verif-message-reported:nth-child(even)
 {
-    background-color: rgb(245, 245, 245); 
+    background-color: white; 
 }
 
 .validate-delete-message
@@ -1455,7 +1455,85 @@ background-color: rgb(245, 245, 245);
 /* Fin page reportedMessages (administration) */
 
 /* Début page forums (administration) */
-#admin-forums #forum-exist
+#admin-forums-return a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#admin-forums h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue
+}
+
+#add-forum-content, #admin-forums-content
+{
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: white;
+}
+
+p#no-admin-list-forums
+{
+    margin: 10px;
+}
+
+#add-forum-content
+{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#add-forum-content
+{
+    background-color: rgb(230, 230, 230);
+}
+
+#add-forum-content input[type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
+}
+
+.admin-forum-cat-topics
+{
+    padding: 10px;
+}
+
+.admin-forum-cat-topics h2
+{
+    margin: 0;
+}
+
+.admin-forum-cat-topics h2 a
+{
+    color: blue;
+    font-size: 22px;
+}
+
+.admin-forum-cat-topics:nth-child(odd)
+{
+    background-color: rgb(230, 230, 230); 
+}
+
+.admin-forum-cat-topics:nth-child(even)
+{
+    background-color: white; 
+}
+
+#admin-forums #add-forum-exist, #add-forum-empty
 {
     display: none;
     color: red;
@@ -1738,6 +1816,12 @@ footer #copyright p
     }
     /* Fin page reportedMessages (administration) */
     
+    /* Début page forums (administration) */
+    #admin-forums h1
+    {
+        font-size: 25px;
+    }
+    
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
@@ -1866,6 +1950,7 @@ footer #copyright p
     #infos-pseudo-email
     {
         margin-left: 0;
+        margin-top: 5px;
     }
     
     #infos-pseudo-email p:first-child

@@ -4,35 +4,51 @@
 <?php ob_start(); ?>
 
 <section id="admin-forums">
+    
+    <div id="admin-forums-return">
+        <p><a href="index.php?action=displayAdminHome"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
+    </div>
 
     <div>
         <h1 id="admin-forums-title">Editer les forums</h1>
     </div>
     
+    <div id="add-forum-content">
+        <form action="index.php?action=addForumCat" method="post" id="form-add-forum">
+            <label for="add-forum"><strong>Ajouter un forum</strong></label><br />
+            <textarea type="text" id="add-forum" name="add-forum"></textarea>
+            <span id="add-forum-exist">Ce forum existe déjà.</span>
+            <span id="add-forum-empty">Le champ forum est vide</span>
+            <input type="submit" value="Envoyer" />
+        </form>
+    </div>
+    
     <div id="admin-forums-content">
-        
-        <?php    
-        while ($forum = $forums->fetch()) {
+         
+        <?php
+        $countForums = $forums->rowcount();
+        if ($countForums == 0) {
         ?>
         
-            <div class="admin-forum-cat-topics">
-                <h2>
-                    <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?> (<?= $forum['nb_topics'] ?> sujets)</a>
-                </h2>
-            </div>
-    
+            <p id="no-admin-list-forums">Aucun forums</p>
+        
         <?php
+        } else {
+            while ($forum = $forums->fetch()) {
+            ?>
+
+                <div class="admin-forum-cat-topics">
+                    <h2>
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= htmlspecialchars($forum['categories']) ?> (<?= $forum['nb_topics'] ?> sujets)</a>
+                    </h2>
+                </div>
+
+        <?php
+            }
         }
         ?>
-        
-        <div id="add-forum-content">
-            <form action="index.php?action=addForumCat" method="post" id="form-add-forum">
-                <label for="add-forum">Ajouter un forum</label><br />
-                <textarea type="text" id="add-forum" name="add-forum" required></textarea>
-                <span id="forum-exist">Ce forum existe déjà.</span>
-                <input type="submit" value="Envoyer" />
-            </form>
-        </div>
+
     </div>
     
 </section>
