@@ -91,8 +91,7 @@
     ?>
     
         <div class="connect-to-report-reply">
-            <p>Vous devez être connecté pour signaler ou laisser un message</p>
-            <p><a href="#" id="connect-to-reply">Se connecter</a></p>
+            <p>Vous devez être connecté pour signaler ou laisser un message : <a href="#" id="connect-to-reply">Se connecter</a></p>
         </div>
     
     <?php

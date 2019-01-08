@@ -5,8 +5,12 @@
 
 <section id="admin-reported-messages">
     
+    <div id="admin-reported-messages-return">
+        <p><a href="index.php?action=displayAdminHome"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
+    </div>
+    
     <div>
-        <h1>Les messages signalés</h1>
+        <h1>Messages signalés</h1>
     </div>
     
     <div id="admin-reported-messages-content">
@@ -16,8 +20,8 @@
         if ($countMessages == 0) {
         ?>
         
-            <div>
-                <p>Aucun message signalé.</p>
+            <div id="none-reported-message">
+                <p>Aucun messages signalés</p>
             </div>
         
         <?php
@@ -25,16 +29,20 @@
             while ($reportedMessage = $reportedMessages->fetch()) {
         ?>
                 
-            <div>
-                    <p>Forum <?= $reportedMessage['forumCategorie'] ?></p>
+                <div class="verif-message-reported">
+                    <div class="reported-message-info">
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <p><strong>Forum : </strong><?= htmlspecialchars($reportedMessage['forumCategorie']) ?></p>
 
-                    <p>Topic <?= $reportedMessage['topicTitle'] ?> créé le <?= $reportedMessage['topicCreation_date'] ?></p>
+                        <p><strong>Sujet : </strong><?= htmlspecialchars($reportedMessage['topicTitle']) ?> <em>le <?= $reportedMessage['topicCreation_date'] ?></em></p>
 
-                    <p>Message créé le <?=$reportedMessage['tm_date'] ?> par <?=$reportedMessage['tm_pseudo'] ?><br /><?= $reportedMessage['tm_message'] ?></p>
+                        <p><strong>Message : </strong>par <?=$reportedMessage['tm_pseudo'] ?> <em>le <?=$reportedMessage['tm_date'] ?></em></p>
+                        <p>"<?= $reportedMessage['tm_message'] ?>"</p>
+                    </div>
 
-                    <p><a href="index.php?action=validMessage&amp;idMessage=<?= $reportedMessage['tm_id'] ?>">Valider</a><a href="index.php?action=removeMessage&amp;idMessage=<?= $reportedMessage['tm_id'] ?>&amp;idTopic=<?= $reportedMessage['topicID'] ?>">Supprimer</a>
-                    </p>
-            </div>
+                    <div class="validate-delete-message"><a href="index.php?action=validMessage&amp;idMessage=<?= $reportedMessage['tm_id'] ?>" class="validate-message">Valider</a><a href="index.php?action=removeMessage&amp;idMessage=<?= $reportedMessage['tm_id'] ?>&amp;idTopic=<?= $reportedMessage['topicID'] ?>" class="delete-message">Supprimer</a>
+                    </div>
+                </div>
         
         <?php
             }

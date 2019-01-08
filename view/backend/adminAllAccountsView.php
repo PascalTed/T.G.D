@@ -5,8 +5,12 @@
 
 <section id="admin-all-accounts">
     
+    <div id="admin-all-accounts-return">
+        <p><a href="index.php?action=displayAdminHome"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
+    </div>
+    
     <div>
-        <h1 id="">Liste des utilisateurs</h1>
+        <h1 id="">Comptes</h1>
     </div>
 
     <div id="admin-all-accounts-content">
@@ -15,10 +19,29 @@
         while ($Account = $allAccounts->fetch()) {
         ?>
         
-            <div>
-                <p><img src="images/avatars/<?= $Account['avatar'] ?>" alt="image avatar"/><a href="index.php?action=displayAdminAccount&amp;idUser=<?= $Account['id'] ?>"><?= $Account['pseudo'] ?></a></p>
-                <p>Inscrit le : <?= $Account['registration_date'] ?></p>
-                <p>droits : <?= $Account['user_right'] ?></p>
+            <div class="all-account-img-info">
+                <div class="all-account-img">
+                    <img src="images/avatars/<?= $Account['avatar'] ?>" alt="image avatar"/>
+                </div>
+                
+                <div class="all-account-info">
+                    <!-- Les données sont protégées par htmlspecialchars -->
+                    <p><strong><?= htmlspecialchars($Account['pseudo']) ?></strong></p>
+                    
+                    <?php
+                    switch ($Account['user_right']) {
+                    case 'admin':
+                        $rights = "Administrateur";
+                         break;
+                    case 'none':
+                        $rights = "Aucun";
+                        break;
+                    }
+                    ?>
+                    
+                    <p><strong>droits : </strong><?= $rights ?> <a href="index.php?action=displayAdminAccount&amp;idUser=<?= $Account['id'] ?>">(modifier)</a></p>
+                    <p><strong>Inscrit le : </strong><?= $Account['registration_date'] ?></p>
+                </div>
             </div>
         
         <?php

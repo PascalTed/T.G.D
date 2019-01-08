@@ -737,7 +737,7 @@ section
 
 #game-detail-image
 {
-    width: 60%;
+    width: 70%;
     display: block;
 }
 /* Fin page jeu */
@@ -825,12 +825,12 @@ section
 
 #forums-content .forum-categorie:nth-child(odd)
 {
-    background-color: rgb(245, 245, 245); 
+    background-color: rgb(230, 230, 230); 
 }
 
 #forums-content .forum-categorie:nth-child(even)
 {
-    background-color: rgb(211, 211, 211); 
+    background-color: rgb(245, 245, 245); 
 }
 
 .forum-categorie
@@ -880,8 +880,8 @@ section
     margin: 0;
 }
 /* Fin page forums */
-/* Début page forumTopics */
 
+/* Début page forumTopics */
 #forum a
 {
     color: blue;
@@ -918,9 +918,14 @@ section
     background-color: rgb(245, 245, 245);
 }
 
-#new-topics a
+#new-topics p a
 {
     font-size: 20px;
+}
+
+#new-topics p a#connect-to-forum
+{
+    font-size: 18px;
 }
 
 #none-topics
@@ -930,12 +935,12 @@ section
 
 #forum-content .topics:nth-child(odd)
 {
-    background-color: rgb(245, 245, 245); 
+    background-color: rgb(230, 230, 230); 
 }
 
 #forum-content .topics:nth-child(even)
 {
-background-color: rgb(211, 211, 211); 
+background-color: rgb(245, 245, 245); 
 }
 
 .topics
@@ -1070,7 +1075,7 @@ background-color: rgb(211, 211, 211);
     color: red;
 }
 
-.connect-to-report-reply, .connect-to-report-reply a
+.connect-to-report-reply a
 {
     color: blue;
 }
@@ -1198,6 +1203,256 @@ background-color: rgb(211, 211, 211);
 }
 
 /* Fin page home (administration) */
+
+/* Début page allAccounts (administration) */
+#admin-all-accounts-return a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#admin-all-accounts h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+}
+
+#admin-all-accounts-content
+{  
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    /* width: 100% */
+}
+
+.all-account-img-info
+{
+    padding: 10px;
+    display: flex;
+}
+
+.all-account-img-info:nth-child(odd)
+{
+    background-color: rgb(230, 230, 230); 
+}
+
+.all-account-img-info:nth-child(even)
+{
+    background-color: rgb(245, 245, 245); 
+}
+
+.all-account-img img
+{
+    display: block;
+    width: 70px;
+    border: 1px solid mediumslateblue;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.all-account-info
+{
+    margin-left: 10px;
+}
+
+.all-account-info p
+{
+    margin :0;
+}
+
+.all-account-info a
+{
+    color: blue;
+}
+
+.all-account-info p:first-child
+{
+    color : orangered;
+}
+/* Fin page allAccounts (administration) */
+
+/* Début page account (administration) */
+#admin-infos-account-return a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#admin-infos-account h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+}
+
+#admin-account-content
+{
+    margin-bottom: 25px;
+    padding: 10px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+}
+
+#admin-account-img-info
+{
+    display: flex;
+}
+
+#admin-account-img img
+{
+    display: block;
+    width: 80px;
+    border: 1px solid mediumslateblue;
+    box-shadow: 0px 0px 10px #333333;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#admin-account-info
+{
+    margin-left: 15px;
+}
+
+#admin-account-info > p
+{
+    margin: 0;
+}
+
+#admin-account-info > p:first-child
+{
+    color: orangered;
+}
+
+#admin-account-form p
+{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: orangered;
+    
+}
+
+#form-add-rights input[type="radio"]
+{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#form-add-rights input[type="reset"], #form-add-rights input[type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
+}
+/* Fin page account (administration) */
+
+/* Début page reportedMessages (administration) */
+#admin-reported-messages-return a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#admin-reported-messages h1
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue
+}
+
+#admin-reported-messages-content
+{
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+}
+
+#none-reported-message p
+{
+    margin: 0;
+}
+
+.verif-message-reported
+{
+    padding: 10px;
+}
+
+.verif-message-reported > div > p:first-child
+{
+    margin-top: 0;
+}
+
+.verif-message-reported > p
+{
+    margin-top: 10px;
+}
+
+.verif-message-reported:nth-child(odd)
+{
+    background-color: rgb(230, 230, 230); 
+}
+
+.verif-message-reported:nth-child(even)
+{
+    background-color: rgb(245, 245, 245); 
+}
+
+.validate-delete-message
+{
+    display: flex;
+}
+
+.validate-message
+{
+    box-shadow: 2px 2px 5px #333333;
+    color: black;
+    background-color: rgb(102, 255, 102);
+    border: 1px solid mediumslateblue;
+    margin-right: 15px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.delete-message
+{
+    box-shadow: 2px 2px 5px #333333;
+    color: black;
+    background-color: rgb(255, 102, 102);
+    border: 1px solid mediumslateblue;
+    padding: 5px;
+    text-decoration: none;
+}
+/* Fin page reportedMessages (administration) */
 
 /* Début page forums (administration) */
 #admin-forums #forum-exist
@@ -1423,13 +1678,24 @@ footer #copyright p
     {
         font-size: 25px;
     }
+    /* Fin page Nos jeux */
     
     /* Début page jeu */
+    #game-content
+    {
+        padding: 10px;
+    }
+    
     #game-details h1
     {
         font-size: 25px;
     }
-    /* Fin page Nos jeux */
+    
+    #game-detail-image
+    {
+        width: 80%;
+    }
+    /* Fin page jeu */
     
     /* Début page account */
     #account h1
@@ -1443,7 +1709,35 @@ footer #copyright p
     {
         font-size: 25px;
     }
+    
+    #admin-home-content
+    {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
     /* Début page home (administration) */
+    
+    /* Début page allAccounts (administration) */
+    #admin-all-accounts h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page allAccounts (administration) */
+    
+    /* Début page account (administration) */
+    #admin-infos-account h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page account (administration) */
+    
+    /* Début page reportedMessages (administration) */
+    #admin-reported-messages h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page reportedMessages (administration) */
+    
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
@@ -1633,17 +1927,56 @@ footer #copyright p
 /* Début media query max-width: 500px */
 @media all and (max-width: 500px){
     
+    /* Début page jeu */
+    #game-detail-image
+    {
+        width: 100%;
+    }
+    /* Fin page jeu */
+    
+    /* Début page allAccounts (administration) */
+    .all-account-img-info
+    {
+        flex-direction: column;
+    }
+    
+    .all-account-img img
+    {
+        width: 50px;    
+    }
+    
+    .all-account-info
+    {
+        margin-left: 0;
+    }
+    /* Fin page allAccounts (administration) */
+    
+    /*Début page account (administration) */
+    #admin-account-img-info
+    {
+        flex-direction: column;
+    }
+    
+    #admin-account-info
+    {
+        margin-top: 5px;
+        margin-left: 0;
+    }
+    /*Fin page account (administration) */
+    
     /* fenêtre se connecter */
     #login-window
     {
         width: 80%;
     }
     
+    /* Début page account */
     /* fenêtre modifier avatar */
     #form-avatar-window
     {
         width: 80%;
     }
+    /* Fin page account */
 }
 /* Fin media query max-width: 500px */
 /* Fin media queries */

@@ -5,64 +5,73 @@
 
 <section id="admin-infos-account">
     
-    <div>
-        <p><a href="index.php?action=displayAdminAllAccounts">Comptes</a><span>/</span>Compte utilisateur</p>
+    
+    <div id="admin-infos-account-return">
+        <p><a href="index.php?action=displayAdminAllAccounts"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
     <div>
         <h1>Informations du compte utilisateur</h1>
     </div>
 
-    <div id="admin-infos-account-content">
-            <div>
-                <p><img src="images/avatars/<?= $infoAccount['avatar'] ?>" alt="image avatar"/><?= $infoAccount['pseudo'] ?></p>
-                <p>Inscrit le : <?= $infoAccount['registration_date'] ?></p>
-                <p>Email : <?= $infoAccount['email'] ?></p>
-                
+    <div id="admin-account-content">
+        <div id="admin-account-img-info">
+            <div id="admin-account-img">
+                <img src="images/avatars/<?= $infoAccount['avatar'] ?>" alt="image avatar"/>
+            </div>
+
+            <div id="admin-account-info">
+                <!-- Les données sont protégées par htmlspecialchars -->
+                <p><strong><?= htmlspecialchars($infoAccount['pseudo']) ?></strong></p>
+                <p><strong>Inscrit le : </strong><?= $infoAccount['registration_date'] ?></p>
+                <p><strong>Email : </strong><?= $infoAccount['email'] ?></p>
+
                 <?php
                 switch ($infoAccount['user_right']) {
                 case 'admin':
                     $rights = "Administrateur";
-                    break;
+                     break;
                 case 'none':
                     $rights = "Aucun";
                     break;
                 }
                 ?>
-                
-                <p>droits : <?= $rights ?></p>
+
+                <p><strong>droits : </strong><?= $rights ?></p>
+
             </div>
+        </div>
         
-            <div>
-                <p>Modifier les droits</p>
-                
-                <form action="index.php?action=addOrRemoveRights&amp;idUser=<?=$infoAccount['id'] ?>" method="post" id="form-add-rights">
-    
-                    <?php
-                    if ($infoAccount['user_right'] == "none") {
-                    ?>
-                    
-                    <label for="admin-rights">Droits administrateur</label>
-                    <input type="radio" name="setRights" value="admin-rights" id="admin-rights" required/>
-                    
-                    <?php
-                    }
-                    if ($infoAccount['user_right'] == "admin") {
-                    ?>
-                    
-                    <label for="none-rights">Aucun droits</label>
-                    <input type="radio" name="setRights" value="none-rights" id="none-rights" required/>
-                    
-                    <?php
-                    }
-                    ?>
-                    
-                    <div>
-                        <input type="reset" value="Annuler" />
-                        <input type="submit" value="Envoyer" />
-                    </div>
-                </form>
-            </div>
+        <div id="admin-account-form">
+            <p><strong>Modifier les droits</strong></p>
+
+            <form action="index.php?action=addOrRemoveRights&amp;idUser=<?=$infoAccount['id'] ?>" method="post" id="form-add-rights">
+
+                <?php
+                if ($infoAccount['user_right'] == "none") {
+                ?>
+
+                <label for="admin-rights">droits administrateur</label>
+                <input type="radio" name="setRights" value="admin-rights" id="admin-rights" required/>
+
+                <?php
+                }
+                if ($infoAccount['user_right'] == "admin") {
+                ?>
+
+                <label for="none-rights">aucun droits</label>
+                <input type="radio" name="setRights" value="none-rights" id="none-rights" required/>
+
+                <?php
+                }
+                ?>
+
+                <div>
+                    <input type="reset" value="Annuler" />
+                    <input type="submit" value="Envoyer" />
+                </div>
+            </form>
+        </div>  
     </div>
     
 </section>
