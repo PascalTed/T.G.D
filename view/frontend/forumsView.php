@@ -5,7 +5,7 @@
 
 <section id="forums">
 
-    <div id="forum-return">
+    <div id="forums-return">
         <p><a href="index.php"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     

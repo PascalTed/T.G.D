@@ -5,7 +5,7 @@
 
 <section id="game-details">
     
-    <div id="games-return">
+    <div id="game-return">
         <!-- Les données sont protégées par htmlspecialchars -->
         <p><a href="index.php?action=displayListGames"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>

@@ -21,13 +21,13 @@
         if (isset($_SESSION['pseudo'])) {
         ?>
 
-            <p><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Ajouter un sujet</a></p>
+            <p id="no-connected-new-topics"><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Ajouter un sujet <i class="fas fa-arrow-right"></i></a></p>
 
         <?php
         } else {
         ?>
 
-            <p>Connectez-vous pour créer un nouveau sujet : <a href="#" id="connect-to-forum">Se connecter</a></p>
+            <p id="connect-to-forum">Connectez-vous pour créer un nouveau sujet : <a href="#">Se connecter</a></p>
 
         <?php
         }
@@ -51,7 +51,7 @@
                 <div class="topics">
                     <h2>
                         <!-- Les données sont protégées par htmlspecialchars -->
-                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?> (<?= $topic['nb_message'] ?> messages)</a>
+                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?> </a><span>(<?= $topic['nb_message'] ?> messages)</span>
                     </h2>
               
                     <p>Posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>

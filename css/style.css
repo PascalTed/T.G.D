@@ -462,8 +462,7 @@ section
 {
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px;
     word-wrap: break-word;
     background-color: white;
     box-shadow: 0px 0px 15px #333333;
@@ -506,14 +505,7 @@ section
 /* Fin messages instantanés */
 
 /* Début page account */
-#account-return a
-{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#account h1
+#account h1, #account-return a
 {
     text-align: center;
     background-color: grey;
@@ -523,6 +515,7 @@ section
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
 }
 
 #account-content
@@ -629,7 +622,7 @@ section
 /* Fin page account */
 
 /* Début page Nos jeux */
-#all-games h1
+#all-games h1, #games-return a
 {
     text-align: center;
     background-color: grey;
@@ -639,6 +632,7 @@ section
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
     /* word-break: break-all; */
 }
 
@@ -692,14 +686,7 @@ section
 /* Fin page Nos jeux */
 
 /* Début page jeu */
-#games-return a
-{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#game-details h1
+#game-details h1, #game-return a
 {
     text-align: center;
     background-color: grey;
@@ -709,6 +696,7 @@ section
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
     /* word-break: break-all; */
 }
 
@@ -743,7 +731,7 @@ section
 /* Fin page jeu */
 
 /* Début page création topic */
-#create-topic h1
+#create-topic h1, #create-topic-return a
 {
     text-align: center;
     background-color: grey;
@@ -753,14 +741,8 @@ section
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
-    /* word-break: break-all; */
-}
-
-#create-topic-return a
-{
-    color: black;
     text-decoration: none;
-    font-weight: bold;
+    /* word-break: break-all; */
 }
 
 #create-topic-content
@@ -792,9 +774,9 @@ section
     color : red;
 }
 /* Fin page création topic */
-
+    
 /* Début page forums */
-#forums h1
+#forums h1, #forums-return a
 {
     text-align: center;
     background-color: grey;
@@ -804,6 +786,7 @@ section
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
     /* word-break: break-all; */
 }
 
@@ -882,19 +865,7 @@ section
 /* Fin page forums */
 
 /* Début page forumTopics */
-#forum a
-{
-    color: blue;
-}
-
-#forum-return a
-{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#forum h1
+#forum h1, #forum-return a
 {
     text-align: center;
     background-color: grey;
@@ -904,6 +875,7 @@ section
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
     /* word-break: break-all; */
 }
 
@@ -918,14 +890,26 @@ section
     background-color: white;
 }
 
-#new-topics p a
+#no-connected-new-topics a
 {
     font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#new-topics p a#connect-to-forum
+#connect-to-forum a
 {
     font-size: 18px;
+    color: blue;
 }
 
 #none-topics
@@ -956,6 +940,13 @@ background-color: white;
 .topics h2 a
 {
     font-size: 22px;
+    color: blue;
+}
+
+.topics h2 span
+{
+    font-weight: inherit;
+    font-size: 20px;
 }
 
 .topics p
@@ -1205,14 +1196,7 @@ background-color: white;
 /* Fin page home (administration) */
 
 /* Début page allAccounts (administration) */
-#admin-all-accounts-return a
-{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-#admin-all-accounts h1
+#admin-all-accounts h1, #admin-all-accounts-return a
 {
     text-align: center;
     background-color: grey;
@@ -1222,6 +1206,7 @@ background-color: white;
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
 }
 
 #admin-all-accounts-content
@@ -1284,14 +1269,14 @@ background-color: white;
 /* Fin page allAccounts (administration) */
 
 /* Début page account (administration) */
-#admin-infos-account-return a
+
 {
-    text-decoration: none;
+    
     color: black;
     font-weight: bold;
 }
 
-#admin-infos-account h1
+#admin-infos-account h1, #admin-infos-account-return a
 {
     text-align: center;
     background-color: grey;
@@ -1301,6 +1286,7 @@ background-color: white;
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
     border: 1px solid mediumslateblue;
+    text-decoration: none;
 }
 
 #admin-account-content
@@ -1367,14 +1353,7 @@ background-color: white;
 /* Fin page account (administration) */
 
 /* Début page reportedMessages (administration) */
-#admin-reported-messages-return a
-{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-#admin-reported-messages h1
+#admin-reported-messages h1, #admin-reported-messages-return a
 {
     text-align: center;
     background-color: grey;
@@ -1383,7 +1362,8 @@ background-color: white;
     text-shadow: 5px 5px 3px black;
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
-    border: 1px solid mediumslateblue
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
 }
 
 #admin-reported-messages-content
@@ -1399,7 +1379,7 @@ background-color: white;
 
 #none-reported-message p
 {
-    margin: 0;
+    margin: 10px;
 }
 
 .verif-message-reported
@@ -1455,14 +1435,7 @@ background-color: white;
 /* Fin page reportedMessages (administration) */
 
 /* Début page forums (administration) */
-#admin-forums-return a
-{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
-
-#admin-forums h1
+#admin-forums h1, #admin-forums-return a
 {
     text-align: center;
     background-color: grey;
@@ -1471,7 +1444,8 @@ background-color: white;
     text-shadow: 5px 5px 3px black;
     box-shadow: 0px 0px 15px #333333;
     padding: 5px 10px;
-    border: 1px solid mediumslateblue
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
 }
 
 #add-forum-content, #admin-forums-content
@@ -1541,6 +1515,19 @@ p#no-admin-list-forums
 /* Fin page forums (administration) */
 
 /* Début page forumTopics (administration) */
+#admin-forum h1, #admin-forum-return a
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
+}
+
 #admin-forum #forum-exist, #admin-forum #no-forum
 {
     display: none;
