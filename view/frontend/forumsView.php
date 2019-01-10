@@ -58,8 +58,8 @@
 
         <?php
             }
-        }
-        $forums->closeCursor();
+            $forums->closeCursor();
+        }      
         ?>
         
     </div>

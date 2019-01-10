@@ -21,13 +21,13 @@
         if (isset($_SESSION['pseudo'])) {
         ?>
 
-            <p id="no-connected-new-topics"><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Ajouter un sujet <i class="fas fa-arrow-right"></i></a></p>
+            <p id="user-add-new-topics"><a href="index.php?action=displayCreateTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>">Ajouter un sujet <i class="fas fa-arrow-right"></i></a></p>
 
         <?php
         } else {
         ?>
 
-            <p id="connect-to-forum">Connectez-vous pour créer un nouveau sujet : <a href="#">Se connecter</a></p>
+            <p id="connect-add-topic">Connectez-vous pour créer un nouveau sujet : <a href="#">Se connecter</a></p>
 
         <?php
         }
@@ -63,8 +63,8 @@
 
         <?php
             }
+            $topics->closeCursor();
         }
-        $topics->closeCursor();
         ?>
   
     </div>

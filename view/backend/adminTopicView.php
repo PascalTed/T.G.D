@@ -78,6 +78,7 @@
         
         <?php
         }
+        $topicMessages->closeCursor();
         ?>
             
     </div>

@@ -5,39 +5,51 @@
 
 <section id="admin-all-games">
     
-    <div>
-        <h1>Editer Nos jeux</h1>
+    <div id="admin-all-games-return">
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <p><a href="index.php?action=displayAdminHome"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
     <div>
-        <h2><a href="index.php?action=displayAdminCreateGame">Ajouter un jeu</a></h2>
+        <h1>Nos jeux</h1>
+    </div>
+    
+    <div id="admin-add-topic">
+        <p><a href="index.php?action=displayAdminCreateGame">Ajouter un jeu <i class="fas fa-arrow-right"></i></a></p>
     </div>
 
     <div id="admin-all-games-content">
-        <h2>Listes des jeux à modifier</h2>
-        <?php    
-        while ($game = $games->fetch()) {
-            
-            $GameExtract = $game['content'];
-            $GameExtract = substr($GameExtract, 0, 200);
-            $spacePosition = strrpos($GameExtract, " ");
-            if ($spacePosition) {
-                $GameExtract = substr($GameExtract, 0, $spacePosition);
-            }
-        ?>
-            
-            <div class="admin-game-content">
-                <h2><?= $game['title'] ?></h2>
-                
-                <img src="images/games/<?= $game['image'] ?>" class="admin-image-game" alt="image du jeu"/> 
-                
-                <!-- Toutes les données sont protégées par htmlspecialchars -->
-                <p class="admin-game-extract"><?= strip_tags($GameExtract) ?>...<a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
-                </p>
-                
-            </div>
-            
+        
         <?php
+        $countgamess = $games->rowcount();
+        if ($countgamess == 0) {
+        ?>
+        
+            <div id="admin-no-list-games">
+                <p>Aucun jeux de créé</p>
+            </div>
+
+        <?php
+        } else {   
+            while ($game = $games->fetch()) {
+
+                $GameExtract = strip_tags($game['content']);
+                $GameExtract = substr($GameExtract, 0, 200);
+        ?>
+                <!-- Les données sont protégées par htmlspecialchars -->
+                <div class="admin-game-content">
+                    <h2><?= htmlspecialchars($game['title']) ?></h2>
+
+                    <img src="images/games/<?= $game['image'] ?>" class="admin-image-game" alt="image du jeu"/> 
+
+                    <p class="admin-game-extract"><?= $GameExtract ?> ... <a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
+                    </p>
+
+                </div>
+
+        <?php
+            }
+            $games->closeCursor();
         }
         ?>
         

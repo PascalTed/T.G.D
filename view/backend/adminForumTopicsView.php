@@ -64,8 +64,8 @@
         
         <?php
             }
+            $topics->closeCursor();
         }
-        $topics->closeCursor();
         ?>
         
     </div>

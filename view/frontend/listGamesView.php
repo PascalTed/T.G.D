@@ -38,15 +38,15 @@
 
                     <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
 
-                    <p class="game-extract"><?= $GameExtract ?><a class="read-more-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>"> <em>... lire la suite</em></a>
+                    <p class="game-extract"><?= $GameExtract ?> ... <a class="read-more-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>"> <em>lire la suite</em></a>
                     </p>
 
                 </div>
 
         <?php
             }
+            $games->closeCursor();
         }
-        $games->closeCursor();
         ?>
         
     </div>

@@ -893,7 +893,7 @@ section
     background-color: white;
 }
 
-#no-connected-new-topics a
+#user-add-new-topics a
 {
     font-size: 20px;
     display: inline-block;
@@ -909,7 +909,7 @@ section
     font-weight: bold;
 }
 
-#connect-to-forum a
+#connect-add-topic a
 {
     font-size: 18px;
     color: blue;
@@ -1256,7 +1256,6 @@ background-color: white;
 /* Fin page allAccounts (administration) */
 
 /* Début page account (administration) */
-
 {
     
     color: black;
@@ -1732,6 +1731,81 @@ p#no-admin-list-forums
 }
 /* Fin page Topic (administration) */
 
+/* Début page Nos jeux (administration) */
+#admin-all-games h1, #admin-all-games-return a
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
+    /* word-break: break-all; */
+}
+
+#admin-no-list-games p
+{
+    margin: 0;
+}
+
+#admin-add-topic a
+{
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#admin-no-list-games, .admin-game-content
+{
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: white;
+    word-wrap: break-word;
+}
+
+.admin-game-content h2
+{
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.admin-image-game
+{
+    display: block;
+    width: 180px;
+    margin: auto;
+}
+
+.admin-game-extract
+{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.admin-game-extract a
+{
+    color: blue;
+}
+/* Fin page Nos jeux (administration) */
+
 /* Début page createGame (administration) */
 #admin-create-game .messages-create-game
 {
@@ -2014,6 +2088,12 @@ footer #copyright p
     }
     /* Fin page topic (administration) */
     
+    /* Début page Nos jeux (administration) */
+    #admin-all-games h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page Nos jeux (administration) */
     /* Fin section */
 }
 /* Fin media query max-width: 800px */

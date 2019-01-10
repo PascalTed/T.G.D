@@ -116,6 +116,7 @@ function verifUpdatedMessage($messageId)
 
 <?php
     }
+    $messages->closeCursor();
 }
 
 // Afficher la page Nos jeux

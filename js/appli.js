@@ -205,11 +205,11 @@ if (connectToMessage !== null) {
 }
 
 // Depuis le forum
-var connectToForum = document.getElementById("connect-to-forum");
+var connectAddTopic = document.getElementById("connect-add-topic");
 
-if (connectToForum !== null) {
+if (connectAddTopic !== null) {
     
-    connectToForum.addEventListener("click", function() {
+    connectAddTopic.addEventListener("click", function() {
         loginWindow.style.display = "block";
         opaqueWindow.style.display = "block";
         if (pseudoPassAlert.style.display === "block") {

@@ -14,7 +14,7 @@
         <div id="admin-option">
             <div id="forum-option">
                 <h2><i class="fas fa-cogs"></i> Forums</h2>
-                <p><a href="index.php?action=displayAdminForums"><i class="fas fa-tools"></i><i class="fas fa-wrench"></i> Editer les forums et les topics</a></p>
+                <p><a href="index.php?action=displayAdminForums"><i class="fas fa-tools"></i><i class="fas fa-wrench"></i> Editer les forums et les sujets</a></p>
                 <p><a href="index.php?action=displayAdminReportedMessages"><i class="fas fa-wrench"></i> Messages signalés</a></p>
             </div>
             
