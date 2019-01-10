@@ -55,9 +55,18 @@ function createAccount($pseudo, $mail, $pass)
 function modifyAvatar($imageAvatar, $userId)
 {
     $accountManager = new AccountManager();
-    $accountManager->changeAvatar($imageAvatar, $userId);
+    $avatar = $accountManager->changeAvatar($imageAvatar, $userId);
     
-    header('Location: index.php?action=displayAccount');
+    if ($avatar == 'Extension incorrecte') {
+        throw new Exception('Extension incorrecte');
+        
+    } elseif ($avatar == 'Erreur lors du transfert') {
+        throw new Exception('Erreur lors du transfert');
+        
+    } else {
+        header('Location: index.php?action=displayAccount');
+    }
+    
 }
 
 // Vérification des informations saisies (pseudo et pass), venant d'un ajaxpost, avant de se connecter

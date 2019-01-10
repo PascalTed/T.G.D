@@ -90,7 +90,7 @@ class AccountManager extends Manager
         $extension_upload = strtolower(substr(strrchr($imageAvatar['name'], '.'), 1));
         
         if ( in_array($extension_upload,$extensions_valides) ) {
-            echo "Extension correcte";
+
             switch ($extension_upload) {
                 case  'jpg':   
                 case 'jpeg':
@@ -132,12 +132,10 @@ class AccountManager extends Manager
                     $resultat = imagegif($croppedImage,$DestinationFileAvatar);
                     break;
             } 
-            if ($resultat) {
-                echo 'Transfert réussi';
-            }else {
-                echo 'Erreur lors du transfert';
+            if (!$resultat) {
+                return 'Erreur lors du transfert';
             }
-            var_dump($resultat);
+
             imagedestroy($newImage);
             
             $this->addNameFileAvatar($userId . '.' .$extension_upload, $userId);
@@ -145,7 +143,7 @@ class AccountManager extends Manager
             $_SESSION['avatar'] = $userId . '.' .$extension_upload;
 
         } else {
-            echo 'Extension incorrecte'; 
+            return 'Extension incorrecte';
         }
     }
     

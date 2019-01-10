@@ -1,7 +1,6 @@
 body
 {
-    background-repeat: repeat;
-    word-wrap: break-word;
+    background-repeat: repeat;    
 }
 
 #body-block
@@ -11,6 +10,7 @@ body
     font-size: 18px;
     background-image: url("../images/mosaics-background.jpg");
     background-size: 150px;
+    word-break: break-word;
 }
 
 /* Début header */
@@ -757,9 +757,9 @@ section
     background-color: white;
 }
 
-#form-create-topic div
+#form-create-topic > div:first-child
 {
-    box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 #form-create-topic input[type="submit"]
@@ -1807,6 +1807,38 @@ p#no-admin-list-forums
 /* Fin page Nos jeux (administration) */
 
 /* Début page createGame (administration) */
+#admin-create-game h1, #admin-create-game-return a
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
+    /* word-break: break-all; */
+}
+
+#admin-create-game-content
+{
+    padding: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: white;
+    word-wrap: break-word;
+}
+
+#form-create-game > div
+{
+    margin-bottom: 15px;
+}
+
 #admin-create-game .messages-create-game
 {
     display: none;
@@ -1816,6 +1848,22 @@ p#no-admin-list-forums
 #admin-create-game #accepted-file-game
 {
     color: blue;
+}
+
+#form-create-game > div:nth-child(5)
+{
+    margin-bottom: 0;
+}
+
+#form-create-game input[type="file"]
+{
+    max-width: 100%;
+}
+
+#form-create-game input[type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
 }
 /* Fin page createGame (administration) */
 
@@ -2094,6 +2142,13 @@ footer #copyright p
         font-size: 25px;
     }
     /* Fin page Nos jeux (administration) */
+    
+    /* Début page createGame (administration) */
+    #admin-create-game h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page createGame (administration) */
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
