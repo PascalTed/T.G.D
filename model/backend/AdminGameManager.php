@@ -6,7 +6,7 @@ use model\frontend\Manager;
 class AdminGameManager extends Manager
 {
     // Ajouter image jeu joué
-    private function addFileGame($gameImage)
+    public function addFileGame($gameImage)
     {
         $extensions_valides = array('jpg' , 'jpeg' , 'png');
         
@@ -16,7 +16,7 @@ class AdminGameManager extends Manager
         $extension_upload = strtolower(substr(strrchr($gameImage['name'], '.'), 1));
         
         if (in_array($extension_upload,$extensions_valides)) {
-            echo "Extension correcte";
+
             switch ($extension_upload) {
                 case  'jpg':   
                 case 'jpeg':
@@ -42,21 +42,19 @@ class AdminGameManager extends Manager
                 echo 'Transfert réussi';
                 return strtolower($gameImage['name']);
             }else {
-                echo 'Erreur lors du transfert';
+                return 'Erreur lors du transfert';
             }
-            var_dump($resultat);
+
             imagedestroy($newImage);
 
         } else {
-            echo 'Extension incorrecte'; 
+            return 'Extension incorrecte'; 
         }
     }
     
     // Enregistrer le jeu joué
-    public function addGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
+    public function addGame($userId, $fileGameName, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
     {
-        $fileGameName = $this->addFileGame($gameImage);
-        
         $db = $this->dbConnect();
         
         $req = $db->prepare('INSERT INTO played_games (user_id, title, image, content, type, release_date, creation_date) VALUES (?, ?, ?, ?, ?, ?, NOW())');
@@ -65,10 +63,8 @@ class AdminGameManager extends Manager
     }
     
     // Modifié un jeu joué
-    public function editGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId)
+    public function editGame($userId, $fileGameName, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId)
     {
-        $fileGameName = $this->addFileGame($gameImage);
-        
         $db = $this->dbConnect();
         
         $req = $db->prepare('UPDATE played_games SET user_id = ?, title = ?, image = ?, content = ?, type = ?, release_date = ? WHERE id = ?');

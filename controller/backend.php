@@ -205,9 +205,19 @@ function displayAdminCreateGame()
 function createGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent)
 {
     $adminGameManager = new AdminGameManager();
-    $adminGameManager->addGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
-    
-    header('Location: index.php?action=displayAdminListGames');
+    $fileGameName = $adminGameManager->addFileGame($gameImage);
+        
+    if ($fileGameName == 'Extension incorrecte') {
+        throw new Exception('Extension incorrecte');
+        
+    } elseif ($fileGameName == 'Erreur lors du transfert') {
+        throw new Exception('Erreur lors du transfert');
+        
+    } else {
+        $adminGameManager->addGame($userId, $fileGameName, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
+            
+        header('Location: index.php?action=displayAdminListGames');
+    }
 }
 // Afficher la page modifier ou supprimer un jeu joué (administration)
 function displayAdminModifyGame($gameId)
@@ -221,9 +231,19 @@ function displayAdminModifyGame($gameId)
 function modifyGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId)
 {
     $adminGameManager = new AdminGameManager();
-    $adminGameManager->editGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId);
+    $fileGameName = $adminGameManager->addFileGame($gameImage);
     
-    header('Location: index.php?action=displayAdminListGames');
+    if ($fileGameName == 'Extension incorrecte') {
+        throw new Exception('Extension incorrecte');
+        
+    } elseif ($fileGameName == 'Erreur lors du transfert') {
+        throw new Exception('Erreur lors du transfert');
+        
+    } else {
+        $adminGameManager->editGame($userId, $fileGameName, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId);
+    
+        header('Location: index.php?action=displayAdminListGames');
+    }
 }
 
 function removeGame($gameId)
