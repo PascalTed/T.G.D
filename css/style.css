@@ -1607,10 +1607,128 @@ p#no-admin-list-forums
 /* Fin page forumTopics (administration) */
 
 /* Début page Topic (administration) */
+#admin-topic h1, #admin-topic-return a
+{
+    text-align: center;
+    background-color: grey;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+    box-shadow: 0px 0px 15px #333333;
+    padding: 5px 10px;
+    border: 1px solid mediumslateblue;
+    text-decoration: none;
+}
+
+#rename-topic-content, #admin-messages-content
+{
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 15px #333333;
+    border: 1px solid #4d4d4d;
+    border-top: 8px solid #4d4d4d;
+    border-bottom: 8px solid #4d4d4d;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#rename-topic-content
+{
+    padding: 10px;
+}
+
+#form-edit-topic > label
+{
+    font-weight: bold;
+}
+
+#topic-radio
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+#topic-radio > div:first-child
+{
+    margin-right: 20px;
+}
+
+#form-edit-topic input[type="submit"]
+{
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #333333;
+}
+
 #admin-topic #topic-exist, #admin-topic #no-topic
 {
     display: none;
     color: red;
+}
+
+.admin-infos-user-message
+{
+    padding: 10px;
+}
+
+.admin-infos-user-message:nth-child(odd)
+{
+    background-color: rgb(230, 230, 230); 
+}
+
+.admin-infos-user-message:nth-child(even)
+{
+    background-color: white; 
+}
+
+.admin-infos-user-message > p
+{
+    margin-top: 5px;
+    margin-bottom: 5px;    
+}
+
+.admin-infos-user
+{
+    display: flex;
+}
+
+.admin-infos-user > p
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.admin-infos-message > div
+{
+    display: flex;
+    margin-top: 10px;
+}
+
+.topic-message-reported
+{
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.validate-topic-message
+{
+    box-shadow: 2px 2px 5px #333333;
+    color: black;
+    background-color: rgb(102, 255, 102);
+    border: 1px solid mediumslateblue;
+    margin-right: 15px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.delete-topic-message
+{
+    box-shadow: 2px 2px 5px #333333;
+    color: black;
+    background-color: rgb(255, 102, 102);
+    border: 1px solid mediumslateblue;
+    padding: 5px;
+    text-decoration: none;
 }
 /* Fin page Topic (administration) */
 
@@ -1888,6 +2006,14 @@ footer #copyright p
         font-size: 25px;
     }
     /* Fin page forumTopics (administration) */
+    
+    /* Début page topic (administration) */
+    #admin-topic h1
+    {
+        font-size: 25px;
+    }
+    /* Fin page topic (administration) */
+    
     /* Fin section */
 }
 /* Fin media query max-width: 800px */
@@ -2127,6 +2253,18 @@ footer #copyright p
     }
     
     #forum-radio > div:first-child
+    {
+        margin-right: 0;
+    }
+    /* Fin page forumTopics */
+    
+    /* Début page forumTopics */
+    #topic-radio
+    {
+        flex-direction: column;
+    }
+    
+    #topic-radio > div:first-child
     {
         margin-right: 0;
     }

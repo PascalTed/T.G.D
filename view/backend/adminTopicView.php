@@ -5,57 +5,81 @@
 
 <section id="admin-topic">
     
-    <div>
-        <p><a href="index.php?action=displayAdminForums">Forum</a><span>/</span><a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>"><?= $forumCat ?></a><span>/</span><?= $infoTopic['topicTitle'] ?></p>
+    <div id="admin-topic-return">
+        <p><a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
-    <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" id="form-edit-topic" method="post">
-        <label for="textarea-edit-topic">Modifier le nom du sujet</label><br />
-        <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= strip_tags($infoTopic['topicTitle']); ?></textarea>
-        <span id="topic-exist">Ce sujet existe déjà.</span>
-        <span id="no-topic">Le champ sujet est vide.</span>
-        
-        <div id="topic-radio">
-            <label for ="adm-modify-topic">Modifier le sujet</label>
-            <input type="radio" name="setTopic" value="adm-modify-topic" id="adm-modify-topic" checked />
-                
-            <label for ="adm-remove-topic">Supprimer le sujet</label>
-            <input type="radio" name="setTopic" value="adm-remove-topic" id="adm-remove-topic" />
-        </div>
-        <input type="submit" value="Envoyer" />
-    </form>
-    
     <div>
+        <h1>Sujet <?= $infoTopic['topicTitle'] ?></h1>
+    </div>
+    
+    <div id="rename-topic-content">
+        <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" id="form-edit-topic" method="post">
+            <label for="textarea-edit-topic">Modifier ou supprimer le sujet</label><br />
+            <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= strip_tags($infoTopic['topicTitle']); ?></textarea>
+            <span id="topic-exist">Ce sujet existe déjà.</span>
+            <span id="no-topic">Le champ sujet est vide.</span>
 
-        <div id="admin-all-messages-topic">
-        
-            <?php    
-            while ($topic = $topicMessages->fetch()) {
-            ?>
-
-                <div><p>posté par <?= $topic['pseudo'] ?></p></div>
-                <div>message  <?= $topic['message'] ?></div>
-                <div>Date du message : <?= $topic['message_date'] ?></div>  
+            <div id="topic-radio">
                 <div>
+                    <label for ="adm-modify-topic">Modifier le nom du sujet</label>
+                    <input type="radio" name="setTopic" value="adm-modify-topic" id="adm-modify-topic" checked />
+                </div>
+                
+                <div>
+                    <label for ="adm-remove-topic">Supprimer le sujet</label>
+                    <input type="radio" name="setTopic" value="adm-remove-topic" id="adm-remove-topic" />
+                </div>
+            </div>
+            <input type="submit" value="Envoyer" />
+        </form>
+    </div>
+
+    <div id="admin-messages-content">
+        
+        <?php    
+        while ($topic = $topicMessages->fetch()) {
+        ?>
+        
+            <div class="admin-infos-user-message">
+                <div class="admin-infos-user">
+                    <p><strong><?= $topic['pseudo'] ?></strong></p>
+                </div>
+
+                <p><em>le <?= $topic['message_date'] ?></em></p>
+                
+                <div class="admin-topic-message"><?= $topic['message'] ?></div>
+
+                <div class="admin-infos-message">
+                    
                     <?php
-                    if ($topic['moderation'] == 1) {
+                    if ($topic['moderation'] == true) {
                     ?>
 
                         <p class="topic-message-reported">Message signalé</p>
-                        <a href="index.php?action=validTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Validé</a>
+                    
+                        <div>
+                            <a class="validate-topic-message" href="index.php?action=validTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Valider</a>
 
+                    <?php
+                    } else {
+                    ?>
+                            
+                        <div>
+                            
                     <?php
                     }
                     ?>
-
-                    <a href="index.php?action=removeTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Supprimé</a>
+                            
+                        <a class="delete-topic-message" href="index.php?action=removeTopicMessage&amp;idMessage=<?= $topic['tm_id'] ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topicId ?>">Supprimer</a>
+                    </div>
                 </div>
-            <?php
-            }
-            ?>
-            
-        </div>
+            </div>
         
+        <?php
+        }
+        ?>
+            
     </div>
     
 </section>

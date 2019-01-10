@@ -584,6 +584,7 @@ var formEditTopic = document.getElementById("form-edit-topic");
 
 if (formEditTopic !== null) {
     formEditTopic.addEventListener("submit", function (e) {
+        tinymce.triggerSave();
         e.preventDefault();
         if (admModifyTopic.checked) {
             console.log("test");
@@ -594,7 +595,7 @@ if (formEditTopic !== null) {
                 ajaxPostVerifyTopic.init("index.php?action=verifyTopic", dataSend, function(reponse) { 
                     if (reponse === "existTopic") {
                         topicExist.style.display = "block";
-                        textareaEditTopic.addEventListener("click", function (e) {
+                        tinymce.get("textarea-edit-topic").on("click", function (e) {
                             topicExist.style.display = "none";
                         });
                     } else {
@@ -604,7 +605,7 @@ if (formEditTopic !== null) {
                 ajaxPostVerifyTopic.executer();
             } else {
                 noTopic.style.display = "block";
-                textareaEditTopic.addEventListener("click", function () {
+                tinymce.get("textarea-edit-topic").on("click", function () {
                     noTopic.style.display = "none";
                 });
             }
