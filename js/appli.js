@@ -543,6 +543,7 @@ var forumExist = document.getElementById("forum-exist");
 
 if (formEditForum !== null) {
     formEditForum.addEventListener("submit", function (e) {
+        tinymce.triggerSave();
         e.preventDefault();
         
         if (admModifyForum.checked) {
@@ -553,7 +554,7 @@ if (formEditForum !== null) {
                 ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
                     if (reponse === "existForum") {
                         forumExist.style.display = "block";
-                        textareaCatForum.addEventListener("click", function (e) {
+                        tinymce.get("textarea-cat-forum").on("click", function (e) {
                             forumExist.style.display = "none";
                         });
                     } else {
@@ -563,7 +564,7 @@ if (formEditForum !== null) {
                 ajaxPostVerifyForum.executer();
             } else {
                 noForum.style.display = "block";
-                textareaCatForum.addEventListener("click", function () {
+                tinymce.get("textarea-cat-forum").on("click", function () {
                     noForum.style.display = "none";
                 });
             }

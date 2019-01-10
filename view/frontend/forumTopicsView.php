@@ -51,12 +51,14 @@
                 <div class="topics">
                     <h2>
                         <!-- Les données sont protégées par htmlspecialchars -->
-                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?> </a><span>(<?= $topic['nb_message'] ?> messages)</span>
+                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?></a>
                     </h2>
-              
-                    <p>Posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
-
-                    <p>Dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>
+                    
+                    <div>
+                        <p>Posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
+                        <p><strong><?= $topic['nb_message'] ?> messages</strong></p>
+                        <p>Dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>
+                    </div>
                 </div>
 
         <?php

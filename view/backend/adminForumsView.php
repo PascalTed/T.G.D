@@ -10,7 +10,7 @@
     </div>
 
     <div>
-        <h1 id="admin-forums-title">Editer les forums</h1>
+        <h1 id="admin-forums-title">Forums</h1>
     </div>
     
     <div id="add-forum-content">
@@ -36,12 +36,12 @@
         } else {
             while ($forum = $forums->fetch()) {
             ?>
-
                 <div class="admin-forum-cat-topics">
                     <h2>
                         <!-- Les données sont protégées par htmlspecialchars -->
-                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= htmlspecialchars($forum['categories']) ?> (<?= $forum['nb_topics'] ?> sujets)</a>
+                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= htmlspecialchars($forum['categories']) ?></a>
                     </h2>
+                    <p><strong><?= $forum['nb_topics'] ?> sujets</strong></p>
                 </div>
 
         <?php
