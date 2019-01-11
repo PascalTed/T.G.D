@@ -179,7 +179,7 @@ try {
                 throw new Exception('Aucun pseudo envoyé.');
             }
             
-        // Signaler un message d'un topic    
+        // Signaler un message d'un topic venant d'un ajaxget   
         } elseif ($_GET['action'] == 'reportTopicMessage') {
             if (isset($_SESSION['pseudo'])) {
                 if (isset($_GET['idMessage']) && isset($_GET['idTopic'])) {
@@ -299,7 +299,7 @@ try {
             }
             
         // Supprimer le message d'un topic dans éditer les forums (administration)
-        // Si celuic-ci est le premier message du topic, le topic et tous ses messages seront supprimés    
+        // Si celui-ci est le premier message du topic, le topic et tous ses messages seront supprimés 
         } elseif ($_GET['action'] == 'removeTopicMessage') {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 if (isset($_GET['idForum']) && $_GET['idForum'] > 0 && isset($_GET['catForum']) && isset($_GET['idTopic']) && $_GET['idTopic'] > 0 && isset($_GET['idMessage']) && $_GET['idMessage'] > 0) {
