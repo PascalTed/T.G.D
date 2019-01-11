@@ -479,7 +479,7 @@ try {
             }
         }
     } else {
-        home();
+        displayHome();
     }
 }
 catch(Exception $e) {

@@ -9,7 +9,7 @@ use model\frontend\GameManager;
 use model\frontend\ForumManager;
 
 // Affiche la page d'accueil
-function home()
+function displayHome()
 {
     $messages = getAllmessages();
     
