@@ -6,13 +6,11 @@
 <section id="forum">
 
     <div id="forum-return">
-        <!-- Les données sont protégées par htmlspecialchars -->
         <p><a href="index.php?action=displayForums"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
     <div>
-        <!-- Les données sont protégées par htmlspecialchars -->
-        <h1>Forum <?= htmlspecialchars($forumCat) ?></h1>
+        <h1>Forum : <?= $forumCat ?></h1>
     </div>
     
     <div id="new-topics">
@@ -42,7 +40,7 @@
         if ($countTopics == 0) {
         ?>
 
-            <p id="none-topics">Aucun sujet de créé</p>
+            <p id="none-topics">Aucun sujet</p>
 
         <?php
         } else {
@@ -50,14 +48,14 @@
         ?>
                 <div class="topics">
                     <h2>
-                        <!-- Les données sont protégées par htmlspecialchars -->
-                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?></a>
+                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?></a>
                     </h2>
                     
                     <div>
-                        <p>Posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <p>posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
                         <p><strong><?= $topic['nb_message'] ?> messages</strong></p>
-                        <p>Dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>
+                        <p>dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>
                     </div>
                 </div>
 

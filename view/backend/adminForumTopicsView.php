@@ -10,8 +10,7 @@
     </div>
     
     <div>
-        <!-- Les données sont protégées par htmlspecialchars -->
-        <h1>Forum <?= htmlspecialchars($forumCat) ?></h1>
+        <h1>Forum <?= $forumCat ?></h1>
     </div>
     
     <div id="rename-forum-content">
@@ -51,14 +50,14 @@
         
                 <div class="admin-topic-messages">
                     <h2>
-                        <!-- Les données sont protégées par htmlspecialchars -->
-                        <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?></a>
+                        <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?></a>
                     </h2>
                     
                     <div>
-                        <p>posté par <?= $topic['t_pseudo'] ?> le <?= $topic['creation_date'] ?></p>
-                        <p><strong><?= $topic['nb_message'] ?> messages</strong></p>
-                        <p>dernier message par <?= $topic['tm_pseudo'] ?> le <?= $topic['last_date'] ?></p>
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <p>posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
+                        <p><strong><?= $topic['nb_message'] ?> message(s)</strong></p>
+                        <p>dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>
                     </div>
                 </div>
         

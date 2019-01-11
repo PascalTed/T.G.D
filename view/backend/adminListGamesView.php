@@ -6,7 +6,6 @@
 <section id="admin-all-games">
     
     <div id="admin-all-games-return">
-        <!-- Les données sont protégées par htmlspecialchars -->
         <p><a href="index.php?action=displayAdminHome"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
@@ -26,7 +25,7 @@
         ?>
         
             <div id="admin-no-list-games">
-                <p>Aucun jeux de créé</p>
+                <p>Aucun jeu</p>
             </div>
 
         <?php
@@ -36,9 +35,9 @@
                 $GameExtract = strip_tags($game['content']);
                 $GameExtract = substr($GameExtract, 0, 200);
         ?>
-                <!-- Les données sont protégées par htmlspecialchars -->
+        
                 <div class="admin-game-content">
-                    <h2><?= htmlspecialchars($game['title']) ?></h2>
+                    <h2><?= $game['title'] ?></h2>
 
                     <img src="images/games/<?= $game['image'] ?>" class="admin-image-game" alt="image du jeu"/> 
 

@@ -11,7 +11,7 @@
     </div>
     
     <div>
-        <h1>Informations du compte utilisateur</h1>
+        <h1>Informations du compte</h1>
     </div>
 
     <div id="admin-account-content">
@@ -23,16 +23,16 @@
             <div id="admin-account-info">
                 <!-- Les données sont protégées par htmlspecialchars -->
                 <p><strong><?= htmlspecialchars($infoAccount['pseudo']) ?></strong></p>
-                <p><strong>Inscrit le : </strong><?= $infoAccount['registration_date'] ?></p>
-                <p><strong>Email : </strong><?= $infoAccount['email'] ?></p>
+                <p><strong>inscrit le : </strong><?= $infoAccount['registration_date'] ?></p>
+                <p><strong>email : </strong><?= $infoAccount['email'] ?></p>
 
                 <?php
                 switch ($infoAccount['user_right']) {
                 case 'admin':
-                    $rights = "Administrateur";
+                    $rights = "administrateur";
                      break;
                 case 'none':
-                    $rights = "Aucun";
+                    $rights = "aucun";
                     break;
                 }
                 ?>

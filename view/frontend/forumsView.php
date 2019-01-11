@@ -30,19 +30,18 @@
                 <div class="forum-categorie">
                     <div class="forum-cat-topics">
                         <div>
-                            <!-- Les données sont protégées par htmlspecialchars -->
-                            <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= htmlspecialchars($forum['categories']) ?></a>
+                            <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
                             </h2>
                         </div>
 
-                        <p><strong><?= $forum['nb_topics'] ?> sujets</strong></p>
+                        <p><strong><?= $forum['nb_topics'] ?> sujet(s)</strong></p>
                     </div>
 
                     <?php
                     if ($forum['nb_topics'] <= 0) {
                     ?>
 
-                        <p>pas de messages</p>
+                        <p>aucun message</p>
 
                     <?php
                     } else {

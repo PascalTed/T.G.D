@@ -6,13 +6,11 @@
 <section id="game-details">
     
     <div id="game-return">
-        <!-- Les données sont protégées par htmlspecialchars -->
         <p><a href="index.php?action=displayListGames"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
 
     <div>
-        <!-- Les données sont protégées par htmlspecialchars -->
-        <h1><?= htmlspecialchars($game['title']); ?></h1>
+        <h1><?= $game['title'] ?></h1>
     </div>
 
     <div id="game-content">

@@ -31,16 +31,16 @@
                     <?php
                     switch ($Account['user_right']) {
                     case 'admin':
-                        $rights = "Administrateur";
+                        $rights = "administrateur";
                          break;
                     case 'none':
-                        $rights = "Aucun";
+                        $rights = "aucun";
                         break;
                     }
                     ?>
                     
                     <p><strong>droits : </strong><?= $rights ?> <a href="index.php?action=displayAdminAccount&amp;idUser=<?= $Account['id'] ?>">(modifier)</a></p>
-                    <p><strong>Inscrit le : </strong><?= $Account['registration_date'] ?></p>
+                    <p><strong>inscrit le : </strong><?= $Account['registration_date'] ?></p>
                 </div>
             </div>
         

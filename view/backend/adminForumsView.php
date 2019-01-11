@@ -38,10 +38,9 @@
             ?>
                 <div class="admin-forum-cat-topics">
                     <h2>
-                        <!-- Les données sont protégées par htmlspecialchars -->
-                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= htmlspecialchars($forum['categories']) ?></a>
+                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
                     </h2>
-                    <p><strong><?= $forum['nb_topics'] ?> sujets</strong></p>
+                    <p><strong><?= $forum['nb_topics'] ?> sujet(s)</strong></p>
                 </div>
 
         <?php

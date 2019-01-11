@@ -43,7 +43,8 @@
         
             <div class="admin-infos-user-message">
                 <div class="admin-infos-user">
-                    <p><strong><?= $topic['pseudo'] ?></strong></p>
+                    <!-- Les données sont protégées par htmlspecialchars -->
+                    <p><strong><?= htmlspecialchars($topic['pseudo']) ?></strong></p>
                 </div>
 
                 <p><em>le <?= $topic['message_date'] ?></em></p>

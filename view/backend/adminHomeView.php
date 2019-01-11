@@ -20,7 +20,7 @@
             
             <div id="game-option">
                 <h2><i class="fas fa-cogs"></i> Nos jeux</h2>
-                <p><a href="index.php?action=displayAdminListGames"><i class="fas fa-wrench"></i> Editer</a></p>
+                <p><a href="index.php?action=displayAdminListGames"><i class="fas fa-wrench"></i> Editer les jeux</a></p>
             </div>
             
             <div id="account-option">

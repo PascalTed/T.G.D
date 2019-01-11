@@ -6,27 +6,13 @@
 <section id="topic">
 
     <div id="topic-return">
-        <!-- Les données sont protégées par htmlspecialchars -->
         <p><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
     <div>
-        <!-- Les données sont protégées par htmlspecialchars -->
-        <h1>Sujet <?= htmlspecialchars($infoTopic['topicTitle']) ?></h1>
+        <h1><?= $infoTopic['topicTitle'] ?></h1>
     </div>
-    
-    <?php
-    if (!isset($_SESSION['pseudo'])) {
-    ?>
-    
-        <div class="connect-to-report-reply">
-            <p>Vous devez être connecté pour signaler ou laisser un message</p>
-        </div>
-    
-    <?php
-    }
-    ?>
-                                                                                 
+                                             
     <div id="topic-content">
                     
         <?php    

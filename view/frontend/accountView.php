@@ -6,7 +6,6 @@
 <section id="account">
     
     <div id="account-return">
-        <!-- Les données sont protégées par htmlspecialchars -->
         <p><a href="index.php"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i> Retour</a></p>
     </div>
     
