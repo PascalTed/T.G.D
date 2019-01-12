@@ -51,12 +51,12 @@
 
             <div id="game-radio">
                 <div>
-                    <label for="adm-modify-game">Modifier le sujet</label>
+                    <label for="adm-modify-game">Modifier le jeu</label>
                     <input type="radio" name="setGame" value="adm-modify-game" id="adm-modify-game" checked />
                 </div>
                 
                 <div>
-                    <label for="adm-remove-game">Supprimer le sujet</label>
+                    <label for="adm-remove-game">Supprimer le jeu</label>
                     <input type="radio" name="setGame" value="adm-remove-game" id="adm-remove-game" />
                 </div>
             </div>
