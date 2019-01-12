@@ -39,7 +39,6 @@ class AdminGameManager extends Manager
                     break;
             } 
             if ($resultat) {
-                echo 'Transfert réussi';
                 return strtolower($gameImage['name']);
             }else {
                 return 'Erreur lors du transfert';
