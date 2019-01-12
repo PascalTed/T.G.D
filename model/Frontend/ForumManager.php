@@ -74,7 +74,6 @@ class ForumManager extends Manager
         $editNewTopic->execute(array($titleTopic, $userId, $forumId, $userId));
         
         $lastTopicId = $db->lastInsertId();
-        echo $lastTopicId;
         
         $this->editMessage($userId, $firstMessageTopic, $forumId, $lastTopicId);
         
