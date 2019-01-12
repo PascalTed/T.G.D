@@ -2,6 +2,9 @@
 
 session_start();
 
+// Chargement des classes
+require "vendor/autoload.php";
+
 require_once('controller/frontend.php');
 require_once('controller/backend.php');
 

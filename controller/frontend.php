@@ -1,8 +1,5 @@
 <?php
 
-// Chargement des classes
-require "vendor/autoload.php";
-
 use model\frontend\AccountManager;
 use model\frontend\InstantMessageManager;
 use model\frontend\GameManager;
@@ -143,7 +140,7 @@ function displayGame($gameId)
     $gameManager = new GameManager();
     $game = $gameManager->getGame($gameId);
     
-    require_once('view/frontend/GameView.php');
+    require_once('view/frontend/gameView.php');
 }
 
 // Afficher la page des forums

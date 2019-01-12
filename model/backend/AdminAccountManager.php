@@ -41,3 +41,5 @@ class AdminAccountManager extends Manager
         }
     }
 }
+
+?>

@@ -163,3 +163,5 @@ class AccountManager extends Manager
         session_destroy();
     }
 }
+
+?>

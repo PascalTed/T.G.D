@@ -1,8 +1,5 @@
 <?php
 
-// Chargement des classes
-require "vendor/autoload.php";
-
 use model\backend\AdminForumManager;
 use model\backend\AdminAccountManager;
 use model\frontend\InstantMessageManager;

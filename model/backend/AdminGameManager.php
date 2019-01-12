@@ -81,3 +81,5 @@ class AdminGameManager extends Manager
         $req->execute(array($gameId));
     }
 }
+
+?>

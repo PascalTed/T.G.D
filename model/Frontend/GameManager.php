@@ -33,3 +33,5 @@ class GameManager extends Manager
         return $nbGames;
     }
 }
+
+?>

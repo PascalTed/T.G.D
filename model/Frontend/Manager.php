@@ -1,5 +1,4 @@
 <?php
-
 namespace model\frontend;
 
 class Manager
@@ -10,3 +9,5 @@ class Manager
         return $db;
     }
 }
+
+?>
