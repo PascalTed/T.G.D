@@ -47,7 +47,7 @@ if (formRegistration !== null) {
     
     // Vérification pseudo
     formInputPseudo.addEventListener("input", function () {
-        console.log("envois");
+
         var dataSend = 'pseudo='+ encodeURIComponent(formInputPseudo.value);
         var ajaxPostPseudo = Object.create(AjaxPost);
         
@@ -55,13 +55,13 @@ if (formRegistration !== null) {
         regexPseudo.init((/\s+/), formInputPseudo.value);
         
         if (regexPseudo.verifier() === true) {
-            console.log("ui");
+
             messagePseudo.classList.add("red-message");
             messagePseudo.textContent = "pseudo incorrect (espace non accepté)";
             pseudoVerified = "nok";
         } else { 
             ajaxPostPseudo.init("index.php?action=verifPseudoCreateAccount", dataSend, function(reponse) {
-            console.log(reponse);
+
                 if (reponse === "existUser") {
                     messagePseudo.classList.add("red-message");
                     messagePseudo.textContent = "pseudo déjà existant";
@@ -76,7 +76,6 @@ if (formRegistration !== null) {
                         pseudoVerified = "nok";
                     }
                 }
-                console.log(pseudoVerified);
             }); 
             ajaxPostPseudo.executer();
         }
@@ -84,7 +83,7 @@ if (formRegistration !== null) {
     
     // Vérification email
     formInputEmail.addEventListener("input", function () {
-        console.log("envois2");
+
         var dataSend = 'email='+ encodeURIComponent(formInputEmail.value);
         var ajaxPostEmail = Object.create(AjaxPost);
         
@@ -93,18 +92,12 @@ if (formRegistration !== null) {
         
         if (regexEmail.verifier() === false) {
             emailVerified = "nok";
-            console.log("pas verifier");
             messageEmail.textContent = "";
-
-            console.log(formInputEmail.value);
-            console.log(emailVerified);
         } else {
             ajaxPostEmail.init("index.php?action=verifEmailCreateAccount", dataSend, function(reponse) {
-                console.log(dataSend);
-                console.log(reponse);
+
                 if (reponse === "existEmail") {
                     messageEmail.classList.add("red-message");
-                    console.log("exist mail");
                     messageEmail.textContent = "email déjà existant";
                     emailVerified = "nok";
                 } else {
@@ -112,21 +105,18 @@ if (formRegistration !== null) {
                     messageEmail.textContent = "email disponible";
                     emailVerified = "ok";
                 }
-                console.log(emailVerified);
             });   
             ajaxPostEmail.executer();
-            console.log("en bvas");
         }
     });
     // password
     formInputPass.addEventListener("input", function () {
-        console.log("envois3");
+
         if (formInputVerifPass.value !== "") {
             formInputVerifPass.value = "";
             messageVerifPass.textContent = "";
             passVerified = "nok";
         }
-        console.log(passVerified);
     });
     // Vérification du password
     formInputVerifPass.addEventListener("input", function () {
@@ -145,8 +135,6 @@ if (formRegistration !== null) {
             messageVerifPass.textContent = "mots de passe différents";
             passVerified = "nok";
         }
-        
-        console.log(passVerified);
     });
 
     formRegistration.addEventListener("submit", function (e) {    
@@ -154,8 +142,6 @@ if (formRegistration !== null) {
    
         if (pseudoVerified === "ok" && emailVerified === "ok" && passVerified ==="ok"){
             formRegistration.submit();
-        } else {
-            console.log("nok");
         }
     })
 }    
@@ -314,13 +300,11 @@ if (formAvatar !== null) {
         var sizeFileAvatar = fileAvatar.files[0].size;
         
         if (sizeFileAvatar > 1048576) {
-            console.log("fichier trop gros");
-            maxFileAvatar.style.display = "block";
+             maxFileAvatar.style.display = "block";
             fileAvatar.addEventListener("click", function () {
                 maxFileAvatar.style.display = "none";
             });
         } else {
-            console.log(formAvatar);
             formAvatar.submit();
         }
     })
@@ -423,13 +407,9 @@ if (formCreateTopic !== null) {
             var dataSend = 'topicTitle='+ encodeURIComponent(createTitleTopic.value);
             var ajaxPostVerifyTopic = Object.create(AjaxPost);
 
-            console.log(dataSend);
-
             ajaxPostVerifyTopic.init("index.php?action=verifyTopic", dataSend, function(reponse) {
-                console.log(dataSend);
-                console.log(reponse);
+
                 if (reponse === "existTopic") {
-                    console.log(reponse);
                     topicExist.style.display = "block";
                     tinymce.get("create-title-topic").on("click", function () {
                         topicExist.style.display = "none";
@@ -584,10 +564,10 @@ var formEditTopic = document.getElementById("form-edit-topic");
 
 if (formEditTopic !== null) {
     formEditTopic.addEventListener("submit", function (e) {
+        
         tinymce.triggerSave();
         e.preventDefault();
         if (admModifyTopic.checked) {
-            console.log("test");
             if (textareaEditTopic.value !== "") {
                 var dataSend = 'topicTitle='+ encodeURIComponent(textareaEditTopic.value);
                 var ajaxPostVerifyTopic = Object.create(AjaxPost);
@@ -639,7 +619,6 @@ if (formCreateGame !== null) {
         tinymce.triggerSave();
         e.preventDefault();
         
-        console.log("test");
         var valueTitleGame = titleGame.value;
         var valueReleaseDateGame = releaseDateGame.value;
         var valueTypeGame = typeGame.value;
@@ -667,7 +646,6 @@ if (formCreateGame !== null) {
             });
         }
         if (sizeFileGame > 2097152) {
-            console.log("fichier trop gros");
             maxFileGame.style.display = "block";
             fileGame.addEventListener("click", function () {
                 maxFileGame.style.display = "none";
@@ -681,7 +659,6 @@ if (formCreateGame !== null) {
         }
         if (valueTitleGame !== "" && valueReleaseDateGame !== "" && valueTypeGame !== "" && sizeFileGame <= 2097152 && valueContentGame !== "") {
             formCreateGame.submit();
-            console.log("test2");
         }
         
     });
@@ -711,8 +688,7 @@ if (formEditGame !== null) {
     formEditGame.addEventListener("submit", function(e) {
         tinymce.triggerSave();
         e.preventDefault();
-        
-        console.log("test");
+
         var admModifyGame = document.getElementById("adm-modify-game");
         var valueEditTitleGame = editTitleGame.value;
         var valueEditDateGame = editDateGame.value;
@@ -742,7 +718,6 @@ if (formEditGame !== null) {
             if (editFileGame.files.length > 0) {
                 var sizeFileEditGame = editFileGame.files[0].size;
                 if (sizeFileEditGame > 2097152) {
-                    console.log("fichier trop gros");
                     maxEditFileGame.style.display = "block";
                     editFileGame.addEventListener("click", function () {
                         maxEditFileGame.style.display = "none";
@@ -762,7 +737,6 @@ if (formEditGame !== null) {
             }
             if (valueEditTitleGame !== "" && valueEditDateGame !== "" && valueEditTypeGame !== "" && sizeFileEditGame <= 2097152 && valueEditContentGame !== "") {
                 formEditGame.submit();
-                console.log("test2");
             }
         } else {
             formEditGame.submit();
