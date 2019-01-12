@@ -201,7 +201,6 @@ function replyToMessage($userId, $message, $forumId, $topicId)
     $forumManager->editMessage($userId, $message, $forumId, $topicId);
     
     $actualizeMessages = updateMessages($topicId);
-    echo $actualizeMessages;
 }
 
 // Mettre à jour la liste des messages d'un topic
@@ -256,7 +255,6 @@ function reportTopicMessage($messageId, $topicId)
     $forumManager->editReport($messageId);
     
     $actualizeMessages = updateMessages($topicId);
-    echo $actualizeMessages;
 }
 
 ?>
