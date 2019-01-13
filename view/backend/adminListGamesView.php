@@ -49,7 +49,7 @@
 
                     <img src="images/games/<?= $game['image'] ?>" class="admin-image-game" alt="image du jeu"/> 
 
-                    <p class="admin-game-extract"><?= $GameExtract ?> ...<a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
+                    <p class="admin-game-extract"><?= $GameExtract ?> ...<a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou supprimer</a>
                     </p>
 
                 </div>
