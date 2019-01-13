@@ -30,13 +30,18 @@
 
                 $GameExtract = strip_tags($game['content']);
                 $GameExtract = substr($GameExtract, 0, 200);
+                $spacePosition = strrpos($GameExtract, " ");
+                
+                if ($spacePosition) {
+                    $GameExtract = substr($GameExtract, 0, $spacePosition);
+                }
         ?>
                 <div class="game-content">
                     <h2><?= $game['title'] ?></h2>
 
                     <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
 
-                    <p class="game-extract"><?= $GameExtract ?> ... <a class="read-more-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>"> <em>lire la suite</em></a>
+                    <p class="game-extract"><?= $GameExtract ?> ...<a class="read-more-game" href="index.php?action=displayGame&amp;idGame=<?= $game['id']; ?>"> <em>lire la suite</em></a>
                     </p>
 
                 </div>

@@ -34,6 +34,11 @@
 
                 $GameExtract = strip_tags($game['content']);
                 $GameExtract = substr($GameExtract, 0, 200);
+                $spacePosition = strrpos($GameExtract, " ");
+                
+                if ($spacePosition) {
+                    $GameExtract = substr($GameExtract, 0, $spacePosition);
+                }
         ?>
         
                 <div class="admin-game-content">
@@ -41,7 +46,7 @@
 
                     <img src="images/games/<?= $game['image'] ?>" class="admin-image-game" alt="image du jeu"/> 
 
-                    <p class="admin-game-extract"><?= $GameExtract ?> ... <a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
+                    <p class="admin-game-extract"><?= $GameExtract ?> ...<a class="admin-modify-game" href="index.php?action=displayAdminModifyGame&amp;idGame=<?= $game['id']; ?>">Modifier ou suprimer</a>
                     </p>
 
                 </div>
