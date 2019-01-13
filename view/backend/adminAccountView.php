@@ -24,7 +24,7 @@
                 <!-- Les données sont protégées par htmlspecialchars -->
                 <p><strong><?= htmlspecialchars($infoAccount['pseudo']) ?></strong></p>
                 <p><strong>inscrit le : </strong><?= $infoAccount['registration_date'] ?></p>
-                <p><strong>email : </strong><?= $infoAccount['email'] ?></p>
+                <p><strong>email : </strong><?= htmlspecialchars($infoAccount['email']) ?></p>
 
                 <?php
                 switch ($infoAccount['user_right']) {

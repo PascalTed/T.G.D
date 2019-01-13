@@ -38,7 +38,7 @@
             ?>
                 <div class="admin-forum-cat-topics">
                     <h2>
-                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
+                        <a href="index.php?action=displayAdminForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= strip_tags($forum['categories']) ?></a>
                     </h2>
                     <p><strong><?= $forum['nb_topics'] ?> sujet(s)</strong></p>
                 </div>

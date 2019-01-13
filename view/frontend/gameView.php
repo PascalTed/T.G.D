@@ -10,13 +10,13 @@
     </div>
 
     <div>
-        <h1><?= $game['title'] ?></h1>
+        <h1><?= strip_tags($game['title']) ?></h1>
     </div>
 
     <div id="game-content">
         <div id="game-header">
             <p><strong>Genre : </strong><?= $game['type']; ?></p>
-            <p><strong>Date de sortie : </strong><?= $game['release_date']; ?></p>
+            <p><strong>Date de sortie : </strong><?= strip_tags($game['release_date']); ?></p>
         </div>
         
         <div id="game-image-text">

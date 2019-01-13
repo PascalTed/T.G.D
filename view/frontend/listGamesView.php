@@ -41,7 +41,7 @@
         ?>
         
                 <div class="game-content">
-                    <h2><?= $game['title'] ?></h2>
+                    <h2><?= strip_tags($game['title']) ?></h2>
 
                     <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
 

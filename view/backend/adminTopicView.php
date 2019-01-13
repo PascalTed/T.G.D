@@ -10,13 +10,14 @@
     </div>
     
     <div>
-        <h1>Sujet <?= $infoTopic['topicTitle'] ?></h1>
+        <h1><?= strip_tags($infoTopic['topicTitle']) ?></h1>
     </div>
     
     <div id="rename-topic-content">
         <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" id="form-edit-topic" method="post">
             <label for="textarea-edit-topic">Modifier ou supprimer le sujet</label><br />
-            <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= $infoTopic['topicTitle']; ?></textarea>
+            <!-- Les données sont protégées par htmlspecialchars -->
+            <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= htmlspecialchars($infoTopic['topicTitle']); ?></textarea>
             <span id="topic-exist">Ce sujet existe déjà.</span>
             <span id="no-topic">Le champ sujet est vide.</span>
 

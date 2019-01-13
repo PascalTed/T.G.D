@@ -10,7 +10,7 @@
     </div>
     
     <div>
-        <h1>Forum : <?= $forumCat ?></h1>
+        <h1>Forum <?= strip_tags($forumCat) ?></h1>
     </div>
     
     <div id="new-topics">
@@ -48,7 +48,7 @@
         ?>
                 <div class="topics">
                     <h2>
-                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?></a>
+                        <a href="index.php?action=displayTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= strip_tags($topic['title']) ?></a>
                     </h2>
                     
                     <div>

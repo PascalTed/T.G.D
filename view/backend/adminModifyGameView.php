@@ -10,7 +10,7 @@
     </div>
 
     <div>
-        <h1><?= $game['title']; ?></h1>
+        <h1><?= strip_tags($game['title']); ?></h1>
     </div>
 
     <div id ="admin-edit-game-content">
@@ -18,19 +18,22 @@
         <form action="index.php?action=modifyOrRemoveGame&amp;idGame=<?= $game['id'] ?>" id="form-edit-game" method="post" enctype="multipart/form-data">
             <div>
                 <label for="edit-title-game"><strong>Modifier le titre</strong></label><br />
-                <textarea id="edit-title-game" name="edit-title-game"><?= $game['title']; ?></textarea>
+                <!-- Les données sont protégées par htmlspecialchars -->
+                <textarea id="edit-title-game" name="edit-title-game"><?= htmlspecialchars($game['title']); ?></textarea>
                 <span id="no-edit-title-game" class="messages-edit-game">Le champ titre est vide.</span>
             </div>
             
             <div>
                 <label for="edit-date-game"><strong>Modifier la date de sortie</strong></label><br />
-                <textarea id="edit-date-game" name="edit-date-game"><?= $game['release_date']; ?></textarea>
+                <!-- Les données sont protégées par htmlspecialchars -->
+                <textarea id="edit-date-game" name="edit-date-game"><?= htmlspecialchars($game['release_date']); ?></textarea>
                 <span id="no-edit-date-game" class="messages-edit-game">Le champ date de sortie est vide.</span>
             </div>
             
             <div>
                 <label for="edit-type-game"><strong>Modifier le genre</strong></label><br />
-                <textarea id="edit-type-game" name="edit-type-game"><?= $game['type']; ?></textarea>
+                <!-- Les données sont protégées par htmlspecialchars -->
+                <textarea id="edit-type-game" name="edit-type-game"><?= htmlspecialchars($game['type']); ?></textarea>
                 <span id="no-edit-type-game" class="messages-edit-game">Le champ genre est vide.</span>
             </div>
             

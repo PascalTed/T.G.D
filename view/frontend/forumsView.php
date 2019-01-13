@@ -30,7 +30,7 @@
                 <div class="forum-categorie">
                     <div class="forum-cat-topics">
                         <div>
-                            <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= $forum['categories'] ?></a>
+                            <h2><a href="index.php?action=displayForumTopics&amp;idForum=<?= $forum['id'] ?>&amp;catForum=<?= $forum['categories'] ?>"><?= strip_tags($forum['categories']) ?></a>
                             </h2>
                         </div>
 

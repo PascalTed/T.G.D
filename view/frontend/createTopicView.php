@@ -10,7 +10,7 @@
     </div>
     
     <div>
-        <h1>Ajouter un sujet au forum <?= $forumCat ?></h1>
+        <h1>Ajouter un sujet au forum <?= strip_tags($forumCat) ?></h1>
     </div>
     
     <div id=create-topic-content>

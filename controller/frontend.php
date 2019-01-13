@@ -211,10 +211,11 @@ function updateMessages($topicId)
     
     while ($topic = $topicMessages->fetch()) {
     ?>
-        <!-- Les données sont protégées par htmlspecialchars -->
+        
         <div class="all-messages-topic">
             <div class="info-user">
                 <p><img src="images/avatars/<?= $topic['avatar'] ?>" alt="image avatar" class="topic-image-avatar" /></p>
+                <!-- Les données sont protégées par htmlspecialchars -->
                 <p><strong><?= htmlspecialchars($topic['pseudo']) ?></strong></p>
                 <p>Inscrit le <?= $topic['registration_date'] ?></p>
             </div>

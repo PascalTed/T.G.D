@@ -10,13 +10,13 @@
     </div>
     
     <div>
-        <h1>Forum <?= $forumCat ?></h1>
+        <h1>Forum <?= strip_tags($forumCat) ?></h1>
     </div>
     
     <div id="rename-forum-content">
         <form action="index.php?action=modifyOrRemoveForum&amp;idForum=<?= $forumId ?>" id="form-edit-forum" method="post">
             <label for="textarea-cat-forum">Modifier ou supprimer le forum</label><br />
-            <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= $forumCat; ?></textarea>
+            <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forumCat); ?></textarea>
             <span id="forum-exist">Ce forum existe déjà.</span>
             <span id="no-forum">Le champ forum est vide.</span>
             <div id="forum-radio">
@@ -50,7 +50,7 @@
         
                 <div class="admin-topic-messages">
                     <h2>
-                        <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= $topic['title'] ?></a>
+                        <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= strip_tags($topic['title']) ?></a>
                     </h2>
                     
                     <div>
