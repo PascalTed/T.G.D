@@ -28,7 +28,10 @@
         } else {
             while ($game = $games->fetch()) {
 
-                $GameExtract = strip_tags($game['content']);
+                $GameExtract = $game['content'];
+                
+                $GameExtract = str_replace('<br />', ' ', $GameExtract);
+                $GameExtract = strip_tags($GameExtract);
                 $GameExtract = substr($GameExtract, 0, 200);
                 $spacePosition = strrpos($GameExtract, " ");
                 
@@ -36,6 +39,7 @@
                     $GameExtract = substr($GameExtract, 0, $spacePosition);
                 }
         ?>
+        
                 <div class="game-content">
                     <h2><?= $game['title'] ?></h2>
 
