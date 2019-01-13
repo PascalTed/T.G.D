@@ -189,7 +189,7 @@ function verifyTopic ($titleTopic)
 function createTopic($userId, $forumId, $forumCat, $titleTopic, $firstMessageTopic)
 {
     $forumManager = new ForumManager();
-    $forumManager->editTopic($userId, $forumId, strip_tags($titleTopic), $firstMessageTopic);
+    $forumManager->editTopic($userId, $forumId, $titleTopic, $firstMessageTopic);
     
     header('Location: index.php?action=displayForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
