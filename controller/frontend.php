@@ -117,7 +117,7 @@ function verifUpdatedMessage($messageId)
             <!-- Les données sont protégées par htmlspecialchars -->
             <p class="message-pseudo"><strong><?= htmlspecialchars($lastMessage['pseudo']) ?></strong></p>
             <p class="message-date"><em>le <?= $lastMessage['message_date_fr'] ?></em></p>
-            <p>"<?= nl2br(htmlspecialchars($lastMessage['message'])) ?>"</p>
+            <p><?= nl2br(htmlspecialchars($lastMessage['message'])) ?></p>
         </div>
 
 <?php

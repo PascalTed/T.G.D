@@ -38,7 +38,7 @@
                 <!-- Les données sont protégées par htmlspecialchars -->
                 <p class="message-pseudo"><strong><?= htmlspecialchars($message['pseudo']) ?></strong></p>
                 <p class="message-date"><em>le <?= $message['message_date_fr'] ?></em></p>
-                <p>"<?= nl2br(htmlspecialchars($message['message'])) ?>"</p>
+                <p><?= nl2br(htmlspecialchars($message['message'])) ?></p>
             </div>
             
         <?php
