@@ -27,7 +27,7 @@ function displayAdminForums()
 function addForumCat($userId, $forumCat)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->editForumCat($userId, $forumCat);
+    $adminForumManager->editForumCat($userId, strip_tags($forumCat));
     
     header('Location: index.php?action=displayAdminForums');
 }
@@ -36,7 +36,7 @@ function addForumCat($userId, $forumCat)
 function modifyForumCat($userId, $forumCat, $forumId)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->updateForumCat($userId, $forumCat, $forumId);
+    $adminForumManager->updateForumCat($userId, strip_tags($forumCat), $forumId);
     
     header('Location: index.php?action=displayAdminForums');
 }
@@ -83,7 +83,7 @@ function displayAdminTopic($forumId, $forumCat, $topicId)
 function modifyTopic($userId, $titleTopic, $topicId, $forumId, $forumCat)
 {
     $adminForumManager = new AdminForumManager();
-    $adminForumManager->updateTopic($userId, $titleTopic, $topicId);
+    $adminForumManager->updateTopic($userId, strip_tags($titleTopic), $topicId);
     
     header('Location: index.php?action=displayAdminForumTopics&idForum=' . $forumId . '&catForum=' . $forumCat);
 }
@@ -211,7 +211,7 @@ function createGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType
         throw new Exception('Erreur lors du transfert');
         
     } else {
-        $adminGameManager->addGame($userId, $fileGameName, $gameTitle, $gameReleaseDate, $gameType, $gameContent);
+        $adminGameManager->addGame($userId, $fileGameName, strip_tags($gameTitle), strip_tags($gameReleaseDate), strip_tags($gameType), $gameContent);
             
         header('Location: index.php?action=displayAdminListGames');
     }
@@ -237,7 +237,7 @@ function modifyGame($userId, $gameImage, $gameTitle, $gameReleaseDate, $gameType
         throw new Exception('Erreur lors du transfert');
         
     } else {
-        $adminGameManager->editGame($userId, $fileGameName, $gameTitle, $gameReleaseDate, $gameType, $gameContent, $gameId);
+        $adminGameManager->editGame($userId, $fileGameName, strip_tags($gameTitle), strip_tags($gameReleaseDate), strip_tags($gameType), $gameContent, $gameId);
     
         header('Location: index.php?action=displayAdminListGames');
     }
