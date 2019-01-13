@@ -16,7 +16,7 @@
     <div id="rename-topic-content">
         <form action="index.php?action=modifyOrRemoveTopic&amp;idTopic=<?= $topicId ?>&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" id="form-edit-topic" method="post">
             <label for="textarea-edit-topic">Modifier ou supprimer le sujet</label><br />
-            <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= strip_tags($infoTopic['topicTitle']); ?></textarea>
+            <textarea id="textarea-edit-topic" name="textarea-edit-topic"><?= $infoTopic['topicTitle']; ?></textarea>
             <span id="topic-exist">Ce sujet existe déjà.</span>
             <span id="no-topic">Le champ sujet est vide.</span>
 

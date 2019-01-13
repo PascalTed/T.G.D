@@ -16,7 +16,7 @@
     <div id="rename-forum-content">
         <form action="index.php?action=modifyOrRemoveForum&amp;idForum=<?= $forumId ?>" id="form-edit-forum" method="post">
             <label for="textarea-cat-forum">Modifier ou supprimer le forum</label><br />
-            <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forumCat); ?></textarea>
+            <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= $forumCat; ?></textarea>
             <span id="forum-exist">Ce forum existe déjà.</span>
             <span id="no-forum">Le champ forum est vide.</span>
             <div id="forum-radio">
