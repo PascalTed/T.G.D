@@ -10,13 +10,14 @@
     </div>
     
     <div>
-        <h1>Forum <?= strip_tags($forumCat) ?></h1>
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <h1>Forum <?= htmlspecialchars($forumCat) ?></h1>
     </div>
     
     <div id="rename-forum-content">
         <form action="index.php?action=modifyOrRemoveForum&amp;idForum=<?= $forumId ?>" id="form-edit-forum" method="post">
             <label for="textarea-cat-forum">Modifier ou supprimer le forum</label><br />
-            <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= strip_tags($forumCat); ?></textarea>
+            <textarea id="textarea-cat-forum" name="textarea-cat-forum"><?= htmlspecialchars($forumCat); ?></textarea>
             <span id="forum-exist">Ce forum existe déjà.</span>
             <span id="no-forum">Le champ forum est vide.</span>
             <div id="forum-radio">
@@ -47,14 +48,13 @@
         } else {
             while ($topic = $topics->fetch()) {
         ?>
-        
+                <!-- Les données sont protégées par htmlspecialchars -->
                 <div class="admin-topic-messages">
                     <h2>
-                        <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= strip_tags($topic['title']) ?></a>
+                        <a href="index.php?action=displayAdminTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>&amp;idTopic=<?= $topic['topicID'] ?>"><?= htmlspecialchars($topic['title']) ?></a>
                     </h2>
                     
                     <div>
-                        <!-- Les données sont protégées par htmlspecialchars -->
                         <p>posté par <?= htmlspecialchars($topic['t_pseudo']) ?> le <?= $topic['creation_date'] ?></p>
                         <p><strong><?= $topic['nb_message'] ?> message(s)</strong></p>
                         <p>dernier message par <?= htmlspecialchars($topic['tm_pseudo']) ?> le <?= $topic['last_date'] ?></p>

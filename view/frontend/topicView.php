@@ -10,7 +10,8 @@
     </div>
     
     <div>
-        <h1><?= strip_tags($infoTopic['topicTitle']) ?></h1>
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <h1><?= htmlspecialchars($infoTopic['topicTitle']) ?></h1>
     </div>
                                              
     <div id="topic-content">

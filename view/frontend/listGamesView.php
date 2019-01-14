@@ -41,7 +41,8 @@
         ?>
         
                 <div class="game-content">
-                    <h2><?= strip_tags($game['title']) ?></h2>
+                    <!-- Les données sont protégées par htmlspecialchars -->
+                    <h2><?= htmlspecialchars($game['title']) ?></h2>
 
                     <img src="images/games/<?= $game['image'] ?>" class="image-game" alt="image du jeu"/> 
 

@@ -10,7 +10,8 @@
     </div>
 
     <div>
-        <h1><?= strip_tags($game['title']); ?></h1>
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <h1><?= htmlspecialchars($game['title']); ?></h1>
     </div>
 
     <div id ="admin-edit-game-content">

@@ -10,7 +10,8 @@
     </div>
     
     <div>
-        <h1>Ajouter un sujet au forum <?= strip_tags($forumCat) ?></h1>
+        <!-- Les données sont protégées par htmlspecialchars -->
+        <h1>Ajouter un sujet au forum <?= htmlspecialchars($forumCat) ?></h1>
     </div>
     
     <div id=create-topic-content>
