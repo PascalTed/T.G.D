@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="fontawesome/css/all.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="La team T.G.D (The Good Death) vous souhaite la bienvenue sur son forum">
+        <meta name="description" content="La team T.G.D (The Good Death) vous souhaite la bienvenue sur son forum, on y parle de jeux pc, hardware, et software">
         
         <!-- Facebook, Open Graph data -->
 		<meta property="og:title" content="Forum de la team T.G.D">
