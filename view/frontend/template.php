@@ -4,7 +4,7 @@
     
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>Forum de la team T.G.D</title>
         <link rel="icon" type="image/png" href="images/favicon.png">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
