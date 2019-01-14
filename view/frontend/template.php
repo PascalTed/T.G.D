@@ -56,7 +56,7 @@
                         <p><a href="https://twitter.com/"><img src="images/social/twitter.png" alt="twitter"/></a></p>
                     </div>
                     <div id="copyright">
-                        <p>Copyright © 2019 tgd.tedsev.com</p>
+                        <p><a target="_blank" href="http://the-good-death.copyright01.com/">Copyright © 2019 tgd.tedsev.com</a></p>
                     </div>
                 </div>
             </footer>
