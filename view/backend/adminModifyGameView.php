@@ -41,9 +41,10 @@
             <div>
                 <label for="edit-file-game"><strong>Modifier l'image</strong></label><br />
                 <img src="images/games/<?= $game['image'] ?>" id="edit-file-game-img" class="image-edit-game" alt="image du jeu à modifier"/>
-                <input type="file" name="edit-file-game" id="edit-file-game" required/><br />
+                <input type="file" name="edit-file-game" id="edit-file-game"/><br />
                 <span id="accepted-edit-file-game">Fichiers acceptés : jpeg ou png, maximum 2Mo.</span><br />
                 <span id="max-edit-file-game" class="messages-edit-game">Le fichier est trop gros.</span>
+                <span id="exist-edit-file-game" class="messages-edit-game">Aucun fichier choisi.</span>
             </div>
 
             <div>

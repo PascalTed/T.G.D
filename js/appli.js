@@ -695,8 +695,6 @@ if (formEditGame !== null) {
         var valueEditTypeGame = editTypeGame.value;
         var valueEditContentGame = editContentGame.value;
         
-        var sizeFileEditGame = editFileGame.files[0].size;
-        
         if(admModifyGame.checked) {
 
             if (valueEditTitleGame == "") {
@@ -717,10 +715,18 @@ if (formEditGame !== null) {
                     noEditTypeGame.style.display = "none";
                 });
             }
-            if (sizeFileEditGame > 2097152) {
-                maxEditFileGame.style.display = "block";
+            if (editFileGame.files.length > 0) {
+                var sizeFileEditGame = editFileGame.files[0].size;
+                if (sizeFileEditGame > 2097152) {
+                    maxEditFileGame.style.display = "block";
+                    editFileGame.addEventListener("click", function () {
+                        maxEditFileGame.style.display = "none";
+                    });
+                }
+            } else {
+                existEditFileGame.style.display = "block";
                 editFileGame.addEventListener("click", function () {
-                    maxEditFileGame.style.display = "none";
+                    existEditFileGame.style.display = "none";
                 });
             }
             if (valueEditContentGame == "") {
