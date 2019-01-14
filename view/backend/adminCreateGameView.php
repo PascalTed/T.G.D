@@ -17,19 +17,19 @@
         
         <form class="form-tiny-mce" action="index.php?action=createGame" method="post" id="form-create-game" enctype="multipart/form-data">
             <div>
-                <label for="title-game"><strong>Ajouter le titre</strong></label>
+                <label for="title-game"><strong>Ajouter le titre</strong></label><br/>
                 <textarea id="title-game" name="title-game"></textarea>
                 <span id="no-title-game" class="messages-create-game">Le champ titre est vide.</span>
             </div>
             
             <div>
-                <label for="release-date-game"><strong>Ajouter la date de sortie</strong></label>
+                <label for="release-date-game"><strong>Ajouter la date de sortie</strong></label><br/>
                 <textarea id="release-date-game" name="release-date-game"></textarea>
                 <span id="no-date-game" class="messages-create-game">Le champ date est vide.</span>
             </div>
             
             <div>
-                <label for="type-game"><strong>Ajouter le genre (ex: FPS)</strong></label>
+                <label for="type-game"><strong>Ajouter le genre (ex: FPS)</strong></label><br/>
                 <textarea id="type-game" name="type-game"></textarea>
                 <span id="no-type-game" class="messages-create-game">Le champ genre est vide.</span>
             </div>

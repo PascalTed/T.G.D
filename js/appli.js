@@ -392,7 +392,7 @@ if (formCreateTopic !== null) {
         
         if (valueTitle === "") {
             noTitleTopic.style.display = "block";
-            tinymce.get("create-title-topic").on("click", function () {
+            createTitleTopic.addEventListener("click", function () {
                 noTitleTopic.style.display = "none";
             });
         }
@@ -411,7 +411,7 @@ if (formCreateTopic !== null) {
 
                 if (reponse === "existTopic") {
                     topicExist.style.display = "block";
-                    tinymce.get("create-title-topic").on("click", function () {
+                    createTitleTopic.addEventListener("click", function () {
                         topicExist.style.display = "none";
                     });
                 } else {
@@ -495,7 +495,7 @@ if (formAddForum !== null) {
             ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
                 if (reponse === "existForum") {
                     addForumExist.style.display = "block";
-                    tinymce.get("add-forum").on("click", function () {
+                    addForum.addEventListener("click", function () {
                         addForumExist.style.display = "none";
                     });
                 } else {
@@ -505,7 +505,7 @@ if (formAddForum !== null) {
             ajaxPostVerifyForum.executer();
         } else {
             addForumEmpty.style.display ="block";
-            tinymce.get("add-forum").on("click", function () {
+            addForum.addEventListener("click", function () {
                 addForumEmpty.style.display ="none";
             });
         }
@@ -534,7 +534,7 @@ if (formEditForum !== null) {
                 ajaxPostVerifyForum.init("index.php?action=verifyForum", dataSend, function(reponse) { 
                     if (reponse === "existForum") {
                         forumExist.style.display = "block";
-                        tinymce.get("textarea-cat-forum").on("click", function (e) {
+                        textareaCatForum.addEventListener("click", function (e) {
                             forumExist.style.display = "none";
                         });
                     } else {
@@ -544,7 +544,7 @@ if (formEditForum !== null) {
                 ajaxPostVerifyForum.executer();
             } else {
                 noForum.style.display = "block";
-                tinymce.get("textarea-cat-forum").on("click", function () {
+                textareaCatForum.addEventListener("click", function () {
                     noForum.style.display = "none";
                 });
             }
@@ -575,7 +575,7 @@ if (formEditTopic !== null) {
                 ajaxPostVerifyTopic.init("index.php?action=verifyTopic", dataSend, function(reponse) { 
                     if (reponse === "existTopic") {
                         topicExist.style.display = "block";
-                        tinymce.get("textarea-edit-topic").on("click", function (e) {
+                        textareaEditTopic.addEventListener("click", function (e) {
                             topicExist.style.display = "none";
                         });
                     } else {
@@ -585,7 +585,7 @@ if (formEditTopic !== null) {
                 ajaxPostVerifyTopic.executer();
             } else {
                 noTopic.style.display = "block";
-                tinymce.get("textarea-edit-topic").on("click", function () {
+                textareaEditTopic.addEventListener("click", function () {
                     noTopic.style.display = "none";
                 });
             }
@@ -629,19 +629,19 @@ if (formCreateGame !== null) {
         
         if (valueTitleGame == "") {
             noTitleGame.style.display = "block";
-            tinymce.get("title-game").on("click", function () {
+            titleGame.addEventListener("click", function () {
                 noTitleGame.style.display = "none";
             });
         }
         if (valueReleaseDateGame == "") {
             noDateGame.style.display = "block";
-            tinymce.get("release-date-game").on("click", function () {
+            releaseDateGame.addEventListener("click", function () {
                 noDateGame.style.display = "none";
             });
         }
         if (valueTypeGame == "") {
             noTypeGame.style.display = "block";
-            tinymce.get("type-game").on("click", function () {
+            typeGame.addEventListener("click", function () {
                 noTypeGame.style.display = "none";
             });
         }
@@ -695,38 +695,32 @@ if (formEditGame !== null) {
         var valueEditTypeGame = editTypeGame.value;
         var valueEditContentGame = editContentGame.value;
         
+        var sizeFileEditGame = editFileGame.files[0].size;
+        
         if(admModifyGame.checked) {
 
             if (valueEditTitleGame == "") {
                 noEditTitleGame.style.display = "block";
-                tinymce.get("edit-title-game").on("click", function () {
+                editTitleGame.addEventListener("click", function () {
                     noEditTitleGame.style.display = "none";
                 });
             }
             if (valueEditDateGame == "") {
                 noEditDateGame.style.display = "block";
-                tinymce.get("edit-date-game").on("click", function () {
+                editDateGame.addEventListener("click", function () {
                     noEditDateGame.style.display = "none";
                 });
             }
             if (valueEditTypeGame == "") {
                 noEditTypeGame.style.display = "block";
-                tinymce.get("edit-type-game").on("click", function () {
+                editTypeGame.addEventListener("click", function () {
                     noEditTypeGame.style.display = "none";
                 });
             }
-            if (editFileGame.files.length > 0) {
-                var sizeFileEditGame = editFileGame.files[0].size;
-                if (sizeFileEditGame > 2097152) {
-                    maxEditFileGame.style.display = "block";
-                    editFileGame.addEventListener("click", function () {
-                        maxEditFileGame.style.display = "none";
-                    });
-                }
-            } else {
-                existEditFileGame.style.display = "block";
+            if (sizeFileEditGame > 2097152) {
+                maxEditFileGame.style.display = "block";
                 editFileGame.addEventListener("click", function () {
-                    existEditFileGame.style.display = "none";
+                    maxEditFileGame.style.display = "none";
                 });
             }
             if (valueEditContentGame == "") {

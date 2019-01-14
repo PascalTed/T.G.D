@@ -14,10 +14,10 @@
     </div>
     
     <div id=create-topic-content>
-        <form class="form-tiny-mce" action="index.php?action=createTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" method="post" id="form-create-topic">
+        <form action="index.php?action=createTopic&amp;idForum=<?= $forumId ?>&amp;catForum=<?= $forumCat ?>" method="post" id="form-create-topic">
             
             <div id="">
-                <label for="create-title-topic"><strong>Ajouter le titre</strong></label>
+                <label for="create-title-topic"><strong>Ajouter le titre</strong></label><br/>
                 <textarea id="create-title-topic" name="create-title-topic"></textarea>
                 <span id="topic-exist">Ce topic existe déjà</span>
                 <span id="no-title-topic">Le champ titre est vide</span>

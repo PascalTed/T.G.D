@@ -806,6 +806,13 @@ section
     margin-bottom: 15px;
 }
 
+#create-title-topic
+{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
 #form-create-topic input[type="submit"]
 {
     cursor: pointer;
@@ -1538,10 +1545,6 @@ p#no-admin-list-forums
     padding: 10px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-}
-
-#add-forum-content
-{
     background-color: rgb(230, 230, 230);
 }
 
@@ -1550,6 +1553,14 @@ p#no-admin-list-forums
     cursor: pointer;
     -webkit-box-shadow: 2px 2px 5px #333333;
             box-shadow: 2px 2px 5px #333333;
+}
+
+#add-forum
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
 }
 
 .admin-forum-cat-topics
@@ -1634,6 +1645,14 @@ p#no-admin-list-forums
 #form-edit-forum > label
 {
     font-weight: bold;
+}
+
+#textarea-cat-forum
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
 }
 
 #forum-radio
@@ -1724,6 +1743,14 @@ p#no-admin-list-forums
 #rename-topic-content
 {
     padding: 10px;
+}
+
+#textarea-edit-topic
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
 }
 
 #form-edit-topic > label
@@ -1940,6 +1967,30 @@ p#no-admin-list-forums
     margin-bottom: 15px;
 }
 
+#title-game
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
+}
+
+#release-date-game
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
+}
+
+#type-game
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
+}
+
 #admin-create-game .messages-create-game
 {
     display: none;
@@ -2000,6 +2051,30 @@ p#no-admin-list-forums
 #form-edit-game > div
 {
     margin-bottom: 15px;
+}
+
+#edit-title-game
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
+}
+
+#edit-date-game
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
+}
+
+#edit-type-game
+{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    padding: 10px
 }
 
 #admin-edit-game .messages-edit-game
