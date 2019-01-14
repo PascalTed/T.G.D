@@ -811,6 +811,7 @@ section
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #form-create-topic input[type="submit"]
@@ -1545,7 +1546,6 @@ p#no-admin-list-forums
     padding: 10px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    background-color: rgb(230, 230, 230);
 }
 
 #add-forum-content input[type="submit"]
@@ -1560,7 +1560,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 .admin-forum-cat-topics
@@ -1652,7 +1653,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #forum-radio
@@ -1750,7 +1752,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #form-edit-topic > label
@@ -1972,7 +1975,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #release-date-game
@@ -1980,7 +1984,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #type-game
@@ -1988,7 +1993,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #admin-create-game .messages-create-game
@@ -2058,7 +2064,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #edit-date-game
@@ -2066,7 +2073,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #edit-type-game
@@ -2074,7 +2082,8 @@ p#no-admin-list-forums
     width: 100%;
     -webkit-box-sizing: border-box;
         box-sizing: border-box;
-    padding: 10px
+    padding: 8px;
+    border: 1px solid #c5c5c5;
 }
 
 #admin-edit-game .messages-edit-game
