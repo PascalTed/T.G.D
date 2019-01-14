@@ -10,21 +10,21 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="fontawesome/css/all.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="">
+        <meta name="description" content="La team T.G.D (The Good Death) vous souhaite la bienvenue sur son forum">
         
         <!-- Facebook, Open Graph data -->
-		<meta property="og:title" content="">
+		<meta property="og:title" content="Forum de la team T.G.D">
 		<meta property="og:type" content="website">
-		<meta property="og:url" content="">
-		<meta property="og:image" content="">
-		<meta property="og:description" content="">
+		<meta property="og:url" content="http://tgd.tedsev.com/">
+		<meta property="og:image" content="http://tgd.tedsev.com/images/tgd.PNG">
+		<meta property="og:description" content="La team T.G.D (The Good Death) vous souhaite la bienvenue sur son forum, on y parle de jeux pc, hardware, et software">
         
         <!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:site" content="">
-		<meta name="twitter:title" content="">
-		<meta name="twitter:description" content="">
-		<meta name="twitter:image" content="">
+		<meta name="twitter:site" content="http://tgd.tedsev.com/">
+		<meta name="twitter:title" content="Forum de la team T.G.D">
+		<meta name="twitter:description" content="La team T.G.D (The Good Death) vous souhaite la bienvenue sur son forum, on y parle de jeux pc, hardware, et software">
+		<meta name="twitter:image" content="http://tgd.tedsev.com/images/tgd.PNG">
     </head>
     
     <body>
