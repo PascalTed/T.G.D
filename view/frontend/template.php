@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8" />
         <title></title>
-        <link rel="icon" type="image/png" href="">
+        <link rel="icon" type="image/png" href="images/favicon.png">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="fontawesome/css/all.css">
