@@ -2088,6 +2088,12 @@ footer #copyright p
 {
     text-align: right;
 }
+
+footer #copyright p a
+{
+    text-decoration: none;
+    color: white;
+}
 /* Fin footer */
 
 /* Début media queries */
