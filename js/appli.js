@@ -90,23 +90,30 @@ if (formRegistration !== null) {
         var regexEmail = Object.create(Regex);
         regexEmail.init((/^\S+@\S+\.\S+$/), formInputEmail.value);
         
-        if (regexEmail.verifier() === false) {
-            emailVerified = "nok";
+        if (formInputEmail.value === "") {
             messageEmail.textContent = "";
         } else {
-            ajaxPostEmail.init("index.php?action=verifEmailCreateAccount", dataSend, function(reponse) {
+            if (regexEmail.verifier() === false) {
+                messageEmail.classList.add("orange-message");
+                messageEmail.textContent = "format email incorrect";
+                emailVerified = "nok";
+            } else {
+                ajaxPostEmail.init("index.php?action=verifEmailCreateAccount", dataSend, function(reponse) {
 
-                if (reponse === "existEmail") {
-                    messageEmail.classList.add("red-message");
-                    messageEmail.textContent = "email déjà existant";
-                    emailVerified = "nok";
-                } else {
-                    messageEmail.classList.remove("red-message");
-                    messageEmail.textContent = "email disponible";
-                    emailVerified = "ok";
-                }
-            });   
-            ajaxPostEmail.executer();
+                    if (reponse === "existEmail") {
+                        messageEmail.classList.remove("orange-message");
+                        messageEmail.classList.add("red-message");
+                        messageEmail.textContent = "email déjà existant";
+                        emailVerified = "nok";
+                    } else {
+                        messageEmail.classList.remove("orange-message");
+                        messageEmail.classList.remove("red-message");
+                        messageEmail.textContent = "email disponible";
+                        emailVerified = "ok";
+                    }
+                });   
+                ajaxPostEmail.executer();
+            }
         }
     });
     // password

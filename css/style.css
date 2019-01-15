@@ -307,6 +307,11 @@ section
     color: blue;
 }
 
+#form-registration span.orange-message
+{
+    color: orange;
+}
+
 #form-registration span.red-message
 {
     color: red;
