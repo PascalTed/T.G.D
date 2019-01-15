@@ -199,7 +199,7 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminHome();
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
             
         // Afficher la page forums (administration)
@@ -207,7 +207,7 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminForums();
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
          
         // Ajouter une nouvelle catégorie forum (administration)
@@ -263,7 +263,7 @@ try {
                     throw new Exception('Aucun id ou catégorie forum envoyé.');
                 }
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
         // Afficher la page du sujet et ses messages (administration)
         } elseif ($_GET['action'] == 'displayAdminTopic'){
@@ -274,7 +274,7 @@ try {
                 throw new Exception('Aucun id sujet ou id forum ou catégorie forum envoyé.');
                 }
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
             
         // Modifier ou supprimer un topic (administration)
@@ -331,7 +331,7 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminReportedMessages();
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
             
         // Valider le message signalé d'un topic dans tous les messages signalés (administration)
@@ -363,7 +363,7 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminAllAccounts();
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
             
         // Afficher la page infos compte utilisateur (administration)    
@@ -375,7 +375,7 @@ try {
                     throw new Exception('Aucun pseudo envoyé.');
                 }
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
             
         // Modifier les droits utilisateurs (administration)
@@ -403,7 +403,7 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminListGames();
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
         
         // Afficher la page pour créer un jeu joué (admnistration)
@@ -411,7 +411,7 @@ try {
             if (isset($_SESSION['user_right']) && $_SESSION['user_right'] == "admin") {
                 displayAdminCreateGame();
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
         // Enregistrer le nouveau jeu joué (admnistration)
         } elseif($_GET['action'] == 'createGame') {
@@ -442,7 +442,7 @@ try {
                     throw new Exception('Aucun id jeu envoyé.');
                 }
             } else {
-                throw new Exception('Aucun droit envoyé.');
+                displayHome();
             }
         
         // Modifier ou supprimer un jeu joué (admnistration)
