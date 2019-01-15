@@ -21,7 +21,7 @@
         </div>
         
         <div id="game-image-text">
-            <image src="images/games/<?= $game['image']; ?>" alt="image du jeu" id="game-detail-image"/>
+            <img src="images/games/<?= $game['image']; ?>" alt="image du jeu" id="game-detail-image"/>
             
             <div>
                 <p><?= $game['content']; ?></p>
