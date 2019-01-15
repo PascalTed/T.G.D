@@ -662,7 +662,7 @@ section
     margin-top: 30px;
 }
 
-#max-file-avatar
+#max-file-avatar, #incorrect-file-avatar
 {
     display: none;
     color: red;

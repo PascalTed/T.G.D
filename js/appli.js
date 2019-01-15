@@ -278,6 +278,7 @@ formLoginWindow.addEventListener("submit", function(e) {
 var formAvatar = document.getElementById("form-avatar");
 var maxFileAvatar = document.getElementById("max-file-avatar");
 var fileAvatar = document.getElementById("file-avatar");
+var incorrectFileAvatar = document.getElementById("incorrect-file-avatar");
 
 if (formAvatar !== null) {
     
@@ -304,14 +305,23 @@ if (formAvatar !== null) {
     formAvatar.addEventListener("submit", function (e) {
         e.preventDefault();
         
+        var regexExtensionImage = Object.create(Regex);
+        regexExtensionImage.init((/\.(gif|jpg|jpeg|png)$/i), fileAvatar.files[0].name);
         var sizeFileAvatar = fileAvatar.files[0].size;
         
         if (sizeFileAvatar > 1048576) {
-             maxFileAvatar.style.display = "block";
+            maxFileAvatar.style.display = "block";
             fileAvatar.addEventListener("click", function () {
                 maxFileAvatar.style.display = "none";
             });
+        } else if (!regexExtensionImage.verifier()) {
+            console.log(fileAvatar.files[0]);
+                incorrectFileAvatar.style.display = "block";
+                fileAvatar.addEventListener("click", function () {
+                    incorrectFileAvatar.style.display = "none";
+                });
         } else {
+        
             formAvatar.submit();
         }
     })
