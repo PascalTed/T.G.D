@@ -67,7 +67,6 @@
                 ?>
 
                 <div>
-                    <input type="reset" value="Annuler" />
                     <input type="submit" value="Envoyer" />
                 </div>
             </form>
