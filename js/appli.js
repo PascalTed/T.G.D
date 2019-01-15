@@ -315,11 +315,10 @@ if (formAvatar !== null) {
                 maxFileAvatar.style.display = "none";
             });
         } else if (!regexExtensionImage.verifier()) {
-            console.log(fileAvatar.files[0]);
-                incorrectFileAvatar.style.display = "block";
-                fileAvatar.addEventListener("click", function () {
-                    incorrectFileAvatar.style.display = "none";
-                });
+            incorrectFileAvatar.style.display = "block";
+            fileAvatar.addEventListener("click", function () {
+                incorrectFileAvatar.style.display = "none";
+            });
         } else {
         
             formAvatar.submit();
