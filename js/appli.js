@@ -626,6 +626,7 @@ var noTypeGame = document.getElementById("no-type-game");
 
 var fileGame = document.getElementById('file-game');
 var maxFileGame = document.getElementById("max-file-game");
+var incorrectFileGame =document.getElementById("incorrect-file-game");
 
 var contentGame = document.getElementById("content-game");
 var noContentGame = document.getElementById("no-content-game");
@@ -639,6 +640,9 @@ if (formCreateGame !== null) {
         var valueReleaseDateGame = releaseDateGame.value;
         var valueTypeGame = typeGame.value;
         var valueContentGame = contentGame.value;
+        
+        var regexExtensionGame = Object.create(Regex);
+        regexExtensionGame.init((/\.(jpg|jpeg|png)$/i), fileGame.files[0].name);
         
         var sizeFileGame = fileGame.files[0].size;
         
@@ -666,6 +670,11 @@ if (formCreateGame !== null) {
             fileGame.addEventListener("click", function () {
                 maxFileGame.style.display = "none";
             });
+        } else if (!regexExtensionGame.verifier()) {
+            incorrectFileGame.style.display = "block";
+            fileGame.addEventListener("click", function () {
+                incorrectFileGame.style.display = "none";
+            });
         }
         if (valueContentGame == "") {
             noContentGame.style.display = "block";
@@ -673,7 +682,7 @@ if (formCreateGame !== null) {
                 noContentGame.style.display = "none";
             });
         }
-        if (valueTitleGame !== "" && valueReleaseDateGame !== "" && valueTypeGame !== "" && sizeFileGame <= 2097152 && valueContentGame !== "") {
+        if (valueTitleGame !== "" && valueReleaseDateGame !== "" && valueTypeGame !== "" && sizeFileGame <= 2097152 && regexExtensionGame.verifier() && valueContentGame !== "") {
             formCreateGame.submit();
         }
         
@@ -696,6 +705,7 @@ var noEditTypeGame = document.getElementById("no-edit-type-game");
 var editFileGame = document.getElementById('edit-file-game');
 var maxEditFileGame = document.getElementById("max-edit-file-game");
 var existEditFileGame = document.getElementById("exist-edit-file-game");
+var incorrectFileEditGame = document.getElementById("incorrect-file-edit-game");
 
 var editContentGame = document.getElementById("edit-content-game");
 var noEditContentGame = document.getElementById("no-edit-content-game");
@@ -732,11 +742,18 @@ if (formEditGame !== null) {
                 });
             }
             if (editFileGame.files.length > 0) {
+                var regexExtensionEditGame = Object.create(Regex);
+                regexExtensionEditGame.init((/\.(jpg|jpeg|png)$/i), editFileGame.files[0].name);
                 var sizeFileEditGame = editFileGame.files[0].size;
                 if (sizeFileEditGame > 2097152) {
                     maxEditFileGame.style.display = "block";
                     editFileGame.addEventListener("click", function () {
                         maxEditFileGame.style.display = "none";
+                    });
+                } else if (!regexExtensionEditGame.verifier()) {
+                    incorrectFileEditGame.style.display = "block";
+                    editFileGame.addEventListener("click", function () {
+                        incorrectFileEditGame.style.display = "none";
                     });
                 }
             } else {
@@ -751,7 +768,7 @@ if (formEditGame !== null) {
                     noEditContentGame.style.display = "none";
                 });
             }
-            if (valueEditTitleGame !== "" && valueEditDateGame !== "" && valueEditTypeGame !== "" && sizeFileEditGame <= 2097152 && valueEditContentGame !== "") {
+            if (valueEditTitleGame !== "" && valueEditDateGame !== "" && valueEditTypeGame !== "" && sizeFileEditGame <= 2097152 && regexExtensionEditGame.verifier() && valueEditContentGame !== "") {
                 formEditGame.submit();
             }
         } else {
