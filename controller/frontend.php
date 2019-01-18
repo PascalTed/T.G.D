@@ -41,11 +41,15 @@ function verifMail($mail) {
 
 // Création du compte
 function createAccount($pseudo, $mail, $pass)
-{    
-    $accountManager = new AccountManager();
-    $accountManager->editAccount($pseudo, $mail, $pass);
-    
-    header('Location: index.php');
+{
+    if (preg_match('#\s+#', $pseudo) == FALSE AND preg_match('#^\S+@\S+\.\S+$#', $mail) == TRUE) {        
+        $accountManager = new AccountManager();
+        $accountManager->editAccount($pseudo, $mail, $pass);
+        
+        header('Location: index.php');
+    } else {
+        throw new Exception('Le format du pseudo ou email n\'est pas respecté');
+    }
 }
 
 // Modifier avatar
