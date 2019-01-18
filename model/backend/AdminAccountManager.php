@@ -35,10 +35,6 @@ class AdminAccountManager extends Manager
         $db = $this->dbConnect();
         $req = $db->prepare('UPDATE users SET user_right = \'none\' WHERE id = ?');
         $req->execute(array($userId));
-        
-        if ($_SESSION['id'] == $userId) {
-            $_SESSION['user_right'] = 'none';
-        }
     }
 }
 
