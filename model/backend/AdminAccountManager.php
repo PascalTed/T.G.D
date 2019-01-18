@@ -1,7 +1,7 @@
 <?php
 namespace model\backend;
 
-use model\frontend\Manager;
+use model\Manager;
 
 class AdminAccountManager extends Manager
 {
