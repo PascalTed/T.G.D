@@ -42,13 +42,12 @@ function verifMail($mail) {
 // Création du compte
 function createAccount($pseudo, $mail, $pass)
 {
-    if (preg_match('#\s+#', $pseudo) == FALSE AND preg_match('#^\S+@\S+\.\S+$#', $mail) == TRUE) {        
+    if (preg_match('#\s+#', $pseudo) == FALSE AND preg_match('#^\S+@\S+\.\S+$#', $mail) == TRUE AND strlen($pass) >= 8) {
         $accountManager = new AccountManager();
         $accountManager->editAccount($pseudo, $mail, $pass);
-        
         header('Location: index.php');
     } else {
-        throw new Exception('Le format du pseudo ou email n\'est pas respecté');
+        throw new Exception('Le format du pseudo ou email ou password n\'est pas respecté');
     }
 }
 
