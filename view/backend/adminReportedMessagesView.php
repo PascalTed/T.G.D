@@ -31,9 +31,9 @@
                 
                 <div class="verif-message-reported">
                     <div class="reported-message-info">
-                        <p><strong>Forum : </strong><?= $reportedMessage['forumCategorie'] ?></p>
-
-                        <p><strong>Sujet : </strong><?= $reportedMessage['topicTitle'] ?> <em>le <?= $reportedMessage['topicCreation_date'] ?></em></p>
+                        <p><strong>Forum : </strong><?= htmlspecialchars($reportedMessage['forumCategorie']) ?></p>
+                        <!-- Les données sont protégées par htmlspecialchars -->
+                        <p><strong>Sujet : </strong><?= htmlspecialchars($reportedMessage['topicTitle']) ?> <em>le <?= htmlspecialchars($reportedMessage['topicCreation_date']) ?></em></p>
                         
                         <!-- Les données sont protégées par htmlspecialchars -->
                         <p><strong>Message : </strong>par <?= htmlspecialchars($reportedMessage['tm_pseudo']) ?> <em>le <?=$reportedMessage['tm_date'] ?></em></p>
